@@ -1,0 +1,34 @@
+name: Julia cross-language contracts — Bowling and Knapsack
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000009/**'
+      - 'katas/KATA-000035/**'
+      - '.github/workflows/julia-kata-contracts.yml'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000009/**'
+      - 'katas/KATA-000035/**'
+      - '.github/workflows/julia-kata-contracts.yml'
+permissions:
+  contents: read
+jobs:
+  julia-crosscheck:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: julia-actions/setup-julia@v3
+        with:
+          version: '1.12'
+      - name: Build C Bowling with strict warnings
+        run: cc -std=c11 -Wall -Wextra -Werror -pedantic katas/KATA-000009/src/bowling.c katas/KATA-000009/src/main.c -o /tmp/ninja-bowling-cli
+      - name: Build Fortran Knapsack with strict checks
+        run: |
+          gfortran -std=f2008 -Wall -Wextra -Werror -fcheck=all -J /tmp -I /tmp katas/KATA-000035/src/knapsack.f90 katas/KATA-000035/src/main.f90 -o /tmp/ninja-knapsack-cli
+      - name: Run Bowling contracts in Julia
+        run: julia --startup-file=no --check-bounds=yes katas/KATA-000009/tests/bowling_julia.jl /tmp/ninja-bowling-cli
+      - name: Run independent Julia meet-in-the-middle model
+        run: julia --startup-file=no --check-bounds=yes katas/KATA-000035/tests/knapsack_julia.jl /tmp/ninja-knapsack-cli
