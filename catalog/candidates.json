@@ -159,5 +159,51 @@
       "branch": "dev",
       "date": "2026-10-17"
     }
+  },
+  {
+    "id": "KATA-000004",
+    "title": "Gossiping Bus Drivers",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/gossiping-bus-drivers-kata",
+    "fingerprint": "periodic-route-synchronous-gossip-convergence",
+    "domain": "distributed-information-propagation",
+    "difficulty": 5,
+    "difficulty_evidence": "Kata-Log category Experienced. Provisional 5/5 by graph propagation, periodic route intersection, simultaneous exchange and off-by-one stop count; no empirical calibration.",
+    "score": 93,
+    "score_evidence": "Single-reviewer eight-factor rubric in katas/KATA-000004/README.md: transfer 19, depth 19, oracle 15, TDD 14, novelty 9, pedagogy 9, portability 4, maintenance 4. Requires independent calibration.",
+    "status": "verified",
+    "license": {
+      "id": "Unlicense",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/gossiping-bus-drivers-kata",
+      "scope": "Kata-Log's own public-domain exercise; this code/tests authored independently under MIT, upstream starters not imported."
+    },
+    "language": "Erlang",
+    "language_rationale": "Immutable per-round synchronous knowledge, OR join semilattice via Erlang bitmasks and map stop groups; language contrasts PHP, Fortran and Java. Elixir/Haskell/Go alternatives considered.",
+    "evidence": {
+      "red": "katas/KATA-000004/evidence/red.txt",
+      "green": "katas/KATA-000004/evidence/green.txt",
+      "oracle": "katas/KATA-000004/evidence/oracle.txt",
+      "ci": "katas/KATA-000004/evidence/ci.txt",
+      "skill_review": "katas/KATA-000004/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green",
+      "verified"
+    ],
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39022575284",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39022575220",
+      "catalog_validation_conclusion": "success",
+      "fortran_regression_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39022575248",
+      "php_regression_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39022575232",
+      "java_regression_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39022575458"
+    }
   }
 ]

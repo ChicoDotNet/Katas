@@ -1,6 +1,6 @@
 # Ninja Language-Agnostic Developer
 
-Version: **0.1.2**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
+Version: **0.1.3**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
 
 ## Misión
 
@@ -33,6 +33,8 @@ Resolver problemas inéditos con corrección, claridad, eficiencia y mantenibili
 - **OBS-003, KATA-000002 (PHP, Banking):** usar enteros de rango fijo para cantidades monetarias obliga a prevenir overflow y no resuelve los problemas de decimales, divisas, persistencia o política bancaria; el contrato de una kata no sustituye requisitos de producción.
 
 - **OBS-004, KATA-000001 (Java, original trivia):** antes de refactorizar un sistema con estado y salida mezclados, inmovilizar fuentes de entrada y conservar una transcripción reproducible puede proteger cambios estructurales. Pero equivalencia en trazas observadas no equivale a corrección de toda la especificación; complementar con un oráculo independiente y entradas adversariales. El ejemplar legado se creó desde cero, sin copiar el código GPL enlazado. [Evidencia](../katas/KATA-000001/evidence/skill_review.md).
+
+- **OBS-005, KATA-000004 (Erlang, Gossiping Bus Drivers):** en una simulación síncrona de difusión de conocimiento, calcular primero todas las uniones usando el estado anterior evita propagación instantánea indebida entre lugares diferentes. Formalizar el índice temporal (visita inicial = 1), la monotonía del conocimiento y el criterio de convergencia es indispensable para que el contrato no dependa de intuiciones sobre el tiempo. Contrastar bitmasks Erlang contra conjuntos Python permite comprobar 2378 escenarios sin reutilizar la misma estructura de representación. **Esta observación está sujeta al CI y no prueba ventajas de Erlang ni de Ninja en problemas nuevos.** [Evidencia](../katas/KATA-000004/evidence/skill_review.md).
 
 **Hipótesis transversal bajo estudio:** hacer explícitas las fronteras entre estado, nondeterminismo y presentación facilita construir oráculos independientes para problemas de distintas familias. Dos ejemplos no prueban que acelere a Ninja ni que generalice universalmente. Evitar convertirla en regla prescriptiva hasta validación.
 
