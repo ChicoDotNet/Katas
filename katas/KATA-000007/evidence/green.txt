@@ -1,0 +1,1 @@
+Local GCC14.2 -Wall -Wextra -Werror -pedantic: PASS: domain lifecycle, invariant and parity assertions.

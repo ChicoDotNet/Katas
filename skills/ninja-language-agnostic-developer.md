@@ -1,6 +1,6 @@
 # Ninja Language-Agnostic Developer
 
-Version: **0.1.5**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
+Version: **0.1.6**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
 
 ## Misión
 
@@ -39,6 +39,8 @@ Resolver problemas inéditos con corrección, claridad, eficiencia y mantenibili
 - **OBS-006, KATA-000005 (Go, Mars Rover):** en APIs con operaciones secuenciales, distinguir **errores de comando** (rechazo completo antes de cualquier efecto) de **eventos del entorno** (obstáculo: progreso parcial intencional) y declarar la geometría de los bordes. Una variante de código para probar RED debe conservar los tipos compartidos sin generar fallos de compilación que oculten defectos de conducta. [Evidencia](../katas/KATA-000005/evidence/skill_review.md). Observación individual, no principio consolidado.
 
 - **OBS-007, KATA-000006 (Ruby, Unusual Spending):** al aplicar umbrales porcentuales fijos a importes exactos, comparar productos cruzados de enteros en unidades menores (`2×actual ≥ 3×anterior`) evita errores de frontera del punto flotante. Distinguir explícitamente gastos previos inexistentes y cero; inyectar fuente de pagos y emisor de avisos para comprobar cambios de mes, especialmente de enero a diciembre. [Evidencia](../katas/KATA-000006/evidence/skill_review.md). Observación bajo validación, no garantía general de mayor velocidad.
+
+- **OBS-008, KATA-000007 (C++20, Tell Don't Ask):** encapsular las transiciones e invariantes junto al estado del dominio, en lugar de mutar estructuras anémicas desde controladores, permite expresar restricciones como «no enviar antes de aprobar» y «no modificar después de cerrar». Verificar la equivalencia legado/refactor y además contrastar un oráculo de transiciones independiente: la sola igualdad entre dos implementaciones podría preservar los mismos defectos. [Evidencia](../katas/KATA-000007/evidence/skill_review.md). Observación individual, no ganancia de rendimiento comprobada.
 
 **Hipótesis transversal bajo estudio:** hacer explícitas las fronteras entre estado, nondeterminismo y presentación facilita construir oráculos independientes para problemas de distintas familias. Dos ejemplos no prueban que acelere a Ninja ni que generalice universalmente. Evitar convertirla en regla prescriptiva hasta validación.
 

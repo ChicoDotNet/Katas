@@ -322,23 +322,46 @@
     "fingerprint": "orders-anemic-model-refactor-transitions",
     "domain": "domain-model-refactoring",
     "difficulty": 5,
-    "difficulty_evidence": "Provisional triage only: Experienced; isolate invariants, state transitions, encapsulation",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "difficulty_evidence": "Kata-Log Experienced; anemic domain-model refactor/behavioral parity provisional 5/5.",
+    "score": 89,
+    "score_evidence": "Author-only provisional 89/100, documented kata README, calibration outstanding",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "Unlicense",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/tell-dont-ask-kata",
+      "scope": "Only source page PD; clean-room original legacy/refactor C++20 under MIT; no starter code copied."
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "C++",
+    "language_rationale": "C++20 private state, value semantics and explicit state transitions show Tell Don't Ask; prior Java legacy exercise distinct, independent Python transition oracle",
+    "evidence": {
+      "red": "katas/KATA-000007/evidence/red.txt",
+      "green": "katas/KATA-000007/evidence/green.txt",
+      "oracle": "katas/KATA-000007/evidence/oracle.txt",
+      "ci": "katas/KATA-000007/evidence/ci.txt",
+      "skill_review": "katas/KATA-000007/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "date": "2026-10-17",
       "listing": "https://kata-log.rocks/",
       "audit": "rights, oracle and difficulty require item-specific review",
       "scan_id": "kata-log-index-20261017-v1"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "GCC 14.2.0 -std=c++20 -Werror; Python 3.13.5",
+      "green": "domain lifecycle and parity assertions passed",
+      "differential_cases": 420,
+      "red": "behavioral failure verified",
+      "ci_pending": true
     }
   },
   {
