@@ -1,0 +1,40 @@
+name: Fortran Knapsack kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000035/**'
+      - '.github/workflows/fortran-knapsack.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000035/**'
+      - '.github/workflows/fortran-knapsack.yml'
+permissions:
+  contents: read
+jobs:
+  knapsack:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install GNU Fortran if missing
+        run: command -v gfortran || (sudo apt-get update && sudo apt-get install -y gfortran)
+      - name: RED GREEN and exhaustive Python oracle
+        working-directory: katas/KATA-000035
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/ninja-knapsack-green /tmp/ninja-knapsack-red
+          gfortran -std=f2018 -Wall -Wextra -Werror -fcheck=all -J/tmp/ninja-knapsack-green src/knapsack.f90 tests/test_knapsack.f90 -o /tmp/ninja-knapsack-green/test
+          /tmp/ninja-knapsack-green/test
+          gfortran -std=f2018 -Wall -Wextra -Werror -fcheck=all -J/tmp/ninja-knapsack-green src/knapsack.f90 src/main.f90 -o /tmp/ninja-knapsack-green/cli
+          python3 tests/differential.py /tmp/ninja-knapsack-green/cli
+          gfortran -std=f2018 -Wall -Wextra -Werror -J/tmp/ninja-knapsack-red tests/red_stub.f90 tests/test_knapsack.f90 -o /tmp/ninja-knapsack-red/test
+          ulimit -c 0
+          if /tmp/ninja-knapsack-red/test > /tmp/knapsack-red.log 2>&1; then
+            echo 'Expected behavioral RED unexpectedly passed' >&2
+            exit 1
+          fi
+          grep -q 'FAIL behavioral' /tmp/knapsack-red.log
