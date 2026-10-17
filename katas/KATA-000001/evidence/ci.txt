@@ -1,4 +1,6 @@
-Remote verification: not yet performed at initial PR authoring.
-GitHub Actions workflow .github/workflows/java-katas.yml checks RED failure reason,
-fixed Golden Master GREEN and independent Python oracle on GitHub-hosted JDK 25.
-Do not promote this candidate to verified until the latest PR head reports success.
+Remote PR check suite on code commit 2539984e4b18552453b435d53d9fbd89dc51d0e1:
+- Java characterization RED/GREEN and differential: SUCCESS https://github.com/ChicoDotNet/Katas/actions/runs/39021656637
+- Catalog validator and unit tests: SUCCESS https://github.com/ChicoDotNet/Katas/actions/runs/39021656659
+- PHP Banking regression: SUCCESS https://github.com/ChicoDotNet/Katas/actions/runs/39021656656
+- Fortran Game of Life regression: SUCCESS https://github.com/ChicoDotNet/Katas/actions/runs/39021656627
+Subsequent commit(s) modifying evidence/metadata require fresh PR head CI before merge.

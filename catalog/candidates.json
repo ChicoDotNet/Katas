@@ -10,7 +10,7 @@
     "difficulty_evidence": "Kata-Log Experienced/Golden Master/Refactoring, provisional hardest-first 5/5; not population ranked.",
     "score": 91,
     "score_evidence": "KATA-000001/README.md: provisional rubric transfer 19, depth 19, oracle 14, TDD 14, novelty 8, pedagogy 9, portability 4, maintenance 4; single reviewer not independently calibrated.",
-    "status": "green",
+    "status": "verified",
     "license": {
       "id": "Unlicense",
       "verified": true,
@@ -33,7 +33,8 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified"
     ],
     "provenance": {
       "upstream_code_url": "https://github.com/jbrains/trivia",
@@ -41,6 +42,14 @@
       "upstream_code_imported": false,
       "clean_room_game_contract": true,
       "not_upstream_equivalent": true
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39021656637",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39021656659",
+      "catalog_validation_conclusion": "success",
+      "php_regression_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39021656656",
+      "fortran_regression_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39021656627"
     }
   },
   {

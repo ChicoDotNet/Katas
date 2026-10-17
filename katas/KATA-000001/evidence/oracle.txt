@@ -1,4 +1,4 @@
-Independent oracle procedure (execution must be verified by CI before promotion):
-  python3 tests/differential.py /tmp/trivia-green
-Expected: PASS: 196 independent scripted scenarios x 2 implementations + 5 invalid inputs
-Independent implementation: Python dictionary-based simulation, not a port of GPL source.
+Independent Python dictionary-based model on GitHub-hosted CI:
+  PASS: 196 independent scripted scenarios x 2 implementations + 5 invalid inputs
+Evidence: https://github.com/ChicoDotNet/Katas/actions/runs/39021656637
+No GPL source/tests/fixtures were imported.
