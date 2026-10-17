@@ -212,5 +212,827 @@
       "branch": "dev",
       "date": "2026-10-17"
     }
+  },
+  {
+    "id": "KATA-000005",
+    "title": "Mars Rover",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/mars-rover-kata",
+    "fingerprint": "navigation-state-machines-wrapping-obstacles",
+    "domain": "robotics-state-machine",
+    "difficulty": 5,
+    "difficulty_evidence": "Kata-Log Experienced; incrementally navigated geometry, validation and obstacle semantics. Provisional author 5/5.",
+    "score": 90,
+    "score_evidence": "Single-reviewer provisional score detailed in README, pending calibration",
+    "status": "green",
+    "license": {
+      "id": "Unlicense",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/mars-rover-kata",
+      "scope": "Only Kata-Log's own public-domain text; original code/tests MIT, no linked starter imported"
+    },
+    "language": "Go",
+    "language_rationale": "Go explicit domain value structs, error values and deterministic transition model; Python independent oracle; alternatives Rust/Julia rejected for this educational goal",
+    "evidence": {
+      "red": "katas/KATA-000005/evidence/red.txt",
+      "green": "katas/KATA-000005/evidence/green.txt",
+      "oracle": "katas/KATA-000005/evidence/oracle.txt",
+      "ci": "katas/KATA-000005/evidence/ci.txt",
+      "skill_review": "katas/KATA-000005/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Go 1.23.2 + Python 3.13.5",
+      "green": "go test ./... success",
+      "red": "go test -tags kata_red ./... nonzero expected assertion",
+      "differential_cases": 360,
+      "checked": "2026-10-17",
+      "ci_pending": true
+    }
+  },
+  {
+    "id": "KATA-000006",
+    "title": "Unusual Spending",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/unusual-spending-kata",
+    "fingerprint": "monthly-category-spending-alert-boundaries",
+    "domain": "finance-aggregation-and-ports",
+    "difficulty": 5,
+    "difficulty_evidence": "Kata-Log Experienced. Provisional 5/5 for time/percent/money and ports interactions.",
+    "score": 91,
+    "score_evidence": "Single-reviewer rubric, pending calibration, described in README",
+    "status": "green",
+    "license": {
+      "id": "Unlicense",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/unusual-spending-kata",
+      "scope": "Kata-Log own PD exercise only; original code/tests MIT, TestDouble starters not imported"
+    },
+    "language": "Ruby",
+    "language_rationale": "Ruby strict separation of service source/sender and immutable value objects, Minitest doubles; fixed deterministic threshold does not require R statistics; Python independent oracle",
+    "evidence": {
+      "red": "katas/KATA-000006/evidence/red.txt",
+      "green": "katas/KATA-000006/evidence/green.txt",
+      "oracle": "katas/KATA-000006/evidence/oracle.txt",
+      "ci": "katas/KATA-000006/evidence/ci.txt",
+      "skill_review": "katas/KATA-000006/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Ruby 3.3.8, Python 3.13.5",
+      "minitest": "7 runs, 23 assertions, 0 failures",
+      "differential_cases": 334,
+      "red": "behavioral failure confirmed",
+      "ci_pending": true
+    }
+  },
+  {
+    "id": "KATA-000007",
+    "title": "Tell Don't Ask",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/tell-dont-ask-kata",
+    "fingerprint": "orders-anemic-model-refactor-transitions",
+    "domain": "domain-model-refactoring",
+    "difficulty": 5,
+    "difficulty_evidence": "Kata-Log Experienced; anemic domain-model refactor/behavioral parity provisional 5/5.",
+    "score": 89,
+    "score_evidence": "Author-only provisional 89/100, documented kata README, calibration outstanding",
+    "status": "green",
+    "license": {
+      "id": "Unlicense",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/tell-dont-ask-kata",
+      "scope": "Only source page PD; clean-room original legacy/refactor C++20 under MIT; no starter code copied."
+    },
+    "language": "C++",
+    "language_rationale": "C++20 private state, value semantics and explicit state transitions show Tell Don't Ask; prior Java legacy exercise distinct, independent Python transition oracle",
+    "evidence": {
+      "red": "katas/KATA-000007/evidence/red.txt",
+      "green": "katas/KATA-000007/evidence/green.txt",
+      "oracle": "katas/KATA-000007/evidence/oracle.txt",
+      "ci": "katas/KATA-000007/evidence/ci.txt",
+      "skill_review": "katas/KATA-000007/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "GCC 14.2.0 -std=c++20 -Werror; Python 3.13.5",
+      "green": "domain lifecycle and parity assertions passed",
+      "differential_cases": 420,
+      "red": "behavioral failure verified",
+      "ci_pending": true
+    }
+  },
+  {
+    "id": "KATA-000008",
+    "title": "Race Car Leaderboard",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/race-car-katas-leaderboard",
+    "fingerprint": "race-leaderboard-self-driving-competitor-ranking",
+    "domain": "legacy-refactoring",
+    "difficulty": 5,
+    "difficulty_evidence": "Kata-Log Experienced; scoring with self-driving entrants and legacy compatibility, provisional 5/5.",
+    "score": 88,
+    "score_evidence": "Author's uncalibrated rating documented in README",
+    "status": "green",
+    "license": {
+      "id": "Unlicense",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/race-car-katas-leaderboard",
+      "scope": "Kata-Log page PD, original independently authored Swift implementation MIT; no external legacy starters imported"
+    },
+    "language": "Swift",
+    "language_rationale": "Swift 6 optionals model autonomous/no driver and immutable ranking values; Python oracle independent, Scala/Kotlin alternative",
+    "evidence": {
+      "red": "katas/KATA-000008/evidence/red.txt",
+      "green": "katas/KATA-000008/evidence/green.txt",
+      "oracle": "katas/KATA-000008/evidence/oracle.txt",
+      "ci": "katas/KATA-000008/evidence/ci.txt",
+      "skill_review": "katas/KATA-000008/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Swift 6.2.1, Python 3.13.5",
+      "green": "8 behavioral scoring and validation assertions",
+      "differential_cases": 300,
+      "red": "Swift compilation successful, expected behavioral failure",
+      "ci_pending": true
+    }
+  },
+  {
+    "id": "KATA-000009",
+    "title": "Bowling Game",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/bowling-game-kata",
+    "fingerprint": "tenpin-bowling-frames-strikes-spares",
+    "domain": "scoring-state-machine",
+    "difficulty": 4,
+    "difficulty_evidence": "Provisional triage only: Experienced; cross-frame scoring, tenth-frame bonus and validation",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    }
+  },
+  {
+    "id": "KATA-000010",
+    "title": "BugsZero",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/bugs-zero-kata",
+    "fingerprint": "defensive-design-bug-prevention",
+    "domain": "legacy-hardening",
+    "difficulty": 4,
+    "difficulty_evidence": "Provisional triage only: Refactoring; may overlap Ugly Trivia source: distinct failure-prevention objective; dedup review pending",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    }
+  },
+  {
+    "id": "KATA-000011",
+    "title": "Gilded Rose",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/gilded-rose-kata",
+    "fingerprint": "inventory-quality-aging-rules",
+    "domain": "refactoring-and-rules",
+    "difficulty": 4,
+    "difficulty_evidence": "Provisional triage only: Refactoring exercise; starter rights require separate review",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    }
+  },
+  {
+    "id": "KATA-000012",
+    "title": "Christmas Lights",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/christmas-lights-kata",
+    "fingerprint": "range-updates-boolean-brightness-grid",
+    "domain": "grids-and-algorithms",
+    "difficulty": 3,
+    "difficulty_evidence": "Provisional triage only: Starter; large-grid rectangle operations; inspired by AoC but only Kata-Log page indexed",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    }
+  },
+  {
+    "id": "KATA-000013",
+    "title": "Clock-in",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/clock-in-kata",
+    "fingerprint": "asynchronous-time-attendance-promises",
+    "domain": "async-and-time",
+    "difficulty": 4,
+    "difficulty_evidence": "Provisional triage only: Asynchronous and promises; review acceptance criteria",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    }
+  },
+  {
+    "id": "KATA-000014",
+    "title": "Configure Wardrobe",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/configure-wardrobe-kata",
+    "fingerprint": "wardrobe-configuration-combinatorics",
+    "domain": "constraints",
+    "difficulty": 3,
+    "difficulty_evidence": "Provisional triage only: Starter; configurable domain rules",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    }
+  },
+  {
+    "id": "KATA-000015",
+    "title": "Elephant Carpaccio",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/elephant-carpaccio",
+    "fingerprint": "thin-vertical-slices-tax-price",
+    "domain": "agile-delivery",
+    "difficulty": 2,
+    "difficulty_evidence": "Provisional triage only: Starter; incremental delivery",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    }
+  },
+  {
+    "id": "KATA-000016",
+    "title": "Fizz Buzz",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/fizz-buzz-kata",
+    "fingerprint": "divisibility-and-string-rendering",
+    "domain": "basic-tdd",
+    "difficulty": 1,
+    "difficulty_evidence": "Provisional triage only: Starter; basic conditional practice",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    }
+  },
+  {
+    "id": "KATA-000017",
+    "title": "Manhattan Distance",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/manhattan-distance-kata",
+    "fingerprint": "grid-l1-distance",
+    "domain": "geometry",
+    "difficulty": 2,
+    "difficulty_evidence": "Provisional triage only: Starter; numerical geometry",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    }
+  },
+  {
+    "id": "KATA-000018",
+    "title": "Ohce",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/ohce-kata",
+    "fingerprint": "reversing-echo-cli",
+    "domain": "cli-tdd",
+    "difficulty": 3,
+    "difficulty_evidence": "Provisional triage only: Starter; mocking and IO",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    }
+  },
+  {
+    "id": "KATA-000019",
+    "title": "Parallel Change",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/parallel-change-kata",
+    "fingerprint": "expand-contract-safe-refactoring",
+    "domain": "compatibility-refactoring",
+    "difficulty": 4,
+    "difficulty_evidence": "Provisional triage only: Refactoring; safety across consumers",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    }
+  },
+  {
+    "id": "KATA-000020",
+    "title": "Race Car Telemetry",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/race-car-katas-telemetry",
+    "fingerprint": "race-car-telemetry-decoupling",
+    "domain": "legacy-observability",
+    "difficulty": 4,
+    "difficulty_evidence": "Provisional triage only: Mocks and SOLID; link to Race Car series, distinct behavior",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    }
+  },
+  {
+    "id": "KATA-000021",
+    "title": "Roman Numerals",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/roman-numerals-kata",
+    "fingerprint": "decimal-to-roman-encoding",
+    "domain": "numerical-encoding",
+    "difficulty": 2,
+    "difficulty_evidence": "Provisional triage only: Starter; algorithms",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    }
+  },
+  {
+    "id": "KATA-000022",
+    "title": "Score Keeper",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/score-keeper-kata",
+    "fingerprint": "scoreboard-event-driven-counter",
+    "domain": "tdd-state",
+    "difficulty": 2,
+    "difficulty_evidence": "Provisional triage only: Starter; incremental score rules",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    }
+  },
+  {
+    "id": "KATA-000023",
+    "title": "Sing a Song",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/sing-a-song-kata",
+    "fingerprint": "lyrics-golden-master-refactoring",
+    "domain": "golden-master",
+    "difficulty": 2,
+    "difficulty_evidence": "Provisional triage only: Starter; note lyrics third-party rights require review",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    }
+  },
+  {
+    "id": "KATA-000024",
+    "title": "Social Network",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/social-network-kata",
+    "fingerprint": "social-network-command-relationships",
+    "domain": "domain-design",
+    "difficulty": 3,
+    "difficulty_evidence": "Provisional triage only: Starter; social network model",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    }
+  },
+  {
+    "id": "KATA-000025",
+    "title": "String Calculator",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/string-calculator-kata",
+    "fingerprint": "custom-delimiter-parser-negative-validation",
+    "domain": "parsing",
+    "difficulty": 3,
+    "difficulty_evidence": "Provisional triage only: Starter; evolving parser",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    }
+  },
+  {
+    "id": "KATA-000026",
+    "title": "Task List",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/task-list-kata",
+    "fingerprint": "task-tracker-domain-types-deadlines",
+    "domain": "refactoring",
+    "difficulty": 4,
+    "difficulty_evidence": "Provisional triage only: Refactoring plus domain value objects and deadlines",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    }
+  },
+  {
+    "id": "KATA-000027",
+    "title": "Tennis",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/tennis-kata",
+    "fingerprint": "tennis-score-advantage-refactoring",
+    "domain": "scoring-refactoring",
+    "difficulty": 3,
+    "difficulty_evidence": "Provisional triage only: Refactoring and TDD",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    }
+  },
+  {
+    "id": "KATA-000028",
+    "title": "The Lift",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/lift-kata",
+    "fingerprint": "elevator-dispatch-state",
+    "domain": "event-driven-simulation",
+    "difficulty": 4,
+    "difficulty_evidence": "Provisional triage only: TDD, mocks and state simulation",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    }
+  },
+  {
+    "id": "KATA-000029",
+    "title": "Tic Tac Toe",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/tic-tac-toe-kata",
+    "fingerprint": "tic-tac-toe-turn-based-terminal-state",
+    "domain": "game-state",
+    "difficulty": 2,
+    "difficulty_evidence": "Provisional triage only: Starter; terminal-state transitions",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    }
+  },
+  {
+    "id": "KATA-000030",
+    "title": "Trip Service",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/trip-service-kata",
+    "fingerprint": "trip-authorization-dependencies",
+    "domain": "legacy-refactoring",
+    "difficulty": 3,
+    "difficulty_evidence": "Provisional triage only: Refactoring and SOLID",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    }
+  },
+  {
+    "id": "KATA-000031",
+    "title": "Yatzy",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/yahtzee-kata",
+    "fingerprint": "dice-hand-rank-scoring",
+    "domain": "combinatoric-scoring",
+    "difficulty": 3,
+    "difficulty_evidence": "Provisional triage only: Refactoring/TDD; page slug is yahtzee-kata",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "date": "2026-10-17",
+      "listing": "https://kata-log.rocks/",
+      "audit": "rights, oracle and difficulty require item-specific review",
+      "scan_id": "kata-log-index-20261017-v1"
+    }
   }
 ]

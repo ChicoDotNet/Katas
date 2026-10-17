@@ -1,0 +1,38 @@
+name: Swift race leaderboard kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000008/**'
+      - '.github/workflows/swift-katas.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000008/**'
+      - '.github/workflows/swift-katas.yml'
+permissions:
+  contents: read
+jobs:
+  swift-leaderboard:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: swift-actions/setup-swift@v2
+        with:
+          swift-version: '6.2'
+      - name: RED GREEN and reference oracle
+        shell: bash
+        working-directory: katas/KATA-000008
+        run: |
+          set -euo pipefail
+          swift --version
+          mkdir -p /tmp/ninja-swift
+          swiftc -swift-version 6 -O src/leaderboard.swift tests/test_leaderboard.swift -o /tmp/ninja-swift/test
+          /tmp/ninja-swift/test
+          swiftc -swift-version 6 -O src/leaderboard.swift src/cli.swift -o /tmp/ninja-swift/cli
+          python3 tests/differential.py /tmp/ninja-swift/cli
+          swiftc -swift-version 6 -D KATA_RED src/leaderboard.swift tests/test_leaderboard.swift -o /tmp/ninja-swift/red
+          if /tmp/ninja-swift/red > /tmp/ninja-swift/red.log 2>&1; then echo 'Expected RED passed' >&2; exit 1; fi
+          grep -q 'FAIL behavioral assertion' /tmp/ninja-swift/red.log

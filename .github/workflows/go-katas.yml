@@ -1,0 +1,36 @@
+name: Go Mars Rover kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000005/**'
+      - '.github/workflows/go-katas.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000005/**'
+      - '.github/workflows/go-katas.yml'
+permissions:
+  contents: read
+jobs:
+  rover:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23.2'
+      - name: Behavior, build and differential oracle
+        working-directory: katas/KATA-000005
+        shell: bash
+        run: |
+          set -euo pipefail
+          go test ./...
+          if go test -tags kata_red ./... > /tmp/mars-red.log 2>&1; then
+            echo 'RED unexpectedly passed' >&2; exit 1
+          fi
+          grep -q 'wrong pose or stop' /tmp/mars-red.log
+          go build -o /tmp/ninja-mars ./cmd/rover
+          python3 tests/differential.py /tmp/ninja-mars

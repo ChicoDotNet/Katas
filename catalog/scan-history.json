@@ -1,0 +1,16 @@
+[
+  {
+    "scan_id": "kata-log-index-20261017-v1",
+    "date": "2026-10-17",
+    "source": "https://kata-log.rocks/",
+    "listing_count": 31,
+    "previous_count": 4,
+    "added": 27,
+    "duplicates": 0,
+    "scope": "Full Kata-Log index; URLs individually checked against published pages; unique canonical fingerprints are provisional, not semantic proof",
+    "next_sources": [
+      "https://github.com/exercism/problem-specifications",
+      "https://projecteuler.net/archives"
+    ]
+  }
+]

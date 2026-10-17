@@ -12,3 +12,7 @@
 10. Si se agota la ejecución, conservar checkpoint; nunca aprobar ficticiamente por cumplir cadencia.
 11. Revisar Genkidama Learn/eng/ci/registry.json, run-family, adapters y Polyglot CI antes de crear soporte de un nuevo lenguaje; adaptar con pruebas y licencias.
 12. Optimizar calidad y transferencia demostradas, no líneas de código, tokens ni cantidad de reglas.
+
+13. **Pipeline overlapping**: una kata solo libera el siguiente trabajo cuando pruebas de comportamiento, oráculo, notas, revisión de Ninja y ejecución local han terminado, con `development_complete: true` y CI pendiente. No confundir con published. Cuando CI llega, verificar/promover independientemente; si falla, corregir la kata anterior sin perder el trabajo posterior.
+14. Cada escaneo debe ser **aditivo, sin IDs/fingerprints duplicados**: persistir nuevas candidatas `discovered` con URL, revisión de fuente, fecha y riesgo de reutilización. Reservar la auditoría completa para antes de promover a eligible.
+15. No bloquear la siguiente autoría esperando Actions; no hacer merge/published sin verde. Un PR de lote puede contener commits atómicos por kata, preservando orden y trazabilidad de validación local.

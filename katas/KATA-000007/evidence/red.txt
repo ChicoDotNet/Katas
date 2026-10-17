@@ -1,0 +1,1 @@
+Local g++ 14.2.0 -std=c++20 -DKATA_RED: executable compiled, exited nonzero; output: FAIL behavioral invariant: same transition outcome. No compile-only RED.

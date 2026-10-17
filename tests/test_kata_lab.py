@@ -51,6 +51,24 @@ class CatalogTests(unittest.TestCase):
         with self.assertRaisesRegex(lab.CatalogError, "skill review"):
             lab.validate_records(CFG, SOURCES, [c], [])
 
+    def test_completed_green_does_not_block_next_kata(self):
+        current = item("current", "green", 5, "a")
+        current["development_complete"] = True
+        nxt = item("next", "discovered", 5, "b")
+        self.assertEqual(lab.next_task(CFG, [current, nxt], [])["action"], "audit_candidate")
+
+    def test_unfinished_green_resumes_before_discovery(self):
+        current = item("current", "green", 5, "a")
+        nxt = item("next", "discovered", 5, "b")
+        self.assertEqual(lab.next_task(CFG, [current, nxt], [])["action"], "resume")
+
+    def test_no_false_publication_when_all_work_is_pending(self):
+        current = item("current", "green", 5, "a")
+        current["development_complete"] = True
+        next_action = lab.next_task(CFG, [current], [])
+        self.assertEqual(next_action["action"], "awaiting_ci")
+        self.assertEqual(lab.gate(CFG, [current], [])["published"], 0)
+
     def test_hardest_first(self):
         cs = [item("easy", "eligible", 2, "a"),
               item("hard", "eligible", 5, "b")]

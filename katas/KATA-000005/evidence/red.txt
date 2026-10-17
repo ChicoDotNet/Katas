@@ -1,0 +1,3 @@
+Local toolchain Go 1.23.2: go test -tags kata_red ./... exited 1 (expected).
+TestNavigation: wrong pose or stop: got starting pose instead of required moved pose.
+The stub initially lacked shared type definitions; corrected by moving Point/Pose/World/Result to types.go so behavioral RED compiles.

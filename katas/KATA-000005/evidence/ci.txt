@@ -1,0 +1,1 @@
+Remote CI PENDING at local-complete milestone. Do not mark verified or published until remote Go workflow succeeds on this exact branch head.

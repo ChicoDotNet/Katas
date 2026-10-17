@@ -1,0 +1,1 @@
+Local Swift 6.2.1: swiftc -D KATA_RED compiled. RED executable exited nonzero and emitted FAIL behavioral assertion: self-driving must occupy second position. No compile-only RED.

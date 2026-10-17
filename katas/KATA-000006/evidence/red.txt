@@ -1,0 +1,2 @@
+Local Ruby 3.3.8: KATA_RED=1 ruby -I src tests/test_spending.rb returned nonzero with Minitest Failure on exact fifty-percent alert.
+Stub overrides detect to return [] but keeps the public interface intact.
