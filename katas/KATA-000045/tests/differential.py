@@ -12,7 +12,7 @@ def oracle(c1,c2,goal,start):
   for x,y in layer:
    d=min(x,c2-y);e=min(y,c1-x)
    for at in ((c1,y),(x,c2),(0,y),(x,0),(x-d,y+d),(x+e,y-e)):
-    if at==forbidden||at==(x,y)||at in seen:continue
+    if at==forbidden or at==(x,y) or at in seen:continue
     if goal in at:return steps+1
     following.add(at)
   seen|=following;layer=following;steps+=1
