@@ -820,23 +820,46 @@
     "fingerprint": "expand-contract-safe-refactoring",
     "domain": "compatibility-refactoring",
     "difficulty": 4,
-    "difficulty_evidence": "Provisional triage only: Refactoring; safety across consumers",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "difficulty_evidence": "Kata-Log Experienced; preserving API compatibility during list expansion, provisional 4/5",
+    "score": 89,
+    "score_evidence": "provisional author estimate, see README",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "Unlicense",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/parallel-change-kata",
+      "scope": "Kata-Log own PD description; clean-room Java implementation MIT; no external starter/test copied"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Java",
+    "language_rationale": "Java 21 static source-level API stability, deprecation and immutable list snapshots; Python oracle simulates mixed old/new call sequences",
+    "evidence": {
+      "red": "katas/KATA-000019/evidence/red.txt",
+      "green": "katas/KATA-000019/evidence/green.txt",
+      "oracle": "katas/KATA-000019/evidence/oracle.txt",
+      "ci": "katas/KATA-000019/evidence/ci.txt",
+      "skill_review": "katas/KATA-000019/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "date": "2026-10-17",
       "listing": "https://kata-log.rocks/",
       "audit": "rights, oracle and difficulty require item-specific review",
       "scan_id": "kata-log-index-20261017-v1"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Java21, Python3.13.5",
+      "green": "11 API/contract checks",
+      "differential_cases": 400,
+      "red": "bulk item loss detected by isolated test variant",
+      "ci_pending": true
     }
   },
   {
