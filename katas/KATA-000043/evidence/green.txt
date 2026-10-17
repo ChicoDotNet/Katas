@@ -1,0 +1,1 @@
+Local Java21: PASS: 12 modular-exchange and validation assertions.

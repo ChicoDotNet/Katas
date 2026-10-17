@@ -1,6 +1,6 @@
 # Ninja Language-Agnostic Developer
 
-Version: **0.1.27**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
+Version: **0.1.28**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
 
 ## Misión
 
@@ -83,6 +83,8 @@ Resolver problemas inéditos con corrección, claridad, eficiencia y mantenibili
 - **OBS-027, KATA-000050 (Fortran, Killer Sudoku Helper):** cuando el espacio de estados es diminuto (nueve dígitos, 2^9 subconjuntos) una enumeración exhaustiva con máscaras explícitas puede ser más transparente y verificable que una poda sofisticada. Contrastarla con combinaciones matemáticas independientes, validar exclusiones e imposibilidad y no extrapolar esta solución a espacios grandes. [Evidencia](../katas/KATA-000050/evidence/skill_review.md). Observación puntual, sin transferencia medida.
 
 - **OBS-028, KATA-000057 (Go, Parallel Letter Frequency):** repartir datos a workers con mapas privados y reducir los resultados en un único hilo evita carreras sobre mapas compartidos. Complementar pruebas funcionales y oráculo secuencial independiente con detector de carreras; distinguir minúsculas Unicode simples del case folding completo. [Evidencia](../katas/KATA-000057/evidence/skill_review.md). Observación acotada, sin transferencia causal demostrada.
+
+- **OBS-029, KATA-000043 (Java, Diffie–Hellman educativa):** separar el contrato de aritmética modular y validación del diseño criptográfico seguro; reutilizar primitivas de BigInteger en vez de exponenciación modular casera y contrastar con Python pow independiente. Un experimento de intercambio matemático no valida un protocolo criptográfico listo para producción. [Evidencia](../katas/KATA-000043/evidence/skill_review.md). Sin mejora de transferencia demostrada.
 
 **Hipótesis transversal bajo estudio:** hacer explícitas las fronteras entre estado, nondeterminismo y presentación facilita construir oráculos independientes para problemas de distintas familias. Dos ejemplos no prueban que acelere a Ninja ni que generalice universalmente. Evitar convertirla en regla prescriptiva hasta validación.
 

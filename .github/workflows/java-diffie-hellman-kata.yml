@@ -1,0 +1,36 @@
+name: Java educational Diffie-Hellman kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000043/**'
+      - '.github/workflows/java-diffie-hellman-kata.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000043/**'
+      - '.github/workflows/java-diffie-hellman-kata.yml'
+permissions:
+  contents: read
+jobs:
+  modular:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Strict Java RED GREEN and Python pow oracle
+        working-directory: katas/KATA-000043
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/dh
+          javac --release 21 -Xlint:all -Werror -d /tmp/dh src/*.java tests/TestDiffieHellman.java
+          java -cp /tmp/dh TestDiffieHellman
+          python3 tests/differential.py /tmp/dh
+          if KATA_RED=1 java -cp /tmp/dh TestDiffieHellman >/tmp/dh-red.log 2>&1; then echo 'RED unexpectedly passed' >&2; exit 1; fi
+          grep -q 'FAIL behavioral assertion' /tmp/dh-red.log
