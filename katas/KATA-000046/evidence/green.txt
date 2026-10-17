@@ -1,0 +1,1 @@
+Local Swift 6: 11 directional assertions plus 2 invalid-input cases passed. Initial bad reverse-diagonal fixture corrected before GREEN.

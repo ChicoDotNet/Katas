@@ -1795,28 +1795,51 @@
   },
   {
     "id": "KATA-000046",
-    "title": "word search",
+    "title": "Word Search — Eight Directions",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/word-search",
     "fingerprint": "exercism-spec-word-search",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "grid-search-geometry",
+    "difficulty": 4,
+    "difficulty_evidence": "Author provisional 4/5: eight-direction coordinate bounds and deterministic tie-breaking; not empirically calibrated",
+    "score": 89,
+    "score_evidence": "Author-only provisional 89/100 in README, independent calibration pending",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Exercism concept link only; original Swift solution/tests and Python oracle under root MIT without copying upstream fixtures"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Swift",
+    "language_rationale": "Swift 6 bounded array traversal, value results and optional matches; Python independent reference enumerates paths. Alternatives PHP/Fortran considered",
+    "evidence": {
+      "red": "katas/KATA-000046/evidence/red.txt",
+      "green": "katas/KATA-000046/evidence/green.txt",
+      "ci": "katas/KATA-000046/evidence/ci.txt",
+      "oracle": "katas/KATA-000046/evidence/oracle.txt",
+      "skill_review": "katas/KATA-000046/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Swift 6.2.1, Python 3",
+      "red": "compiled wrong variant failed expected behavioral assertion",
+      "green": "11 directions + 2 validation",
+      "differential_cases": 400,
+      "ci_pending": true
     }
   },
   {
