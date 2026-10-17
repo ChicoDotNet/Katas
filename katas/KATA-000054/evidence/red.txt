@@ -1,0 +1,1 @@
+Local Java21: KATA_RED=1 java -cp /tmp/ninja-sat-java TestSatellite exited nonzero for a multi-node structural mismatch. Source compiled with -Xlint:all -Werror.

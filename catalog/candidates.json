@@ -2178,28 +2178,51 @@
   },
   {
     "id": "KATA-000054",
-    "title": "satellite",
+    "title": "Satellite — Tree Reconstruction",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/satellite",
     "fingerprint": "exercism-spec-satellite",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "binary-tree-reconstruction",
+    "difficulty": 5,
+    "difficulty_evidence": "Author provisional 5/5: preorder/inorder consistent partitioning and rejection of inconsistent trees",
+    "score": 92,
+    "score_evidence": "Author provisional 92/100, see README, no independent calibration",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Concept link only; Java21 code and generator-first Python oracle independently authored under MIT"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Java",
+    "language_rationale": "Java 21 immutable record tree and linear hash-index partitioning; Python generator-first AST source; C++/Haskell alternatives",
+    "evidence": {
+      "red": "katas/KATA-000054/evidence/red.txt",
+      "green": "katas/KATA-000054/evidence/green.txt",
+      "oracle": "katas/KATA-000054/evidence/oracle.txt",
+      "ci": "katas/KATA-000054/evidence/ci.txt",
+      "skill_review": "katas/KATA-000054/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Java21 strict -Xlint:all -Werror; Python3.13",
+      "red": "compiled wrong variant failed structural assertion",
+      "green": "6 fixed +4 invalid",
+      "differential_cases": 905,
+      "ci_pending": true
     }
   },
   {

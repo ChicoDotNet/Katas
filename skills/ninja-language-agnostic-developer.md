@@ -1,6 +1,6 @@
 # Ninja Language-Agnostic Developer
 
-Version: **0.1.22**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
+Version: **0.1.23**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
 
 ## Misión
 
@@ -73,6 +73,8 @@ Resolver problemas inéditos con corrección, claridad, eficiencia y mantenibili
 - **OBS-022, KATA-000036 (Ruby, Poker):** separar clasificación y comparación lexicográfica completa, incluyendo desempates y excepciones como la escalera con as bajo. Validar los propios generadores de pruebas para que no inyecten cartas duplicadas dentro de una mano. [Evidencia](../katas/KATA-000036/evidence/skill_review.md). Observación limitada; sin mejora general probada.
 
 - **OBS-023, KATA-000048 (C++20, Connect Hex):** separar la geometría de las seis vecindades de la prueba de conectividad; comparar BFS de producción contra union-find independiente con vértices virtuales. Comprobar que RED bajo -Werror falle por conducta y no por compilación. [Evidencia](../katas/KATA-000048/evidence/skill_review.md). Un solo ejercicio no prueba aumento de velocidad.
+
+- **OBS-024, KATA-000054 (Java, Satellite):** comprobar reconstrucción de estructuras generando el árbol esperado *antes* de extraer los recorridos; exigir validez de particiones además de igualdad de conjuntos. Un segundo reconstructor podría reproducir el mismo defecto, mientras el generador-first preserva la estructura prevista. [Evidencia](../katas/KATA-000054/evidence/skill_review.md). Observación, no transferencia demostrada.
 
 **Hipótesis transversal bajo estudio:** hacer explícitas las fronteras entre estado, nondeterminismo y presentación facilita construir oráculos independientes para problemas de distintas familias. Dos ejemplos no prueban que acelere a Ninja ni que generalice universalmente. Evitar convertirla en regla prescriptiva hasta validación.
 
