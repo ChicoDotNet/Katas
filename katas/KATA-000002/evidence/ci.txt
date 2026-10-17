@@ -3,4 +3,8 @@ php tests/behavior.php -> PASS: 9 outside-in/acceptance assertions
 python3 tests/differential.py -> PASS: 251 independent differential scenarios + invalid input guard
 php -l src/Bank.php -> No syntax errors detected
 php -l src/cli.php -> No syntax errors detected
-GitHub Actions verify-php workflow result must be collected before changing status to verified. Local run is not remote CI.
+Remote GitHub Actions first code-head validation (fb9391533bb336d54d00a4aa365e3e44f4646c20):
+PHP kata verification: success https://github.com/ChicoDotNet/Katas/actions/runs/39020491838
+Kata catalog validation: success https://github.com/ChicoDotNet/Katas/actions/runs/39020491785
+Fortran regression workflow: success https://github.com/ChicoDotNet/Katas/actions/runs/39020491669
+These checks use ephemeral GitHub-hosted runners. The changing metadata/evidence still requires final PR checks.
