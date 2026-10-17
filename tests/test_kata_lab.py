@@ -62,7 +62,8 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(lab.next_task(CFG, cs, [])["id"], "active")
 
     def test_gate_holds_without_benchmarks(self):
-        self.assertEqual(lab.gate(CFG, [item(status="published")], [])["decision"],
+        self.assertEqual(lab.gate(CFG, [item("a", "published"),
+                                        item("b", "published", fingerprint="b")], [])["decision"],
                          "review_required")
 
     def test_hardest_first_continues_on_transfer_and_speed_gains(self):
