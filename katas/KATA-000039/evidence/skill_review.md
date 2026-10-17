@@ -1,0 +1,3 @@
+# OBS-017 — Generate expected structures independently of the parser
+
+**Bounded observation:** parser differential testing can be more convincing when the test generates the intended AST **first**, then serializes it to syntax, rather than implementing two parsers that may share an ambiguous interpretation. Nested sequences, variations, repeated properties, escaped delimiters and malformed input require separate invariant tests. A deliberate RED must fail due to incorrect parse behavior, not because test fixture escaping prevents compilation. The initial Perl test fixture had a quoting error; correction preceded GREEN verification. This is one implementation; no universal effect on Ninja transfer has been demonstrated.

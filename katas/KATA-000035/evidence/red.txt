@@ -1,0 +1,1 @@
+Local GNU Fortran 14.2: red_stub.f90 compiled under -Werror and exited nonzero with 'FAIL behavioral: source case 90 0'. No compilation-only RED. Previously corrected harmless unused-argument warning so failure reflects semantics.

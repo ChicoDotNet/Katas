@@ -1,0 +1,3 @@
+# OBS-019 — Canonical encodings and parsing rejection
+
+Bounded observation: round-trip equality is necessary but not sufficient for an encoding format. Validate numerical boundaries and **reject multiple noncanonical representations** to prevent ambiguous byte streams; reject unterminated groups and overflows before materializing values. Testing independently with quotient/remainder arithmetic instead of implementation-mirroring bit shifts provides a more useful oracle. One mistaken expected concatenation in a handwritten fixture was corrected before GREEN; this does not measure generalized Ninja improvement.

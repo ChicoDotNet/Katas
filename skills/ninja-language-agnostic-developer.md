@@ -1,6 +1,6 @@
 # Ninja Language-Agnostic Developer
 
-Version: **0.1.12**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
+Version: **0.1.19**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
 
 ## Misión
 
@@ -53,6 +53,20 @@ Resolver problemas inéditos con corrección, claridad, eficiencia y mantenibili
 - **OBS-013, KATA-000019 (Java, Parallel Change):** un cambio estructural seguro expande primero la API/representación, migra consumidores de manera incremental y solo después contrae interfaces cuando existen evidencias de compatibilidad. Los tests productivos deben permanecer verdes; un RED de prueba separado comprueba que los contratos detectan pérdida de datos. Las vistas inmutables evitan mutaciones fuera del gobierno del agregado. [Evidencia](../katas/KATA-000019/evidence/skill_review.md). No se ha demostrado ganancia longitudinal del Ninja.
 
 - **OBS-014, KATA-000032 (Python, Alphametics):** explorar restricciones de suma por columnas y acarreo permite podar asignaciones combinatorias, manteniendo inyecciones de dígitos y prohibiciones de cero inicial como invariantes. Contrastar contra un algoritmo independiente de permutaciones es importante porque una kata puede tener varias soluciones igualmente correctas. Una prueba inicialmente incorrecta asumía que una palabra de una letra no podía valer cero; fue corregida contra la especificación antes de validar GREEN. [Evidencia](../katas/KATA-000032/evidence/skill_review.md). No se ha demostrado mejora longitudinal del Ninja.
+
+- **OBS-015, KATA-000033 (TypeScript, Forth):** al permitir redefiniciones de palabras en un lenguaje de pila, capturar (expandir) las referencias al definir una palabra impide que cambios posteriores muten semánticas anteriores de forma retroactiva. Proteger límites de aridad, división, valores enteros y aislación de estado. El oráculo independiente interpreta tokens Python, mientras el intérprete TypeScript ejecuta instrucciones tipadas; 816 programas locales coincidieron. [Evidencia](../katas/KATA-000033/evidence/skill_review.md). No confundir esta observación con una mejora longitudinal demostrada.
+
+- **OBS-016, KATA-000035 (Fortran, Knapsack):** el orden de actualización de un arreglo de DP determina si los objetos se reutilizan ilegalmente: recorrer capacidades en orden descendente protege la restricción 0–1, incluso con objetos sin peso. Un oráculo exhaustivo de subconjuntos encontró además una expectativa humana errónea (30 frente a 35), evitando cambiar una solución correcta para satisfacer un test falso. [Evidencia](../katas/KATA-000035/evidence/skill_review.md). 500 escenarios y ocho verificaciones locales; ninguna afirmación causal sobre mayor velocidad futura.
+
+- **OBS-016, KATA-000044 (Go, Dominoes):** para construir un ciclo euleriano de un multigrafo no basta con comprobar grados pares; exigir además conectividad entre vértices incidentes. Identificar cada arista física evita perder fichas duplicadas y usar un oráculo independiente de fuerza bruta y verificador de cadena evita falsas soluciones. [Evidencia](../katas/KATA-000044/evidence/skill_review.md). Observación individual, sin efecto de transferencia demostrado.
+
+- **OBS-017, KATA-000039 (Perl, SGF Parsing):** para verificar analizadores sintácticos, generar primero árboles semánticos esperados y después serializarlos crea un oráculo diferente de un segundo parser. Probar escapes, secuencias, ramificaciones, duplicados y rechazos malformados; asegurar que RED falla en comportamiento, no por la sintaxis de la propia fixture. [Evidencia](../katas/KATA-000039/evidence/skill_review.md). Observación individual, efecto de transferencia por medir.
+
+- **OBS-018, KATA-000046 (Swift, Word Search):** cuando existen varias soluciones espaciales equivalentes, definir coordenadas, direcciones y desempate deterministas. Una palabra inyectada aleatoriamente podría existir antes en otra orientación: comparar contra un oráculo de búsqueda completo, no contra su posición de inyección. [Evidencia](../katas/KATA-000046/evidence/skill_review.md). Caso individual sin efecto longitudinal demostrado.
+
+- **OBS-019, KATA-000047 (PHP, Variable Length Quantity):** en formatos binarios, verificar round-trips no basta: comprobar representación canónica, terminación de grupos, rangos y overflow antes de aceptar un flujo. Usar un oráculo aritmético de división/resto distinto de la lógica de bits de producción. [Evidencia](../katas/KATA-000047/evidence/skill_review.md). Sin transferencia validada.
+
+- **OBS-020, KATA-000056 (C11, Circular Buffer):** especificar por separado políticas de rechazo y sobreescritura; conservar orden FIFO cuando el índice de cabeza gira. Verificar con deque independiente, no otro ring que repita el defecto de índices. El compilador con -Werror forma parte de GREEN verificable. [Evidencia](../katas/KATA-000056/evidence/skill_review.md). Observación local, sin transferencia demostrada.
 
 **Hipótesis transversal bajo estudio:** hacer explícitas las fronteras entre estado, nondeterminismo y presentación facilita construir oráculos independientes para problemas de distintas familias. Dos ejemplos no prueban que acelere a Ninja ni que generalice universalmente. Evitar convertirla en regla prescriptiva hasta validación.
 

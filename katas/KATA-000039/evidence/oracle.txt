@@ -1,0 +1,1 @@
+Local Perl/Python: PASS: 340 generated-AST and malformed-document cases; expected AST generated without parsing Perl outputs.

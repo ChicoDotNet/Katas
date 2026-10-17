@@ -21,3 +21,5 @@
 17. **CI polling is not the work queue**: once a kata is locally complete with reproducible RED/GREEN/oracle/Ninja evidence, develop the next while previous CI runs. Check workflows at reasonable checkpoints, never repeatedly poll slow JVM/Swift runners instead of writing the next eligible kata. Preserve exact-head CI certification before merge/publication.
 
 18. **Gobernanza de ramas**: seguir `docs/governance/delivery.md`. Dependabot envía PR a `main` (rama predeterminada); un PR de promoción certifica el `dev` HEAD exacto antes de squash, y el PR posterior `main → dev` solo sincroniza ancestros sin cambios de contenido. No promocionar ramas o PR con CI pendiente o rojo.
+
+18. **Release a main cada 18 katas publicadas (no simplemente green)**: cuando dev alcance 18,36,54,72,90 o múltiplos posteriores, preparar PR revisable dev→main; reconciliar commits exclusivos de main, auditar diferencias y exigir CI sobre SHA exacto sin force-push. Mientras corre CI de release, desarrollar la siguiente kata. Ver docs/promotion-main.md.

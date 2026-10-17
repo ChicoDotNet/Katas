@@ -1280,7 +1280,7 @@
     "difficulty_evidence": "Exercism alphametics requires decimal all-different assignment, multi-digit no-leading-zero and sum carries; author-provisional 5/5, not calibrated",
     "score": 93,
     "score_evidence": "Author-provisional rubric 93/100, see kata README; no independent calibration",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "MIT",
       "verified": true,
@@ -1308,40 +1308,93 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "Python 3.13.5",
       "green": "6 unittest groups",
       "differential_cases": 84,
       "red": "test_send_more_money assertion failed with deliberately empty assignment",
-      "ci_pending": true
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39050731054",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39050730951",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "f3ec903edbe4c23e3a2c4bdefafbad271c778611"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/16",
+      "commit_sha": "39ae9aa92056cb58c52fb06ea185cd9ff9558ddc",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
     "id": "KATA-000033",
-    "title": "forth",
+    "title": "Forth Interpreter",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/forth",
     "fingerprint": "exercism-spec-forth",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "stack-language-parser-interpreter",
+    "difficulty": 5,
+    "difficulty_evidence": "Provisional experienced-level: user-defined words, captured definition semantics, stack arity and error boundaries. Single reviewer, not calibrated.",
+    "score": 91,
+    "score_evidence": "Single-reviewer provisional 91/100: transfer19 depth19 oracle15 TDD14 novelty8 pedagogy9 portability4 maintenance3. See README; independent calibration pending.",
+    "status": "published",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Upstream Exercism problem-specifications MIT; source/tests here independently authored, no upstream canonical data copied"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "TypeScript",
+    "language_rationale": "TypeScript typed bytecode and map closures support a dynamic stack language with freezing of previously defined words. Python token-expansion oracle differs from typed compiled instructions; Rust/Scala alternatives considered; Genkidama supports TS.",
+    "evidence": {
+      "red": "katas/KATA-000033/evidence/red.txt",
+      "green": "katas/KATA-000033/evidence/green.txt",
+      "oracle": "katas/KATA-000033/evidence/oracle.txt",
+      "ci": "katas/KATA-000033/evidence/ci.txt",
+      "skill_review": "katas/KATA-000033/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green",
+      "verified",
+      "published"
+    ],
+    "local_validation": {
+      "toolchain": "Node 22.16.0, TypeScript tsc, Python 3.13",
+      "red": "compilable stub failed with behavioral ASSERT",
+      "green": "23 original fixed cases",
+      "differential_cases": 816,
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39052863910",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39052863961",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "929c3da42645d07af4b9b72b022790080a7bddab"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/23",
+      "commit_sha": "ce3e9495f6f6b702c3e2c23f7fbf89f2aef7701d",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -1372,28 +1425,66 @@
   },
   {
     "id": "KATA-000035",
-    "title": "knapsack",
+    "title": "0–1 Knapsack",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/knapsack",
     "fingerprint": "exercism-spec-knapsack",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "combinatorial-optimization-dynamic-programming",
+    "difficulty": 5,
+    "difficulty_evidence": "Provisional difficulty 5/5: state-space optimization with item single-use invariant, descending-capacity updates and zero-weight boundaries; not independently calibrated.",
+    "score": 90,
+    "score_evidence": "Author provisional 90/100, see kata README; not independently calibrated.",
+    "status": "published",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "MIT source description and one illustrative sample adapted with attribution; original Fortran code/tests/Python oracle authored independently"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Fortran",
+    "language_rationale": "Fortran 2018 integer arrays, column of capacity DP and explicit reverse-index iteration demonstrate 0–1 optimization; Python brute-force oracle is structurally separate. COBOL, Julia and C are alternatives in different domains.",
+    "evidence": {
+      "red": "katas/KATA-000035/evidence/red.txt",
+      "green": "katas/KATA-000035/evidence/green.txt",
+      "oracle": "katas/KATA-000035/evidence/oracle.txt",
+      "ci": "katas/KATA-000035/evidence/ci.txt",
+      "skill_review": "katas/KATA-000035/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green",
+      "verified",
+      "published"
+    ],
+    "local_validation": {
+      "toolchain": "GNU Fortran 14.2 -std=f2018 -Werror + Python 3.13",
+      "green": "8 acceptance cases",
+      "red": "compilable incorrect implementation failed a behavioral check",
+      "differential_cases": 500,
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39053449971",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39053449994",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "2193635a366574c6a9efa4486a64b7ca04034bf0"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/24",
+      "commit_sha": "44ba73aefc23b7d712bb1a5ea966c3d711503c80",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -1476,28 +1567,66 @@
   },
   {
     "id": "KATA-000039",
-    "title": "sgf parsing",
+    "title": "SGF Tree Parsing",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/sgf-parsing",
     "fingerprint": "exercism-spec-sgf-parsing",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "recursive-language-parsing",
+    "difficulty": 5,
+    "difficulty_evidence": "Provisional 5/5: recursion, branching, escapes, invalid grammars; not population calibrated",
+    "score": 91,
+    "score_evidence": "Author-only provisional 91/100 with README justification; independent calibration pending",
+    "status": "published",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Only conceptual upstream link; independently authored subset parser, fixtures and generator-first Python oracle under root MIT"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Perl",
+    "language_rationale": "Perl 5 character scanner, hash/array recursive trees and core JSON::PP/Test::More; Python generator-first independent oracle. TS alternative already exercised with Forth",
+    "evidence": {
+      "red": "katas/KATA-000039/evidence/red.txt",
+      "green": "katas/KATA-000039/evidence/green.txt",
+      "oracle": "katas/KATA-000039/evidence/oracle.txt",
+      "ci": "katas/KATA-000039/evidence/ci.txt",
+      "skill_review": "katas/KATA-000039/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green",
+      "verified",
+      "published"
+    ],
+    "local_validation": {
+      "toolchain": "Perl 5 + Python 3",
+      "green": "15 Test::More assertions",
+      "red": "importable bad parser fails fixed behavior",
+      "differential_cases": 340,
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39055411291",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39055411343",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "efbd61ce18f97eb224d31a51d6251b57d6d4c1d3"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/25",
+      "commit_sha": "fd7e2abe0decefd5762a7badb23ed9281ab1ebcf",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -1606,28 +1735,66 @@
   },
   {
     "id": "KATA-000044",
-    "title": "dominoes",
+    "title": "Dominoes — Closed Euler Tour",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/dominoes",
     "fingerprint": "exercism-spec-dominoes",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "multigraph-eulerian-traversal",
+    "difficulty": 5,
+    "difficulty_evidence": "Author provisional 5/5: Euler cycle, connectivity, loops and multigraph identity; not population-calibrated",
+    "score": 93,
+    "score_evidence": "Single-author provisional 93/100 in kata README; independent calibration pending",
+    "status": "published",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Metadata and conceptual link only; original Go code and independent Python tests under root MIT, no upstream assets copied"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Go",
+    "language_rationale": "Go adjacency graph with edge indices + Hierholzer O(E+V), Python independent exponential backtracking oracle; Prolog and Ruby considered",
+    "evidence": {
+      "red": "katas/KATA-000044/evidence/red.txt",
+      "green": "katas/KATA-000044/evidence/green.txt",
+      "ci": "katas/KATA-000044/evidence/ci.txt",
+      "oracle": "katas/KATA-000044/evidence/oracle.txt",
+      "skill_review": "katas/KATA-000044/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green",
+      "verified",
+      "published"
+    ],
+    "local_validation": {
+      "toolchain": "Go toolchain (local) + Python 3",
+      "red": "wrong-but-compilable implementation fails behavioral test",
+      "green": "10 named cases plus validation/immutability",
+      "differential_cases": 952,
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39055411284",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39055411343",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "efbd61ce18f97eb224d31a51d6251b57d6d4c1d3"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/25",
+      "commit_sha": "fd7e2abe0decefd5762a7badb23ed9281ab1ebcf",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -1658,54 +1825,130 @@
   },
   {
     "id": "KATA-000046",
-    "title": "word search",
+    "title": "Word Search — Eight Directions",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/word-search",
     "fingerprint": "exercism-spec-word-search",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "grid-search-geometry",
+    "difficulty": 4,
+    "difficulty_evidence": "Author provisional 4/5: eight-direction coordinate bounds and deterministic tie-breaking; not empirically calibrated",
+    "score": 89,
+    "score_evidence": "Author-only provisional 89/100 in README, independent calibration pending",
+    "status": "published",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Exercism concept link only; original Swift solution/tests and Python oracle under root MIT without copying upstream fixtures"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Swift",
+    "language_rationale": "Swift 6 bounded array traversal, value results and optional matches; Python independent reference enumerates paths. Alternatives PHP/Fortran considered",
+    "evidence": {
+      "red": "katas/KATA-000046/evidence/red.txt",
+      "green": "katas/KATA-000046/evidence/green.txt",
+      "ci": "katas/KATA-000046/evidence/ci.txt",
+      "oracle": "katas/KATA-000046/evidence/oracle.txt",
+      "skill_review": "katas/KATA-000046/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green",
+      "verified",
+      "published"
+    ],
+    "local_validation": {
+      "toolchain": "Swift 6.2.1, Python 3",
+      "red": "compiled wrong variant failed expected behavioral assertion",
+      "green": "11 directions + 2 validation",
+      "differential_cases": 400,
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39055411302",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39055411343",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "efbd61ce18f97eb224d31a51d6251b57d6d4c1d3"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/25",
+      "commit_sha": "fd7e2abe0decefd5762a7badb23ed9281ab1ebcf",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
     "id": "KATA-000047",
-    "title": "variable length quantity",
+    "title": "Variable Length Quantity — u32",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/variable-length-quantity",
     "fingerprint": "exercism-spec-variable-length-quantity",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "binary-stream-encoding",
+    "difficulty": 4,
+    "difficulty_evidence": "Provisional 4/5: canonical VLQ encoding, overlong validation and unsigned overflow boundaries",
+    "score": 90,
+    "score_evidence": "Uncalibrated author estimate 90/100 documented in README",
+    "status": "published",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Source concept only, no imported canonical cases. PHP solution and Python reference original MIT"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "PHP",
+    "language_rationale": "PHP 8.4 strict typed exceptions and unsigned 32-bit range checks; contrast independent Python divmod representation. Go/C alternative",
+    "evidence": {
+      "red": "katas/KATA-000047/evidence/red.txt",
+      "green": "katas/KATA-000047/evidence/green.txt",
+      "ci": "katas/KATA-000047/evidence/ci.txt",
+      "oracle": "katas/KATA-000047/evidence/oracle.txt",
+      "skill_review": "katas/KATA-000047/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green",
+      "verified",
+      "published"
+    ],
+    "local_validation": {
+      "toolchain": "PHP 8 + Python 3",
+      "red": "behavioral decoding mismatch",
+      "green": "16 boundary/error checks",
+      "differential_cases": 1003,
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39055411407",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39055411343",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "efbd61ce18f97eb224d31a51d6251b57d6d4c1d3"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/25",
+      "commit_sha": "fd7e2abe0decefd5762a7badb23ed9281ab1ebcf",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -1918,28 +2161,66 @@
   },
   {
     "id": "KATA-000056",
-    "title": "circular buffer",
+    "title": "Circular Buffer — FIFO/overwrite",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/circular-buffer",
     "fingerprint": "exercism-spec-circular-buffer",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "bounded-data-structures",
+    "difficulty": 4,
+    "difficulty_evidence": "Provisional 4/5: circular indices, eviction policy, wraparound and ownership boundaries",
+    "score": 90,
+    "score_evidence": "Author-only 90/100 estimate, independent calibration not performed",
+    "status": "published",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Upstream concept only; original C implementation/tests and Python deque oracle under root MIT"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "C",
+    "language_rationale": "C11 bounded static arrays and explicit index invariants; independently modeled with Python deque; Rust/Go could also work",
+    "evidence": {
+      "red": "katas/KATA-000056/evidence/red.txt",
+      "green": "katas/KATA-000056/evidence/green.txt",
+      "ci": "katas/KATA-000056/evidence/ci.txt",
+      "oracle": "katas/KATA-000056/evidence/oracle.txt",
+      "skill_review": "katas/KATA-000056/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green",
+      "verified",
+      "published"
+    ],
+    "local_validation": {
+      "toolchain": "C11 strict -Werror and Python 3",
+      "red": "compile-correct, overwrite behavior failed",
+      "green": "12 checks",
+      "differential_cases": 600,
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39055411436",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39055411343",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "efbd61ce18f97eb224d31a51d6251b57d6d4c1d3"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/25",
+      "commit_sha": "fd7e2abe0decefd5762a7badb23ed9281ab1ebcf",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {

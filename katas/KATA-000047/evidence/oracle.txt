@@ -1,0 +1,1 @@
+Local PHP/Python: PASS: 1003 independently generated VLQ encode/decode and malformed-input cases.
