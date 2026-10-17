@@ -1,0 +1,1 @@
+Local Fortran DP compared to exhaustive independent Python subset search: PASS: 500 independent exhaustive 0-1 knapsack scenarios.
