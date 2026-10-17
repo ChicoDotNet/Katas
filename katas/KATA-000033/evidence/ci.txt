@@ -1,1 +1,5 @@
-Local tests passed on authoring container; remote GitHub CI pending. Do not count as verified or published before exact-head CI success and reviewed merge.
+TypeScript Forth exact code head 929c3da42645d07af4b9b72b022790080a7bddab: SUCCESS.
+RED/GREEN and 816 independent Python differential programs: https://github.com/ChicoDotNet/Katas/actions/runs/39052863910
+Catalog and tests: https://github.com/ChicoDotNet/Katas/actions/runs/39052863961
+Reviewed squash merge to dev PR #23: https://github.com/ChicoDotNet/Katas/pull/23
+Dev merge SHA ce3e9495f6f6b702c3e2c23f7fbf89f2aef7701d.
