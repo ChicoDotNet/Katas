@@ -1,0 +1,33 @@
+# Dependabot reads this file from the repository's default branch (main).
+# Ninja kata development happens on dev; version-update PRs must target dev.
+# Security update PRs, if enabled in repository settings, always target main.
+version: 2
+
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    target-branch: "dev"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "America/Mexico_City"
+    open-pull-requests-limit: 3
+    groups:
+      workflow-actions:
+        patterns: ["*"]
+
+  - package-ecosystem: "gomod"
+    # Match Go modules in existing and future single-level kata directories.
+    directories:
+      - "/katas/*"
+    target-branch: "dev"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:15"
+      timezone: "America/Mexico_City"
+    open-pull-requests-limit: 3
+    groups:
+      go-modules:
+        patterns: ["*"]
