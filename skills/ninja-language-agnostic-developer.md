@@ -1,6 +1,6 @@
 # Ninja Language-Agnostic Developer
 
-Version: **0.1.13**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
+Version: **0.1.14**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
 
 ## Misión
 
@@ -55,6 +55,8 @@ Resolver problemas inéditos con corrección, claridad, eficiencia y mantenibili
 - **OBS-014, KATA-000032 (Python, Alphametics):** explorar restricciones de suma por columnas y acarreo permite podar asignaciones combinatorias, manteniendo inyecciones de dígitos y prohibiciones de cero inicial como invariantes. Contrastar contra un algoritmo independiente de permutaciones es importante porque una kata puede tener varias soluciones igualmente correctas. Una prueba inicialmente incorrecta asumía que una palabra de una letra no podía valer cero; fue corregida contra la especificación antes de validar GREEN. [Evidencia](../katas/KATA-000032/evidence/skill_review.md). No se ha demostrado mejora longitudinal del Ninja.
 
 - **OBS-015, KATA-000033 (TypeScript, Forth):** al permitir redefiniciones de palabras en un lenguaje de pila, capturar (expandir) las referencias al definir una palabra impide que cambios posteriores muten semánticas anteriores de forma retroactiva. Proteger límites de aridad, división, valores enteros y aislación de estado. El oráculo independiente interpreta tokens Python, mientras el intérprete TypeScript ejecuta instrucciones tipadas; 816 programas locales coincidieron. [Evidencia](../katas/KATA-000033/evidence/skill_review.md). No confundir esta observación con una mejora longitudinal demostrada.
+
+- **OBS-016, KATA-000035 (Fortran, Knapsack):** el orden de actualización de un arreglo de DP determina si los objetos se reutilizan ilegalmente: recorrer capacidades en orden descendente protege la restricción 0–1, incluso con objetos sin peso. Un oráculo exhaustivo de subconjuntos encontró además una expectativa humana errónea (30 frente a 35), evitando cambiar una solución correcta para satisfacer un test falso. [Evidencia](../katas/KATA-000035/evidence/skill_review.md). 500 escenarios y ocho verificaciones locales; ninguna afirmación causal sobre mayor velocidad futura.
 
 **Hipótesis transversal bajo estudio:** hacer explícitas las fronteras entre estado, nondeterminismo y presentación facilita construir oráculos independientes para problemas de distintas familias. Dos ejemplos no prueban que acelere a Ninja ni que generalice universalmente. Evitar convertirla en regla prescriptiva hasta validación.
 
