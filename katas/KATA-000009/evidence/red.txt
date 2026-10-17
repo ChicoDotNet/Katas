@@ -1,0 +1,1 @@
+Local GCC14.2: behaviorally wrong game_score() stub compiled and exited nonzero on an assert for a nonzero-scoring game. No compile-only RED.

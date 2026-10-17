@@ -1,0 +1,1 @@
+Local GCC14.2 -std=c11 -Wall -Wextra -Werror -pedantic: PASS: 8 C bowling score and validation assertions.
