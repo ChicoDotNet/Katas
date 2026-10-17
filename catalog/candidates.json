@@ -505,24 +505,45 @@
     "source_url": "https://kata-log.rocks/bowling-game-kata",
     "fingerprint": "tenpin-bowling-frames-strikes-spares",
     "domain": "scoring-state-machine",
-    "difficulty": 4,
-    "difficulty_evidence": "Provisional triage only: Experienced; cross-frame scoring, tenth-frame bonus and validation",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "difficulty": 5,
+    "difficulty_evidence": "provisional: difficult cross-frame strike/spare look-ahead",
+    "score": 88,
+    "score_evidence": "single reviewer provisional; see kata README",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "Unlicense",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/bowling-game-kata"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "C",
+    "language_rationale": "C11 explicit bounded roll buffers with Python frame-model oracle",
+    "evidence": {
+      "red": "katas/KATA-000009/evidence/red.txt",
+      "green": "katas/KATA-000009/evidence/green.txt",
+      "oracle": "katas/KATA-000009/evidence/oracle.txt",
+      "ci": "katas/KATA-000009/evidence/ci.txt",
+      "skill_review": "katas/KATA-000009/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "date": "2026-10-17",
       "listing": "https://kata-log.rocks/",
       "audit": "rights, oracle and difficulty require item-specific review",
       "scan_id": "kata-log-index-20261017-v1"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "behavior": 8,
+      "differential_cases": 600,
+      "red_behavioral": true,
+      "ci_pending": true
     }
   },
   {
