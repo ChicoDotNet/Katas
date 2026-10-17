@@ -26,10 +26,10 @@ function packed(rows){
 const tests=[];
 for(const [h,w] of [[1,1],[2,3],[3,3]])
  for(let bits=0;bits<(1<<(h*w));bits++)tests.push([h,w,bits]);
-let seed=20261017;
+let seed=20261017n;
 for(let i=0;i<100;i++){
- seed=(seed*1103515245+12345)%2147483647;
- tests.push([4,6,seed%(1<<24)]);
+ seed=(seed*1103515245n+12345n)%2147483647n;
+ tests.push([4,6,Number(seed%BigInt(1<<24))]);
 }
 assert.equal(tests.length,678);
 const output=run(pixi,['run','--manifest-path',manifest,'mojo','run',mojoSource],undefined,900000).trim().split('\n');
