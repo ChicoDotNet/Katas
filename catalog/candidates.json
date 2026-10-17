@@ -221,23 +221,47 @@
     "fingerprint": "navigation-state-machines-wrapping-obstacles",
     "domain": "robotics-state-machine",
     "difficulty": 5,
-    "difficulty_evidence": "Provisional triage only: Experienced; incremental movement, wrapping interpretation and obstacle halting",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "difficulty_evidence": "Kata-Log Experienced; incrementally navigated geometry, validation and obstacle semantics. Provisional author 5/5.",
+    "score": 90,
+    "score_evidence": "Single-reviewer provisional score detailed in README, pending calibration",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "Unlicense",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/mars-rover-kata",
+      "scope": "Only Kata-Log's own public-domain text; original code/tests MIT, no linked starter imported"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Go",
+    "language_rationale": "Go explicit domain value structs, error values and deterministic transition model; Python independent oracle; alternatives Rust/Julia rejected for this educational goal",
+    "evidence": {
+      "red": "katas/KATA-000005/evidence/red.txt",
+      "green": "katas/KATA-000005/evidence/green.txt",
+      "oracle": "katas/KATA-000005/evidence/oracle.txt",
+      "ci": "katas/KATA-000005/evidence/ci.txt",
+      "skill_review": "katas/KATA-000005/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "date": "2026-10-17",
       "listing": "https://kata-log.rocks/",
       "audit": "rights, oracle and difficulty require item-specific review",
       "scan_id": "kata-log-index-20261017-v1"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Go 1.23.2 + Python 3.13.5",
+      "green": "go test ./... success",
+      "red": "go test -tags kata_red ./... nonzero expected assertion",
+      "differential_cases": 360,
+      "checked": "2026-10-17",
+      "ci_pending": true
     }
   },
   {
