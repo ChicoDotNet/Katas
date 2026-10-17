@@ -1,0 +1,1 @@
+Local Ruby: KATA_RED=1 ruby -I src tests/test_poker.rb exited nonzero with Minitest Failure; deliberate best() stub returned no winners, Ruby loaded correctly.

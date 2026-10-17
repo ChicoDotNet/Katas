@@ -1,0 +1,1 @@
+Local Ruby/Python: PASS: 760 independent poker hand-ranking scenarios; fixed generator duplicate-card flaw first.

@@ -1,6 +1,6 @@
 # Ninja Language-Agnostic Developer
 
-Version: **0.1.20**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
+Version: **0.1.21**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
 
 ## Misión
 
@@ -69,6 +69,8 @@ Resolver problemas inéditos con corrección, claridad, eficiencia y mantenibili
 - **OBS-020, KATA-000056 (C11, Circular Buffer):** especificar por separado políticas de rechazo y sobreescritura; conservar orden FIFO cuando el índice de cabeza gira. Verificar con deque independiente, no otro ring que repita el defecto de índices. El compilador con -Werror forma parte de GREEN verificable. [Evidencia](../katas/KATA-000056/evidence/skill_review.md). Observación local, sin transferencia demostrada.
 
 - **OBS-021, KATA-000037 (JavaScript, Reactive Cells):** recalcular valores dependientes hasta un estado estable antes de invocar notificaciones; comparar instantáneas estables y usar un oráculo que recompute desde cero para evitar notificaciones de estados intermedios en grafos diamante. Limitar los generadores aleatorios al dominio numérico del lenguaje. [Evidencia](../katas/KATA-000037/evidence/skill_review.md). Observación puntual, no mejora longitudinal probada.
+
+- **OBS-022, KATA-000036 (Ruby, Poker):** separar clasificación y comparación lexicográfica completa, incluyendo desempates y excepciones como la escalera con as bajo. Validar los propios generadores de pruebas para que no inyecten cartas duplicadas dentro de una mano. [Evidencia](../katas/KATA-000036/evidence/skill_review.md). Observación limitada; sin mejora general probada.
 
 **Hipótesis transversal bajo estudio:** hacer explícitas las fronteras entre estado, nondeterminismo y presentación facilita construir oráculos independientes para problemas de distintas familias. Dos ejemplos no prueban que acelere a Ninja ni que generalice universalmente. Evitar convertirla en regla prescriptiva hasta validación.
 
