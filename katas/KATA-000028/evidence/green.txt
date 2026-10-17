@@ -1,0 +1,1 @@
+Go1.23: go test ./... => PASS (pickup, delivery, FIFO, same-floor, invalid request and idle).

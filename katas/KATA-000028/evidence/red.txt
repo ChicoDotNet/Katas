@@ -1,0 +1,1 @@
+Go1.23: deliberate no-op Tick stub compiled and failed TestPickupAndDelivery with expected trace mismatch, not a missing type/import.

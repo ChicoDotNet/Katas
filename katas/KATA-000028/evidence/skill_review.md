@@ -1,0 +1,3 @@
+# OBS-012: explicit logical clock and event ordering
+
+Synchronous state machines should distinguish a queued request from a fulfilled request, and expose precisely when movement and arrival events are observable. The Tick API makes the passage of time controllable: no implicit movement in a constructor, queueing method or snapshot read. Defining whether arrivals consume the same tick as movement prevents off-by-one acceptance bugs. Independent Python event traces check the complete sequence, not only final floor. One Go implementation does not establish language superiority or transferable speed gains.

@@ -1,0 +1,1 @@
+Local Kotlin 1.9: deliberate wrong InventoryRed.kt compiled and exited 1 from 'ordinary before expiry' behavioral check.

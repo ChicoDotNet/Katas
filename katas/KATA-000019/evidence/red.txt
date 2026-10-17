@@ -1,0 +1,1 @@
+Local javac21: deliberately incorrect parallel-change stub compiles, then fails on 'bulk items retained expected=[4, 5, 6] got=[4]'; behavioral RED only.
