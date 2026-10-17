@@ -18,3 +18,9 @@ python3 tests/differential.py src/cli.php
 Local: 16 fixed boundary/error checks GREEN, RED compiled and failed due to wrong decoding; 1,003 independently generated encode/decode/malformed cases PASS. A bad initial expected concatenation was corrected before GREEN. Time O(inputBytes+outputBytes), bounded integers; reject noncanonical alternatives by design. Provisional author difficulty 4/5, score 90/100; no independent calibration.
 
 [RED](evidence/red.txt) · [GREEN](evidence/green.txt) · [oracle](evidence/oracle.txt) · [CI](evidence/ci.txt) · [Ninja observation](evidence/skill_review.md).
+
+## Extensión políglota de verificación — 17-oct-2026
+
+**Ada + Rust implementaciones de contraste**: `tests/vlq_ada.adb` y `tests/vlq_rust.rs` codifican/decodifican valores u32 con rechazo de representaciones no canónicas y overflow; `tests/vlq_crosscheck.mjs` contrasta ambos contra la interfaz PHP original en casos deterministas. Ada aporta manejo explícito de dominios enteros y GNAT con comprobaciones; Rust, enteros sin signo y multiplicación checked. C y Go también serían plausibles pero enseñan menos sobre estos contratos. Workflow `ada-rust-vlq-kata.yml`. PHP sigue siendo implementación principal.
+
+No se aumenta el número de katas publicadas por esta extensión. Mantener evidencia histórica y exigir CI exact-head.

@@ -1,0 +1,35 @@
+name: Ada and Rust cross-language VLQ contract
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000047/**'
+      - '.github/workflows/ada-rust-vlq-kata.yml'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000047/**'
+      - '.github/workflows/ada-rust-vlq-kata.yml'
+permissions:
+  contents: read
+jobs:
+  ada-rust-vlq:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Install GNAT Ada compiler and PHP
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends gnat php-cli
+      - name: Compile Rust implementation and unit tests
+        run: |
+          rustc --edition=2021 -O -o /tmp/ninja-vlq-rust katas/KATA-000047/tests/vlq_rust.rs
+          rustc --edition=2021 --test -o /tmp/ninja-vlq-rust-tests katas/KATA-000047/tests/vlq_rust.rs
+          /tmp/ninja-vlq-rust-tests
+      - name: Compile Ada implementation under GNAT safety checks
+        run: gnatmake -gnat2022 -gnatwa -gnato -o /tmp/ninja-vlq-ada katas/KATA-000047/tests/vlq_ada.adb
+      - name: Compare Ada and Rust encoders and decoders to original PHP
+        run: node katas/KATA-000047/tests/vlq_crosscheck.mjs katas/KATA-000047/src/cli.php /tmp/ninja-vlq-rust /tmp/ninja-vlq-ada

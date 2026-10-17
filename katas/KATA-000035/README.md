@@ -31,3 +31,9 @@ Local gfortran 14.2 + Python 3.13: **8 acceptance scenarios, 500 independently e
 Author-provisional score 90/100 and difficulty 5/5 (knapsack complexity, edge cases and single-use invariant); ratings are not independently calibrated. Time O(N×C), space O(C), within declared input bounds. Real-world overflow, optimization for enormous capacities, negative values and fractional weights are not supported.
 
 Evidence: [RED](evidence/red.txt) · [GREEN](evidence/green.txt) · [oracle](evidence/oracle.txt) · [CI](evidence/ci.txt) · [Ninja review](evidence/skill_review.md).
+
+## Extensión políglota de verificación — 17-oct-2026
+
+**Julia meet-in-the-middle**, `tests/knapsack_julia.jl`, compara 502 escenarios contra programación dinámica Fortran; es un tercer enfoque además de enumeración exhaustiva Python. Alternativas: R para vectores y Haskell para composición funcional, pero Julia permite un modelo numérico idiomático y portable. Workflow `julia-kata-contracts.yml`. Fortran permanece principal.
+
+No se aumenta el número de katas publicadas por esta extensión. Mantener evidencia histórica y exigir CI exact-head.

@@ -20,3 +20,9 @@ grep -q 'Assertion' /tmp/bowl-red.log
 Locally: 8 fixed behavioral checks; 600 random *valid, complete* games independently scored by a Python frame model; RED compiled but failed due to wrong score. Compiler GCC14.2.0 with -Werror. Memory complexity O(1) with 21 roll slots, time O(1) for 10 frames. Provisional author rating 88/100 and difficulty 5/5; calibration pending.
 
 Evidence: evidence/red.txt, green.txt, oracle.txt, ci.txt, skill_review.md.
+
+## Extensión políglota de verificación — 17-oct-2026
+
+**Julia para pruebas de contratos de marcos**, `tests/bowling_julia.jl`: genera 600 partidas completas y verifica diez marcos, reglas del décimo, límites 0..300 y puntajes contra el binario C. No sustituye las pruebas C ni el oráculo original. **Ada sería más fuerte para tipar rangos/contratos a nivel de compilador**; Julia ofrece aquí modelado matemático de marcos; Swift también podría usar tipos suma. Workflow `julia-kata-contracts.yml`.
+
+No se aumenta el número de katas publicadas por esta extensión. Mantener evidencia histórica y exigir CI exact-head.

@@ -17,3 +17,9 @@ python3 tests/differential.py cli.pl
 GREEN: 15 deterministic acceptance/invalid tests, plus 330 independently generated ASTs and 10 invalid documents = **340** oracle cases. RED is an importable, behaviorally wrong variant that declines every input; no compilation failure. Provisional author difficulty 5/5, score 91/100; neither is externally calibrated.
 
 [RED](evidence/red.txt) · [GREEN](evidence/green.txt) · [oracle](evidence/oracle.txt) · [CI](evidence/ci.txt) · [Ninja review](evidence/skill_review.md).
+
+## Extensión políglota de verificación — 17-oct-2026
+
+**OCaml AST-first**, `tests/sgf_ast_ocaml.ml`, genera 180 árboles tipados y los serializa a SGF con escapes; el parser Perl debe recuperar el mismo AST. Contrasta el generador previo Python sin reescribir la implementación. Se compararon Haskell (ADT), F# (tipos suma) y OCaml; OCaml destaca por el árbol tipado y el generador pequeño con stdlib. Workflow `ocaml-sgf-kata.yml`.
+
+No se aumenta el número de katas publicadas por esta extensión. Mantener evidencia histórica y exigir CI exact-head.

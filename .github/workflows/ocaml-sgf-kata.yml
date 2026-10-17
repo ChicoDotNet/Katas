@@ -1,0 +1,29 @@
+name: OCaml AST-first generator for Perl SGF parser
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000039/**'
+      - '.github/workflows/ocaml-sgf-kata.yml'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000039/**'
+      - '.github/workflows/ocaml-sgf-kata.yml'
+permissions:
+  contents: read
+jobs:
+  ocaml-sgf:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install OCaml runtime and compiler
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ocaml-nox
+      - name: Compile typed OCaml AST generator
+        run: ocamlc -w +a-4-70 -o /tmp/sgf-ocaml katas/KATA-000039/tests/sgf_ast_ocaml.ml
+      - name: Check independently generated trees against original Perl
+        run: node katas/KATA-000039/tests/sgf_ocaml_crosscheck.mjs /tmp/sgf-ocaml katas/KATA-000039/cli.pl
