@@ -1,1 +1,5 @@
-Remote CI pending. Local complete, not verified/published.
+CI SUCCESS on exact code SHA 672cdd1eaf4e1c00d9704c2c4133ee2610edff53
+Primary workflow: https://github.com/ChicoDotNet/Katas/actions/runs/39065201575
+Catalog validation: https://github.com/ChicoDotNet/Katas/actions/runs/39065201549
+All 28 PR workflows: SUCCESS. Reviewed squash merge: https://github.com/ChicoDotNet/Katas/pull/29
+Code integrated into dev at 8edd7ef16f450f8d0759b9f00323c54d6cfea09c. Source changes beyond the certified code require recertification.
