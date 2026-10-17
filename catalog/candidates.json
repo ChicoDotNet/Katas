@@ -1576,7 +1576,7 @@
     "difficulty_evidence": "Provisional 5/5: recursion, branching, escapes, invalid grammars; not population calibrated",
     "score": 91,
     "score_evidence": "Author-only provisional 91/100 with README justification; independent calibration pending",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "MIT",
       "verified": true,
@@ -1604,14 +1604,29 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "Perl 5 + Python 3",
       "green": "15 Test::More assertions",
       "red": "importable bad parser fails fixed behavior",
       "differential_cases": 340,
-      "ci_pending": true
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39055411291",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39055411343",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "efbd61ce18f97eb224d31a51d6251b57d6d4c1d3"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/25",
+      "commit_sha": "fd7e2abe0decefd5762a7badb23ed9281ab1ebcf",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -1729,7 +1744,7 @@
     "difficulty_evidence": "Author provisional 5/5: Euler cycle, connectivity, loops and multigraph identity; not population-calibrated",
     "score": 93,
     "score_evidence": "Single-author provisional 93/100 in kata README; independent calibration pending",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "MIT",
       "verified": true,
@@ -1757,14 +1772,29 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "Go toolchain (local) + Python 3",
       "red": "wrong-but-compilable implementation fails behavioral test",
       "green": "10 named cases plus validation/immutability",
       "differential_cases": 952,
-      "ci_pending": true
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39055411284",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39055411343",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "efbd61ce18f97eb224d31a51d6251b57d6d4c1d3"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/25",
+      "commit_sha": "fd7e2abe0decefd5762a7badb23ed9281ab1ebcf",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -1804,7 +1834,7 @@
     "difficulty_evidence": "Author provisional 4/5: eight-direction coordinate bounds and deterministic tie-breaking; not empirically calibrated",
     "score": 89,
     "score_evidence": "Author-only provisional 89/100 in README, independent calibration pending",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "MIT",
       "verified": true,
@@ -1832,14 +1862,29 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "Swift 6.2.1, Python 3",
       "red": "compiled wrong variant failed expected behavioral assertion",
       "green": "11 directions + 2 validation",
       "differential_cases": 400,
-      "ci_pending": true
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39055411302",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39055411343",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "efbd61ce18f97eb224d31a51d6251b57d6d4c1d3"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/25",
+      "commit_sha": "fd7e2abe0decefd5762a7badb23ed9281ab1ebcf",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -1853,7 +1898,7 @@
     "difficulty_evidence": "Provisional 4/5: canonical VLQ encoding, overlong validation and unsigned overflow boundaries",
     "score": 90,
     "score_evidence": "Uncalibrated author estimate 90/100 documented in README",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "MIT",
       "verified": true,
@@ -1881,14 +1926,29 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "PHP 8 + Python 3",
       "red": "behavioral decoding mismatch",
       "green": "16 boundary/error checks",
       "differential_cases": 1003,
-      "ci_pending": true
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39055411407",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39055411343",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "efbd61ce18f97eb224d31a51d6251b57d6d4c1d3"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/25",
+      "commit_sha": "fd7e2abe0decefd5762a7badb23ed9281ab1ebcf",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -2110,7 +2170,7 @@
     "difficulty_evidence": "Provisional 4/5: circular indices, eviction policy, wraparound and ownership boundaries",
     "score": 90,
     "score_evidence": "Author-only 90/100 estimate, independent calibration not performed",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "MIT",
       "verified": true,
@@ -2138,14 +2198,29 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "C11 strict -Werror and Python 3",
       "red": "compile-correct, overwrite behavior failed",
       "green": "12 checks",
       "differential_cases": 600,
-      "ci_pending": true
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39055411436",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39055411343",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "efbd61ce18f97eb224d31a51d6251b57d6d4c1d3"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/25",
+      "commit_sha": "fd7e2abe0decefd5762a7badb23ed9281ab1ebcf",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
