@@ -1,0 +1,35 @@
+name: TypeScript Zipper kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000052/**'
+      - '.github/workflows/ts-zipper-kata.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000052/**'
+      - '.github/workflows/ts-zipper-kata.yml'
+permissions:
+  contents: read
+jobs:
+  zipper:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Strict TypeScript GREEN RED and Python direct-path oracle
+        working-directory: katas/KATA-000052
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --no-save typescript@5.9.3
+          npx tsc -p .
+          node build/tests/test_zipper.js
+          python3 tests/differential.py build/src/cli.js
+          if KATA_RED=1 node build/tests/test_zipper.js >/tmp/zipper-red.log 2>&1; then exit 1; fi
+          grep -q 'FAIL behavioral assertion' /tmp/zipper-red.log

@@ -2149,28 +2149,51 @@
   },
   {
     "id": "KATA-000052",
-    "title": "zipper",
+    "title": "Zipper — Immutable Binary Tree Focus",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/zipper",
     "fingerprint": "exercism-spec-zipper",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "persistent-functional-data-structures",
+    "difficulty": 5,
+    "difficulty_evidence": "Provisional author 5/5: persistent zipper navigation, breadcrumbs and immutable structural edits",
+    "score": 93,
+    "score_evidence": "Author-only provisional 93/100, see README; no calibrated ranking",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Exercism conceptual reference only, original TypeScript zipper and direct-path Python oracle MIT"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "TypeScript",
+    "language_rationale": "TypeScript recursive structural types, persistent value updates and null-safe navigation; independent Python full-root editor, Haskell alternative unavailable locally",
+    "evidence": {
+      "red": "katas/KATA-000052/evidence/red.txt",
+      "green": "katas/KATA-000052/evidence/green.txt",
+      "oracle": "katas/KATA-000052/evidence/oracle.txt",
+      "ci": "katas/KATA-000052/evidence/ci.txt",
+      "skill_review": "katas/KATA-000052/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "TypeScript strict/Node22/Python3.13",
+      "red": "type-checked wrong value update triggers behavioral failure",
+      "green": "12 fixed assertions",
+      "differential_cases": 420,
+      "ci_pending": true
     }
   },
   {

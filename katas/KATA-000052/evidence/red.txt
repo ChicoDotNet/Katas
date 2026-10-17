@@ -1,0 +1,1 @@
+Local Node22/TypeScript strict: KATA_RED=1 node build/tests/test_zipper.js failed 'new focused value'; source type-checked.
