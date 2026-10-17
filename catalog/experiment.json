@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "planning_denominator": 55659,
+  "denominator_status": "preliminary_not_deduplicated",
+  "pilot_fraction": 0.0016,
+  "stages": [
+    {
+      "name": "pilot",
+      "fraction": 0.0016
+    },
+    {
+      "name": "foundation",
+      "fraction": 0.008
+    },
+    {
+      "name": "expansion",
+      "fraction": 0.04
+    },
+    {
+      "name": "long_term",
+      "fraction": 0.2
+    }
+  ],
+  "strategy": "hardest_first_until_pilot_gate",
+  "minimum_holdouts": 30,
+  "minimum_joint_passes": 10,
+  "min_success_gain": 0.1,
+  "max_median_time_ratio": 0.9,
+  "timezone": "America/Mexico_City",
+  "work_hours_local": "08:17-17:17 Monday-Friday",
+  "rubric_weights": {
+    "transfer": 20,
+    "depth": 20,
+    "oracle": 15,
+    "tdd": 15,
+    "novelty": 10,
+    "pedagogy": 10,
+    "portability": 5,
+    "maintenance": 5
+  },
+  "genkidama_reference": {
+    "repository": "ChicoDotNet/Genkidama",
+    "branch": "dev",
+    "files": [
+      "learn/_meta/catalog.yml",
+      "eng/ci/registry.json",
+      ".github/workflows/polyglot.yml"
+    ]
+  }
+}

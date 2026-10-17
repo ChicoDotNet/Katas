@@ -1,0 +1,43 @@
+name: Hourly Kata Planner (read-only)
+
+on:
+  schedule:
+    - cron: '17 8-17 * * 1-5'
+      timezone: 'America/Mexico_City'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kata-hourly-planner
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Test catalog engine
+        run: python3 -m unittest discover -s tests -v
+      - name: Validate state
+        run: python3 tools/kata_lab.py validate
+      - name: Produce auditable handoff
+        run: |
+          mkdir -p artifacts
+          python3 tools/kata_lab.py next --output artifacts/next.json
+          python3 tools/kata_lab.py report --output artifacts/report.json
+          echo "## Ninja kata hourly planner" >> "$GITHUB_STEP_SUMMARY"
+          echo "Read-only planning: no LLM coding agent is connected." >> "$GITHUB_STEP_SUMMARY"
+          echo '~~~json' >> "$GITHUB_STEP_SUMMARY"
+          cat artifacts/next.json >> "$GITHUB_STEP_SUMMARY"
+          echo '~~~' >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kata-handoff
+          path: artifacts/
+          retention-days: 14

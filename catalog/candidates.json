@@ -1,0 +1,65 @@
+[
+  {
+    "id": "KATA-000001",
+    "title": "Ugly Trivia Game",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/ugly-trivia-kata",
+    "fingerprint": "legacy-trivia-characterization-golden-master",
+    "domain": "legacy-refactoring",
+    "difficulty": 5,
+    "difficulty_evidence": "Kata-Log: Experienced; provisional, not independently scored",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {}
+  },
+  {
+    "id": "KATA-000002",
+    "title": "Banking Kata",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/banking-kata",
+    "fingerprint": "bank-account-outside-in-mocks",
+    "domain": "tdd-design",
+    "difficulty": 4,
+    "difficulty_evidence": "Kata-Log: Experienced; provisional, not independently scored",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {}
+  },
+  {
+    "id": "KATA-000003",
+    "title": "Game of Life",
+    "source_id": "kata-log",
+    "source_url": "https://kata-log.rocks/game-of-life-kata",
+    "fingerprint": "cellular-automaton-conway-life",
+    "domain": "algorithm-design",
+    "difficulty": 4,
+    "difficulty_evidence": "Kata-Log: Experienced; provisional, not independently scored",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {}
+  }
+]
