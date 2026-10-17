@@ -19,6 +19,16 @@ NEXT_STAGE = dict(zip(STAGES, STAGES[1:]))
 NEXT_STAGE["blocked"] = "eligible"
 ACTIVE = {"selected", "red", "green", "verified"}
 
+def development_finished(candidate: dict) -> bool:
+    """Locally complete work is eligible to overlap remote CI, not publishable yet."""
+    evidence = candidate.get("evidence", {})
+    return (
+        candidate.get("status") == "green"
+        and candidate.get("development_complete") is True
+        and all(evidence.get(key) for key in ("red", "green", "oracle", "skill_review"))
+    )
+
+
 
 class CatalogError(ValueError):
     """An invalid or unauditable catalog state."""
@@ -59,6 +69,10 @@ def validate_records(cfg: dict, sources: list, candidates: list, holdouts: list)
                 raise CatalogError(f"{c['id']}: unverified or incompatible rights")
             if c["score_evidence"] == "not_evaluated":
                 raise CatalogError(f"{c['id']}: missing ranking evidence")
+        if c.get("development_complete") is True and c["status"] not in ("green", "verified", "published"):
+            raise CatalogError(f"{c['id']}: development_complete only valid at GREEN or later")
+        if c.get("development_complete") is True and not all(c.get("evidence", {}).get(x) for x in ("red", "green", "oracle", "skill_review")):
+            raise CatalogError(f"{c['id']}: incomplete local evidence")
         if c["status"] in ("selected", "red", "green", "verified", "published"):
             if not c.get("language") or not c.get("language_rationale"):
                 raise CatalogError(f"{c['id']}: missing language justification")
@@ -140,7 +154,9 @@ def next_task(cfg: dict, candidates: list, holdouts: list) -> dict:
     decision = gate(cfg, candidates, holdouts)
     if decision["decision"] == "review_required":
         return {"action": "gate_review", "gate": decision}
-    active = [c for c in candidates if c["status"] in ACTIVE]
+    active = [c for c in candidates if c["status"] in ACTIVE
+              and c["status"] != "verified"
+              and not development_finished(c)]
     if active:
         # Finish closest-to-verification work first; stable tie-break.
         c = sorted(active, key=lambda x: (-STAGES.index(x["status"]), x["id"]))[0]
@@ -163,6 +179,10 @@ def next_task(cfg: dict, candidates: list, holdouts: list) -> dict:
         c = discovered[0]
         return {"action": "audit_candidate", "id": c["id"], "source_url": c["source_url"],
                 "warning": "provisional difficulty; verify rights and ranking before copying"}
+    pending = [c["id"] for c in candidates if development_finished(c) or c["status"] == "verified"]
+    if pending:
+        return {"action": "awaiting_ci", "ids": pending,
+                "message": "Development finished; remote CI/merge is pending, do not count as published"}
     return {"action": "discover_candidates", "message": "catalog needs eligible candidates"}
 
 
