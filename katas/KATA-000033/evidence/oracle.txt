@@ -1,0 +1,1 @@
+Local Python 3.13 / compiled TypeScript Node.js 22: PASS: 816 independent Forth programs (Python token interpreter vs TypeScript compiled operations). Fixed programs plus deterministic seed 20261017.
