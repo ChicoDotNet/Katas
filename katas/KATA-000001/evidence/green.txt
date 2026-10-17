@@ -1,0 +1,3 @@
+GREEN on GitHub-hosted JDK 25 (compiled with --release 21):
+  PASS: 3 fixed Golden Master/acceptance assertions
+Evidence: https://github.com/ChicoDotNet/Katas/actions/runs/39021656637

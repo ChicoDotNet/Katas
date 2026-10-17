@@ -1,0 +1,39 @@
+name: Python Alphametics kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000032/**'
+      - '.github/workflows/python-alphametics.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000032/**'
+      - '.github/workflows/python-alphametics.yml'
+permissions:
+  contents: read
+jobs:
+  alphametics:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: GREEN and independent oracle
+        working-directory: katas/KATA-000032
+        run: |
+          python3 -m unittest discover -s tests -v
+          python3 tests/differential.py src/cli.py
+      - name: Behavioral RED verification
+        working-directory: katas/KATA-000032
+        shell: bash
+        run: |
+          set -euo pipefail
+          if KATA_RED=1 python3 -m unittest discover -s tests > /tmp/ninja-alphametics-red.log 2>&1; then
+            echo 'RED unexpectedly passed' >&2
+            exit 1
+          fi
+          grep -q 'FAIL: test_send_more_money' /tmp/ninja-alphametics-red.log

@@ -1,0 +1,51 @@
+# Arquitectura: catálogo → prueba → código → evidencia → Ninja
+
+## Fronteras
+
+- Katas es dueño del catálogo, estado, mediciones, soluciones, tests, revisiones del skill y documentación.
+- Genkidama es **referencia técnica**, no dependencia de runtime: inspeccionar su learn/_meta/catalog.yml, eng/ci/registry.json, run-family, adapters y .github/workflows/polyglot.yml. Validar toolchains y licencias antes de reutilizar.
+- El agente autónomo es un trabajador **aún por conectar**. El workflow horario inicial solo valida y publica un plan JSON auditable, con permisos contents:read. No inventar trabajo generado.
+
+## Datos
+
+- catalog/experiment.json: denominador congelado, estrategia, umbrales, rúbrica.
+- catalog/sources.json: fuentes y restricciones.
+- catalog/candidates.json: identificador, fingerprint, derechos, dificultad, estado, lenguaje y rutas de evidencia.
+- catalog/holdouts.json: evaluaciones pareadas independientes, **no** los enunciados reservados.
+- skills/ninja-language-agnostic-developer.md: skill canónico y procedimientos de promoción de conocimiento.
+
+## Flujo lógico
+
+~~~mermaid
+flowchart TD
+  Schedule[Horario 08:17-17:17 MX] --> Validate[CI y catálogo]
+  Validate --> Plan[Propuesta siguiente y artefacto JSON]
+  Plan --> Agent{¿Agente aislado conectado?}
+  Agent -->|No| Report[Reporte sin cambios]
+  Agent -->|Sí| Audit[Auditar fuente/licencia]
+  Audit --> Language[Seleccionar lenguaje]
+  Language --> Red[Crear pruebas y capturar RED]
+  Red --> Green[Implementar, GREEN y refactor]
+  Green --> Verify[CI multilenguaje + oráculo independiente]
+  Verify --> Ninja[Evaluar lección Ninja]
+  Ninja --> PR[PR kata/* a dev]
+  PR --> Publish[Publicar solo con evidencia]
+~~~
+
+## Activación y seguridad
+
+El cron de GitHub solo funciona desde la rama **default main**, no desde una feature ni dev. Por tanto, este PR no programa ejecuciones hasta promover la configuración a main. GitHub puede retrasar/perder runs; la integración del agente deberá usar checkpoints persistentes e idempotencia. Nunca ejecutar código desconocido en runners self-hosted privilegiados con credenciales. Configurar permisos temporales externos antes de permitir que un agente escriba PRs.
+
+## Primeras tareas de implementación autónoma pendiente
+
+1. Integrar agente externo seguro (selección, pruebas, implementación, PR y reportes).
+2. Aislar ejecutores por familia de lenguajes con toolchains reproducibles basados en Genkidama.
+3. Persistir exclusión mutua y recuperación de runs omitidos.
+4. Añadir oráculos independientes, medición de tokens, tiempos y complejidad.
+5. Crear PRs de katas completos y un dashboard longitudinal.
+
+## Canal separado: tarea ChatGPT recurrente
+
+A partir del **2026-10-19**, existe una tarea recurrente de ChatGPT solicitada para lunes-viernes, a las **08:00, 09:00, ..., 17:00**, zona `America/Mexico_City`, con instrucciones de avanzar EXP-001 utilizando las integraciones disponibles. Esta tarea es **independiente** de `.github/workflows/hourly-kata.yml` y no constituye autorización implícita para saltar PRs, ejecutar código inseguro, copiar enunciados o declarar katas resueltas. Las capacidades de escritura y ejecución efectivamente disponibles en cada corrida deben verificarse en ese momento. Si no puede actuar, debe reportarlo sin fingir éxito.
+
+El workflow GitHub, por separado, está preparado para **08:17–17:17**, pero solo podrá dispararse tras promoción a `main` (la rama predeterminada); genera planes y artefactos, sin agente LLM interno. No deben contabilizarse esos dos disparadores como veinte intentos de resolución independientes.

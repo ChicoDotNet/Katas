@@ -1,0 +1,1 @@
+Local verification complete. Remote GitHub Actions not yet certified; do not promote to verified or published before exact-head CI green and reviewed merge.

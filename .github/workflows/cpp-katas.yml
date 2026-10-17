@@ -1,0 +1,34 @@
+name: C++ Tell Dont Ask kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000007/**'
+      - '.github/workflows/cpp-katas.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000007/**'
+      - '.github/workflows/cpp-katas.yml'
+permissions:
+  contents: read
+jobs:
+  order-lifecycle:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: RED GREEN and independent oracle
+        shell: bash
+        working-directory: katas/KATA-000007
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/ninja-cpp
+          g++ -std=c++20 -Wall -Wextra -Werror -pedantic -I src tests/test_orders.cpp -o /tmp/ninja-cpp/test
+          /tmp/ninja-cpp/test
+          g++ -std=c++20 -Wall -Wextra -Werror -pedantic -I src src/cli.cpp -o /tmp/ninja-cpp/cli
+          python3 tests/differential.py /tmp/ninja-cpp/cli
+          g++ -std=c++20 -Wall -Wextra -Werror -pedantic -DKATA_RED -I src tests/test_orders.cpp -o /tmp/ninja-cpp/red
+          if /tmp/ninja-cpp/red > /tmp/ninja-cpp/red.log 2>&1; then echo 'Expected RED passed' >&2; exit 1; fi
+          grep -q 'FAIL behavioral invariant' /tmp/ninja-cpp/red.log

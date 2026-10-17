@@ -1,0 +1,3 @@
+Local Python 3.13.5: KATA_RED=1 python3 -m unittest discover -s tests returned nonzero as expected.
+Behavioral failure: FAIL: test_send_more_money — solver returned an empty assignment instead of the required digit map.
+The RED stub implements the same function signature, so the failure is an assertion of wrong behavior, not an import/build failure.

@@ -1,0 +1,1 @@
+Local C11 versus Python independent frame oracle: PASS: 600 frame-based independent bowling games.

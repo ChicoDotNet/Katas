@@ -1,0 +1,30 @@
+[
+  {
+    "id": "kata-log",
+    "url": "https://kata-log.rocks/",
+    "policy": "verify_each_asset",
+    "note": "Site claims public domain for its content; linked GitHub starters require separate verification."
+  },
+  {
+    "id": "exercism",
+    "url": "https://exercism.org/",
+    "policy": "verify_each_asset",
+    "note": "Track specifications can be MIT; check each artifact."
+  },
+  {
+    "id": "codewars",
+    "url": "https://www.codewars.com/kata",
+    "policy": "link_only_pending_review",
+    "note": "Respect platform terms and no scraping."
+  },
+  {
+    "id": "leetcode",
+    "url": "https://leetcode.com/problemset/",
+    "policy": "link_only_pending_review"
+  },
+  {
+    "id": "advent-of-code",
+    "url": "https://adventofcode.com/",
+    "policy": "link_only_pending_review"
+  }
+]

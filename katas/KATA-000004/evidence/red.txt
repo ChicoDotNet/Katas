@@ -1,0 +1,4 @@
+Behavioral RED, remotely verified on code head 801c624926e8bb0dee2528890ba85c85cbf2a2d5.
+The compilable, intentionally incorrect stub always returned never.
+The fixed test expected 5 visits; the assertion_failed marker and nonzero exit were verified in the GitHub-hosted BEAM job.
+https://github.com/ChicoDotNet/Katas/actions/runs/39022575284

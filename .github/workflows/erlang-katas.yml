@@ -1,0 +1,49 @@
+name: Erlang gossip kata verification
+
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000004/**'
+      - '.github/workflows/erlang-katas.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000004/**'
+      - '.github/workflows/erlang-katas.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  gossip:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: '28.5.0.4'
+      - name: Compile and prove RED detects wrong behavior
+        working-directory: katas/KATA-000004
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/ninja-gossip-red /tmp/ninja-gossip-green
+          erlc -o /tmp/ninja-gossip-red tests/red_stub/gossip.erl tests/gossip_tests.erl
+          if erl -noshell -pa /tmp/ninja-gossip-red -s gossip_tests run -s init stop > /tmp/ninja-gossip-red.txt 2>&1; then
+            echo 'Expected RED did not fail' >&2
+            exit 1
+          fi
+          grep -q 'assertion_failed' /tmp/ninja-gossip-red.txt
+      - name: Compile GREEN and fixed behavior tests
+        working-directory: katas/KATA-000004
+        shell: bash
+        run: |
+          set -euo pipefail
+          erlc -o /tmp/ninja-gossip-green src/gossip.erl src/gossip_cli.erl tests/gossip_tests.erl
+          erl -noshell -pa /tmp/ninja-gossip-green -s gossip_tests run -s init stop
+      - name: Independent Python differential oracle
+        working-directory: katas/KATA-000004
+        run: python3 tests/differential.py /tmp/ninja-gossip-green

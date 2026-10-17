@@ -1,0 +1,1 @@
+Local Go 1.23.2: go test ./... => ok ninja-katas/marsrover (all tests passed).
