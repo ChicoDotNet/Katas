@@ -1344,7 +1344,7 @@
     "difficulty_evidence": "Provisional experienced-level: user-defined words, captured definition semantics, stack arity and error boundaries. Single reviewer, not calibrated.",
     "score": 91,
     "score_evidence": "Single-reviewer provisional 91/100: transfer19 depth19 oracle15 TDD14 novelty8 pedagogy9 portability4 maintenance3. See README; independent calibration pending.",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "MIT",
       "verified": true,
@@ -1372,14 +1372,29 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "Node 22.16.0, TypeScript tsc, Python 3.13",
       "red": "compilable stub failed with behavioral ASSERT",
       "green": "23 original fixed cases",
       "differential_cases": 816,
-      "ci_pending": true
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39052863910",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39052863961",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "929c3da42645d07af4b9b72b022790080a7bddab"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/23",
+      "commit_sha": "ce3e9495f6f6b702c3e2c23f7fbf89f2aef7701d",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
