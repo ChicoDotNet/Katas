@@ -1498,7 +1498,7 @@
     "difficulty_evidence": "Author provisional 5/5: hand categories, ace-low straight and lexicographic tie breaks",
     "score": 91,
     "score_evidence": "Author provisional 91/100, see README, uncalibrated",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "MIT",
       "verified": true,
@@ -1526,14 +1526,29 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "Ruby 3.3/Python 3.13",
       "red": "loadable empty-results stub failed behavior",
       "green": "12 tests, 15 assertions",
       "differential_cases": 760,
-      "ci_pending": true
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39065201463",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39065201549",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "672cdd1eaf4e1c00d9704c2c4133ee2610edff53"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/29",
+      "commit_sha": "8edd7ef16f450f8d0759b9f00323c54d6cfea09c",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -1547,7 +1562,7 @@
     "difficulty_evidence": "Author provisional 5/5: dependency DAG propagation, stable-state callback semantics, diamond graph and rollback, not calibrated",
     "score": 93,
     "score_evidence": "Author provisional 93/100, README; independent ratings not available",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "MIT",
       "verified": true,
@@ -1575,14 +1590,29 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "Node 22, Python 3.13",
       "red": "incorrect fixture fails behaviorally",
       "green": "10 fixed tests",
       "differential_cases": 360,
-      "ci_pending": true
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39065201518",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39065201549",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "672cdd1eaf4e1c00d9704c2c4133ee2610edff53"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/29",
+      "commit_sha": "8edd7ef16f450f8d0759b9f00323c54d6cfea09c",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -1854,7 +1884,7 @@
     "difficulty_evidence": "Provisional 5/5: compulsory first action, forbidden states, optimal witness reconstruction",
     "score": 92,
     "score_evidence": "Author provisional 92/100; independent calibration pending",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "MIT",
       "verified": true,
@@ -1882,14 +1912,29 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "Go 1.23.2/Python 3.13",
       "red": "bad 1-step result caught by fixed test",
       "green": "Go unit scenarios",
       "differential_cases": 1200,
-      "ci_pending": true
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39065201676",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39065201549",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "672cdd1eaf4e1c00d9704c2c4133ee2610edff53"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/29",
+      "commit_sha": "8edd7ef16f450f8d0759b9f00323c54d6cfea09c",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -2031,7 +2076,7 @@
     "difficulty_evidence": "Author provisional 5/5: Hex 6-neighbor geometry and two opposing edge pairs, uncalibrated",
     "score": 92,
     "score_evidence": "Single-reviewer provisional 92/100, see README",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "MIT",
       "verified": true,
@@ -2059,14 +2104,29 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "GCC C++20 -Werror and Python 3.13",
       "red": "compiled wrong variant behaviorally fails",
       "green": "12 winner cases + 2 invalid",
       "differential_cases": 1500,
-      "ci_pending": true
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39065201365",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39065201549",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "672cdd1eaf4e1c00d9704c2c4133ee2610edff53"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/29",
+      "commit_sha": "8edd7ef16f450f8d0759b9f00323c54d6cfea09c",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -2158,7 +2218,7 @@
     "difficulty_evidence": "Provisional author 5/5: persistent zipper navigation, breadcrumbs and immutable structural edits",
     "score": 93,
     "score_evidence": "Author-only provisional 93/100, see README; no calibrated ranking",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "MIT",
       "verified": true,
@@ -2186,14 +2246,29 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "TypeScript strict/Node22/Python3.13",
       "red": "type-checked wrong value update triggers behavioral failure",
       "green": "12 fixed assertions",
       "differential_cases": 420,
-      "ci_pending": true
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39065201575",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39065201549",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "672cdd1eaf4e1c00d9704c2c4133ee2610edff53"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/29",
+      "commit_sha": "8edd7ef16f450f8d0759b9f00323c54d6cfea09c",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -2233,7 +2308,7 @@
     "difficulty_evidence": "Author provisional 5/5: preorder/inorder consistent partitioning and rejection of inconsistent trees",
     "score": 92,
     "score_evidence": "Author provisional 92/100, see README, no independent calibration",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "MIT",
       "verified": true,
@@ -2261,14 +2336,29 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "Java21 strict -Xlint:all -Werror; Python3.13",
       "red": "compiled wrong variant failed structural assertion",
       "green": "6 fixed +4 invalid",
       "differential_cases": 905,
-      "ci_pending": true
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39065201432",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39065201549",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "672cdd1eaf4e1c00d9704c2c4133ee2610edff53"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/29",
+      "commit_sha": "8edd7ef16f450f8d0759b9f00323c54d6cfea09c",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
