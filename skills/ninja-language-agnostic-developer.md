@@ -1,6 +1,6 @@
 # Ninja Language-Agnostic Developer
 
-Version: **0.1.18**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
+Version: **0.1.19**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
 
 ## Misión
 
@@ -65,6 +65,8 @@ Resolver problemas inéditos con corrección, claridad, eficiencia y mantenibili
 - **OBS-018, KATA-000046 (Swift, Word Search):** cuando existen varias soluciones espaciales equivalentes, definir coordenadas, direcciones y desempate deterministas. Una palabra inyectada aleatoriamente podría existir antes en otra orientación: comparar contra un oráculo de búsqueda completo, no contra su posición de inyección. [Evidencia](../katas/KATA-000046/evidence/skill_review.md). Caso individual sin efecto longitudinal demostrado.
 
 - **OBS-019, KATA-000047 (PHP, Variable Length Quantity):** en formatos binarios, verificar round-trips no basta: comprobar representación canónica, terminación de grupos, rangos y overflow antes de aceptar un flujo. Usar un oráculo aritmético de división/resto distinto de la lógica de bits de producción. [Evidencia](../katas/KATA-000047/evidence/skill_review.md). Sin transferencia validada.
+
+- **OBS-020, KATA-000056 (C11, Circular Buffer):** especificar por separado políticas de rechazo y sobreescritura; conservar orden FIFO cuando el índice de cabeza gira. Verificar con deque independiente, no otro ring que repita el defecto de índices. El compilador con -Werror forma parte de GREEN verificable. [Evidencia](../katas/KATA-000056/evidence/skill_review.md). Observación local, sin transferencia demostrada.
 
 **Hipótesis transversal bajo estudio:** hacer explícitas las fronteras entre estado, nondeterminismo y presentación facilita construir oráculos independientes para problemas de distintas familias. Dos ejemplos no prueban que acelere a Ninja ni que generalice universalmente. Evitar convertirla en regla prescriptiva hasta validación.
 
