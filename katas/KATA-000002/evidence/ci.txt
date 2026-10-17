@@ -1,0 +1,6 @@
+Local tests (PHP 8.4.24, Python 3):
+php tests/behavior.php -> PASS: 9 outside-in/acceptance assertions
+python3 tests/differential.py -> PASS: 251 independent differential scenarios + invalid input guard
+php -l src/Bank.php -> No syntax errors detected
+php -l src/cli.php -> No syntax errors detected
+GitHub Actions verify-php workflow result must be collected before changing status to verified. Local run is not remote CI.

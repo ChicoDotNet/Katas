@@ -1,6 +1,6 @@
 # Ninja Language-Agnostic Developer
 
-Version: **0.1.0**. Status: **bootstrap; no lessons validated yet**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
+Version: **0.1.1**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
 
 ## Misión
 
@@ -26,6 +26,14 @@ Resolver problemas inéditos con corrección, claridad, eficiencia y mantenibili
 - Principio consolidado: resultados reproducibles y transferencia independiente.
 - Deprecado: consejo refutado o superado, con trazabilidad de retiro.
 
+## Observaciones trazables (todavía NO principios consolidados)
+
+- **OBS-001, KATA-000003 (Fortran, Life):** un núcleo de transformación puro, combinado con un oráculo diferencial en otro lenguaje, permitió verificar la actualización simultánea de una matriz finita. [Evidencia](../katas/KATA-000003/evidence/skill_review.md).
+- **OBS-002, KATA-000002 (PHP, Banking):** al separar reloj, libro de movimientos y renderizado detrás de puertos pequeños, un doble de prueba detectó una implementación que ignoraba interacciones y un oráculo independiente examinó 251 historiales. Este patrón puede aumentar la verificabilidad de sistemas con efectos, pero todavía falta evaluación en otros problemas y en holdouts. [Evidencia](../katas/KATA-000002/evidence/skill_review.md).
+- **OBS-003, KATA-000002 (PHP, Banking):** usar enteros de rango fijo para cantidades monetarias obliga a prevenir overflow y no resuelve los problemas de decimales, divisas, persistencia o política bancaria; el contrato de una kata no sustituye requisitos de producción.
+
+**Hipótesis transversal bajo estudio:** hacer explícitas las fronteras entre estado, nondeterminismo y presentación facilita construir oráculos independientes para problemas de distintas familias. Dos ejemplos no prueban que acelere a Ninja ni que generalice universalmente. Evitar convertirla en regla prescriptiva hasta validación.
+
 ## Hipótesis iniciales, NO conclusiones
 
 - Los invariantes y los oráculos independientes reducen falsos verdes.
@@ -34,6 +42,6 @@ Resolver problemas inéditos con corrección, claridad, eficiencia y mantenibili
 - Elegir estructuras de datos por operaciones dominantes generaliza entre lenguajes.
 - Un skill condensado puede ser mejor que otro con más texto; medirlo.
 
-Al inicio no existe evidencia de katas implementadas aquí que respalde conclusiones de rendimiento. Versionar cada promoción por PR; rechazar generalizaciones no validadas.
+Al inicio no existe evidencia de mejora longitudinal por uso del Ninja. Versionar cada promoción por PR, mantener holdouts aislados y rechazar generalizaciones no validadas.
 
 Referencias: [Protocolo](../docs/experiment.md) y [Arquitectura](../docs/architecture.md).
