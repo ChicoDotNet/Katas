@@ -52,7 +52,7 @@ procedure Vlq_Ada is
          for I in 1 .. Used loop
             declare
                N : Long_Long_Integer := Values (I);
-               Digits : Digit_Buffer := (others => 0);
+               Groups_Data : Digit_Buffer := (others => 0);
                Count : Natural := 0;
             begin
                if N < 0 or else N > Max_U32 then
@@ -60,15 +60,15 @@ procedure Vlq_Ada is
                end if;
                loop
                   Count := Count + 1;
-                  Digits (Count) := N mod 128;
+                  Groups_Data (Count) := N mod 128;
                   N := N / 128;
                   exit when N = 0;
                end loop;
                for J in reverse 1 .. Count loop
                   if J > 1 then
-                     Emit (Digits (J) + 128);
+                     Emit (Groups_Data (J) + 128);
                   else
-                     Emit (Digits (J));
+                     Emit (Groups_Data (J));
                   end if;
                end loop;
             end;
