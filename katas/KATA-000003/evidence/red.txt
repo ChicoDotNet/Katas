@@ -1,0 +1,6 @@
+RED (expected failure) — behavioral assertion
+Command: gfortran -std=f2008 -Wall -Wextra -fcheck=all tests/life_red_stub.f90 tests/test_life.f90 -o /tmp/ninja-red && /tmp/ninja-red
+Exit code: 1
+FAIL: block stable
+ERROR STOP 1
+Reason: empty-board stub cannot preserve a 2x2 living block. This is behavior RED, not an expected compilation failure.

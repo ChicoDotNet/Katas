@@ -1,0 +1,35 @@
+name: Fortran kata verification
+
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/**'
+      - '.github/workflows/fortran-katas.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/**'
+      - '.github/workflows/fortran-katas.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  game-of-life:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install GNU Fortran
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends gfortran
+      - name: Build and test Fortran kata
+        working-directory: katas/KATA-000003
+        shell: bash
+        run: |
+          set -euo pipefail
+          gfortran -std=f2008 -Wall -Wextra -fcheck=all src/life_core.f90 tests/test_life.f90 -o /tmp/ninja-lifetest
+          /tmp/ninja-lifetest
+          gfortran -std=f2008 -Wall -Wextra -fcheck=all src/life_core.f90 src/life_cli.f90 -o /tmp/ninja-life-cli
+          python3 tests/test_differential.py /tmp/ninja-life-cli

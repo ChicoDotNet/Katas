@@ -1,0 +1,6 @@
+Local verification: GNU Fortran (Debian 14.2.0-19) 14.2.0
+Command: gfortran -std=f2008 -Wall -Wextra -fcheck=all src/life_core.f90 tests/test_life.f90
+Result: PASS (6 patterns)
+Command: gfortran -std=f2008 -Wall -Wextra -fcheck=all src/life_core.f90 src/life_cli.f90; python3 tests/test_differential.py /tmp/ninja-life-cli
+Result: PASS (677 independent oracle cases)
+GitHub PR CI: pending at initial authoring; use Actions run as independent remote verification.

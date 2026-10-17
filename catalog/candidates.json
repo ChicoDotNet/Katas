@@ -10,7 +10,7 @@
     "difficulty_evidence": "Kata-Log: Experienced; provisional, not independently scored",
     "score": 0,
     "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "status": "blocked",
     "license": {
       "id": "UNKNOWN",
       "verified": false,
@@ -18,7 +18,8 @@
     },
     "language": "",
     "language_rationale": "",
-    "evidence": {}
+    "evidence": {},
+    "block_reason": "Kata-Log description public domain, but jbrains/trivia starter is GPL-3.0; no starter copied. Original clean-room equivalent and license strategy need separate audit."
   },
   {
     "id": "KATA-000002",
@@ -49,17 +50,32 @@
     "fingerprint": "cellular-automaton-conway-life",
     "domain": "algorithm-design",
     "difficulty": 4,
-    "difficulty_evidence": "Kata-Log: Experienced; provisional, not independently scored",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "difficulty_evidence": "Kata-Log labels this Experienced; provisional 4/5",
+    "score": 83,
+    "score_evidence": "Author's provisional eight-factor rubric in katas/KATA-000003/README.md (transfer 17, depth 14, oracle 14, TDD 13, novelty 7, pedagogy 9, portability 5, maintenance 4); requires independent calibration",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "Unlicense",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/game-of-life-kata",
+      "scope": "Kata-Log page; original code in this repo MIT; starter repos not imported"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {}
+    "language": "Fortran",
+    "language_rationale": "Pure two-dimensional array evolution and numerical index semantics; contrast with Julia and Python; GNU Fortran available in Genkidama GNU CI family.",
+    "evidence": {
+      "red": "katas/KATA-000003/evidence/red.txt",
+      "green": "katas/KATA-000003/evidence/green.txt",
+      "ci": "katas/KATA-000003/evidence/ci.txt",
+      "oracle": "katas/KATA-000003/evidence/oracle.txt",
+      "skill_review": "katas/KATA-000003/evidence/skill_review.md",
+      "skill_conclusion": "confirmed"
+    },
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ]
   }
 ]
