@@ -1,0 +1,34 @@
+name: R direct-path oracle for TypeScript Zipper
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000052/**'
+      - '.github/workflows/r-zipper-kata.yml'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000052/**'
+      - '.github/workflows/r-zipper-kata.yml'
+permissions:
+  contents: read
+jobs:
+  zipper-r:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install R and JSON package
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends r-base-core r-cran-jsonlite
+      - name: Compile original TypeScript Zipper
+        working-directory: katas/KATA-000052
+        run: |
+          npm install --no-save typescript@5.9.3
+          npx tsc -p .
+          node build/tests/test_zipper.js
+      - name: Run original independent R copy-on-modify model
+        working-directory: katas/KATA-000052
+        run: Rscript --vanilla tests/zipper_r.R build/src/cli.js
