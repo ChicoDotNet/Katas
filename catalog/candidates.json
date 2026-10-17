@@ -32,7 +32,7 @@
     "difficulty_evidence": "Kata-Log: Experienced, Outside-In, Mocks and SOLID; provisional 4/5",
     "score": 85,
     "score_evidence": "Single-reviewer eight-factor rubric in katas/KATA-000002/README.md; transfer 18, depth 17, oracle 13, TDD 15, novelty 7, pedagogy 7, portability 4, maintenance 4. Pending independent calibration.",
-    "status": "green",
+    "status": "verified",
     "license": {
       "id": "Unlicense",
       "verified": true,
@@ -54,8 +54,16 @@
       "eligible",
       "selected",
       "red",
-      "green"
-    ]
+      "green",
+      "verified"
+    ],
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39020491838",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39020491785",
+      "catalog_validation_conclusion": "success",
+      "cross_family_regression_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39020491669"
+    }
   },
   {
     "id": "KATA-000003",
