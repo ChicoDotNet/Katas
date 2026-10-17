@@ -29,6 +29,7 @@ jobs:
           set -euo pipefail
           go test ./...
           go build -o /tmp/buckets-cli ./cmd/buckets
+          python3 tests/test_witness_validator.py
           python3 tests/differential.py /tmp/buckets-cli
           if KATA_RED=1 go test ./... >/tmp/buckets-red.log 2>&1; then exit 1; fi
           grep -q 'wrong shortest solution' /tmp/buckets-red.log

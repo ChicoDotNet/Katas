@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: MIT
 """Independent layered minimum-distance oracle and step-by-step witness validation."""
 import json,random,subprocess,sys
+from witness import verify_witness
 rng=random.Random(20261017)
 def oracle(c1,c2,goal,start):
  initial=(c1,0) if start==1 else (0,c2)
@@ -30,15 +31,5 @@ for i,(s,out) in enumerate(zip(cases,results)):
  if distance is None:
   assert not result['possible'],(i,s,result);continue
  assert result['possible'] and result['moves']==distance,(i,s,distance,result)
- states=result['states'];actions=result['actions'];assert len(states)==len(actions)==distance
- assert states[0]==({'one':s['cap1'],'two':0} if s['start']==1 else {'one':0,'two':s['cap2']})
- for j in range(1,len(states)):
-  before=states[j-1];after=states[j];x,y=before['one'],before['two'];a,b=after['one'],after['two']
-  delta=min(x,s['cap2']-y);other=min(y,s['cap1']-x)
-  allowed={(s['cap1'],y),(x,s['cap2']),(0,y),(x,0),(x-delta,y+delta),(x+other,y-other)}
-  assert (a,b) in allowed and (a,b)!=(x,y),(i,s,j)
-  assert (a,b)!=((0,s['cap2']) if s['start']==1 else (s['cap1'],0))
- last=states[-1];goal=result['goal']
- assert last['one' if goal==1 else 'two']==s['target']
- assert result['other']==last['two' if goal==1 else 'one']
+ verify_witness(s,result)
 print(f'PASS: {len(cases)} independent shortest-distance queries and action witnesses')
