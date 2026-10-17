@@ -1,0 +1,35 @@
+name: PHP Tree Building kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000042/**'
+      - '.github/workflows/php-tree-building-kata.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000042/**'
+      - '.github/workflows/php-tree-building-kata.yml'
+permissions:
+  contents: read
+jobs:
+  hierarchy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          coverage: none
+      - name: GREEN RED and independent Python hierarchy oracle
+        working-directory: katas/KATA-000042
+        shell: bash
+        run: |
+          set -euo pipefail
+          php -l src/TreeBuilding.php
+          php tests/test_tree.php
+          python3 tests/differential.py src/cli.php
+          if KATA_RED=1 php tests/test_tree.php >/tmp/tree-red.log 2>&1; then echo 'RED unexpectedly passed' >&2; exit 1; fi
+          grep -q 'FAIL behavioral assertion' /tmp/tree-red.log

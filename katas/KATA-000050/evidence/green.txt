@@ -1,0 +1,1 @@
+Local GNU Fortran 2018: PASS: 12 fixed combinations and 2 invalid-input cases.

@@ -1759,54 +1759,100 @@
   },
   {
     "id": "KATA-000042",
-    "title": "tree building",
+    "title": "Tree Building — Unsorted Parent Records",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/tree-building",
     "fingerprint": "exercism-spec-tree-building",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "hierarchical-record-reconstruction",
+    "difficulty": 4,
+    "difficulty_evidence": "Provisional 4/5: validate root, uniqueness, parent order, deterministic hierarchy from unordered records",
+    "score": 89,
+    "score_evidence": "Author provisional 89/100, uncalibrated",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Concept reference only; original PHP hierarchy builder and independent Python bottom-up tests MIT; no original legacy starter refactored"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "PHP",
+    "language_rationale": "PHP associative/array records resemble JSON-backed forum data; independent Python bottom-up tree assembly; Java/C# alternatives",
+    "evidence": {
+      "red": "katas/KATA-000042/evidence/red.txt",
+      "green": "katas/KATA-000042/evidence/green.txt",
+      "oracle": "katas/KATA-000042/evidence/oracle.txt",
+      "ci": "katas/KATA-000042/evidence/ci.txt",
+      "skill_review": "katas/KATA-000042/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "PHP8 local + Python3",
+      "red": "empty-children stub fails behaviorally",
+      "green": "4 trees + 7 malformed",
+      "differential_cases": 1000,
+      "ci_pending": true
     }
   },
   {
     "id": "KATA-000043",
-    "title": "diffie hellman",
+    "title": "Diffie–Hellman — Modular Key Agreement (Educational)",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/diffie-hellman",
     "fingerprint": "exercism-spec-diffie-hellman",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "modular-arithmetic-and-crypto-contracts",
+    "difficulty": 5,
+    "difficulty_evidence": "Provisional 5/5: modular powers, symmetry, big integers and parameter boundaries, not production cryptography",
+    "score": 91,
+    "score_evidence": "Author provisional 91/100; independent calibration pending",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Original Java implementation and Python oracle, only Exercism conceptual link used"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Java",
+    "language_rationale": "Java21 BigInteger.modPow avoids hand-rolled modular arithmetic and machine integer overflow; Python built-in pow provides separate implementation",
+    "evidence": {
+      "red": "katas/KATA-000043/evidence/red.txt",
+      "green": "katas/KATA-000043/evidence/green.txt",
+      "oracle": "katas/KATA-000043/evidence/oracle.txt",
+      "ci": "katas/KATA-000043/evidence/ci.txt",
+      "skill_review": "katas/KATA-000043/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Java21 -Xlint:all -Werror and Python3",
+      "red": "behaviorally wrong one-key variant failed modular test",
+      "green": "12 modular-exchange and validation checks",
+      "differential_cases": 1005,
+      "ci_pending": true
     }
   },
   {
@@ -2157,28 +2203,51 @@
   },
   {
     "id": "KATA-000050",
-    "title": "killer sudoku helper",
+    "title": "Killer Sudoku Helper — Constraint Subsets",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/killer-sudoku-helper",
     "fingerprint": "exercism-spec-killer-sudoku-helper",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "bounded-constraint-combinatorics",
+    "difficulty": 4,
+    "difficulty_evidence": "Provisional author 4/5: bitmasks, forbidden digits, exhaustive combination and stable ordering",
+    "score": 89,
+    "score_evidence": "Author provisional 89/100, independent calibration pending",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Upstream conceptual reference only; original Fortran and independent Python source MIT, no starter or canonical tests copied"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Fortran",
+    "language_rationale": "Fortran2018 popcnt/btest and compact bounded numeric enumeration with strict compiler checking; Python independent itertools.combinations; Julia/Prolog considered but unavailable locally",
+    "evidence": {
+      "red": "katas/KATA-000050/evidence/red.txt",
+      "green": "katas/KATA-000050/evidence/green.txt",
+      "oracle": "katas/KATA-000050/evidence/oracle.txt",
+      "ci": "katas/KATA-000050/evidence/ci.txt",
+      "skill_review": "katas/KATA-000050/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "GNU Fortran -std=f2018 -Werror -fcheck=all and Python3",
+      "red": "compiled incorrect variant fails expected count",
+      "green": "12 accepted combinations and 2 invalid inputs",
+      "differential_cases": 2525,
+      "ci_pending": true
     }
   },
   {
@@ -2453,28 +2522,51 @@
   },
   {
     "id": "KATA-000057",
-    "title": "parallel letter frequency",
+    "title": "Parallel Letter Frequency — Worker/Reducer",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/parallel-letter-frequency",
     "fingerprint": "exercism-spec-parallel-letter-frequency",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "concurrency-parallel-reduction",
+    "difficulty": 5,
+    "difficulty_evidence": "Provisional 5/5: bounded goroutines, deterministic reduction, unicode lower mapping, race detection",
+    "score": 91,
+    "score_evidence": "Provisional author score 91/100; not independently calibrated",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Conceptual link only; original Go and Python tests under MIT, no upstream copied fixtures"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Go",
+    "language_rationale": "Go goroutines and channels support independent per-worker maps; Python Counter oracle, Erlang alternative not locally installed",
+    "evidence": {
+      "red": "katas/KATA-000057/evidence/red.txt",
+      "green": "katas/KATA-000057/evidence/green.txt",
+      "oracle": "katas/KATA-000057/evidence/oracle.txt",
+      "ci": "katas/KATA-000057/evidence/ci.txt",
+      "skill_review": "katas/KATA-000057/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Go1.23 go test -race, Python3",
+      "red": "wrong empty result triggers behavior failure",
+      "green": "Go unit tests and race detector",
+      "differential_cases": 907,
+      "ci_pending": true
     }
   },
   {

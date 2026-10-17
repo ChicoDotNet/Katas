@@ -1,0 +1,1 @@
+Local Java/Python: PASS: 1005 independent modular key-exchange scenarios using Python built-in pow(a,b,p).

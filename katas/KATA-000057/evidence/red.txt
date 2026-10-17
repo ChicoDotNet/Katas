@@ -1,0 +1,1 @@
+Local Go: KATA_RED=1 go test ./... compiled then failed the incorrect empty-result behavior assertion.

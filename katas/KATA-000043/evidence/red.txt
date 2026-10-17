@@ -1,0 +1,1 @@
+Local Java21: KATA_RED=1 compiled with -Xlint:all -Werror and behaviorally failed first public-key assertion.
