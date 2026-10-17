@@ -1844,28 +1844,51 @@
   },
   {
     "id": "KATA-000047",
-    "title": "variable length quantity",
+    "title": "Variable Length Quantity — u32",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/variable-length-quantity",
     "fingerprint": "exercism-spec-variable-length-quantity",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "binary-stream-encoding",
+    "difficulty": 4,
+    "difficulty_evidence": "Provisional 4/5: canonical VLQ encoding, overlong validation and unsigned overflow boundaries",
+    "score": 90,
+    "score_evidence": "Uncalibrated author estimate 90/100 documented in README",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Source concept only, no imported canonical cases. PHP solution and Python reference original MIT"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "PHP",
+    "language_rationale": "PHP 8.4 strict typed exceptions and unsigned 32-bit range checks; contrast independent Python divmod representation. Go/C alternative",
+    "evidence": {
+      "red": "katas/KATA-000047/evidence/red.txt",
+      "green": "katas/KATA-000047/evidence/green.txt",
+      "ci": "katas/KATA-000047/evidence/ci.txt",
+      "oracle": "katas/KATA-000047/evidence/oracle.txt",
+      "skill_review": "katas/KATA-000047/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "PHP 8 + Python 3",
+      "red": "behavioral decoding mismatch",
+      "green": "16 boundary/error checks",
+      "differential_cases": 1003,
+      "ci_pending": true
     }
   },
   {

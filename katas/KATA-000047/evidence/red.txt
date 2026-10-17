@@ -1,0 +1,1 @@
+Local PHP 8: KATA_RED=1 php tests/test_vlq.php returned nonzero because decode returned empty rather than expected values (FAIL behavioral assertion: concatenated decode). PHP source syntax valid.
