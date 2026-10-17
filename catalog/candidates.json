@@ -1062,24 +1062,47 @@
     "source_url": "https://kata-log.rocks/lift-kata",
     "fingerprint": "elevator-dispatch-state",
     "domain": "event-driven-simulation",
-    "difficulty": 4,
-    "difficulty_evidence": "Provisional triage only: TDD, mocks and state simulation",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "difficulty": 5,
+    "difficulty_evidence": "Author provisional: time-step state machine, FIFO queue, arrival events; no external calibration",
+    "score": 89,
+    "score_evidence": "single-reviewer provisional, see kata README",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "Unlicense",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/lift-kata",
+      "scope": "Kata-Log's own public-domain page; original Go solution MIT, no starter imported"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Go",
+    "language_rationale": "Go deterministic queue and Tick state transition; Python independently computes event traces",
+    "evidence": {
+      "red": "katas/KATA-000028/evidence/red.txt",
+      "green": "katas/KATA-000028/evidence/green.txt",
+      "oracle": "katas/KATA-000028/evidence/oracle.txt",
+      "ci": "katas/KATA-000028/evidence/ci.txt",
+      "skill_review": "katas/KATA-000028/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "date": "2026-10-17",
       "listing": "https://kata-log.rocks/",
       "audit": "rights, oracle and difficulty require item-specific review",
       "scan_id": "kata-log-index-20261017-v1"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Go1.23.2, Python3.13.5",
+      "green": "behavioral Go tests passed",
+      "differential_cases": 300,
+      "red": "specific trace mismatch",
+      "ci_pending": true
     }
   },
   {
