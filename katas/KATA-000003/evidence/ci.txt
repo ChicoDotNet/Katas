@@ -1,0 +1,8 @@
+Local verification: GNU Fortran (Debian 14.2.0-19) 14.2.0
+Command: gfortran -std=f2008 -Wall -Wextra -fcheck=all src/life_core.f90 tests/test_life.f90
+Result: PASS (6 patterns)
+Command: gfortran -std=f2008 -Wall -Wextra -fcheck=all src/life_core.f90 src/life_cli.f90; python3 tests/test_differential.py /tmp/ninja-life-cli
+Result: PASS (677 independent oracle cases)
+GitHub Fortran workflow: success — https://github.com/ChicoDotNet/Katas/actions/runs/39019014775
+GitHub Catalog validation: success — https://github.com/ChicoDotNet/Katas/actions/runs/39019014730
+Evidence captured on first PR head 43ac1a0419dd7a36b5ab5d19034502e04c9b28e6.
