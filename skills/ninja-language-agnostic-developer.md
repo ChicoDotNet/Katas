@@ -1,6 +1,6 @@
 # Ninja Language-Agnostic Developer
 
-Version: **0.1.10**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
+Version: **0.1.11**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
 
 ## Misión
 
@@ -49,6 +49,8 @@ Resolver problemas inéditos con corrección, claridad, eficiencia y mantenibili
 - **OBS-011, KATA-000009 (C11, Bowling):** los flujos de eventos con bonos que miran hacia delante requieren separar validación de eventos, marcos lógicos y cálculo. Los tiros que pertenecen al siguiente cuadro modifican el puntaje anterior; el décimo tiene reglas propias. Contrastar índices del stream contra un oráculo independiente de cuadros evitó un falso verde. [Evidencia](../katas/KATA-000009/evidence/skill_review.md). Es observación, no prueba de transferencia.
 
 - **OBS-012, KATA-000028 (Go, The Lift):** introducir un reloj lógico explícito (Tick) y separar solicitudes encoladas de cambios observables de estado; definir si llegada y recogida ocurren en el mismo tick evita errores temporales. Verificar trazas completas con oráculo independiente, no solo el piso final. [Evidencia](../katas/KATA-000028/evidence/skill_review.md). Una observación local no demuestra mejoras generales.
+
+- **OBS-013, KATA-000019 (Java, Parallel Change):** un cambio estructural seguro expande primero la API/representación, migra consumidores de manera incremental y solo después contrae interfaces cuando existen evidencias de compatibilidad. Los tests productivos deben permanecer verdes; un RED de prueba separado comprueba que los contratos detectan pérdida de datos. Las vistas inmutables evitan mutaciones fuera del gobierno del agregado. [Evidencia](../katas/KATA-000019/evidence/skill_review.md). No se ha demostrado ganancia longitudinal del Ninja.
 
 **Hipótesis transversal bajo estudio:** hacer explícitas las fronteras entre estado, nondeterminismo y presentación facilita construir oráculos independientes para problemas de distintas familias. Dos ejemplos no prueban que acelere a Ninja ni que generalice universalmente. Evitar convertirla en regla prescriptiva hasta validación.
 
