@@ -19,8 +19,7 @@ eq(': dup 9 ; 2 dup', [2, 9]);
 eq(': addone 1 + ; : addone addone 1 + ; 2 addone', [4]);
 eq(': swap dup ; 3 swap', [3, 3]);
 eq('3 4 : TWO 2 ; TWO +', [3, 6]);
-eq('  1
- 2	 + ', [3]);
+eq('  1' + String.fromCharCode(10) + ' 2' + String.fromCharCode(9) + ' + ', [3]);
 eq('-12 3 /', [-4]);
 error('+', 'underflow');
 error('1 swap', 'underflow');
