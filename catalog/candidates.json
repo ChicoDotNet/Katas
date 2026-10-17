@@ -272,23 +272,46 @@
     "fingerprint": "monthly-category-spending-alert-boundaries",
     "domain": "finance-aggregation-and-ports",
     "difficulty": 5,
-    "difficulty_evidence": "Provisional triage only: Experienced; time boundaries, money arithmetic, service doubles and threshold semantics",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "difficulty_evidence": "Kata-Log Experienced. Provisional 5/5 for time/percent/money and ports interactions.",
+    "score": 91,
+    "score_evidence": "Single-reviewer rubric, pending calibration, described in README",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "Unlicense",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/unusual-spending-kata",
+      "scope": "Kata-Log own PD exercise only; original code/tests MIT, TestDouble starters not imported"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Ruby",
+    "language_rationale": "Ruby strict separation of service source/sender and immutable value objects, Minitest doubles; fixed deterministic threshold does not require R statistics; Python independent oracle",
+    "evidence": {
+      "red": "katas/KATA-000006/evidence/red.txt",
+      "green": "katas/KATA-000006/evidence/green.txt",
+      "oracle": "katas/KATA-000006/evidence/oracle.txt",
+      "ci": "katas/KATA-000006/evidence/ci.txt",
+      "skill_review": "katas/KATA-000006/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "date": "2026-10-17",
       "listing": "https://kata-log.rocks/",
       "audit": "rights, oracle and difficulty require item-specific review",
       "scan_id": "kata-log-index-20261017-v1"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Ruby 3.3.8, Python 3.13.5",
+      "minitest": "7 runs, 23 assertions, 0 failures",
+      "differential_cases": 334,
+      "red": "behavioral failure confirmed",
+      "ci_pending": true
     }
   },
   {
