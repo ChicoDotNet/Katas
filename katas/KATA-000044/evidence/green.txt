@@ -1,0 +1,1 @@
+Local Go 1.23: go test ./... => PASS (10 named graph cases + validation and immutable-input checks).

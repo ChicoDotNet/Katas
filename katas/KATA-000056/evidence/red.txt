@@ -1,0 +1,1 @@
+Local C11: deliberately incorrect but compilable red_stub.c failed the ring_write(&r,7,1) overwrite behavior assertion, nonzero exit.

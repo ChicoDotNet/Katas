@@ -1,0 +1,1 @@
+Local Perl: KATA_RED=1 perl -Ilib tests/test_sgf.t exits nonzero; fixed test #1 fails behaviorally (not ok 1 - empty node). Test script compiles normally.

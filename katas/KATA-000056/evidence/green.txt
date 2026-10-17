@@ -1,0 +1,1 @@
+Local C11 -Wall -Wextra -Werror -pedantic: PASS: 12 C ring buffer contract/boundary assertions.

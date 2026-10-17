@@ -1,0 +1,3 @@
+# OBS-016 — Graph feasibility needs both global and local invariants
+
+**Bounded observation:** every vertex in a closed Euler tour has even degree, but that is not sufficient without connectivity. Two disconnected self-loops provide a counterexample. Integer physical edge IDs, rather than a set of unordered endpoint pairs, preserve duplicates; Hierholzer traversal consumes each edge exactly once. A structurally independent brute-force Python solver checks existence; a separate multiset and chain validator checks the witness. It is a local implementation result, not established improvement in Ninja transfer speed or generality.

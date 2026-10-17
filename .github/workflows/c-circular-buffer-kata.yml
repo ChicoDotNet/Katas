@@ -1,0 +1,29 @@
+name: C Circular Buffer kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths: ['katas/KATA-000056/**', '.github/workflows/c-circular-buffer-kata.yml', 'catalog/**']
+  push:
+    branches: [dev, main]
+    paths: ['katas/KATA-000056/**', '.github/workflows/c-circular-buffer-kata.yml']
+permissions:
+  contents: read
+jobs:
+  buffer:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: GREEN, behavioral RED, and Python independent oracle
+        working-directory: katas/KATA-000056
+        shell: bash
+        run: |
+          set -euo pipefail
+          cc -std=c11 -Wall -Wextra -Werror -pedantic src/ring.c tests/test_ring.c -o /tmp/ring-test
+          /tmp/ring-test
+          cc -std=c11 -Wall -Wextra -Werror -pedantic src/ring.c src/cli.c -o /tmp/ring-cli
+          python3 tests/differential.py /tmp/ring-cli
+          cc -std=c11 -Wall -Wextra -Werror -pedantic tests/red_stub.c tests/test_ring.c -o /tmp/ring-red
+          ulimit -c 0
+          if /tmp/ring-red >/tmp/ring-red.log 2>&1; then echo 'RED unexpectedly passed' >&2; exit 1; fi
+          grep -q 'ring_write' /tmp/ring-red.log

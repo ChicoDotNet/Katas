@@ -1,0 +1,1 @@
+Local Swift 6: intentionally incorrect compiled -D KATA_RED returns missing coordinates and fails behavioral check 'horizontal' with nonzero status.

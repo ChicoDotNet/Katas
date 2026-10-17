@@ -1,0 +1,1 @@
+Remote exact-head CI pending; do not mark verified/published before green workflow and reviewed merge.

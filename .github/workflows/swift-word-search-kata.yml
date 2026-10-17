@@ -1,0 +1,31 @@
+name: Swift Word Search kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths: ['katas/KATA-000046/**', '.github/workflows/swift-word-search-kata.yml', 'catalog/**']
+  push:
+    branches: [dev, main]
+    paths: ['katas/KATA-000046/**', '.github/workflows/swift-word-search-kata.yml']
+permissions:
+  contents: read
+jobs:
+  word-search:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: swift-actions/setup-swift@v2
+        with:
+          swift-version: '6.2'
+      - name: RED GREEN and Python oracle
+        working-directory: katas/KATA-000046
+        shell: bash
+        run: |
+          set -euo pipefail
+          swiftc -swift-version 6 src/Search.swift tests/TestSearch.swift -o /tmp/word-test
+          /tmp/word-test
+          swiftc -swift-version 6 -O src/Search.swift src/Main.swift -o /tmp/word-cli
+          python3 tests/differential.py /tmp/word-cli
+          swiftc -swift-version 6 -D KATA_RED src/Search.swift tests/TestSearch.swift -o /tmp/word-red
+          if /tmp/word-red > /tmp/word-red.log 2>&1; then echo 'RED unexpectedly passed' >&2; exit 1; fi
+          grep -q 'FAIL behavioral assertion' /tmp/word-red.log

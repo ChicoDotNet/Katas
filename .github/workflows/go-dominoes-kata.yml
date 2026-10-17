@@ -1,0 +1,29 @@
+name: Go Dominoes kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths: ['katas/KATA-000044/**', '.github/workflows/go-dominoes-kata.yml', 'catalog/**']
+  push:
+    branches: [dev, main]
+    paths: ['katas/KATA-000044/**', '.github/workflows/go-dominoes-kata.yml']
+permissions:
+  contents: read
+jobs:
+  dominoes:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+      - name: RED GREEN and independent Python witness oracle
+        working-directory: katas/KATA-000044
+        shell: bash
+        run: |
+          set -euo pipefail
+          go test ./...
+          if go test -tags kata_red ./... >/tmp/domino-red.log 2>&1; then echo 'Behavioral RED unexpectedly passed' >&2; exit 1; fi
+          grep -Eq 'wrong possibility|invalid chain' /tmp/domino-red.log
+          go build -o /tmp/domino-cli ./cmd/dominoes
+          python3 tests/differential.py /tmp/domino-cli
