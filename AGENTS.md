@@ -3,7 +3,7 @@
 1. Leer README, docs/experiment.md, docs/source-policy.md y skills/ninja-language-agnostic-developer.md.
 2. Nunca copiar enunciados, código, tests, imágenes o inputs de terceros sin licencia comprobada del **artefacto específico**; conservar atribuciones.
 3. Nunca fingir estados red, green, verified o published; enlazar evidencia reproducible. Tests diseñados por el mismo agente no reemplazan oráculos independientes.
-4. Escoger el lenguaje mejor adaptado desde el catálogo Genkidama, justificando alternativas. No imponer cuotas por lenguaje.
+4. **Seleccionar primero por el dominio, nunca por CI existente**: aplicar docs/language-selection.md antes de comprobar si Katas ya tiene workflow. Contrastar tres lenguajes viables, razonar qué aprendizaje distintivo aporta el elegido y registrar el costo semántico de recurrir a uno habitual. Ni imponer cuotas ni premiar lo familiar; Ada, Julia, COBOL, VB.NET, Mojo y otros deben competir cuando la kata lo justifique.
 5. Durante el piloto aplicar hardest-first **entre candidatas elegibles**. En el corte de 90 publicadas ejecutar gate; si falta evidencia, no continuar automáticamente.
 6. Cada kata requiere revisión del Ninja con resultado incorporated, confirmed, no_change o rejected. Observaciones individuales no son principios universales.
 7. Preservar RED fallido por el motivo correcto, GREEN, revisión independiente, refactorización y CI.
@@ -23,3 +23,5 @@
 18. **Gobernanza de ramas**: seguir `docs/governance/delivery.md`. Dependabot envía PR a `main` (rama predeterminada); un PR de promoción certifica el `dev` HEAD exacto antes de squash, y el PR posterior `main → dev` solo sincroniza ancestros sin cambios de contenido. No promocionar ramas o PR con CI pendiente o rojo.
 
 18. **Release a main cada 18 katas publicadas (no simplemente green)**: cuando dev alcance 18,36,54,72,90 o múltiplos posteriores, preparar PR revisable dev→main; reconciliar commits exclusivos de main, auditar diferencias y exigir CI sobre SHA exacto sin force-push. Mientras corre CI de release, desarrollar la siguiente kata. Ver docs/promotion-main.md.
+
+19. **CI preexistente no es criterio para elegir lenguaje**. Reutilizar Genkidama (eng/ci/registry.json, run-family y Polyglot CI) para preparar después del ranking el compilador y un workflow reproducible. Si el toolchain falla, registrar bloqueo y no sustituir silenciosamente con Java/Python/Go. No afirmar GREEN sin ejecución. Seguir docs/language-selection.md.

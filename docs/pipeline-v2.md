@@ -38,3 +38,7 @@ This policy applies to unattended hourly executions and interactive work alike.
 ## Stable main cadence (every 18 published)
 
 Mandatory dev→main promotion milestones: 18, 36, 54, 72, 90, then each further multiple of 18 after the separate pilot gate. Keep main-only commits through reconciliation and use exact-head CI; promotion CI does not block development of the next kata. See docs/promotion-main.md and tools/release_milestones.py.
+
+## Elegir lenguaje ANTES de la infraestructura
+
+Antes de consultar qué CI existe en Katas, evaluar el dominio e invariantes de la kata y comparar al menos tres candidatos técnicamente relevantes de Genkidama. Documentar en el README qué hace interesante el lenguaje ganador, las alternativas y el contrafactual frente a otro lenguaje habitual. Workflow existente nunca puntúa como ventaja semántica. Configurar herramientas y CI después de seleccionar el lenguaje, adaptando la familia correspondiente de Genkidama. No forzar novedad por sí sola: un lenguaje frecuente puede ganar si demuestra una mejor afinidad. Si no se logra instalar el compilador, dejar checkpoint y reportar bloqueo; jamás inventar GREEN o cambiar de lenguaje sin rehacer el razonamiento. Documento canónico: docs/language-selection.md.
