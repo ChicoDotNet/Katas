@@ -1,2 +1,4 @@
-Planned behavior RED — not yet remotely verified.
-Compile tests/red_stub/gossip.erl with tests/gossip_tests.erl to the isolated RED build directory. The stub always returns never, including the source case whose correct answer is 5. The test harness must exit nonzero with assertion_failed. CI checks the reason, not just a failure code.
+Behavioral RED, remotely verified on code head 801c624926e8bb0dee2528890ba85c85cbf2a2d5.
+The compilable, intentionally incorrect stub always returned never.
+The fixed test expected 5 visits; the assertion_failed marker and nonzero exit were verified in the GitHub-hosted BEAM job.
+https://github.com/ChicoDotNet/Katas/actions/runs/39022575284

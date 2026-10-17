@@ -1,3 +1,3 @@
-Planned independent verification — not yet remotely verified.
-Expected: PASS: 2378 independent differential simulations (1521+729+128).
-Python model uses sets per driver and station-level union, not Erlang bitsets. A single Erlang VM processes the scenarios to isolate algorithm time from VM startup cost.
+Independent Python set-based oracle verified against Erlang bitmask model, code head 801c624926e8bb0dee2528890ba85c85cbf2a2d5:
+PASS: 2378 independent differential simulations (1521+729+128)
+https://github.com/ChicoDotNet/Katas/actions/runs/39022575284

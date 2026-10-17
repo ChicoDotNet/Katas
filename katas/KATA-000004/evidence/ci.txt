@@ -1,4 +1,7 @@
-Status: pending remote CI at initial PR.
-Validation workflow: .github/workflows/erlang-katas.yml.
-Previous language-family regressions are expected through independent workflows (PHP, Fortran and Java), and catalog validator runs on PR changes.
-No Erlang runtime was installed in the local authoring container; only GitHub-hosted CI may certify GREEN.
+Remote PR checks for code commit 801c624926e8bb0dee2528890ba85c85cbf2a2d5, all SUCCESS:
+- Erlang RED/GREEN + independent Python oracle: https://github.com/ChicoDotNet/Katas/actions/runs/39022575284
+- Catalog + unit tests: https://github.com/ChicoDotNet/Katas/actions/runs/39022575220
+- Fortran regression: https://github.com/ChicoDotNet/Katas/actions/runs/39022575248
+- PHP regression: https://github.com/ChicoDotNet/Katas/actions/runs/39022575232
+- Java regression: https://github.com/ChicoDotNet/Katas/actions/runs/39022575458
+A new commit documenting these checks must itself receive final green PR CI before merge.
