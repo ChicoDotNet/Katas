@@ -1,1 +1,6 @@
-Remote CI PENDING at local-complete milestone. Do not mark verified or published until remote Go workflow succeeds on this exact branch head.
+GitHub-hosted CI SUCCESS on exact PR head 68a945d7e3d3d944db27889581dcbf766fe2dbc6.
+Individual language workflow: https://github.com/ChicoDotNet/Katas/actions/runs/39024426143
+Catalog and validation tests: https://github.com/ChicoDotNet/Katas/actions/runs/39024426023
+Previous-kata regressions: Java https://github.com/ChicoDotNet/Katas/actions/runs/39024425984 ; PHP https://github.com/ChicoDotNet/Katas/actions/runs/39024426001 ; Fortran https://github.com/ChicoDotNet/Katas/actions/runs/39024426011 ; Erlang https://github.com/ChicoDotNet/Katas/actions/runs/39024426025
+Source and Ninja included in merged PR https://github.com/ChicoDotNet/Katas/pull/11 at dev commit be136d41c62590d53edfc0eb1c991c7c7ca37975.
+Publication catalog entry recorded in a separate PR for auditability.
