@@ -1280,7 +1280,7 @@
     "difficulty_evidence": "Exercism alphametics requires decimal all-different assignment, multi-digit no-leading-zero and sum carries; author-provisional 5/5, not calibrated",
     "score": 93,
     "score_evidence": "Author-provisional rubric 93/100, see kata README; no independent calibration",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "MIT",
       "verified": true,
@@ -1308,40 +1308,78 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "Python 3.13.5",
       "green": "6 unittest groups",
       "differential_cases": 84,
       "red": "test_send_more_money assertion failed with deliberately empty assignment",
-      "ci_pending": true
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39050731054",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39050730951",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "f3ec903edbe4c23e3a2c4bdefafbad271c778611"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/16",
+      "commit_sha": "39ae9aa92056cb58c52fb06ea185cd9ff9558ddc",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
     "id": "KATA-000033",
-    "title": "forth",
+    "title": "Forth Interpreter",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/forth",
     "fingerprint": "exercism-spec-forth",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "stack-language-parser-interpreter",
+    "difficulty": 5,
+    "difficulty_evidence": "Provisional experienced-level: user-defined words, captured definition semantics, stack arity and error boundaries. Single reviewer, not calibrated.",
+    "score": 91,
+    "score_evidence": "Single-reviewer provisional 91/100: transfer19 depth19 oracle15 TDD14 novelty8 pedagogy9 portability4 maintenance3. See README; independent calibration pending.",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Upstream Exercism problem-specifications MIT; source/tests here independently authored, no upstream canonical data copied"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "TypeScript",
+    "language_rationale": "TypeScript typed bytecode and map closures support a dynamic stack language with freezing of previously defined words. Python token-expansion oracle differs from typed compiled instructions; Rust/Scala alternatives considered; Genkidama supports TS.",
+    "evidence": {
+      "red": "katas/KATA-000033/evidence/red.txt",
+      "green": "katas/KATA-000033/evidence/green.txt",
+      "oracle": "katas/KATA-000033/evidence/oracle.txt",
+      "ci": "katas/KATA-000033/evidence/ci.txt",
+      "skill_review": "katas/KATA-000033/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Node 22.16.0, TypeScript tsc, Python 3.13",
+      "red": "compilable stub failed with behavioral ASSERT",
+      "green": "23 original fixed cases",
+      "differential_cases": 816,
+      "ci_pending": true
     }
   },
   {

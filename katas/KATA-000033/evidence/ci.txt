@@ -1,0 +1,1 @@
+Local tests passed on authoring container; remote GitHub CI pending. Do not count as verified or published before exact-head CI success and reviewed merge.

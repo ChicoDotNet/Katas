@@ -1,0 +1,1 @@
+Local tsc isolated RED stub compiled; running the same 23-case TypeScript acceptance suite failed with 'ASSERT behavior' (expected: empty stack instead of arithmetic result). Behavioral RED; no compiler error.

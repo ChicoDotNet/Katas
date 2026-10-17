@@ -34,3 +34,7 @@ The hourly agent must **never require `gh`**. First detect tools, checkout, remo
 4. Never require installing an external CLI to continue; do not invent commits, build outcomes, pushes or PR numbers.
 
 This policy applies to unattended hourly executions and interactive work alike.
+
+## Stable main cadence (every 18 published)
+
+Mandatory dev→main promotion milestones: 18, 36, 54, 72, 90, then each further multiple of 18 after the separate pilot gate. Keep main-only commits through reconciliation and use exact-head CI; promotion CI does not block development of the next kata. See docs/promotion-main.md and tools/release_milestones.py.
