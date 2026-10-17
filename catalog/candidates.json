@@ -509,7 +509,7 @@
     "difficulty_evidence": "provisional: difficult cross-frame strike/spare look-ahead",
     "score": 88,
     "score_evidence": "single reviewer provisional; see kata README",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "Unlicense",
       "verified": true,
@@ -537,13 +537,28 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "behavior": 8,
       "differential_cases": 600,
       "red_behavioral": true,
       "ci_pending": true
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39044492709",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39044492653",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "166aa60ddec14ab3612404821edcc36f2578d3b5"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/13",
+      "commit_sha": "b71b1a43820db3df79be4e66218f62b2f104a234",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -584,7 +599,7 @@
     "difficulty_evidence": "Kata-Log Experienced; category boundary rules, special item handling, provisional author score 5",
     "score": 92,
     "score_evidence": "Provisional author weighted rubric estimate, pending independent calibration",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "Unlicense",
       "verified": true,
@@ -613,7 +628,9 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "Kotlin 1.9, Java 21, Python 3.13.5",
@@ -621,6 +638,19 @@
       "green": "11 tests",
       "differential_cases": 1445,
       "ci_pending": true
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39044492705",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39044492653",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "166aa60ddec14ab3612404821edcc36f2578d3b5"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/13",
+      "commit_sha": "b71b1a43820db3df79be4e66218f62b2f104a234",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -823,7 +853,7 @@
     "difficulty_evidence": "Kata-Log Experienced; preserving API compatibility during list expansion, provisional 4/5",
     "score": 89,
     "score_evidence": "provisional author estimate, see README",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "Unlicense",
       "verified": true,
@@ -852,7 +882,9 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "Java21, Python3.13.5",
@@ -860,6 +892,19 @@
       "differential_cases": 400,
       "red": "bulk item loss detected by isolated test variant",
       "ci_pending": true
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39044492663",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39044492653",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "166aa60ddec14ab3612404821edcc36f2578d3b5"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/13",
+      "commit_sha": "b71b1a43820db3df79be4e66218f62b2f104a234",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -1089,7 +1134,7 @@
     "difficulty_evidence": "Author provisional: time-step state machine, FIFO queue, arrival events; no external calibration",
     "score": 89,
     "score_evidence": "single-reviewer provisional, see kata README",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "Unlicense",
       "verified": true,
@@ -1118,7 +1163,9 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "Go1.23.2, Python3.13.5",
@@ -1126,6 +1173,19 @@
       "differential_cases": 300,
       "red": "specific trace mismatch",
       "ci_pending": true
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39044492659",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39044492653",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "166aa60ddec14ab3612404821edcc36f2578d3b5"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/13",
+      "commit_sha": "b71b1a43820db3df79be4e66218f62b2f104a234",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
