@@ -2476,28 +2476,51 @@
   },
   {
     "id": "KATA-000057",
-    "title": "parallel letter frequency",
+    "title": "Parallel Letter Frequency — Worker/Reducer",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/parallel-letter-frequency",
     "fingerprint": "exercism-spec-parallel-letter-frequency",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "concurrency-parallel-reduction",
+    "difficulty": 5,
+    "difficulty_evidence": "Provisional 5/5: bounded goroutines, deterministic reduction, unicode lower mapping, race detection",
+    "score": 91,
+    "score_evidence": "Provisional author score 91/100; not independently calibrated",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Conceptual link only; original Go and Python tests under MIT, no upstream copied fixtures"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Go",
+    "language_rationale": "Go goroutines and channels support independent per-worker maps; Python Counter oracle, Erlang alternative not locally installed",
+    "evidence": {
+      "red": "katas/KATA-000057/evidence/red.txt",
+      "green": "katas/KATA-000057/evidence/green.txt",
+      "oracle": "katas/KATA-000057/evidence/oracle.txt",
+      "ci": "katas/KATA-000057/evidence/ci.txt",
+      "skill_review": "katas/KATA-000057/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Go1.23 go test -race, Python3",
+      "red": "wrong empty result triggers behavior failure",
+      "green": "Go unit tests and race detector",
+      "differential_cases": 907,
+      "ci_pending": true
     }
   },
   {
