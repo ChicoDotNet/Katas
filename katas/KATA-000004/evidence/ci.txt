@@ -1,0 +1,4 @@
+Status: pending remote CI at initial PR.
+Validation workflow: .github/workflows/erlang-katas.yml.
+Previous language-family regressions are expected through independent workflows (PHP, Fortran and Java), and catalog validator runs on PR changes.
+No Erlang runtime was installed in the local authoring container; only GitHub-hosted CI may certify GREEN.

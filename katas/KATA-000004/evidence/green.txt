@@ -1,0 +1,3 @@
+Planned GREEN — not yet remotely verified.
+Expected: PASS: 13 Erlang behavior, boundary and validation assertions
+Run source example expecting 5 visits, 2nd example expecting never, zero-based initial encounter counted as first visit, time cap and invalid routes.

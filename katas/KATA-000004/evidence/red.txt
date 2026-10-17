@@ -1,0 +1,2 @@
+Planned behavior RED — not yet remotely verified.
+Compile tests/red_stub/gossip.erl with tests/gossip_tests.erl to the isolated RED build directory. The stub always returns never, including the source case whose correct answer is 5. The test harness must exit nonzero with assertion_failed. CI checks the reason, not just a failure code.
