@@ -1434,7 +1434,7 @@
     "difficulty_evidence": "Provisional difficulty 5/5: state-space optimization with item single-use invariant, descending-capacity updates and zero-weight boundaries; not independently calibrated.",
     "score": 90,
     "score_evidence": "Author provisional 90/100, see kata README; not independently calibrated.",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "MIT",
       "verified": true,
@@ -1462,14 +1462,29 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "GNU Fortran 14.2 -std=f2018 -Werror + Python 3.13",
       "green": "8 acceptance cases",
       "red": "compilable incorrect implementation failed a behavioral check",
       "differential_cases": 500,
-      "ci_pending": true
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39053449971",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39053449994",
+      "catalog_validation_conclusion": "success",
+      "verified_code_sha": "2193635a366574c6a9efa4486a64b7ca04034bf0"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/24",
+      "commit_sha": "44ba73aefc23b7d712bb1a5ea966c3d711503c80",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -1682,28 +1697,51 @@
   },
   {
     "id": "KATA-000044",
-    "title": "dominoes",
+    "title": "Dominoes — Closed Euler Tour",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/dominoes",
     "fingerprint": "exercism-spec-dominoes",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "multigraph-eulerian-traversal",
+    "difficulty": 5,
+    "difficulty_evidence": "Author provisional 5/5: Euler cycle, connectivity, loops and multigraph identity; not population-calibrated",
+    "score": 93,
+    "score_evidence": "Single-author provisional 93/100 in kata README; independent calibration pending",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Metadata and conceptual link only; original Go code and independent Python tests under root MIT, no upstream assets copied"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Go",
+    "language_rationale": "Go adjacency graph with edge indices + Hierholzer O(E+V), Python independent exponential backtracking oracle; Prolog and Ruby considered",
+    "evidence": {
+      "red": "katas/KATA-000044/evidence/red.txt",
+      "green": "katas/KATA-000044/evidence/green.txt",
+      "ci": "katas/KATA-000044/evidence/ci.txt",
+      "oracle": "katas/KATA-000044/evidence/oracle.txt",
+      "skill_review": "katas/KATA-000044/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Go toolchain (local) + Python 3",
+      "red": "wrong-but-compilable implementation fails behavioral test",
+      "green": "10 named cases plus validation/immutability",
+      "differential_cases": 952,
+      "ci_pending": true
     }
   },
   {

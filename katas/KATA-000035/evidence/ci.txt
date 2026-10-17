@@ -1,1 +1,5 @@
 Local GREEN and independent reference confirmed. GitHub Actions remote certification pending. Do not declare verified or published until exact-head CI success and reviewed merge.
+
+Official exact-head PR #24 successful workflow: https://github.com/ChicoDotNet/Katas/actions/runs/39053449971
+Catalog validation: https://github.com/ChicoDotNet/Katas/actions/runs/39053449994
+Merged into dev as https://github.com/ChicoDotNet/Katas/pull/24 (44ba73aefc23b7d712bb1a5ea966c3d711503c80).

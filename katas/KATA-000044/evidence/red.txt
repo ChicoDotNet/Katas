@@ -1,0 +1,1 @@
+Local Go: wrong-but-compilable kata_red variant fails multiple behavior assertions (e.g. single edge wrong possibility, loop invalid chain). Exit status 1; no compilation-only failure.
