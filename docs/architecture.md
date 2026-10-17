@@ -43,3 +43,9 @@ El cron de GitHub solo funciona desde la rama **default main**, no desde una fea
 3. Persistir exclusión mutua y recuperación de runs omitidos.
 4. Añadir oráculos independientes, medición de tokens, tiempos y complejidad.
 5. Crear PRs de katas completos y un dashboard longitudinal.
+
+## Canal separado: tarea ChatGPT recurrente
+
+A partir del **2026-10-19**, existe una tarea recurrente de ChatGPT solicitada para lunes-viernes, a las **08:00, 09:00, ..., 17:00**, zona `America/Mexico_City`, con instrucciones de avanzar EXP-001 utilizando las integraciones disponibles. Esta tarea es **independiente** de `.github/workflows/hourly-kata.yml` y no constituye autorización implícita para saltar PRs, ejecutar código inseguro, copiar enunciados o declarar katas resueltas. Las capacidades de escritura y ejecución efectivamente disponibles en cada corrida deben verificarse en ese momento. Si no puede actuar, debe reportarlo sin fingir éxito.
+
+El workflow GitHub, por separado, está preparado para **08:17–17:17**, pero solo podrá dispararse tras promoción a `main` (la rama predeterminada); genera planes y artefactos, sin agente LLM interno. No deben contabilizarse esos dos disparadores como veinte intentos de resolución independientes.
