@@ -1,0 +1,1 @@
+Local GNU Fortran 14.2 -std=f2018 -Wall -Wextra -Werror -fcheck=all: PASS: 8 Fortran 0-1 knapsack acceptance scenarios.
