@@ -1,6 +1,6 @@
 # Ninja Language-Agnostic Developer
 
-Version: **0.1.25**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
+Version: **0.1.26**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
 
 ## Misión
 
@@ -79,6 +79,8 @@ Resolver problemas inéditos con corrección, claridad, eficiencia y mantenibili
 - **OBS-025, KATA-000045 (Go, Two Bucket):** verificar por separado la optimalidad del número de operaciones y la legalidad de la secuencia testigo. Modelar explícitamente la primera acción obligatoria y los estados prohibidos; no considerar válido un mínimo alcanzado mediante transiciones ilegales. [Evidencia](../katas/KATA-000045/evidence/skill_review.md). Observación local sin prueba de transferencia.
 
 - **OBS-026, KATA-000052 (TypeScript, Zipper):** editar árboles persistentes mediante foco y breadcrumbs que preservan hermanos y contexto, reconstruyendo padres sin mutar versiones anteriores. Contrastar contra un editor independiente por rutas en el árbol completo. [Evidencia](../katas/KATA-000052/evidence/skill_review.md). Observación individual sin evidencia causal de mejora de Ninja.
+
+- **OBS-027, KATA-000050 (Fortran, Killer Sudoku Helper):** cuando el espacio de estados es diminuto (nueve dígitos, 2^9 subconjuntos) una enumeración exhaustiva con máscaras explícitas puede ser más transparente y verificable que una poda sofisticada. Contrastarla con combinaciones matemáticas independientes, validar exclusiones e imposibilidad y no extrapolar esta solución a espacios grandes. [Evidencia](../katas/KATA-000050/evidence/skill_review.md). Observación puntual, sin transferencia medida.
 
 **Hipótesis transversal bajo estudio:** hacer explícitas las fronteras entre estado, nondeterminismo y presentación facilita construir oráculos independientes para problemas de distintas familias. Dos ejemplos no prueban que acelere a Ninja ni que generalice universalmente. Evitar convertirla en regla prescriptiva hasta validación.
 

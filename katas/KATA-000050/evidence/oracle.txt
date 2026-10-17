@@ -1,0 +1,1 @@
+Local Fortran/Python: PASS: 2525 independent Killer Sudoku cage combinations from itertools.combinations.

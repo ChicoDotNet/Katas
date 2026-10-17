@@ -1,0 +1,1 @@
+Local gfortran -std=f2018 -Wall -Wextra -Werror -fcheck=all: KATA_RED=1 compiled then failed behaviorally on unexpected combination count.

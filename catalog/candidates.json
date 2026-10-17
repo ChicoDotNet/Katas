@@ -2157,28 +2157,51 @@
   },
   {
     "id": "KATA-000050",
-    "title": "killer sudoku helper",
+    "title": "Killer Sudoku Helper — Constraint Subsets",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/killer-sudoku-helper",
     "fingerprint": "exercism-spec-killer-sudoku-helper",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "bounded-constraint-combinatorics",
+    "difficulty": 4,
+    "difficulty_evidence": "Provisional author 4/5: bitmasks, forbidden digits, exhaustive combination and stable ordering",
+    "score": 89,
+    "score_evidence": "Author provisional 89/100, independent calibration pending",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Upstream conceptual reference only; original Fortran and independent Python source MIT, no starter or canonical tests copied"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Fortran",
+    "language_rationale": "Fortran2018 popcnt/btest and compact bounded numeric enumeration with strict compiler checking; Python independent itertools.combinations; Julia/Prolog considered but unavailable locally",
+    "evidence": {
+      "red": "katas/KATA-000050/evidence/red.txt",
+      "green": "katas/KATA-000050/evidence/green.txt",
+      "oracle": "katas/KATA-000050/evidence/oracle.txt",
+      "ci": "katas/KATA-000050/evidence/ci.txt",
+      "skill_review": "katas/KATA-000050/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "GNU Fortran -std=f2018 -Werror -fcheck=all and Python3",
+      "red": "compiled incorrect variant fails expected count",
+      "green": "12 accepted combinations and 2 invalid inputs",
+      "differential_cases": 2525,
+      "ci_pending": true
     }
   },
   {

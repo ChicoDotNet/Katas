@@ -1,0 +1,34 @@
+name: Fortran Killer Sudoku kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000050/**'
+      - '.github/workflows/fortran-killer-sudoku-kata.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000050/**'
+      - '.github/workflows/fortran-killer-sudoku-kata.yml'
+permissions:
+  contents: read
+jobs:
+  cages:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install GNU Fortran
+        run: sudo apt-get update && sudo apt-get install -y gfortran
+      - name: RED GREEN and independent combinatorial reference
+        working-directory: katas/KATA-000050
+        shell: bash
+        run: |
+          set -euo pipefail
+          gfortran -std=f2018 -Wall -Wextra -Werror -fcheck=all -J /tmp -I /tmp src/cages.f90 tests/test_cages.f90 -o /tmp/killer-test
+          /tmp/killer-test
+          gfortran -std=f2018 -Wall -Wextra -Werror -fcheck=all -J /tmp -I /tmp src/cages.f90 src/main.f90 -o /tmp/killer-cli
+          python3 tests/differential.py /tmp/killer-cli
+          if KATA_RED=1 /tmp/killer-test >/tmp/killer-red.log 2>&1; then echo 'Unexpected RED GREEN' >&2; exit 1; fi
+          grep -q 'FAIL behavioral assertion' /tmp/killer-red.log
