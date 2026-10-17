@@ -2,6 +2,8 @@
 
 Laboratorio público de katas multilenguaje, pruebas ejecutables y aprendizaje acumulativo. El producto principal es el skill vivo [Ninja](skills/ninja-language-agnostic-developer.md); cada solución es evidencia, no solo una respuesta.
 
+**Estado verificado: 8/90 publicadas en `dev`, catálogo de 31 candidatas del primer barrido de Kata-Log y Ninja v0.1.7.** Cuatro nuevas katas (Go, Ruby, C++20 y Swift) se desarrollaron secuencialmente mientras CI corría en paralelo; se verificaron posteriormente antes del merge. Ver [política de superposición de CI](docs/pipeline-v2.md).
+
 ## Programa registrado
 
 - **Censo de planeación:** 55,659 entradas preliminares (aún sin deduplicación o auditoría integral de permisos).

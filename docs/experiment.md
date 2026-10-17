@@ -1,6 +1,6 @@
 # EXP-001: piloto hardest-first del 0.16%
 
-Estado: **protocolo preregistrado; experimento todavía no ejecutado**. Fecha: 2026-10-17.
+Estado: **experimento en ejecución (8/90 katas publicadas); el protocolo original se conserva más abajo**. Fecha inicial: 2026-10-17. La actualización de estado no cambia los umbrales preregistrados. La publicación de cuatro katas con CI superpuesta se hizo en PR #11; catálogo ampliado de 4 a 31.
 
 ## Pregunta
 

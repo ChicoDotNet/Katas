@@ -224,7 +224,7 @@
     "difficulty_evidence": "Kata-Log Experienced; incrementally navigated geometry, validation and obstacle semantics. Provisional author 5/5.",
     "score": 90,
     "score_evidence": "Single-reviewer provisional score detailed in README, pending calibration",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "Unlicense",
       "verified": true,
@@ -253,7 +253,9 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "Go 1.23.2 + Python 3.13.5",
@@ -261,7 +263,26 @@
       "red": "go test -tags kata_red ./... nonzero expected assertion",
       "differential_cases": 360,
       "checked": "2026-10-17",
-      "ci_pending": true
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39024426143",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39024426023",
+      "catalog_validation_conclusion": "success",
+      "exact_head": "68a945d7e3d3d944db27889581dcbf766fe2dbc6",
+      "other_regressions": [
+        "39024426011",
+        "39024426001",
+        "39024425984",
+        "39024426025"
+      ]
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/11",
+      "commit_sha": "be136d41c62590d53edfc0eb1c991c7c7ca37975",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -275,7 +296,7 @@
     "difficulty_evidence": "Kata-Log Experienced. Provisional 5/5 for time/percent/money and ports interactions.",
     "score": 91,
     "score_evidence": "Single-reviewer rubric, pending calibration, described in README",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "Unlicense",
       "verified": true,
@@ -304,14 +325,35 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "Ruby 3.3.8, Python 3.13.5",
       "minitest": "7 runs, 23 assertions, 0 failures",
       "differential_cases": 334,
       "red": "behavioral failure confirmed",
-      "ci_pending": true
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39024426000",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39024426023",
+      "catalog_validation_conclusion": "success",
+      "exact_head": "68a945d7e3d3d944db27889581dcbf766fe2dbc6",
+      "other_regressions": [
+        "39024426011",
+        "39024426001",
+        "39024425984",
+        "39024426025"
+      ]
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/11",
+      "commit_sha": "be136d41c62590d53edfc0eb1c991c7c7ca37975",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -325,7 +367,7 @@
     "difficulty_evidence": "Kata-Log Experienced; anemic domain-model refactor/behavioral parity provisional 5/5.",
     "score": 89,
     "score_evidence": "Author-only provisional 89/100, documented kata README, calibration outstanding",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "Unlicense",
       "verified": true,
@@ -354,14 +396,35 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "GCC 14.2.0 -std=c++20 -Werror; Python 3.13.5",
       "green": "domain lifecycle and parity assertions passed",
       "differential_cases": 420,
       "red": "behavioral failure verified",
-      "ci_pending": true
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39024426045",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39024426023",
+      "catalog_validation_conclusion": "success",
+      "exact_head": "68a945d7e3d3d944db27889581dcbf766fe2dbc6",
+      "other_regressions": [
+        "39024426011",
+        "39024426001",
+        "39024425984",
+        "39024426025"
+      ]
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/11",
+      "commit_sha": "be136d41c62590d53edfc0eb1c991c7c7ca37975",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -375,7 +438,7 @@
     "difficulty_evidence": "Kata-Log Experienced; scoring with self-driving entrants and legacy compatibility, provisional 5/5.",
     "score": 88,
     "score_evidence": "Author's uncalibrated rating documented in README",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "Unlicense",
       "verified": true,
@@ -404,14 +467,35 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "Swift 6.2.1, Python 3.13.5",
       "green": "8 behavioral scoring and validation assertions",
       "differential_cases": 300,
       "red": "Swift compilation successful, expected behavioral failure",
-      "ci_pending": true
+      "ci_pending": false
+    },
+    "verification": {
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39024426063",
+      "workflow_conclusion": "success",
+      "catalog_validation_url": "https://github.com/ChicoDotNet/Katas/actions/runs/39024426023",
+      "catalog_validation_conclusion": "success",
+      "exact_head": "68a945d7e3d3d944db27889581dcbf766fe2dbc6",
+      "other_regressions": [
+        "39024426011",
+        "39024426001",
+        "39024425984",
+        "39024426025"
+      ]
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/11",
+      "commit_sha": "be136d41c62590d53edfc0eb1c991c7c7ca37975",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
