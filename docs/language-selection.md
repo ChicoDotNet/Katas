@@ -23,6 +23,10 @@ Una implementación incluso verificada o publicada **puede reemplazarse por otra
 5. **El reemplazo nunca crea una nueva kata publicada:** published_katas permanece igual; tampoco mueve hitos de main cada 18 katas. La cobertura de lenguajes principales puede subir o bajar, según se mantenga o pierda la última kata del lenguaje antiguo. Conservar además el historial de exploraciones anteriores sin contarlas dos veces.
 
 Reevaluar el lenguaje no implica descartar evidencia de una solución original: implica preservar su historia y exigir **certificación completa e independiente** para la sustituta.
+## Selección independiente de lenguajes de pruebas y oráculos
+
+El lenguaje principal de la kata, el de tests de comportamiento y el del oráculo diferencial son **tres decisiones distintas**. Seleccionar primero la estrategia que mejor detecta errores y luego el lenguaje en que se expresa de forma más rigurosa. Los 26 ejercicios publicados usan actualmente Python para oráculos diferenciales: **no convertir esta contingencia en una norma**. Se permiten oráculos en el propio lenguaje si usan un modelo o algoritmo independiente, o verificaciones cruzadas con otros lenguajes de Genkidama. Exigir justificar alternativas y riesgos compartidos en cada README según [oracle-selection.md](oracle-selection.md). No cuotas de idiomas ni Python por defecto.
+
 ## Protocolo obligatorio antes de comenzar código
 
 1. Caracterizar el problema: dominio, invariantes, representación, fallos, complejidad y qué merece probar.
