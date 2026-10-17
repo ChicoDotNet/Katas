@@ -1,0 +1,31 @@
+# Dependabot reads this file from the repository's default branch (main).
+# All Dependabot version-update PRs target stable main (the default branch).
+# Security update PRs remain governed separately by repository security settings.
+version: 2
+
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "America/Mexico_City"
+    open-pull-requests-limit: 3
+    groups:
+      workflow-actions:
+        patterns: ["*"]
+
+  - package-ecosystem: "gomod"
+    # Match Go modules in existing and future single-level kata directories.
+    directories:
+      - "/katas/*"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:15"
+      timezone: "America/Mexico_City"
+    open-pull-requests-limit: 3
+    groups:
+      go-modules:
+        patterns: ["*"]
