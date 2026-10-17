@@ -372,23 +372,46 @@
     "fingerprint": "race-leaderboard-self-driving-competitor-ranking",
     "domain": "legacy-refactoring",
     "difficulty": 5,
-    "difficulty_evidence": "Provisional triage only: Experienced; separate sources and preserve scoring interfaces",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "difficulty_evidence": "Kata-Log Experienced; scoring with self-driving entrants and legacy compatibility, provisional 5/5.",
+    "score": 88,
+    "score_evidence": "Author's uncalibrated rating documented in README",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "Unlicense",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/race-car-katas-leaderboard",
+      "scope": "Kata-Log page PD, original independently authored Swift implementation MIT; no external legacy starters imported"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Swift",
+    "language_rationale": "Swift 6 optionals model autonomous/no driver and immutable ranking values; Python oracle independent, Scala/Kotlin alternative",
+    "evidence": {
+      "red": "katas/KATA-000008/evidence/red.txt",
+      "green": "katas/KATA-000008/evidence/green.txt",
+      "oracle": "katas/KATA-000008/evidence/oracle.txt",
+      "ci": "katas/KATA-000008/evidence/ci.txt",
+      "skill_review": "katas/KATA-000008/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "date": "2026-10-17",
       "listing": "https://kata-log.rocks/",
       "audit": "rights, oracle and difficulty require item-specific review",
       "scan_id": "kata-log-index-20261017-v1"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Swift 6.2.1, Python 3.13.5",
+      "green": "8 behavioral scoring and validation assertions",
+      "differential_cases": 300,
+      "red": "Swift compilation successful, expected behavioral failure",
+      "ci_pending": true
     }
   },
   {
