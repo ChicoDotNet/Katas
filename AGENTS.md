@@ -7,7 +7,7 @@
 5. Durante el piloto aplicar hardest-first **entre candidatas elegibles**. En el corte de 90 publicadas ejecutar gate; si falta evidencia, no continuar automáticamente.
 6. Cada kata requiere revisión del Ninja con resultado incorporated, confirmed, no_change o rejected. Observaciones individuales no son principios universales.
 7. Preservar RED fallido por el motivo correcto, GREEN, revisión independiente, refactorización y CI.
-8. Una rama kata/ID-descripcion por desafío, PR a dev, no escribir directamente en main. Dev a main por promoción revisable.
+8. Una rama kata/ID-descripcion por desafío y PR hacia dev usando **squash merge**. dev a main mediante PR de promoción certificada y **squash merge**; después, sincronización main a dev con un **merge commit** exclusivamente si no cambia el árbol. No escribir directamente en ramas protegidas lógicamente.
 9. Código desconocido se ejecuta solo en runners efímeros sin secretos ni permisos privilegiados, idealmente sin acceso a la red. No usar runners self-hosted persistentes para códigos públicos ajenos.
 10. Si se agota la ejecución, conservar checkpoint; nunca aprobar ficticiamente por cumplir cadencia.
 11. Revisar Genkidama Learn/eng/ci/registry.json, run-family, adapters y Polyglot CI antes de crear soporte de un nuevo lenguaje; adaptar con pruebas y licencias.
@@ -19,3 +19,5 @@
 
 16. **No `gh` dependency**: check for ordinary `git`, checkout, remote and credentials. Use `git` for branches/commits/push when functional and connected GitHub tools for PR/CI or where Git is inaccessible. Missing GitHub CLI is never a blocker. Verify every claimed remote write.
 17. **CI polling is not the work queue**: once a kata is locally complete with reproducible RED/GREEN/oracle/Ninja evidence, develop the next while previous CI runs. Check workflows at reasonable checkpoints, never repeatedly poll slow JVM/Swift runners instead of writing the next eligible kata. Preserve exact-head CI certification before merge/publication.
+
+18. **Gobernanza de ramas**: seguir `docs/governance/delivery.md`. Dependabot envía PR a `main` (rama predeterminada); un PR de promoción certifica el `dev` HEAD exacto antes de squash, y el PR posterior `main → dev` solo sincroniza ancestros sin cambios de contenido. No promocionar ramas o PR con CI pendiente o rojo.
