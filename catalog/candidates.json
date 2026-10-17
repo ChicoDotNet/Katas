@@ -1271,28 +1271,51 @@
   },
   {
     "id": "KATA-000032",
-    "title": "alphametics",
+    "title": "Alphametics",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/alphametics",
     "fingerprint": "exercism-spec-alphametics",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "constraint-solving-backtracking",
+    "difficulty": 5,
+    "difficulty_evidence": "Exercism alphametics requires decimal all-different assignment, multi-digit no-leading-zero and sum carries; author-provisional 5/5, not calibrated",
+    "score": 93,
+    "score_evidence": "Author-provisional rubric 93/100, see kata README; no independent calibration",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Upstream problem-specifications repository MIT; only reference URL used. Code, tests and fixture independently authored under Katas MIT."
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Python",
+    "language_rationale": "Python3.13 column-wise constraint backtracking, reversible digit assignments and carry pruning; contrast independent permutation oracle. Prolog CLP(FD) considered but no executable confirmed in local environment.",
+    "evidence": {
+      "red": "katas/KATA-000032/evidence/red.txt",
+      "green": "katas/KATA-000032/evidence/green.txt",
+      "oracle": "katas/KATA-000032/evidence/oracle.txt",
+      "ci": "katas/KATA-000032/evidence/ci.txt",
+      "skill_review": "katas/KATA-000032/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Python 3.13.5",
+      "green": "6 unittest groups",
+      "differential_cases": 84,
+      "red": "test_send_more_money assertion failed with deliberately empty assignment",
+      "ci_pending": true
     }
   },
   {

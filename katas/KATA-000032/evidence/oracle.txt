@@ -1,0 +1,1 @@
+Local Python 3.13.5: PASS: 84 independent exhaustive permutation-oracle scenarios.
