@@ -1,6 +1,6 @@
 # Ninja Language-Agnostic Developer
 
-Version: **0.1.12**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
+Version: **0.1.13**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
 
 ## Misión
 
@@ -53,6 +53,8 @@ Resolver problemas inéditos con corrección, claridad, eficiencia y mantenibili
 - **OBS-013, KATA-000019 (Java, Parallel Change):** un cambio estructural seguro expande primero la API/representación, migra consumidores de manera incremental y solo después contrae interfaces cuando existen evidencias de compatibilidad. Los tests productivos deben permanecer verdes; un RED de prueba separado comprueba que los contratos detectan pérdida de datos. Las vistas inmutables evitan mutaciones fuera del gobierno del agregado. [Evidencia](../katas/KATA-000019/evidence/skill_review.md). No se ha demostrado ganancia longitudinal del Ninja.
 
 - **OBS-014, KATA-000032 (Python, Alphametics):** explorar restricciones de suma por columnas y acarreo permite podar asignaciones combinatorias, manteniendo inyecciones de dígitos y prohibiciones de cero inicial como invariantes. Contrastar contra un algoritmo independiente de permutaciones es importante porque una kata puede tener varias soluciones igualmente correctas. Una prueba inicialmente incorrecta asumía que una palabra de una letra no podía valer cero; fue corregida contra la especificación antes de validar GREEN. [Evidencia](../katas/KATA-000032/evidence/skill_review.md). No se ha demostrado mejora longitudinal del Ninja.
+
+- **OBS-015, KATA-000033 (TypeScript, Forth):** al permitir redefiniciones de palabras en un lenguaje de pila, capturar (expandir) las referencias al definir una palabra impide que cambios posteriores muten semánticas anteriores de forma retroactiva. Proteger límites de aridad, división, valores enteros y aislación de estado. El oráculo independiente interpreta tokens Python, mientras el intérprete TypeScript ejecuta instrucciones tipadas; 816 programas locales coincidieron. [Evidencia](../katas/KATA-000033/evidence/skill_review.md). No confundir esta observación con una mejora longitudinal demostrada.
 
 **Hipótesis transversal bajo estudio:** hacer explícitas las fronteras entre estado, nondeterminismo y presentación facilita construir oráculos independientes para problemas de distintas familias. Dos ejemplos no prueban que acelere a Ninja ni que generalice universalmente. Evitar convertirla en regla prescriptiva hasta validación.
 
