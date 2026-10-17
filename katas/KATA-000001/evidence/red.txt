@@ -1,0 +1,6 @@
+Behavioral RED was executed on GitHub-hosted JDK 25 for initial PR head 2539984e4b18552453b435d53d9fbd89dc51d0e1.
+Command: java -cp /tmp/trivia-red TestTrivia
+Exit status: nonzero (expected); specific assertion marker verified via grep:
+  refactored behavioral golden master mismatch
+The deliberately incorrect but compilable RedStub returns a different transcript.
+Evidence: https://github.com/ChicoDotNet/Katas/actions/runs/39021656637
