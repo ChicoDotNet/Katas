@@ -559,24 +559,47 @@
     "source_url": "https://kata-log.rocks/gilded-rose-kata",
     "fingerprint": "inventory-quality-aging-rules",
     "domain": "refactoring-and-rules",
-    "difficulty": 4,
-    "difficulty_evidence": "Provisional triage only: Refactoring exercise; starter rights require separate review",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "difficulty": 5,
+    "difficulty_evidence": "Kata-Log Experienced; category boundary rules, special item handling, provisional author score 5",
+    "score": 92,
+    "score_evidence": "Provisional author weighted rubric estimate, pending independent calibration",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "Unlicense",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/gilded-rose-kata",
+      "scope": "Kata-Log own page PD; original Kotlin source MIT; no external starter code imported"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Kotlin",
+    "language_rationale": "Pure immutable Kotlin data class item transitions expose category rules; alternatives Pascal/COBOL/Fortran considered; independent oracle Python",
+    "evidence": {
+      "red": "katas/KATA-000011/evidence/red.txt",
+      "green": "katas/KATA-000011/evidence/green.txt",
+      "oracle": "katas/KATA-000011/evidence/oracle.txt",
+      "ci": "katas/KATA-000011/evidence/ci.txt",
+      "skill_review": "katas/KATA-000011/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "date": "2026-10-17",
       "listing": "https://kata-log.rocks/",
       "audit": "rights, oracle and difficulty require item-specific review",
       "scan_id": "kata-log-index-20261017-v1"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Kotlin 1.9, Java 21, Python 3.13.5",
+      "red": "behavioral exception confirmed",
+      "green": "11 tests",
+      "differential_cases": 1445,
+      "ci_pending": true
     }
   },
   {

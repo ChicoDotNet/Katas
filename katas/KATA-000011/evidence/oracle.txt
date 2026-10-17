@@ -1,0 +1,1 @@
+Local Kotlin vs independent Python rule oracle: PASS: 1445 Kotlin/Python differential inventory transitions.

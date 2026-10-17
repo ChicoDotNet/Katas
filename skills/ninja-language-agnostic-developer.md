@@ -1,6 +1,6 @@
 # Ninja Language-Agnostic Developer
 
-Version: **0.1.7**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
+Version: **0.1.8**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
 
 ## Misión
 
@@ -43,6 +43,8 @@ Resolver problemas inéditos con corrección, claridad, eficiencia y mantenibili
 - **OBS-008, KATA-000007 (C++20, Tell Don't Ask):** encapsular las transiciones e invariantes junto al estado del dominio, en lugar de mutar estructuras anémicas desde controladores, permite expresar restricciones como «no enviar antes de aprobar» y «no modificar después de cerrar». Verificar la equivalencia legado/refactor y además contrastar un oráculo de transiciones independiente: la sola igualdad entre dos implementaciones podría preservar los mismos defectos. [Evidencia](../katas/KATA-000007/evidence/skill_review.md). Observación individual, no ganancia de rendimiento comprobada.
 
 - **OBS-009, KATA-000008 (Swift, Race Car Leaderboard):** la ausencia de un atributo (conductor humano) puede ser un **dato significativo**: vehículos autónomos siguen ocupando puestos y alteran la puntuación de otros. Evitar filtrar valores nulos antes de entender su semántica de negocio. Desempates y tablas de puntos no especificadas requieren decisiones visibles y pruebas. [Evidencia](../katas/KATA-000008/evidence/skill_review.md). Observación de un caso original, no norma general probada.
+
+- **OBS-010, KATA-000011 (Kotlin, Gilded Rose):** modelar reglas especiales de negocio como transformaciones puras y probar discontinuidades temporales en los límites antes/después de cada umbral; contrastar con un oráculo por tabla de reglas independiente. Es una observación individual y no una mejora general de velocidad validada. [Evidencia](../katas/KATA-000011/evidence/skill_review.md).
 
 **Hipótesis transversal bajo estudio:** hacer explícitas las fronteras entre estado, nondeterminismo y presentación facilita construir oráculos independientes para problemas de distintas familias. Dos ejemplos no prueban que acelere a Ninja ni que generalice universalmente. Evitar convertirla en regla prescriptiva hasta validación.
 

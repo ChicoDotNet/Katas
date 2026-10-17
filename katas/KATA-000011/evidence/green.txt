@@ -1,0 +1,1 @@
+Local JDK21/Kotlin1.9: PASS: 11 Gilded Rose behavioral assertions.
