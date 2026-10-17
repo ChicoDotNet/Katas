@@ -12,5 +12,17 @@
       "https://github.com/exercism/problem-specifications",
       "https://projecteuler.net/archives"
     ]
+  },
+  {
+    "scan_id": "exercism-20261017-part1",
+    "source": "https://github.com/exercism/problem-specifications/tree/main/exercises",
+    "source_index_count": 152,
+    "processed_into_catalog": 30,
+    "added": 30,
+    "prior_count": 31,
+    "after_count": 61,
+    "scope": "prioritized partial scan; remaining source items need later passes",
+    "license_note": "repo root MIT; per-artifact review required before reproduction",
+    "date": "2026-10-17"
   }
 ]

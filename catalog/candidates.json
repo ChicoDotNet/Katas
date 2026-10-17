@@ -1118,5 +1118,785 @@
       "audit": "rights, oracle and difficulty require item-specific review",
       "scan_id": "kata-log-index-20261017-v1"
     }
+  },
+  {
+    "id": "KATA-000032",
+    "title": "alphametics",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/alphametics",
+    "fingerprint": "exercism-spec-alphametics",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000033",
+    "title": "forth",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/forth",
+    "fingerprint": "exercism-spec-forth",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000034",
+    "title": "zebra puzzle",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/zebra-puzzle",
+    "fingerprint": "exercism-spec-zebra-puzzle",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000035",
+    "title": "knapsack",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/knapsack",
+    "fingerprint": "exercism-spec-knapsack",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000036",
+    "title": "poker",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/poker",
+    "fingerprint": "exercism-spec-poker",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000037",
+    "title": "react",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/react",
+    "fingerprint": "exercism-spec-react",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000038",
+    "title": "rest api",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/rest-api",
+    "fingerprint": "exercism-spec-rest-api",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000039",
+    "title": "sgf parsing",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/sgf-parsing",
+    "fingerprint": "exercism-spec-sgf-parsing",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000040",
+    "title": "custom set",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/custom-set",
+    "fingerprint": "exercism-spec-custom-set",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000041",
+    "title": "linked list",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/linked-list",
+    "fingerprint": "exercism-spec-linked-list",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000042",
+    "title": "tree building",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/tree-building",
+    "fingerprint": "exercism-spec-tree-building",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000043",
+    "title": "diffie hellman",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/diffie-hellman",
+    "fingerprint": "exercism-spec-diffie-hellman",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000044",
+    "title": "dominoes",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/dominoes",
+    "fingerprint": "exercism-spec-dominoes",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000045",
+    "title": "two bucket",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/two-bucket",
+    "fingerprint": "exercism-spec-two-bucket",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000046",
+    "title": "word search",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/word-search",
+    "fingerprint": "exercism-spec-word-search",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000047",
+    "title": "variable length quantity",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/variable-length-quantity",
+    "fingerprint": "exercism-spec-variable-length-quantity",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000048",
+    "title": "connect",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/connect",
+    "fingerprint": "exercism-spec-connect",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000049",
+    "title": "flower field",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/flower-field",
+    "fingerprint": "exercism-spec-flower-field",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000050",
+    "title": "killer sudoku helper",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/killer-sudoku-helper",
+    "fingerprint": "exercism-spec-killer-sudoku-helper",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000051",
+    "title": "spiral matrix",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/spiral-matrix",
+    "fingerprint": "exercism-spec-spiral-matrix",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000052",
+    "title": "zipper",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/zipper",
+    "fingerprint": "exercism-spec-zipper",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000053",
+    "title": "pov",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/pov",
+    "fingerprint": "exercism-spec-pov",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000054",
+    "title": "satellite",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/satellite",
+    "fingerprint": "exercism-spec-satellite",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000055",
+    "title": "binary search tree",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/binary-search-tree",
+    "fingerprint": "exercism-spec-binary-search-tree",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000056",
+    "title": "circular buffer",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/circular-buffer",
+    "fingerprint": "exercism-spec-circular-buffer",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000057",
+    "title": "parallel letter frequency",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/parallel-letter-frequency",
+    "fingerprint": "exercism-spec-parallel-letter-frequency",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000058",
+    "title": "ledger",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/ledger",
+    "fingerprint": "exercism-spec-ledger",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000059",
+    "title": "robot name",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/robot-name",
+    "fingerprint": "exercism-spec-robot-name",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000060",
+    "title": "grep",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/grep",
+    "fingerprint": "exercism-spec-grep",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
+  },
+  {
+    "id": "KATA-000061",
+    "title": "micro blog",
+    "source_id": "exercism",
+    "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/micro-blog",
+    "fingerprint": "exercism-spec-micro-blog",
+    "domain": "not_yet_classified",
+    "difficulty": 0,
+    "difficulty_evidence": "not yet audited",
+    "score": 0,
+    "score_evidence": "not_evaluated",
+    "status": "discovered",
+    "license": {
+      "id": "UNKNOWN",
+      "verified": false,
+      "evidence_url": ""
+    },
+    "language": "",
+    "language_rationale": "",
+    "evidence": {},
+    "discovery": {
+      "source_scan": "exercism-20261017-part1",
+      "date": "2026-10-17",
+      "note": "metadata only; no exercises copied"
+    }
   }
 ]
