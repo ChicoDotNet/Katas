@@ -1,0 +1,25 @@
+name: Perl SGF parsing kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths: ['katas/KATA-000039/**', '.github/workflows/perl-sgf-kata.yml', 'catalog/**']
+  push:
+    branches: [dev, main]
+    paths: ['katas/KATA-000039/**', '.github/workflows/perl-sgf-kata.yml']
+permissions:
+  contents: read
+jobs:
+  parser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Core Perl RED, GREEN and generated Python oracle
+        working-directory: katas/KATA-000039
+        shell: bash
+        run: |
+          set -euo pipefail
+          perl -Ilib tests/test_sgf.t
+          if KATA_RED=1 perl -Ilib tests/test_sgf.t >/tmp/sgf-red.log 2>&1; then echo 'Behavioral RED unexpectedly passed' >&2; exit 1; fi
+          grep -q 'not ok 1' /tmp/sgf-red.log
+          python3 tests/differential.py cli.pl

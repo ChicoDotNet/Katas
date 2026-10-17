@@ -1567,28 +1567,51 @@
   },
   {
     "id": "KATA-000039",
-    "title": "sgf parsing",
+    "title": "SGF Tree Parsing",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/sgf-parsing",
     "fingerprint": "exercism-spec-sgf-parsing",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "recursive-language-parsing",
+    "difficulty": 5,
+    "difficulty_evidence": "Provisional 5/5: recursion, branching, escapes, invalid grammars; not population calibrated",
+    "score": 91,
+    "score_evidence": "Author-only provisional 91/100 with README justification; independent calibration pending",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Only conceptual upstream link; independently authored subset parser, fixtures and generator-first Python oracle under root MIT"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Perl",
+    "language_rationale": "Perl 5 character scanner, hash/array recursive trees and core JSON::PP/Test::More; Python generator-first independent oracle. TS alternative already exercised with Forth",
+    "evidence": {
+      "red": "katas/KATA-000039/evidence/red.txt",
+      "green": "katas/KATA-000039/evidence/green.txt",
+      "oracle": "katas/KATA-000039/evidence/oracle.txt",
+      "ci": "katas/KATA-000039/evidence/ci.txt",
+      "skill_review": "katas/KATA-000039/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Perl 5 + Python 3",
+      "green": "15 Test::More assertions",
+      "red": "importable bad parser fails fixed behavior",
+      "differential_cases": 340,
+      "ci_pending": true
     }
   },
   {

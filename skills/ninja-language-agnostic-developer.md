@@ -1,6 +1,6 @@
 # Ninja Language-Agnostic Developer
 
-Version: **0.1.15**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
+Version: **0.1.16**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
 
 ## Misión
 
@@ -59,6 +59,8 @@ Resolver problemas inéditos con corrección, claridad, eficiencia y mantenibili
 - **OBS-016, KATA-000035 (Fortran, Knapsack):** el orden de actualización de un arreglo de DP determina si los objetos se reutilizan ilegalmente: recorrer capacidades en orden descendente protege la restricción 0–1, incluso con objetos sin peso. Un oráculo exhaustivo de subconjuntos encontró además una expectativa humana errónea (30 frente a 35), evitando cambiar una solución correcta para satisfacer un test falso. [Evidencia](../katas/KATA-000035/evidence/skill_review.md). 500 escenarios y ocho verificaciones locales; ninguna afirmación causal sobre mayor velocidad futura.
 
 - **OBS-016, KATA-000044 (Go, Dominoes):** para construir un ciclo euleriano de un multigrafo no basta con comprobar grados pares; exigir además conectividad entre vértices incidentes. Identificar cada arista física evita perder fichas duplicadas y usar un oráculo independiente de fuerza bruta y verificador de cadena evita falsas soluciones. [Evidencia](../katas/KATA-000044/evidence/skill_review.md). Observación individual, sin efecto de transferencia demostrado.
+
+- **OBS-017, KATA-000039 (Perl, SGF Parsing):** para verificar analizadores sintácticos, generar primero árboles semánticos esperados y después serializarlos crea un oráculo diferente de un segundo parser. Probar escapes, secuencias, ramificaciones, duplicados y rechazos malformados; asegurar que RED falla en comportamiento, no por la sintaxis de la propia fixture. [Evidencia](../katas/KATA-000039/evidence/skill_review.md). Observación individual, efecto de transferencia por medir.
 
 **Hipótesis transversal bajo estudio:** hacer explícitas las fronteras entre estado, nondeterminismo y presentación facilita construir oráculos independientes para problemas de distintas familias. Dos ejemplos no prueban que acelere a Ninja ni que generalice universalmente. Evitar convertirla en regla prescriptiva hasta validación.
 
