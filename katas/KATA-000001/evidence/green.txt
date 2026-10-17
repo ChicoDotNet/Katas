@@ -1,0 +1,4 @@
+GREEN procedure (execution must be verified by CI before promotion):
+  javac --release 21 -d /tmp/trivia-green src/*.java tests/TestTrivia.java
+  java -cp /tmp/trivia-green TestTrivia
+Expected: PASS: 3 fixed Golden Master/acceptance assertions

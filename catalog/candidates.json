@@ -7,19 +7,41 @@
     "fingerprint": "legacy-trivia-characterization-golden-master",
     "domain": "legacy-refactoring",
     "difficulty": 5,
-    "difficulty_evidence": "Kata-Log: Experienced; provisional, not independently scored",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "blocked",
+    "difficulty_evidence": "Kata-Log Experienced/Golden Master/Refactoring, provisional hardest-first 5/5; not population ranked.",
+    "score": 91,
+    "score_evidence": "KATA-000001/README.md: provisional rubric transfer 19, depth 19, oracle 14, TDD 14, novelty 8, pedagogy 9, portability 4, maintenance 4; single reviewer not independently calibrated.",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "Unlicense",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/ugly-trivia-kata",
+      "scope": "Kata-Log own public-domain description only; original Katas solution MIT; referenced upstream GPL code not imported."
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
-    "block_reason": "Kata-Log description public domain, but linked jbrains/trivia starter is GPL-3.0; no starter copied. Original clean-room equivalent and license strategy need separate audit."
+    "language": "Java",
+    "language_rationale": "Original intentionally tangled OO state machine enables Golden Master/refactor in Java (Genkidama JVM family); reject COBOL (batch emphasis), Scala (abstraction jump) and PHP (repetition of previous kata). JDK25 CI compiles --release 21.",
+    "evidence": {
+      "red": "katas/KATA-000001/evidence/red.txt",
+      "green": "katas/KATA-000001/evidence/green.txt",
+      "oracle": "katas/KATA-000001/evidence/oracle.txt",
+      "ci": "katas/KATA-000001/evidence/ci.txt",
+      "skill_review": "katas/KATA-000001/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
+    "state_history": [
+      "discovered",
+      "blocked",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "provenance": {
+      "upstream_code_url": "https://github.com/jbrains/trivia",
+      "upstream_code_license": "GPL-3.0-only",
+      "upstream_code_imported": false,
+      "clean_room_game_contract": true,
+      "not_upstream_equivalent": true
+    }
   },
   {
     "id": "KATA-000002",

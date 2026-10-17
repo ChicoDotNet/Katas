@@ -1,6 +1,0 @@
-Behavioral RED recorded locally with PHP 8.4.24.
-Command: KATA_RED=1 php tests/behavior.php
-Exit code: 1 (expected)
-Output: FAIL: outside-in ledger interactions
-Cause: Account red stub implements public operations as no-ops, so the spy ledger received no deposit or withdrawal interactions.
-This is a behavioral RED, not a compilation failure. Reproduce using tests/red_stub/Bank.php.

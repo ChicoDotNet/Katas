@@ -1,0 +1,47 @@
+WELCOME Ada
+WELCOME Bea
+TURN Ada roll=2
+MOVE Ada 2
+ASK HISTORY#1
+RIGHT Ada score=1
+TURN Bea roll=1
+MOVE Bea 1
+ASK NATURE#1
+WRONG Bea
+TURN Ada roll=5
+MOVE Ada 7
+ASK ARTS#1
+RIGHT Ada score=2
+TURN Bea roll=3
+SKIP Bea
+TURN Ada roll=4
+MOVE Ada 11
+ASK ARTS#2
+WRONG Ada
+TURN Bea roll=2
+RETURN Bea
+MOVE Bea 3
+ASK ARTS#3
+RIGHT Bea score=1
+TURN Ada roll=2
+RETURN Ada
+MOVE Ada 1
+ASK NATURE#2
+RIGHT Ada score=3
+TURN Bea roll=2
+MOVE Bea 5
+ASK NATURE#3
+RIGHT Bea score=2
+TURN Ada roll=4
+MOVE Ada 5
+ASK NATURE#4
+RIGHT Ada score=4
+TURN Bea roll=1
+MOVE Bea 6
+ASK HISTORY#2
+RIGHT Bea score=3
+TURN Ada roll=1
+MOVE Ada 6
+ASK HISTORY#3
+RIGHT Ada score=5
+WIN Ada
