@@ -1,0 +1,31 @@
+name: Mojo packed-stencil verification for Fortran Game of Life
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000003/**'
+      - '.github/workflows/mojo-life-kata.yml'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000003/**'
+      - '.github/workflows/mojo-life-kata.yml'
+permissions:
+  contents: read
+jobs:
+  mojo-life:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: prefix-dev/setup-pixi@v0.11.0
+        with:
+          pixi-version: v0.81.0
+          run-install: false
+      - name: Compile original Fortran kernel
+        run: gfortran -std=f2008 -Wall -Wextra -Werror -fcheck=all -J /tmp -I /tmp katas/KATA-000003/src/life_core.f90 katas/KATA-000003/src/life_cli.f90 -o /tmp/ninja-life-original
+      - name: Compare Mojo 1.1 packed stencil against Fortran on 678 boards
+        run: node katas/KATA-000003/tests/life_mojo_crosscheck.mjs pixi katas/KATA-000003/tests/pixi.toml katas/KATA-000003/tests/life_mojo.mojo /tmp/ninja-life-original
