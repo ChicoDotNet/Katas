@@ -1,0 +1,2 @@
+Local Python 3.13.5: python3 -m unittest discover -s tests -v
+Ran 6 tests, OK (including subcases for satisfiable, impossible and malformed puzzles).
