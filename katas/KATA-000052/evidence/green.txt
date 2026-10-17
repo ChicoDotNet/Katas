@@ -1,0 +1,1 @@
+Local tsc strict/Node22: PASS: 12 immutable zipper path, navigation and edit assertions.

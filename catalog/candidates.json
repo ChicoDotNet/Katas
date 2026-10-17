@@ -1489,54 +1489,100 @@
   },
   {
     "id": "KATA-000036",
-    "title": "poker",
+    "title": "Poker — Complete Hand Ranking",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/poker",
     "fingerprint": "exercism-spec-poker",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "combinatorial-hand-ranking",
+    "difficulty": 5,
+    "difficulty_evidence": "Author provisional 5/5: hand categories, ace-low straight and lexicographic tie breaks",
+    "score": 91,
+    "score_evidence": "Author provisional 91/100, see README, uncalibrated",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Only conceptual source link, original Ruby/independent Python under MIT, no canonical fixtures imported"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Ruby",
+    "language_rationale": "Ruby tally/group sorting and array comparison idiomatic for ranking; independent Python Counter oracle; alternatives Scala/Julia",
+    "evidence": {
+      "red": "katas/KATA-000036/evidence/red.txt",
+      "green": "katas/KATA-000036/evidence/green.txt",
+      "oracle": "katas/KATA-000036/evidence/oracle.txt",
+      "ci": "katas/KATA-000036/evidence/ci.txt",
+      "skill_review": "katas/KATA-000036/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Ruby 3.3/Python 3.13",
+      "red": "loadable empty-results stub failed behavior",
+      "green": "12 tests, 15 assertions",
+      "differential_cases": 760,
+      "ci_pending": true
     }
   },
   {
     "id": "KATA-000037",
-    "title": "react",
+    "title": "Reactive Cells — Dependency DAG",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/react",
     "fingerprint": "exercism-spec-react",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "reactive-programming",
+    "difficulty": 5,
+    "difficulty_evidence": "Author provisional 5/5: dependency DAG propagation, stable-state callback semantics, diamond graph and rollback, not calibrated",
+    "score": 93,
+    "score_evidence": "Author provisional 93/100, README; independent ratings not available",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Exercism concept referenced; no starter or canonical cases copied, all source original MIT"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "JavaScript",
+    "language_rationale": "First-class transform functions, ordered computation DAG and callbacks; Python scratch model; TypeScript and Scala alternatives considered",
+    "evidence": {
+      "red": "katas/KATA-000037/evidence/red.txt",
+      "green": "katas/KATA-000037/evidence/green.txt",
+      "oracle": "katas/KATA-000037/evidence/oracle.txt",
+      "ci": "katas/KATA-000037/evidence/ci.txt",
+      "skill_review": "katas/KATA-000037/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Node 22, Python 3.13",
+      "red": "incorrect fixture fails behaviorally",
+      "green": "10 fixed tests",
+      "differential_cases": 360,
+      "ci_pending": true
     }
   },
   {
@@ -1799,28 +1845,51 @@
   },
   {
     "id": "KATA-000045",
-    "title": "two bucket",
+    "title": "Two Bucket — Constrained Shortest Paths",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/two-bucket",
     "fingerprint": "exercism-spec-two-bucket",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "constrained-state-graph-search",
+    "difficulty": 5,
+    "difficulty_evidence": "Provisional 5/5: compulsory first action, forbidden states, optimal witness reconstruction",
+    "score": 92,
+    "score_evidence": "Author provisional 92/100; independent calibration pending",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Exercism concept reference, no imported tests, original Go and independent Python under MIT"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Go",
+    "language_rationale": "Go explicit BFS state and predecessor action trace; independent Python layered reachability, alternative Java/Prolog considered",
+    "evidence": {
+      "red": "katas/KATA-000045/evidence/red.txt",
+      "green": "katas/KATA-000045/evidence/green.txt",
+      "oracle": "katas/KATA-000045/evidence/oracle.txt",
+      "ci": "katas/KATA-000045/evidence/ci.txt",
+      "skill_review": "katas/KATA-000045/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Go 1.23.2/Python 3.13",
+      "red": "bad 1-step result caught by fixed test",
+      "green": "Go unit scenarios",
+      "differential_cases": 1200,
+      "ci_pending": true
     }
   },
   {
@@ -1953,28 +2022,51 @@
   },
   {
     "id": "KATA-000048",
-    "title": "connect",
+    "title": "Connect — Hex Connectivity",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/connect",
     "fingerprint": "exercism-spec-connect",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "hex-grid-graph-connectivity",
+    "difficulty": 5,
+    "difficulty_evidence": "Author provisional 5/5: Hex 6-neighbor geometry and two opposing edge pairs, uncalibrated",
+    "score": 92,
+    "score_evidence": "Single-reviewer provisional 92/100, see README",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Reference concept only; original C++20 code, fixtures and Python union-find oracle MIT"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "C++",
+    "language_rationale": "C++20 bounded BFS on skewed hex grid; independent Python DSU oracle; Go alternative previously explored graph problem",
+    "evidence": {
+      "red": "katas/KATA-000048/evidence/red.txt",
+      "green": "katas/KATA-000048/evidence/green.txt",
+      "oracle": "katas/KATA-000048/evidence/oracle.txt",
+      "ci": "katas/KATA-000048/evidence/ci.txt",
+      "skill_review": "katas/KATA-000048/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "GCC C++20 -Werror and Python 3.13",
+      "red": "compiled wrong variant behaviorally fails",
+      "green": "12 winner cases + 2 invalid",
+      "differential_cases": 1500,
+      "ci_pending": true
     }
   },
   {
@@ -2057,28 +2149,51 @@
   },
   {
     "id": "KATA-000052",
-    "title": "zipper",
+    "title": "Zipper — Immutable Binary Tree Focus",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/zipper",
     "fingerprint": "exercism-spec-zipper",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "persistent-functional-data-structures",
+    "difficulty": 5,
+    "difficulty_evidence": "Provisional author 5/5: persistent zipper navigation, breadcrumbs and immutable structural edits",
+    "score": 93,
+    "score_evidence": "Author-only provisional 93/100, see README; no calibrated ranking",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Exercism conceptual reference only, original TypeScript zipper and direct-path Python oracle MIT"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "TypeScript",
+    "language_rationale": "TypeScript recursive structural types, persistent value updates and null-safe navigation; independent Python full-root editor, Haskell alternative unavailable locally",
+    "evidence": {
+      "red": "katas/KATA-000052/evidence/red.txt",
+      "green": "katas/KATA-000052/evidence/green.txt",
+      "oracle": "katas/KATA-000052/evidence/oracle.txt",
+      "ci": "katas/KATA-000052/evidence/ci.txt",
+      "skill_review": "katas/KATA-000052/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "TypeScript strict/Node22/Python3.13",
+      "red": "type-checked wrong value update triggers behavioral failure",
+      "green": "12 fixed assertions",
+      "differential_cases": 420,
+      "ci_pending": true
     }
   },
   {
@@ -2109,28 +2224,51 @@
   },
   {
     "id": "KATA-000054",
-    "title": "satellite",
+    "title": "Satellite — Tree Reconstruction",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/satellite",
     "fingerprint": "exercism-spec-satellite",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "binary-tree-reconstruction",
+    "difficulty": 5,
+    "difficulty_evidence": "Author provisional 5/5: preorder/inorder consistent partitioning and rejection of inconsistent trees",
+    "score": 92,
+    "score_evidence": "Author provisional 92/100, see README, no independent calibration",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Concept link only; Java21 code and generator-first Python oracle independently authored under MIT"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Java",
+    "language_rationale": "Java 21 immutable record tree and linear hash-index partitioning; Python generator-first AST source; C++/Haskell alternatives",
+    "evidence": {
+      "red": "katas/KATA-000054/evidence/red.txt",
+      "green": "katas/KATA-000054/evidence/green.txt",
+      "oracle": "katas/KATA-000054/evidence/oracle.txt",
+      "ci": "katas/KATA-000054/evidence/ci.txt",
+      "skill_review": "katas/KATA-000054/evidence/skill_review.md",
+      "skill_conclusion": "incorporated"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Java21 strict -Xlint:all -Werror; Python3.13",
+      "red": "compiled wrong variant failed structural assertion",
+      "green": "6 fixed +4 invalid",
+      "differential_cases": 905,
+      "ci_pending": true
     }
   },
   {

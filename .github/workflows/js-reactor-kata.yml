@@ -1,0 +1,33 @@
+name: JavaScript Reactive Cells kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000037/**'
+      - '.github/workflows/js-reactor-kata.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000037/**'
+      - '.github/workflows/js-reactor-kata.yml'
+permissions:
+  contents: read
+jobs:
+  reactive:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: RED GREEN independent reference
+        working-directory: katas/KATA-000037
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --test tests/test_reactor.mjs
+          python3 tests/differential.py src/cli.mjs
+          if KATA_RED=1 node --test tests/test_reactor.mjs >/tmp/react-red.log 2>&1; then exit 1; fi
+          grep -q 'not ok' /tmp/react-red.log

@@ -1,0 +1,1 @@
+Local C++20 strict -Werror: KATA_RED build compiled after fixing unused height warning; executable exited nonzero with behavioral assertion on winning board.

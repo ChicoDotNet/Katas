@@ -1,6 +1,6 @@
 # Ninja Language-Agnostic Developer
 
-Version: **0.1.19**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
+Version: **0.1.25**. Status: **experimental observations; transfer not yet validated**. Skill vivo del laboratorio ChicoDotNet/Katas. No es un modelo reentrenado; es conocimiento externo auditable.
 
 ## Misión
 
@@ -67,6 +67,18 @@ Resolver problemas inéditos con corrección, claridad, eficiencia y mantenibili
 - **OBS-019, KATA-000047 (PHP, Variable Length Quantity):** en formatos binarios, verificar round-trips no basta: comprobar representación canónica, terminación de grupos, rangos y overflow antes de aceptar un flujo. Usar un oráculo aritmético de división/resto distinto de la lógica de bits de producción. [Evidencia](../katas/KATA-000047/evidence/skill_review.md). Sin transferencia validada.
 
 - **OBS-020, KATA-000056 (C11, Circular Buffer):** especificar por separado políticas de rechazo y sobreescritura; conservar orden FIFO cuando el índice de cabeza gira. Verificar con deque independiente, no otro ring que repita el defecto de índices. El compilador con -Werror forma parte de GREEN verificable. [Evidencia](../katas/KATA-000056/evidence/skill_review.md). Observación local, sin transferencia demostrada.
+
+- **OBS-021, KATA-000037 (JavaScript, Reactive Cells):** recalcular valores dependientes hasta un estado estable antes de invocar notificaciones; comparar instantáneas estables y usar un oráculo que recompute desde cero para evitar notificaciones de estados intermedios en grafos diamante. Limitar los generadores aleatorios al dominio numérico del lenguaje. [Evidencia](../katas/KATA-000037/evidence/skill_review.md). Observación puntual, no mejora longitudinal probada.
+
+- **OBS-022, KATA-000036 (Ruby, Poker):** separar clasificación y comparación lexicográfica completa, incluyendo desempates y excepciones como la escalera con as bajo. Validar los propios generadores de pruebas para que no inyecten cartas duplicadas dentro de una mano. [Evidencia](../katas/KATA-000036/evidence/skill_review.md). Observación limitada; sin mejora general probada.
+
+- **OBS-023, KATA-000048 (C++20, Connect Hex):** separar la geometría de las seis vecindades de la prueba de conectividad; comparar BFS de producción contra union-find independiente con vértices virtuales. Comprobar que RED bajo -Werror falle por conducta y no por compilación. [Evidencia](../katas/KATA-000048/evidence/skill_review.md). Un solo ejercicio no prueba aumento de velocidad.
+
+- **OBS-024, KATA-000054 (Java, Satellite):** comprobar reconstrucción de estructuras generando el árbol esperado *antes* de extraer los recorridos; exigir validez de particiones además de igualdad de conjuntos. Un segundo reconstructor podría reproducir el mismo defecto, mientras el generador-first preserva la estructura prevista. [Evidencia](../katas/KATA-000054/evidence/skill_review.md). Observación, no transferencia demostrada.
+
+- **OBS-025, KATA-000045 (Go, Two Bucket):** verificar por separado la optimalidad del número de operaciones y la legalidad de la secuencia testigo. Modelar explícitamente la primera acción obligatoria y los estados prohibidos; no considerar válido un mínimo alcanzado mediante transiciones ilegales. [Evidencia](../katas/KATA-000045/evidence/skill_review.md). Observación local sin prueba de transferencia.
+
+- **OBS-026, KATA-000052 (TypeScript, Zipper):** editar árboles persistentes mediante foco y breadcrumbs que preservan hermanos y contexto, reconstruyendo padres sin mutar versiones anteriores. Contrastar contra un editor independiente por rutas en el árbol completo. [Evidencia](../katas/KATA-000052/evidence/skill_review.md). Observación individual sin evidencia causal de mejora de Ninja.
 
 **Hipótesis transversal bajo estudio:** hacer explícitas las fronteras entre estado, nondeterminismo y presentación facilita construir oráculos independientes para problemas de distintas familias. Dos ejemplos no prueban que acelere a Ninja ni que generalice universalmente. Evitar convertirla en regla prescriptiva hasta validación.
 

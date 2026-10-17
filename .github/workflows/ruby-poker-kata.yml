@@ -1,0 +1,33 @@
+name: Ruby Poker kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000036/**'
+      - '.github/workflows/ruby-poker-kata.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000036/**'
+      - '.github/workflows/ruby-poker-kata.yml'
+permissions:
+  contents: read
+jobs:
+  poker:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+      - name: Behavioral RED GREEN and independent Python oracle
+        working-directory: katas/KATA-000036
+        shell: bash
+        run: |
+          set -euo pipefail
+          ruby -I src tests/test_poker.rb
+          python3 tests/differential.py src/cli.rb
+          if KATA_RED=1 ruby -I src tests/test_poker.rb >/tmp/poker-red.log 2>&1; then exit 1; fi
+          grep -q 'Failure:' /tmp/poker-red.log

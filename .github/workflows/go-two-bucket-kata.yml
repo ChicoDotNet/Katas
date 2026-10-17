@@ -1,0 +1,34 @@
+name: Go Two Bucket kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000045/**'
+      - '.github/workflows/go-two-bucket-kata.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000045/**'
+      - '.github/workflows/go-two-bucket-kata.yml'
+permissions:
+  contents: read
+jobs:
+  water-jugs:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+      - name: RED GREEN shortest path and witness oracle
+        working-directory: katas/KATA-000045
+        shell: bash
+        run: |
+          set -euo pipefail
+          go test ./...
+          go build -o /tmp/buckets-cli ./cmd/buckets
+          python3 tests/differential.py /tmp/buckets-cli
+          if KATA_RED=1 go test ./... >/tmp/buckets-red.log 2>&1; then exit 1; fi
+          grep -q 'wrong shortest solution' /tmp/buckets-red.log

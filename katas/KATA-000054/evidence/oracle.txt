@@ -1,0 +1,1 @@
+Local Java21/Python: PASS: 905 independently generated tree reconstructions and invalid cases (generator-first oracle).
