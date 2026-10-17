@@ -21,3 +21,9 @@ RED uses a compiled yet incorrect stub. GREEN: 10 named cases plus invalid pips 
 Author-only provisional difficulty 5/5, rubric 93/100, not independently calibrated. A single kata cannot prove longitudinal learning or language superiority.
 
 [RED](evidence/red.txt) · [GREEN](evidence/green.txt) · [oracle](evidence/oracle.txt) · [CI](evidence/ci.txt) · [Ninja observation](evidence/skill_review.md)
+
+## Extensión políglota de verificación — 17-oct-2026
+
+**SWI-Prolog para la decisión Euleriana**, `tests/prolog_cycle.pl`, decide factibilidad por paridad de grados y conectividad del grafo en 454 casos, independientemente del recorrido constructivo Go. Se consideraron OCaml (grafo tipado), Erlang (procesos) y Prolog; el valor de Prolog son relaciones declarativas. Conserva las verificaciones de la cadena de fichas. Workflow `prolog-crosscheck-katas.yml`.
+
+No se aumenta el número de katas publicadas por esta extensión. Mantener evidencia histórica y exigir CI exact-head.

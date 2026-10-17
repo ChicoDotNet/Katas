@@ -38,3 +38,9 @@ The CLI consumes a first line of rows and columns then one row of 0/1 characters
 Provisional rubric (out of 100): transfer 17/20 + depth 14/20 + oracle 14/15 + TDD 13/15 + novelty 7/10 + pedagogy 9/10 + portability 5/5 + maintenance 4/5 = **83**. This is a single-reviewer estimate to be calibrated, not an objectively validated ranking.
 
 License evidence: [Kata-Log footer](https://kata-log.rocks/game-of-life-kata). The **original** MIT code in this folder does not derive from linked starter kits.
+
+## Extensión políglota de verificación — 17-oct-2026
+
+**Mojo 1.1 bitboard stencil (aditivo).** Nuevo `tests/life_mojo.mojo` usa celdas empaquetadas en bits y una vecindad independiente del arreglo Fortran. El verificador `tests/life_mojo_crosscheck.mjs` compara **678 tableros** exhaustivos/semillados; reproduce con el workflow `mojo-life-kata.yml` y Pixi fijado en `tests/pixi.toml`. No sustituye el núcleo Fortran ni el oráculo Python. Se consideraron Julia (matrices), Rust (bits) y Mojo (kernel/value computation); Mojo gana por el experimento de cómputo especializado.
+
+No se aumenta el número de katas publicadas por esta extensión. Mantener evidencia histórica y exigir CI exact-head.

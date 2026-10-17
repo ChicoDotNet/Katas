@@ -9,3 +9,9 @@ JavaScript chosen for first-class callback functions and no external UI framewor
 Run: `cd katas/KATA-000037 && node --test tests/test_reactor.mjs && python3 tests/differential.py src/cli.mjs`. Behavioral RED: `KATA_RED=1 node --test tests/test_reactor.mjs` should fail a behavioral case. Local validation: 10 fixed behavioral tests and 360 independent DAG histories passed; confirmed behavioral RED. Score 93/100 and difficulty 5/5 are **author provisional**, not calibrated.
 
 Evidence files in evidence/ and Ninja review OBS-021.
+
+## Extensión políglota de verificación — 17-oct-2026
+
+**Haskell modelo funcional**, `tests/reactive_haskell.hs`, recálculo por instantáneas puras de 180 DAGs y comparación de eventos con el reactor JavaScript. Aporta evaluación determinista sin mantener el mismo programador de callbacks. Se contemplaron OCaml (ADTs), Elm (reactividad declarativa) y Haskell; Haskell concentra la comprobación en valores inmutables. Workflow `haskell-reactive-kata.yml`.
+
+No se aumenta el número de katas publicadas por esta extensión. Mantener evidencia histórica y exigir CI exact-head.

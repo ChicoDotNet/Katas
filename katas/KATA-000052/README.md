@@ -9,3 +9,9 @@ TypeScript structural tree types/readonly breadcrumb frames suit persistent reco
 Local Node22/tsc strict: 12 assertions, 420 independently generated tree-edit histories, behaviorally failing RED. Run `cd katas/KATA-000052 && tsc -p . && node build/tests/test_zipper.js && python3 tests/differential.py build/src/cli.js`; KATA_RED=1 node build/tests/test_zipper.js should fail. Provisional author difficulty 5/5, score 93/100, not independently calibrated.
 
 Evidence under evidence/, Ninja OBS-026. Compiled build/ is excluded from Git.
+
+## Extensión políglota de verificación — 17-oct-2026
+
+**R editor directo copy-on-modify**, `tests/zipper_r.R`, genera 220 historiales de navegación/edición de árbol, preserva el valor original y contrasta con la reconstrucción zipper TypeScript. R no pretende mejorar los tipos del zipper; **sí aporta un modelo de referencia adecuado** mediante listas y copy-on-modify. Se consideraron Haskell (ADT), OCaml (persistencia) y R (referencia independiente); aquí preferimos R como oráculo y mantenemos TypeScript. Workflow `r-zipper-kata.yml`.
+
+No se aumenta el número de katas publicadas por esta extensión. Mantener evidencia histórica y exigir CI exact-head.
