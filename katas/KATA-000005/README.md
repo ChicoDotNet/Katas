@@ -32,3 +32,16 @@ A newline JSON array of scenarios is fed to the CLI; each scenario provides Worl
 - Ninja note: validate commands up front while allowing intended partial progress on obstacles; explicitly document geometry choices.
 
 [RED evidence](evidence/red.txt) · [GREEN](evidence/green.txt) · [oracle](evidence/oracle.txt) · [skill review](evidence/skill_review.md) · [CI](evidence/ci.txt)
+
+## Additional metamorphic hardening (2026-10-17)
+
+The prior 360-scenario Python oracle and the Go implementation both encode cardinal coordinates and toroidal movement. Merely translating their algorithms into a third language would not independently challenge shared conventions. The additional `metamorphic_test.go` checks **different mathematical relations** against the same implementation, preserving the published Go solution and its KATA-ID:
+
+- Eight **absolute cardinal/edge anchors** fix north = +Y, east = +X, and wrapping in both dimensions, so relational invariances alone cannot bless a shared reversed-axis mistake.
+- 320 deterministic worlds verify four rotations, inverse commands, and a complete dimension of forward steps (2,240 composed paths).
+- 300 worlds with obstacles verify **translation equivariance**: shifting the whole torus, start and obstacles shifts the result and obstacle witness, but does not change heading, blocked status or applied-command count.
+- 300 more obstacle-bearing worlds verify **composition of command prefixes and suffixes**, including earliest-stop preservation and the applied-command counter. This is a direct executable invariant, not a second copy of the Go transition loop.
+
+**Verification strategies compared:** (A) the existing independently coded Python transition table can give precise expected poses but may share geometry assumptions; (B) Go-native metamorphic transformations and composition do not independently calculate an entire journey, but can expose path-ordering, witness, translation, inverse and wrap errors without implementing the same transition table. Both are retained. Go is appropriate for this test layer because it exercises the original public API and its typed Result directly; the existing Python oracle remains the cross-language reference. No new language is used merely for variety.
+
+Local pre-CI reproduction with Go 1.23.2: `go test ./... -count=1` PASS; `go test -tags kata_red ./...` fails on a **behavioral** cardinal anchor as intended. These are local checks, not a claim of GitHub CI success. The PR's exact-head workflow is required before integration. The input generator is deterministic; the assertions are relational and do not prove the entire polar/spherical interpretation, concurrent effects, or exhaustive geometry. Ninja review: **confirmed OBS-006, no new universal rule**; the lesson is to complement differential models with mathematically distinct invariants and absolute convention anchors when a shared semantic error is plausible.
