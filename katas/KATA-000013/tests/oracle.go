@@ -42,17 +42,17 @@ func reference(s Scenario) Result {
 }
 func main(){
     if len(os.Args)!=2 {panic("Usage: go run tests/oracle.go src/cli.mjs")}
-    alphabet:=[]string{"G","F","I"}
+    alphabet:=[]string{"G","F","I","J","K"}
     modes:=[]string{"time","optional","required"}
     servers:=[]string{"O","F"}
-    cases:=make([]Scenario,0,962)
+    cases:=make([]Scenario,0,1550)
     for _,mode:=range modes {for _,a:=range alphabet {for _,b:=range alphabet {for _,c:=range alphabet {for _,server:=range servers {
         cases=append(cases,Scenario{Mode:mode,GPS:[]string{a,b,c},Server:server})
     }}}}}
     var seed uint32=20261019
     random:=func(max uint32)int{seed=seed*1664525+1013904223;return int(seed%max)}
     for i:=0;i<800;i++{
-        cases=append(cases,Scenario{Mode:modes[random(3)],GPS:[]string{alphabet[random(3)],alphabet[random(3)],alphabet[random(3)]},Server:servers[random(2)]})
+        cases=append(cases,Scenario{Mode:modes[random(3)],GPS:[]string{alphabet[random(5)],alphabet[random(5)],alphabet[random(5)]},Server:servers[random(2)]})
     }
     input,err:=json.Marshal(cases);if err!=nil{panic(err)}
     cmd:=exec.Command("node",os.Args[1]);cmd.Stdin=bytes.NewReader(input)
@@ -64,5 +64,5 @@ func main(){
         want:=reference(s)
         if !reflect.DeepEqual(actual[i],want){panic(fmt.Sprintf("case %d: %+v\nexpected %+v, got %+v",i,s,want,actual[i]))}
     }
-    fmt.Printf("PASS: %d independent Go decision-table outcomes (162 exhaustive + 800 seeded)\n",len(cases))
+    fmt.Printf("PASS: %d independent Go decision-table outcomes (750 exhaustive + 800 seeded)\n",len(cases))
 }

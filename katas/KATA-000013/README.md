@@ -10,7 +10,7 @@ Conceptual reference: https://kata-log.rocks/clock-in-kata — Kata-Log explicit
 
 `clockIn({mode,now,getGps,send})` returns a Promise. `mode` is `time`, `optional` or `required`. `now()` is sampled once; its result must be a safe integer. `time` posts `{at}` without GPS. `optional` awaits one GPS request; on rejection or invalid coordinates it posts time-only. `required` awaits up to three **sequential** GPS requests; it retries rejection or invalid coordinates, rejects `RequiredGpsError` after exhaustion and never posts without valid GPS. Latitude and longitude must be finite and in [-90,90]/[-180,180]. After a valid GPS result, send is invoked once with `{at,position}`; otherwise `{at}`. The send receipt or rejection is propagated. There is no sleeping, network, browser GPS or global clock.
 
-The scripted CLI accepts `G` (valid GPS), `F` (GPS failure), `I` (invalid GPS), and server `O` (success) or `F` (failure). It reports observable `gps`, `post+gps` and `post+time` events. A pending GPS Promise must prevent POST from starting.
+The scripted CLI accepts `G` (valid GPS), `F` (GPS failure), `I` (latitude 95), `J` (longitude 181), `K` (fractional latitude 90.5), and server `O` (success) or `F` (failure). It reports observable `gps`, `post+gps` and `post+time` events. A pending GPS Promise must prevent POST from starting.
 
 ## Three language candidates, selected BEFORE inspecting workflows
 
@@ -35,7 +35,7 @@ After the domain ranking, inspected Genkidama `eng/ci/registry.json` and `.githu
 | Rejected alternative | Rewriting the JS async retry loop in Go/JavaScript would risk duplicating the same control-flow error |
 | Shared error risk | Both use the same invented five-token contract and three policy modes; neither is a third-party specification or tests real GPS, TCP, cancellation or browser behavior |
 
-Go checks **162 exhaustive** mode × GPS-triple × server combinations and **800 seeded** additional scenarios (962 comparisons total). A boolean-only test would miss ordering and call-count bugs. The Go oracle is independent in *technique* but not completely independent in assumptions.
+Go checks **750 exhaustive** mode × GPS-triple × server combinations and **800 seeded** additional scenarios (1,550 comparisons total). A boolean-only test would miss ordering and call-count bugs. The Go oracle is independent in *technique* but not completely independent in assumptions.
 
 ## Commands (executed locally)
 
@@ -44,7 +44,7 @@ bash katas/KATA-000013/tests/run.sh
 # from katas/KATA-000013:
 NINJA_RED=1 node --test tests/test-clock-in.mjs  # intentionally exits nonzero, semantic failure
 node --test tests/test-clock-in.mjs                # 9 PASS
-go run tests/oracle.go src/cli.mjs                # 962 PASS
+go run tests/oracle.go src/cli.mjs                # 1,550 PASS
 go vet tests/oracle.go                           # PASS
 ```
 
@@ -53,3 +53,7 @@ No third-party packages or network required. Proposed workflow: `.github/workflo
 ## Ninja review and limits
 
 Outcome: **confirmed**, no Ninja edit. Deterministic deferred Promises and independent decision-table traces reveal premature POST and incorrect fallback without timing sleeps. This original exercise does not characterize the upstream implementation and is not causal evidence of improved delivery or transfer. Source and test license claims are per artifact; holdout gate remains at 90 published.
+
+## Adversarial oracle boundary expansion — 2026-10-19
+
+The Go reference now distinguishes valid GPS, failure, latitude 95, longitude 181 and fractional latitude 90.5, including 750 exhaustive mode/script/server combinations and 800 seeded cases. These new cases check strict coordinate bounds without translating the JavaScript retry loop. Local Node RED/GREEN (9 tests), Go decision oracle (1,550 cases) and `go vet` passed on 2026-10-19. Remote CI is required on this exact SHA before any verification or publication claim. Native Node deferred-Promise tests still cover timing and single clock sampling that CLI traces cannot observe.

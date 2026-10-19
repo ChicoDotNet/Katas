@@ -11,6 +11,8 @@ for(const test of cases){
     const token=test.gps[gpsIndex++];
     if(token==='G')return {lat:19.5,lon:-99.1};
     if(token==='I')return {lat:95,lon:0};
+    if(token==='J')return {lat:0,lon:181};
+    if(token==='K')return {lat:90.5,lon:0};
     throw Error('gps failure');
   };
   const send=async record=>{

@@ -726,7 +726,7 @@
       "toolchain": "Node 22.16.0 / Go 1.23.2; CI proposed Node 24.18.1 / Go 1.26.5",
       "red": "Behaviorally wrong POST-before-GPS mutant fails node:test",
       "green": "9 native Node tests",
-      "differential_cases": 962,
+      "differential_cases": 1550,
       "ci_pending": true
     }
   },

@@ -4,11 +4,13 @@ on:
     branches: [dev, main]
     paths:
       - 'katas/KATA-000013/**'
+      - 'catalog/candidates.json'
       - '.github/workflows/javascript-clock-in-kata.yml'
   push:
     branches: [dev, main, 'kata/000013-*']
     paths:
       - 'katas/KATA-000013/**'
+      - 'catalog/candidates.json'
       - '.github/workflows/javascript-clock-in-kata.yml'
 permissions:
   contents: read
@@ -28,3 +30,10 @@ jobs:
         run: bash katas/KATA-000013/tests/run.sh
       - name: Go oracle static analysis
         run: go vet katas/KATA-000013/tests/oracle.go
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Validate catalog and governance on exact head
+        run: |
+          python3 -m unittest discover -s tests -v
+          python3 tools/kata_lab.py validate
