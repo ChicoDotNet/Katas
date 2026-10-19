@@ -1,0 +1,1 @@
+2026-10-19 local Node 22.16.0: node --test tests/test-clock-in.mjs PASSED 9 native tests (0 failed). Covers deferred ordering, optional/required GPS, retry, exhaustion, invalid input and coordinates, server rejection and single timestamp.

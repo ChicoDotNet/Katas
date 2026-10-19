@@ -1,0 +1,30 @@
+name: JavaScript Clock-in kata — Node native RED GREEN and Go decision oracle
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000013/**'
+      - '.github/workflows/javascript-clock-in-kata.yml'
+  push:
+    branches: [dev, main, 'kata/000013-*']
+    paths:
+      - 'katas/KATA-000013/**'
+      - '.github/workflows/javascript-clock-in-kata.yml'
+permissions:
+  contents: read
+jobs:
+  promise-contracts:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.18.1'
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.26.5'
+      - name: Native behavioral RED GREEN and independent Go decision-table oracle
+        run: bash katas/KATA-000013/tests/run.sh
+      - name: Go oracle static analysis
+        run: go vet katas/KATA-000013/tests/oracle.go
