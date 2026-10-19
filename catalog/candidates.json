@@ -920,10 +920,10 @@
     "score_evidence": "Provisional author 86/100, independent calibration pending",
     "status": "green",
     "license": {
-      "id": "PUBLIC_DOMAIN_DECLARATION",
+      "id": "MIT",
       "verified": true,
-      "evidence_url": "https://kata-log.rocks/race-car-katas-telemetry",
-      "scope": "Kata-Log page used only as conceptual reference; original Java code and tests MIT; no starter/fixtures copied"
+      "evidence_url": "https://github.com/ChicoDotNet/Katas/blob/dev/LICENSE",
+      "scope": "MIT covers the original locally authored implementation, tests and fixtures; the external Kata-Log page is only a conceptual public-domain reference. No external starter or fixtures were copied."
     },
     "language": "Java",
     "language_rationale": "Java 21 checked IOException, interface and finally cleanup; Go and C# alternatives evaluated; native Java tests and Node.js 22 grammar oracle",
