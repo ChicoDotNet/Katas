@@ -693,10 +693,10 @@
     "score_evidence": "Provisional author 88/100; independent calibration pending",
     "status": "green",
     "license": {
-      "id": "PUBLIC_DOMAIN_DECLARATION",
+      "id": "MIT",
       "verified": true,
-      "evidence_url": "https://kata-log.rocks/clock-in-kata",
-      "scope": "Kata-Log page explicitly public domain; original JS/Go/tests MIT under Katas. No third-party starter/fixtures copied."
+      "evidence_url": "https://github.com/ChicoDotNet/Katas/blob/dev/LICENSE",
+      "scope": "MIT covers original locally authored JS and Go source, tests and fixtures; Kata-Log is only a public-domain conceptual reference. No external starter or fixtures copied."
     },
     "language": "JavaScript",
     "language_rationale": "Native JS Promises and node:test deferred microtasks; Kotlin coroutines and C# Tasks contrasted; Go selected for structurally different decision-table oracle.",
