@@ -909,29 +909,52 @@
   },
   {
     "id": "KATA-000020",
-    "title": "Race Car Telemetry",
+    "title": "Race Car Telemetry — Injectable Diagnostic Transport (Clean-room)",
     "source_id": "kata-log",
     "source_url": "https://kata-log.rocks/race-car-katas-telemetry",
     "fingerprint": "race-car-telemetry-decoupling",
     "domain": "legacy-observability",
     "difficulty": 4,
-    "difficulty_evidence": "Provisional triage only: Mocks and SOLID; link to Race Car series, distinct behavior",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "difficulty_evidence": "Provisional 4/5: SOLID seam, retry semantics, I/O cleanup and event-order traces; not independently calibrated",
+    "score": 86,
+    "score_evidence": "Provisional author 86/100, independent calibration pending",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "PUBLIC_DOMAIN_DECLARATION",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/race-car-katas-telemetry",
+      "scope": "Kata-Log page used only as conceptual reference; original Java code and tests MIT; no starter/fixtures copied"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Java",
+    "language_rationale": "Java 21 checked IOException, interface and finally cleanup; Go and C# alternatives evaluated; native Java tests and Node.js 22 grammar oracle",
+    "evidence": {
+      "red": "katas/KATA-000020/evidence/red.txt",
+      "green": "katas/KATA-000020/evidence/green.txt",
+      "oracle": "katas/KATA-000020/evidence/oracle.txt",
+      "ci": "katas/KATA-000020/evidence/ci.txt",
+      "skill_review": "katas/KATA-000020/evidence/skill_review.md",
+      "skill_conclusion": "confirmed"
+    },
     "discovery": {
       "date": "2026-10-17",
       "listing": "https://kata-log.rocks/",
       "audit": "rights, oracle and difficulty require item-specific review",
       "scan_id": "kata-log-index-20261017-v1"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "OpenJDK 21.0.12.1 javac -Xlint:all -Werror and Node 22.16.0",
+      "red": "compilable behavioral mutant rejected with wrong result",
+      "green": "7 native Java scenarios",
+      "differential_cases": 925,
+      "ci_pending": true
     }
   },
   {

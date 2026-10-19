@@ -1,0 +1,1 @@
+2026-10-19 local OpenJDK 21.0.12.1: javac -Xlint:all -Werror compiled production and RED mutant; bash katas/KATA-000020/tests/run.sh rejected intentional wrong-result behavior with assertion 'wrong result'.

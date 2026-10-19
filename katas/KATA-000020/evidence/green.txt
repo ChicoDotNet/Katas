@@ -1,0 +1,1 @@
+2026-10-19 local OpenJDK 21.0.12.1 and Node 22.16.0: bash katas/KATA-000020/tests/run.sh; PASS: 7 native Java diagnostic scenarios, retries, early success, cleanup, exact trace.

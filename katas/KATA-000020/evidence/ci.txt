@@ -1,0 +1,1 @@
+2026-10-19: NOT CERTIFIED until exact-head GitHub Actions passes and reviewed PR is squash-merged. Local Java21/Node22 RED, GREEN and independent grammar passed; workflow configured in .github/workflows/java-telemetry-kata.yml.
