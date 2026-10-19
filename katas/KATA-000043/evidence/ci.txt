@@ -1,1 +1,4 @@
-Remote exact-head CI pending. Local GREEN does not imply verified/published.
+Verified native RED/GREEN and structurally independent oracle on PR #31 exact head e561dc55700771fd5cc8800b07f093cfd5918fd6: https://github.com/ChicoDotNet/Katas/actions/runs/39067317653 (success).
+Verified same suite on squash integration 12653c1f9b9281eb1e3495f8171dd161e19e0353: https://github.com/ChicoDotNet/Katas/actions/runs/39069984486 (success).
+Unchanged kata source through dev 0d97c338cb8702265ad6fda4381cbd9336197f61. Audit: docs/audits/ninja-publication-four-2026-10-19.md.
+Publication effective after metadata PR exact-head CI and squash merge.
