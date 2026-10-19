@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Install GNU Fortran if missing
         run: command -v gfortran || (sudo apt-get update && sudo apt-get install -y gfortran)
       - name: RED GREEN and exhaustive Python oracle
