@@ -8,6 +8,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import re
 import statistics
 from collections import Counter
 from pathlib import Path
@@ -86,6 +87,22 @@ def validate_records(cfg: dict, sources: list, candidates: list, holdouts: list)
                     ("incorporated", "confirmed", "no_change", "rejected")
                     or not evidence.get("skill_review")):
                 raise CatalogError(f"{c['id']}: missing skill review")
+            # Structural provenance only. Actual merge and exact-head CI are
+            # verified through GitHub before publishing; never inferred here.
+            provenance = c.get("published_via")
+            if not isinstance(provenance, dict):
+                raise CatalogError(f"{c['id']}: missing published_via provenance")
+            pr = provenance.get("merged_pr")
+            sha = provenance.get("commit_sha")
+            date = provenance.get("date")
+            if (not isinstance(pr, str)
+                    or not re.fullmatch(r"https://github\\.com/ChicoDotNet/Katas/pull/[1-9][0-9]*", pr)
+                    or not isinstance(sha, str)
+                    or not re.fullmatch(r"[0-9a-f]{40}", sha)
+                    or provenance.get("branch") != "dev"
+                    or not isinstance(date, str)
+                    or not re.fullmatch(r"20[0-9]{2}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])", date)):
+                raise CatalogError(f"{c['id']}: invalid published_via provenance")
 
     holdout_ids = [h.get("id") for h in holdouts]
     if len(set(holdout_ids)) != len(holdout_ids):
