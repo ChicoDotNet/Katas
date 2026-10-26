@@ -20,3 +20,8 @@ func TestBFSPathAndOrientation(t *testing.T) {
  if !ok||!reflect.DeepEqual(expected["c"],[]string{"a"})||!reflect.DeepEqual(expected["a"],[]string{"r"}) {t.Fatalf("bad orientation %v",expected)}
  if got:=bfsPath(adj,"c","missing");got!=nil {t.Fatalf("missing node: %v",got)}
 }
+
+// A child that exits without answering must fail, never count as an oracle PASS.
+func TestOracleRejectsPrematureEOF(t *testing.T) {
+ if err := run("/bin/true"); err == nil { t.Fatal("premature child EOF was accepted") }
+}
