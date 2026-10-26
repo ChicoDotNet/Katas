@@ -1,0 +1,14 @@
+GNU Fortran (Debian 14.2.0-19) 14.2.0
+go version go1.23.2 linux/amd64
+Python 3.13.5
+PASS compilable behavioral RED
+PASS native Fortran assertions: 74127
+ok  	command-line-arguments	1.037s
+PASS Go closed-form ring reference + permutation + ring-peel metamorphism: 270 sizes, 2 invalid-size rejections
+KILLED reverse_top_edge: Fortran native behavioral rejection
+KILLED skip_right_column: Fortran native behavioral rejection
+KILLED wrong_inner_right_boundary: Fortran native behavioral rejection
+KILLED wrong_value_increment: Fortran native behavioral rejection
+KILLED skip_left_column: Fortran native behavioral rejection
+PASS 5 compilable Fortran mutants killed
+PASS complete local suite

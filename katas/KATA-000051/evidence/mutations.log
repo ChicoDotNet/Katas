@@ -1,0 +1,6 @@
+KILLED reverse_top_edge: Fortran native behavioral rejection
+KILLED skip_right_column: Fortran native behavioral rejection
+KILLED wrong_inner_right_boundary: Fortran native behavioral rejection
+KILLED wrong_value_increment: Fortran native behavioral rejection
+KILLED skip_left_column: Fortran native behavioral rejection
+PASS 5 compilable Fortran mutants killed

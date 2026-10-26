@@ -2256,24 +2256,50 @@
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/spiral-matrix",
     "fingerprint": "exercism-spec-spiral-matrix",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "two-dimensional-spiral-indexing",
+    "difficulty": 3,
+    "difficulty_evidence": "Provisional 3/5: boundary-ring indexing, row/column coordinate inversion and allocatable 2D arrays; no independent difficulty calibration",
+    "score": 81,
+    "score_evidence": "Provisional author 81/100 based on verification diversity, matrix invariants, Fortran learning value and maintainability; not independently calibrated",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Concept instructions only; original Fortran, Go, Python and shell work under Katas MIT; no upstream starter, fixtures or tests imported",
+      "instructions_blob": "01e8a77f808ebf669389df96d5a86ae06cc23f69",
+      "license_blob": "6813d6298df9a46da6485050e8a5fcd61ab79879"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Fortran",
+    "language_rationale": "Fortran allocatable column-major matrix and explicit ring boundaries over Julia, Rust and Go; native Fortran tests; independent Go closed-form and metamorphic oracles (Python orchestration only)",
+    "evidence": {
+      "red": "katas/KATA-000051/evidence/red.log",
+      "green": "katas/KATA-000051/evidence/green.log",
+      "oracle": "katas/KATA-000051/evidence/oracle.log",
+      "skill_review": "katas/KATA-000051/evidence/skill_review.md",
+      "skill_conclusion": "confirmed"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "GNU Fortran 14.2 -std=f2008 -fcheck=all; Go 1.23.2 go test -race; Python 3 mutation driver",
+      "red": "compilable zero matrix stub fails behavioral assertion",
+      "green": "74127 native assertions",
+      "differential_cases": 270,
+      "metamorphic": "ring peel compares two Fortran process executions n and n-2",
+      "mutants_killed": "5/5 compiled",
+      "ci_pending": true
     }
   },
   {
