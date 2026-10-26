@@ -2342,28 +2342,53 @@
   },
   {
     "id": "KATA-000053",
-    "title": "pov",
+    "title": "POV — Immutable Tree Rerooting and Paths",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/pov",
     "fingerprint": "exercism-spec-pov",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "persistent-tree-reorientation",
+    "difficulty": 4,
+    "difficulty_evidence": "Provisional 4/5: immutable rerooting, node/edge preservation, unique paths, duplicate labels and independent graph orientation",
+    "score": 87,
+    "score_evidence": "Author provisional 87/100; uncalibrated against other discovered candidates",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Conceptual POV canonical-data reference (blob b10d346bd6c0061b09e9b4593cca4e06659bb43e); original Swift and Go MIT; no starter, fixtures or upstream test cases imported"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Swift",
+    "language_rationale": "Swift value-semantic immutable recursive Tree and Codable; Haskell/OCaml persistent ADTs and Go graph approach considered; Go BFS selected independently as oracle",
+    "evidence": {
+      "red": "katas/KATA-000053/evidence/red.log",
+      "green": "katas/KATA-000053/evidence/green.log",
+      "oracle": "katas/KATA-000053/evidence/oracle.log",
+      "ci": "katas/KATA-000053/evidence/ci.txt",
+      "skill_review": "katas/KATA-000053/evidence/skill_review.md",
+      "skill_conclusion": "confirmed"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Swift 6.2.1 + Go 1.23.2 Linux x86_64",
+      "red": "Compiles, fails by behavior",
+      "green": "15355 Swift native assertions",
+      "differential_cases": 1540,
+      "oracle": "Go adjacency/BFS graph orientation and shortest paths, 70 generated trees; Go race detector",
+      "mutants_killed": "2/2",
+      "ci_pending": true
     }
   },
   {
