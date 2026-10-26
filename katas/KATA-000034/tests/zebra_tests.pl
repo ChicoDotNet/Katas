@@ -18,4 +18,12 @@ test(distinct_house_positions) :-
     forall(member(Group, [Colors, Nations, Drinks, Pets, Hobbies]),
            (sort(Group, Sorted), assertion(Sorted == [1,2,3,4,5]))).
 
+test(ordered_green_ivory_clue) :-
+    zebra:layout(houses([_, Green, Ivory, _, _], _, _, _, _)),
+    assertion(Green =:= Ivory + 1).
+
+test(norwegian_is_first) :-
+    zebra:layout(houses(_, [_, _, _, Norwegian, _], _, _, _)),
+    assertion(Norwegian =:= 1).
+
 :- end_tests(zebra).
