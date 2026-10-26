@@ -1,0 +1,42 @@
+GREEN captured on 2026-10-26 (Perl 5.40.1, Test::More).
+Command: perl -c src/grep.pl && perl tests/native.t
+src/grep.pl syntax OK
+ok 1 - fixed substring exit
+ok 2 - fixed substring output
+ok 3 - UTF-8 pattern decoded exit
+ok 4 - UTF-8 pattern decoded output
+ok 5 - regex punctuation is literal exit
+ok 6 - regex punctuation is literal output
+ok 7 - dash-prefixed literal pattern after terminator exit
+ok 8 - dash-prefixed literal pattern after terminator output
+ok 9 - case insensitive exit
+ok 10 - case insensitive output
+ok 11 - exact only exit
+ok 12 - exact only output
+ok 13 - invert exit
+ok 14 - invert output
+ok 15 - numbering exit
+ok 16 - numbering output
+ok 17 - multi file exit
+ok 18 - multi file output
+ok 19 - multi file numbering exit
+ok 20 - multi file numbering output
+ok 21 - file names only exit
+ok 22 - file names only output
+ok 23 - file names override numbering exit
+ok 24 - file names override numbering output
+ok 25 - empty pattern exit
+ok 26 - empty pattern output
+ok 27 - empty exact pattern exit
+ok 28 - empty exact pattern output
+ok 29 - final line without LF exit
+ok 30 - final line without LF output
+ok 31 - no match exit
+ok 32 - no match output
+ok 33 - file order and duplicates exit
+ok 34 - file order and duplicates output
+ok 35 - missing file exit 2
+ok 36 - missing file does not leak partial output
+ok 37 - unknown flag rejected
+ok 38 - unknown flag no output
+1..38
