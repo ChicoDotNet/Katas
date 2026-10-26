@@ -1,0 +1,34 @@
+name: Fortran spiral matrix kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000051/**'
+      - '.github/workflows/fortran-spiral-matrix-kata.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000051/**'
+      - '.github/workflows/fortran-spiral-matrix-kata.yml'
+permissions:
+  contents: read
+jobs:
+  spiral:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23.2'
+      - name: Ensure genuine GNU Fortran compiler
+        run: command -v gfortran || (sudo apt-get update && sudo apt-get install -y gfortran)
+      - name: Native RED/GREEN, Go closed-form and metamorphic oracle, mutants
+        working-directory: katas/KATA-000051
+        shell: bash
+        run: |
+          set -euo pipefail
+          gfortran --version
+          go version
+          bash tests/run.sh
