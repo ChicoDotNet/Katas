@@ -1,0 +1,36 @@
+name: Prolog Zebra Puzzle kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000034/**'
+      - '.github/workflows/prolog-zebra-kata.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000034/**'
+      - '.github/workflows/prolog-zebra-kata.yml'
+permissions:
+  contents: read
+jobs:
+  zebra:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23.2'
+          cache: false
+      - name: Install authentic SWI-Prolog (Genkidama functional family)
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y swi-prolog-nox
+      - name: Native RED/GREEN, independent Go enumeration, mutation gates
+        working-directory: katas/KATA-000034
+        run: |
+          set -euo pipefail
+          swipl --version
+          go version
+          bash tests/run.sh
