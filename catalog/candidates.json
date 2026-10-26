@@ -1814,6 +1814,12 @@
       "pr_head_ci": "https://github.com/ChicoDotNet/Katas/actions/runs/39067317574",
       "postmerge_ci": "https://github.com/ChicoDotNet/Katas/actions/runs/39069984374",
       "audit": "docs/audits/ninja-publication-four-2026-10-19.md"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/31",
+      "commit_sha": "12653c1f9b9281eb1e3495f8171dd161e19e0353",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -1873,6 +1879,12 @@
       "pr_head_ci": "https://github.com/ChicoDotNet/Katas/actions/runs/39067317653",
       "postmerge_ci": "https://github.com/ChicoDotNet/Katas/actions/runs/39069984486",
       "audit": "docs/audits/ninja-publication-four-2026-10-19.md"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/31",
+      "commit_sha": "12653c1f9b9281eb1e3495f8171dd161e19e0353",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -2278,6 +2290,12 @@
       "pr_head_ci": "https://github.com/ChicoDotNet/Katas/actions/runs/39067317487",
       "postmerge_ci": "https://github.com/ChicoDotNet/Katas/actions/runs/39069984378",
       "audit": "docs/audits/ninja-publication-four-2026-10-19.md"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/31",
+      "commit_sha": "12653c1f9b9281eb1e3495f8171dd161e19e0353",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -2607,6 +2625,12 @@
       "pr_head_ci": "https://github.com/ChicoDotNet/Katas/actions/runs/39067317500",
       "postmerge_ci": "https://github.com/ChicoDotNet/Katas/actions/runs/39069984492",
       "audit": "docs/audits/ninja-publication-four-2026-10-19.md"
+    },
+    "published_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/31",
+      "commit_sha": "12653c1f9b9281eb1e3495f8171dd161e19e0353",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
