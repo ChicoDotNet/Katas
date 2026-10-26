@@ -27,10 +27,11 @@ func permutations() [][5]int {
 func near(a, b int) bool { return a+1 == b || b+1 == a }
 
 // Positions are zero-based; each property appears once per category.
-func independentSolutions() [][2]string {
+type world struct { colors, nations, drinks, pets, hobbies [5]int }
+
+func independentWorlds() []world {
     ps := permutations()
-    names := [5]string{"englishman", "spaniard", "ukrainian", "norwegian", "japanese"}
-    found := make([][2]string, 0, 2)
+    found := make([]world, 0, 2)
     for _, c := range ps { // red, green, ivory, yellow, blue
         if c[4] != 1 || c[1] != c[2]+1 { continue }
         for _, n := range ps { // english, spanish, ukrainian, norwegian, japanese
@@ -41,18 +42,34 @@ func independentSolutions() [][2]string {
                     if h[1] != c[3] || h[3] != d[3] || h[4] != n[4] { continue }
                     for _, p := range ps { // dog, snails, fox, horse, zebra
                         if p[0] != n[1] || p[1] != h[0] || !near(p[2], h[2]) || !near(p[3], h[1]) { continue }
-                        water, zebra := "", ""
-                        for i, pos := range n {
-                            if pos == d[4] { water = names[i] }
-                            if pos == p[4] { zebra = names[i] }
-                        }
-                        found = append(found, [2]string{water, zebra})
+                        found = append(found, world{c, n, d, p, h})
                     }
                 }
             }
         }
     }
     return found
+}
+
+func independentSolutions() [][2]string {
+    names := [5]string{"englishman", "spaniard", "ukrainian", "norwegian", "japanese"}
+    answers := make([][2]string, 0, 2)
+    for _, w := range independentWorlds() {
+        water, zebra := "", ""
+        for i, pos := range w.nations {
+            if pos == w.drinks[4] { water = names[i] }
+            if pos == w.pets[4] { zebra = names[i] }
+        }
+        answers = append(answers, [2]string{water, zebra})
+    }
+    return answers
+}
+
+func worldSignature(w world) string {
+    group := func(a [5]int) string {
+        return fmt.Sprintf("[%d,%d,%d,%d,%d]", a[0]+1, a[1]+1, a[2]+1, a[3]+1, a[4]+1)
+    }
+    return strings.Join([]string{group(w.colors), group(w.nations), group(w.drinks), group(w.pets), group(w.hobbies)}, "|")
 }
 
 func main() {
@@ -67,5 +84,12 @@ func main() {
     actual := strings.TrimSpace(string(output))
     want := expected[0][0] + "," + expected[0][1]
     if actual != want { fmt.Fprintf(os.Stderr, "differential mismatch: got %q want %q\n", actual, want); os.Exit(1) }
-    fmt.Println("Differential Prolog/Go: PASS")
+    layoutCmd := exec.Command("swipl", "-q", "-s", "src/zebra.pl", "-g", "zebra:layout(houses(C,N,D,P,H)),format('~w|~w|~w|~w|~w~n',[C,N,D,P,H])", "-t", "halt")
+    layoutCmd.Dir = os.Args[1]
+    layoutOutput, layoutErr := layoutCmd.CombinedOutput()
+    if layoutErr != nil { fmt.Fprintf(os.Stderr, "Prolog layout failed: %v: %s\n", layoutErr, layoutOutput); os.Exit(1) }
+    actualLayout := strings.TrimSpace(string(layoutOutput))
+    expectedLayout := worldSignature(independentWorlds()[0])
+    if actualLayout != expectedLayout { fmt.Fprintf(os.Stderr, "full-world mismatch: got %q want %q\n", actualLayout, expectedLayout); os.Exit(1) }
+    fmt.Println("Differential Prolog/Go: PASS (answers and all 25 positions)")
 }
