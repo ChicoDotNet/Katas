@@ -1,0 +1,27 @@
+name: Perl fixed-string grep kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths: ['katas/KATA-000060/**', '.github/workflows/perl-grep-kata.yml', 'catalog/**']
+  push:
+    branches: [dev, main]
+    paths: ['katas/KATA-000060/**', '.github/workflows/perl-grep-kata.yml']
+permissions:
+  contents: read
+jobs:
+  perl-grep:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23.2'
+      - name: Genuine Perl RED/GREEN, Go independent oracles and mutations
+        working-directory: katas/KATA-000060
+        shell: bash
+        run: |
+          set -euo pipefail
+          perl -v
+          go version
+          bash tests/run.sh
