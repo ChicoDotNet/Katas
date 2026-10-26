@@ -1,0 +1,1 @@
+CI not executed at this local checkpoint. Must integrate feature branch, require authentic exact-head workflow success, independent review and squash merge before publication.

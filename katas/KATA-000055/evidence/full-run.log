@@ -1,0 +1,7 @@
+RED: compilable, fails behaviorally PASS
+C++20 GREEN: 6876 assertions
+ok  	command-line-arguments	1.011s
+Go stable-partition + sorted multiset + input permutation oracle: 355 original and 355 permuted cases PASS
+Mutant KATA_MUTANT_DUP_RIGHT detected
+Mutant KATA_MUTANT_DROP_NEGATIVE detected
+KATA-000055 suite PASS

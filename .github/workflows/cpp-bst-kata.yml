@@ -1,0 +1,32 @@
+name: C++20 BST kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000055/**'
+      - '.github/workflows/cpp-bst-kata.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000055/**'
+      - '.github/workflows/cpp-bst-kata.yml'
+permissions:
+  contents: read
+jobs:
+  native-bst:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23.2'
+      - name: Real GCC C++20 RED GREEN Go oracle and mutation
+        working-directory: katas/KATA-000055
+        run: bash tests/run.sh
+      - name: ASan UBSan native verification
+        working-directory: katas/KATA-000055
+        run: |
+          g++ -std=c++20 -Wall -Wextra -Werror -pedantic -g -O1 -fsanitize=address,undefined -fno-omit-frame-pointer tests/Native.cpp -o .build/native-asan
+          ASAN_OPTIONS=detect_leaks=1 .build/native-asan

@@ -1,0 +1,1 @@
+Ninja v0.1.29, KATA-000055: confirmed. Native C++ invariants plus structurally different Go stable-partition oracle; no new general principle, no skill file changed. Rework: replaced tautological Go-side shuffle check with second actual C++ CLI execution and metamorphic in-order comparison. No causal improvement claim. Holdout pending.

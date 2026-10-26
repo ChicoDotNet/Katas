@@ -2432,28 +2432,54 @@
   },
   {
     "id": "KATA-000055",
-    "title": "binary search tree",
+    "title": "Binary Search Tree — RAII Ownership and Stable Partition Oracle",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/binary-search-tree",
     "fingerprint": "exercism-spec-binary-search-tree",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "ordered-tree-ownership-and-duplicate-placement",
+    "difficulty": 4,
+    "difficulty_evidence": "Provisional 4/5: topology, duplicate-side invariant, RAII ownership, degeneracy, differential shape checks",
+    "score": 86,
+    "score_evidence": "Author provisional 86/100; not calibrated",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Conceptual description.md blob 7625220e9a0fb2412ea4c5432e87b1309d425ff1; original C++/Go and tests, no upstream starters or fixtures"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "C++",
+    "language_rationale": "C++20 unique_ptr RAII and iterative inorder; Rust Box, Ada access and Haskell ADT considered; Go stable partition selected as independent oracle",
+    "evidence": {
+      "red": "katas/KATA-000055/evidence/full-run.log",
+      "green": "katas/KATA-000055/evidence/full-run.log",
+      "oracle": "katas/KATA-000055/evidence/full-run.log",
+      "ci": "katas/KATA-000055/evidence/ci.txt",
+      "skill_review": "katas/KATA-000055/evidence/skill_review.md",
+      "skill_conclusion": "confirmed"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "GCC 14.2 C++20 + Go 1.23.2 Linux x86_64",
+      "red": "compiles, fails behaviorally",
+      "green": "6876 native assertions",
+      "differential_cases": 710,
+      "oracle": "Go stable partition + sorted multiset + permutation metamorphism",
+      "mutants_killed": "2/2",
+      "sanitizers": "ASan/UBSan and Go race pass",
+      "ci_pending": true
     }
   },
   {
