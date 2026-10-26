@@ -34,3 +34,7 @@ Concept and clues: https://github.com/exercism/problem-specifications/tree/main/
 
 ## Limits
 One fixed puzzle, not a generic Einstein puzzle parser. No causal Ninja performance claims. Independent holdouts still needed.
+
+## Mutation hardening from first CI attempt
+
+Initial exact-head CI at 93dd8edee9ddedd98ba04a62ef6999ec05952d0b ran genuine SWI-Prolog 9.0.4, native RED/GREEN and Go differential successfully, but the reversed green/ivory constraint **survived** because the two requested answers did not change. This exposed an oracle weakness, not a reason to accept the mutant. Added explicit positional invariants and independent full-world (all 25 positions) comparison; certification remains pending the new exact-head CI.
