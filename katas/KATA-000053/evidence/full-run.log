@@ -1,0 +1,7 @@
+RED compiled, failed on behavior as expected
+Swift native GREEN: 15355 behavioral/structural/metamorphic assertions
+ok   command-line-arguments 1.021s
+Go BFS/adjacency oracle: 1540 Swift JSONL calls; 70 generated trees, root orientation, path and reversibility PASS
+MUTANT KILLED: KATA_MUTANT_DROP_SIBLINGS
+MUTANT KILLED: KATA_MUTANT_REVERSE_PATH
+POV suite PASS
