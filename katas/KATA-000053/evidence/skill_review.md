@@ -1,0 +1,1 @@
+Ninja v0.1.29 — confirmed. Independent graph/BFS oracle tests immutable Swift rerooting without copying its algorithm; no skill change, no claim of causal transfer. Evidence limited to this kata; holdout pending.

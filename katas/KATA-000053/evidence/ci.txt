@@ -1,0 +1,1 @@
+LOCAL GREEN ONLY. Exact-head GitHub Actions CI must execute on the PR HEAD. Do not mark verified/published until relevant checks pass and independent review plus squash merge complete.
