@@ -22,6 +22,7 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: '1.23.2'
+          cache: false
       - name: Ensure genuine GNU Fortran compiler
         run: command -v gfortran || (sudo apt-get update && sudo apt-get install -y gfortran)
       - name: Native RED/GREEN, Go closed-form and metamorphic oracle, mutants
