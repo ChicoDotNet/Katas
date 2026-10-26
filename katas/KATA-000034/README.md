@@ -38,3 +38,7 @@ One fixed puzzle, not a generic Einstein puzzle parser. No causal Ninja performa
 ## Mutation hardening from first CI attempt
 
 Initial exact-head CI at 93dd8edee9ddedd98ba04a62ef6999ec05952d0b ran genuine SWI-Prolog 9.0.4, native RED/GREEN and Go differential successfully, but the reversed green/ivory constraint **survived** because the two requested answers did not change. This exposed an oracle weakness, not a reason to accept the mutant. Added explicit positional invariants and independent full-world (all 25 positions) comparison; certification remains pending the new exact-head CI.
+
+## Genuine runtime evidence and state
+
+On PR #48 head `e4c167a5fa4b3078b07e36c08b8a166cfae2a8a2`, [GitHub Actions run 40365683668](https://github.com/ChicoDotNet/Katas/actions/runs/40365683668) completed **success** with SWI-Prolog 9.0.4 and Go 1.23.2. Behavioral RED rejected the stub; native plunit GREEN passed; Go exhaustive enumeration found exactly one world; Prolog/Go agreed on both answers **and all 25 positions**; two compiled Prolog constraint mutants were detected. This supports **GREEN on the PR branch only** and `development_complete=true`. The catalog metadata commit itself requires fresh exact-head CI before review/merge; **not verified or published**.
