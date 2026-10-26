@@ -2627,24 +2627,57 @@
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/grep",
     "fingerprint": "exercism-spec-grep",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "streaming-text-search",
+    "difficulty": 4,
+    "difficulty_evidence": "Provisional 4/5: flag interactions, streaming I/O, literal-vs-regex semantics, Unicode argv decoding and multi-file ordering; not independently calibrated.",
+    "score": 86,
+    "score_evidence": "Provisional author 86/100; independent calibration pending.",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "MIT Exercism instructions conceptual reference only; original Perl/Go/Python code/tests and generated fixtures MIT; no canonical-data, starter or upstream fixtures copied"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Perl",
+    "language_rationale": "Compared Perl, Rust, Go and OCaml before CI. Perl streaming text, fixed literal index and Unicode argv decoding teach distinctive semantics; Rust emphasizes ownership, Go simpler but less revealing, OCaml flag modeling.",
+    "evidence": {
+      "red": "katas/KATA-000060/evidence/red.txt",
+      "green": "katas/KATA-000060/evidence/green.txt",
+      "oracle": "katas/KATA-000060/evidence/oracle.txt",
+      "ci": "katas/KATA-000060/evidence/ci.txt",
+      "skill_review": "katas/KATA-000060/evidence/skill_review.md",
+      "skill_conclusion": "confirmed"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "test_language": "Perl 5.40.1 / Test::More",
+    "oracle_language": "Go 1.23.2",
+    "oracle_strategies": [
+      "Go strings.Contains/equals",
+      "Go regexp.QuoteMeta + RE2",
+      "numbered -v complement metamorphism"
+    ],
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Perl 5.40.1 + Go 1.23.2 + Python 3.13.5",
+      "red": "compilable always-empty stub fails behaviorally",
+      "green": "38 native assertions including UTF-8 argv and -- terminator",
+      "differential_cases": 900,
+      "oracle_checks": 1800,
+      "metamorphic_pairs": 200,
+      "mutants_detected": 7,
+      "ci_pending": true
     }
   },
   {

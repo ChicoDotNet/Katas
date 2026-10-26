@@ -1,0 +1,16 @@
+Go 1.23.2, 2026-10-26:
+go vet tests/oracle.go tests/oracle_test.go: exit 0
+go test -race tests/oracle.go tests/oracle_test.go: ok command-line-arguments 1.010s
+go build -o build/grep-oracle tests/oracle.go: exit 0
+build/grep-oracle:
+PASS Perl CLI versus two independent Go matchers: 900 randomized cases, 1800 oracle checks, 200 complement pairs, 1 witness
+python3 tests/mutations.py:
+PASS mutant ignore_inversion: Perl syntax valid, native rejected, independent Go rejected
+PASS mutant exact_as_substring: Perl syntax valid, native rejected, independent Go rejected
+PASS mutant omit_filename_prefix: Perl syntax valid, native rejected, independent Go rejected
+PASS mutant ignore_file_names_only: Perl syntax valid, native rejected, independent Go rejected
+PASS mutant ignore_case_broken: Perl syntax valid, native rejected, independent Go rejected
+PASS mutant unicode_argv_undecoded: Perl syntax valid, native rejected, independent Go rejected
+PASS mutant reject_dash_literal: Perl syntax valid, native rejected, independent Go rejected
+PASS 7/7 compiled/syntax-valid mutants rejected by both verifiers
+bash tests/run.sh: exit 0 on warmed Go cache.
