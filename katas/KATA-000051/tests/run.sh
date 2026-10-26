@@ -2,6 +2,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 mkdir -p build evidence
+# Real compiler for both RED and GREEN; RED must compile but fail behaviorally.
 gfortran -std=f2008 -Wall -Wextra -Werror -fcheck=all -Jbuild -Ibuild tests/red_stub.f90 tests/native.f90 -o build/red-native
 set +e
 build/red-native > evidence/red.log 2>&1
