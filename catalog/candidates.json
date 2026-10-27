@@ -2181,24 +2181,47 @@
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/flower-field",
     "fingerprint": "exercism-spec-flower-field",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "grid-stencil",
+    "difficulty": 3,
+    "difficulty_evidence": "Eight-neighbor stencil, rectangular boundary cases and independent 2D prefix-sum oracle; provisional 3/5 pending calibration",
+    "score": 72,
+    "score_evidence": "Provisional single-agent rubric (not independently calibrated): transfer 13/20, depth 13/20, oracle 14/15, TDD 13/15, novelty 6/10, pedagogy 7/10, portability 3/5, maintenance 3/5 = 72/100. Distinctive Fortran halo and independent Go prefix-sum model; difficulty 3/5, no hardest-first causal claim.",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/exercises/flower-field/instructions.md",
+      "scope": "Conceptual instructions blob bbdae0c2cb1fa4a25852a885a02a4f42b9b677e7 under LICENSE blob 6813d6298df9a46da6485050e8a5fcd61ab79879; no starter/tests/fixtures imported"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Fortran",
+    "language_rationale": "Fortran 2D column-major halo/stencil arrays vs Julia/R/Ada, chosen before CI; Go prefix-sum oracle and metamorphic rotations",
+    "evidence": {
+      "red": "katas/KATA-000049/evidence/red.txt",
+      "green": "katas/KATA-000049/evidence/green.txt",
+      "oracle": "katas/KATA-000049/evidence/oracle.txt",
+      "ci": "katas/KATA-000049/evidence/ci.txt",
+      "skill_review": "katas/KATA-000049/evidence/skill_review.md",
+      "skill_conclusion": "confirmed"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "GNU Fortran 14.2.0 and Go 1.23.2 -race; Python3 mutation orchestration",
+      "red": "compiled identity stub fails behaviorally",
+      "green": "2054 native assertions; 512 exhaustive 3x3 boards",
+      "differential_cases": 240,
+      "ci_pending": true
     }
   },
   {
