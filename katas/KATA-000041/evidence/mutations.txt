@@ -1,0 +1,2 @@
+MUTANT KILLED KATA_MUTANT_ERASE_LAST: native behavioral failure
+MUTANT KILLED KATA_MUTANT_POP_BACK_FRONT: native behavioral failure
