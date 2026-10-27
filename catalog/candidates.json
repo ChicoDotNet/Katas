@@ -1617,28 +1617,52 @@
   },
   {
     "id": "KATA-000038",
-    "title": "rest api",
+    "title": "REST API — IOU Ledger",
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/rest-api",
     "fingerprint": "exercism-spec-rest-api",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "atomic-ledger-http-state-machine",
+    "difficulty": 4,
+    "difficulty_evidence": "Provisional 4/5: bilateral settlement, cents precision, atomic rejection, HTTP state, concurrency, and independent event replay",
+    "score": 90,
+    "score_evidence": "Provisional author 90/100, independent calibration pending",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Conceptual rest-api description only; original Go/Ruby code and tests, no upstream starters/canonical fixtures imported"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Go",
+    "language_rationale": "Go net/http, exact cents, mutex and race detector for atomic IOU state; Ada/COBOL/Ruby alternatives; Ruby event-replay independent oracle",
+    "evidence": {
+      "red": "katas/KATA-000038/evidence/red.txt",
+      "green": "katas/KATA-000038/evidence/green.txt",
+      "oracle": "katas/KATA-000038/evidence/oracle.txt",
+      "ci": "katas/KATA-000038/evidence/ci.txt",
+      "skill_review": "katas/KATA-000038/evidence/skill_review.md",
+      "skill_conclusion": "confirmed"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Go 1.23.2 + Ruby 3.3.8",
+      "red": "compilable HTTP 501 stub fails expected HTTP 200",
+      "green": "Go httptest with -race passed",
+      "differential_cases": 5860,
+      "mutants_killed": 2,
+      "ci_pending": true
     }
   },
   {

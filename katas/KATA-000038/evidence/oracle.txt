@@ -1,0 +1,1 @@
+Ruby replay oracle: 65 histories, 5860 real Go HTTP requests verified, global zero-sum invariant PASS

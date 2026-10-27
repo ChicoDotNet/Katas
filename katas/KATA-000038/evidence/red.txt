@@ -1,0 +1,5 @@
+--- FAIL: TestREDBehavior (0.00s)
+    red_test.go:12: behavioral RED: GET /users returned 501; expected 200
+FAIL
+FAIL	kata038/tests/red	0.005s
+FAIL

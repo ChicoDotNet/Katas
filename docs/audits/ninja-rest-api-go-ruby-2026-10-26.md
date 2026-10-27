@@ -1,0 +1,13 @@
+# Ninja audit — KATA-000038 REST API — 2026-10-26 (integration checkpoint 2026-10-27)
+
+- **Checkpoint:** GREEN local, integrated into a feature branch for review; remote exact-head CI, review, and publication pending.
+- **Source:** Exercism/problem-specifications `exercises/rest-api/description.md» blob `e889b1bf20762398566d9811888616e8ee03cb54» (MIT repo LICENSE blob `6813d6298df9a46da6485050e8a5fcd61ab79879»). Canonical-data blob `06fac0284f83a9e2995d81c0f049c70d592b3112» reviewed as reference but not copied. No starter, tests, fixtures, data or images imported. All Go/Ruby files and original test inputs authored here. License scope audited per conceptual description; original source under MIT.
+- **Domain:** exact-cent bilateral debt, cancellation, atomic HTTP state transitions, deterministic sorting, concurrency and bounded values. Hardest-first provisional difficulty **4/5**, provisional score **90/100** pending independent calibration.
+- **Implementation:** Go `net/http» and canonical unordered-pair net cents. Alternatives Ada, COBOL, Ruby assessed before reading Genkidama workflows. Go chosen for HTTP state/concurrency + native race testing, not existing CI.
+- **Native tests:** Go `testing», `httptest», `-race»; stub RED compiles and fails expected 501 vs 200; full GREEN tests pass.
+- **Independent oracle:** Ruby append-only event log with replay and BigDecimal/cent normalization. SQL ledger `GROUP BY» considered, not implemented. Alternative same-algorithm translation rejected. Event replay vs incremental pair aggregation are different algorithms. Metamorphic commutation, reversal, zero-sum, rejection atomicity.
+- **Local execution:** Go 1.23.2, Ruby 3.3.8, `bash tests/run.sh» exit 0 on 2026-10-27; 65 histories, 5,860 real Go HTTP requests, 2/2 mutants rejected by Go AND Ruby.
+- **Retrabajo:** native tests found quoted JSON numeric accepted by `json.Number» and fixed via `json.RawMessage»; a test incorrectly compared `interface{}(float64)» against `int», fixed; oracle generated an invalid relative HTTP target that panicked `httptest.NewRequest», fixed driver guard and added negative regression. Refined snapshot to accumulate exact integer balances before rendering.
+- **Genkidama:** `eng/ci/registry.json» blob `24bde39c748dd3903789fd20eace80894a4735fb» maps Go to native, Ruby to scripting. Dedicated workflow proposed for authentic remote execution.
+- **Ninja review:** v0.1.29, **confirmed** (exact minor units and independent oracle risk), no skill change, no causal attribution. Independent holdouts and active engineering time still required.
+- **Remaining gates:** remote exact-head CI, independent review, squash merge and catalog recalc. Never mark published from local result.
