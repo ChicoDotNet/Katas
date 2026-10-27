@@ -1,0 +1,31 @@
+name: Go REST API IOU kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000038/**'
+      - '.github/workflows/go-rest-api-kata.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000038/**'
+      - '.github/workflows/go-rest-api-kata.yml'
+permissions:
+  contents: read
+jobs:
+  rest-api:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23.2'
+      - name: Check Ruby and Go runtimes
+        run: |
+          go version
+          ruby --version
+      - name: Execute behavioral RED, GREEN, Ruby event-replay oracle and mutants
+        working-directory: katas/KATA-000038
+        run: bash tests/run.sh

@@ -1,0 +1,3 @@
+Mutant sign: native Go tests fail; Ruby replay oracle fails.
+Mutant creditor: native Go tests fail; Ruby replay oracle fails.
+See .build/mutant-*.log for exact local traces; excluded from checkpoint ZIP.

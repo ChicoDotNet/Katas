@@ -1,0 +1,1 @@
+2026-10-27: PR feature branch created; exact-head remote CI and independent review pending. Local suite only; NOT published.

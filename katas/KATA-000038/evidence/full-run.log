@@ -1,0 +1,6 @@
+RED compiled and failed behaviorally as expected
+ok  	kata038/src	1.115s
+Ruby replay oracle: 65 histories, 5860 real Go HTTP requests verified, global zero-sum invariant PASS
+Mutant sign: detected by native tests AND independent Ruby oracle
+Mutant creditor: detected by native tests AND independent Ruby oracle
+FULL SUITE PASS

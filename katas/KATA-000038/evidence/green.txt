@@ -1,0 +1,10 @@
+=== RUN   TestSettlementAndBalances
+--- PASS: TestSettlementAndBalances (0.00s)
+=== RUN   TestAtomicErrors
+--- PASS: TestAtomicErrors (0.00s)
+=== RUN   TestConservationConcurrent
+--- PASS: TestConservationConcurrent (0.09s)
+=== RUN   TestNew
+--- PASS: TestNew (0.00s)
+PASS
+ok  	kata038/src	1.106s
