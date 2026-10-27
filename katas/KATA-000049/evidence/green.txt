@@ -1,0 +1,1 @@
+PASS native Fortran cases=512 assertions=2054

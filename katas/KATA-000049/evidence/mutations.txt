@@ -1,0 +1,3 @@
+PASS compiled mutant killed: exclude-upper-left
+PASS compiled mutant killed: ignore-right-column
+PASS compiled mutant killed: erase-zero

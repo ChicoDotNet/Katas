@@ -1,0 +1,35 @@
+name: Fortran Flower Field kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000049/**'
+      - '.github/workflows/fortran-flower-field-kata.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000049/**'
+      - '.github/workflows/fortran-flower-field-kata.yml'
+permissions:
+  contents: read
+jobs:
+  flower-field:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23.2'
+          cache: false
+      - name: Install genuine Fortran compiler if needed
+        run: command -v gfortran || (sudo apt-get update && sudo apt-get install -y gfortran)
+      - name: Execute RED, native GREEN, Go prefix oracle, metamorphisms and compiled mutants
+        working-directory: katas/KATA-000049
+        shell: bash
+        run: |
+          set -euo pipefail
+          gfortran --version
+          go version
+          bash tests/run.sh

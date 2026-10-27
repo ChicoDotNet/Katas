@@ -1,0 +1,9 @@
+=== RUN   TestIndependentPrefixAndMetamorphisms
+    flower_test.go:91: PASS 240 independent prefix cases; real-process rotation/reflection
+--- PASS: TestIndependentPrefixAndMetamorphisms (2.12s)
+=== RUN   TestMalformedInputRejected
+--- PASS: TestMalformedInputRejected (0.02s)
+=== RUN   TestLargeAndDegenerate
+--- PASS: TestLargeAndDegenerate (0.04s)
+PASS
+ok  	floweroracle	3.198s

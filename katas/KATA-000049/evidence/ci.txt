@@ -1,0 +1,1 @@
+NOT YET EXECUTED: remote CI for KATA-000049 pending branch/PR. Local tests/run.sh PASS on 2026-10-27. Do not treat this note as CI evidence.
