@@ -2184,8 +2184,8 @@
     "domain": "grid-stencil",
     "difficulty": 3,
     "difficulty_evidence": "Eight-neighbor stencil, rectangular boundary cases and independent 2D prefix-sum oracle; provisional 3/5 pending calibration",
-    "score": 0,
-    "score_evidence": "not_evaluated",
+    "score": 72,
+    "score_evidence": "Provisional single-agent rubric (not independently calibrated): transfer 13/20, depth 13/20, oracle 14/15, TDD 13/15, novelty 6/10, pedagogy 7/10, portability 3/5, maintenance 3/5 = 72/100. Distinctive Fortran halo and independent Go prefix-sum model; difficulty 3/5, no hardest-first causal claim.",
     "status": "green",
     "license": {
       "id": "MIT",
