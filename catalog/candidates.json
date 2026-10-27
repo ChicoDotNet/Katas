@@ -1768,7 +1768,7 @@
     "difficulty_evidence": "Provisional 4/5: validate root, uniqueness, parent order, deterministic hierarchy from unordered records",
     "score": 89,
     "score_evidence": "Author provisional 89/100, uncalibrated",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "MIT",
       "verified": true,
@@ -1796,14 +1796,37 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "PHP8 local + Python3",
       "red": "empty-children stub fails behaviorally",
       "green": "4 trees + 7 malformed",
       "differential_cases": 1000,
-      "ci_pending": true
+      "ci_pending": false
+    },
+    "remote_validation": {
+      "source_pr": 31,
+      "source_head": "e561dc55700771fd5cc8800b07f093cfd5918fd6",
+      "source_merge": "12653c1f9b9281eb1e3495f8171dd161e19e0353",
+      "pr_head_ci": "https://github.com/ChicoDotNet/Katas/actions/runs/39067317574",
+      "postmerge_ci": "https://github.com/ChicoDotNet/Katas/actions/runs/39069984374",
+      "audit": "docs/audits/ninja-publication-four-2026-10-19.md"
+    },
+    "published_via": {
+      "publication_pr": "https://github.com/ChicoDotNet/Katas/pull/45",
+      "state": "PENDING_INDEPENDENT_REVIEW_AND_SQUASH_MERGE",
+      "branch": "dev",
+      "merge_commit_sha": null,
+      "merged_at": null
+    },
+    "implementation_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/31",
+      "commit_sha": "12653c1f9b9281eb1e3495f8171dd161e19e0353",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -1817,7 +1840,7 @@
     "difficulty_evidence": "Provisional 5/5: modular powers, symmetry, big integers and parameter boundaries, not production cryptography",
     "score": 91,
     "score_evidence": "Author provisional 91/100; independent calibration pending",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "MIT",
       "verified": true,
@@ -1845,14 +1868,37 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "Java21 -Xlint:all -Werror and Python3",
       "red": "behaviorally wrong one-key variant failed modular test",
       "green": "12 modular-exchange and validation checks",
       "differential_cases": 1005,
-      "ci_pending": true
+      "ci_pending": false
+    },
+    "remote_validation": {
+      "source_pr": 31,
+      "source_head": "e561dc55700771fd5cc8800b07f093cfd5918fd6",
+      "source_merge": "12653c1f9b9281eb1e3495f8171dd161e19e0353",
+      "pr_head_ci": "https://github.com/ChicoDotNet/Katas/actions/runs/39067317653",
+      "postmerge_ci": "https://github.com/ChicoDotNet/Katas/actions/runs/39069984486",
+      "audit": "docs/audits/ninja-publication-four-2026-10-19.md"
+    },
+    "published_via": {
+      "publication_pr": "https://github.com/ChicoDotNet/Katas/pull/45",
+      "state": "PENDING_INDEPENDENT_REVIEW_AND_SQUASH_MERGE",
+      "branch": "dev",
+      "merge_commit_sha": null,
+      "merged_at": null
+    },
+    "implementation_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/31",
+      "commit_sha": "12653c1f9b9281eb1e3495f8171dd161e19e0353",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -2212,7 +2258,7 @@
     "difficulty_evidence": "Provisional author 4/5: bitmasks, forbidden digits, exhaustive combination and stable ordering",
     "score": 89,
     "score_evidence": "Author provisional 89/100, independent calibration pending",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "MIT",
       "verified": true,
@@ -2240,14 +2286,37 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "GNU Fortran -std=f2018 -Werror -fcheck=all and Python3",
       "red": "compiled incorrect variant fails expected count",
       "green": "12 accepted combinations and 2 invalid inputs",
       "differential_cases": 2525,
-      "ci_pending": true
+      "ci_pending": false
+    },
+    "remote_validation": {
+      "source_pr": 31,
+      "source_head": "e561dc55700771fd5cc8800b07f093cfd5918fd6",
+      "source_merge": "12653c1f9b9281eb1e3495f8171dd161e19e0353",
+      "pr_head_ci": "https://github.com/ChicoDotNet/Katas/actions/runs/39067317487",
+      "postmerge_ci": "https://github.com/ChicoDotNet/Katas/actions/runs/39069984378",
+      "audit": "docs/audits/ninja-publication-four-2026-10-19.md"
+    },
+    "published_via": {
+      "publication_pr": "https://github.com/ChicoDotNet/Katas/pull/45",
+      "state": "PENDING_INDEPENDENT_REVIEW_AND_SQUASH_MERGE",
+      "branch": "dev",
+      "merge_commit_sha": null,
+      "merged_at": null
+    },
+    "implementation_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/31",
+      "commit_sha": "12653c1f9b9281eb1e3495f8171dd161e19e0353",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
@@ -2531,7 +2600,7 @@
     "difficulty_evidence": "Provisional 5/5: bounded goroutines, deterministic reduction, unicode lower mapping, race detection",
     "score": 91,
     "score_evidence": "Provisional author score 91/100; not independently calibrated",
-    "status": "green",
+    "status": "published",
     "license": {
       "id": "MIT",
       "verified": true,
@@ -2559,14 +2628,37 @@
       "eligible",
       "selected",
       "red",
-      "green"
+      "green",
+      "verified",
+      "published"
     ],
     "local_validation": {
       "toolchain": "Go1.23 go test -race, Python3",
       "red": "wrong empty result triggers behavior failure",
       "green": "Go unit tests and race detector",
       "differential_cases": 907,
-      "ci_pending": true
+      "ci_pending": false
+    },
+    "remote_validation": {
+      "source_pr": 31,
+      "source_head": "e561dc55700771fd5cc8800b07f093cfd5918fd6",
+      "source_merge": "12653c1f9b9281eb1e3495f8171dd161e19e0353",
+      "pr_head_ci": "https://github.com/ChicoDotNet/Katas/actions/runs/39067317500",
+      "postmerge_ci": "https://github.com/ChicoDotNet/Katas/actions/runs/39069984492",
+      "audit": "docs/audits/ninja-publication-four-2026-10-19.md"
+    },
+    "published_via": {
+      "publication_pr": "https://github.com/ChicoDotNet/Katas/pull/45",
+      "state": "PENDING_INDEPENDENT_REVIEW_AND_SQUASH_MERGE",
+      "branch": "dev",
+      "merge_commit_sha": null,
+      "merged_at": null
+    },
+    "implementation_via": {
+      "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/31",
+      "commit_sha": "12653c1f9b9281eb1e3495f8171dd161e19e0353",
+      "branch": "dev",
+      "date": "2026-10-17"
     }
   },
   {
