@@ -1,0 +1,1 @@
+CI NOT EXECUTED for KATA-000061 in this local checkpoint. Proposed workflow: .github/workflows/cpp-micro-blog-kata.yml. Never treat local GREEN as remote certification or publication.

@@ -1,0 +1,25 @@
+name: C++20 Micro Blog Unicode kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths: ['katas/KATA-000061/**', '.github/workflows/cpp-micro-blog-kata.yml', 'catalog/**']
+  push:
+    branches: [dev, main]
+    paths: ['katas/KATA-000061/**', '.github/workflows/cpp-micro-blog-kata.yml']
+permissions:
+  contents: read
+jobs:
+  micro-blog:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install authentic C++20 and Ruby toolchains
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y g++ ruby
+          g++ --version | head -1
+          ruby --version
+      - name: Compile RED, execute GREEN with sanitizers, independent Ruby models and mutants
+        working-directory: katas/KATA-000061
+        run: bash tests/run.sh
