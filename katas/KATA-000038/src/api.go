@@ -25,10 +25,10 @@ type API struct {
 }
 
 type User struct {
-	Name    string             `json:"name"»
-	Owes    map[string]float64 `json:"owes"»
-	OwedBy  map[string]float64 `json:"owed_by"»
-	Balance float64            `json:"balance"»
+	Name    string             `json:"name"`
+	Owes    map[string]float64 `json:"owes"`
+	OwedBy  map[string]float64 `json:"owed_by"`
+	Balance float64            `json:"balance"`
 }
 
 func New(names []string) (*API, error) {
@@ -161,7 +161,7 @@ func (a *API) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	switch {
 	case r.Method == http.MethodGet && r.URL.Path == "/users":
 		var body struct {
-			Users []string `json:"users"»
+			Users []string `json:"users"`
 		}
 		// Empty GET body requests all users, but a non-empty body selects users.
 		if r.Body != nil && r.ContentLength != 0 {
@@ -192,7 +192,7 @@ func (a *API) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		writeJSON(w, 200, map[string]any{"users": a.snapshot(names)})
 	case r.Method == http.MethodPost && r.URL.Path == "/add":
 		var body struct {
-			User string `json:"user"»
+			User string `json:"user"`
 		}
 		if err := decodeBody(r, &body); err != nil || !validName(body.User) {
 			fail(w, 400)
@@ -206,9 +206,9 @@ func (a *API) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		writeJSON(w, 200, a.snapshot([]string{body.User})[0])
 	case r.Method == http.MethodPost && r.URL.Path == "/iou":
 		var body struct {
-			Lender   string          `json:"lender"»
-			Borrower string          `json:"borrower"»
-			Amount   json.RawMessage `json:"amount"»
+			Lender   string          `json:"lender"`
+			Borrower string          `json:"borrower"`
+			Amount   json.RawMessage `json:"amount"`
 		}
 		if err := decodeBody(r, &body); err != nil {
 			fail(w, 400)

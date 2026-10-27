@@ -35,7 +35,7 @@ func TestSettlementAndBalances(t *testing.T) {
 		l, b string
 		n    string
 	}{{"Ada", "Bob", "12.25"}, {"Bob", "Ada", "7.00"}, {"Zoe", "Ada", "2.25"}, {"Ada", "Zoe", "2.25"}} {
-		status, _ := request(t, a, "POST", "/iou", fmt.Sprintf(`{"lender":%q,"borrower":%q,"amount":%s}», v.l, v.b, v.n))
+		status, _ := request(t, a, "POST", "/iou", fmt.Sprintf(`{"lender":%q,"borrower":%q,"amount":%s}`, v.l, v.b, v.n))
 		if status != 200 {
 			t.Fatal(status)
 		}
@@ -53,7 +53,7 @@ func TestSettlementAndBalances(t *testing.T) {
 	if !reflect.DeepEqual(ada["owed_by"], map[string]any{"Bob": 5.25}) || len(zoe["owes"].(map[string]any)) != 0 {
 		t.Fatal(got)
 	}
-	status, filtered := request(t, a, "GET", "/users", `{"users":["Zoe","Ada"]}»)
+	status, filtered := request(t, a, "GET", "/users", `{"users":["Zoe","Ada"]}`)
 	if status != 200 || len(filtered["users"].([]any)) != 2 {
 		t.Fatal(filtered)
 	}
@@ -64,18 +64,18 @@ func TestAtomicErrors(t *testing.T) {
 		method, path, body string
 		code               int
 	}{
-		{"POST", "/iou", `{"lender":"Ada","borrower":"Ada","amount":1}», 400},
-		{"POST", "/iou", `{"lender":"Ada","borrower":"Nobody","amount":1}», 404},
-		{"POST", "/iou", `{"lender":"Ada","borrower":"Bob","amount":-1}», 400},
-		{"POST", "/iou", `{"lender":"Ada","borrower":"Bob","amount":0}», 400},
-		{"POST", "/iou", `{"lender":"Ada","borrower":"Bob","amount":1.001}», 400},
-		{"POST", "/iou", `{"lender":"Ada","borrower":"Bob","amount":1e2}», 400},
-		{"POST", "/iou", `{"lender":"Ada","borrower":"Bob","amount":1000000001}», 400},
-		{"POST", "/iou", `{"lender":"Ada","borrower":"Bob","amount":"3"}», 400},
-		{"POST", "/iou", `{"lender":"Ada","borrower":"Bob","amount":1} {}», 400},
-		{"POST", "/add", `{"user":"Ada"}», 409},
-		{"POST", "/add", `{"user":"  X"}», 400},
-		{"GET", "/users", `{"users":["Ghost"]}», 404},
+		{"POST", "/iou", `{"lender":"Ada","borrower":"Ada","amount":1}`, 400},
+		{"POST", "/iou", `{"lender":"Ada","borrower":"Nobody","amount":1}`, 404},
+		{"POST", "/iou", `{"lender":"Ada","borrower":"Bob","amount":-1}`, 400},
+		{"POST", "/iou", `{"lender":"Ada","borrower":"Bob","amount":0}`, 400},
+		{"POST", "/iou", `{"lender":"Ada","borrower":"Bob","amount":1.001}`, 400},
+		{"POST", "/iou", `{"lender":"Ada","borrower":"Bob","amount":1e2}`, 400},
+		{"POST", "/iou", `{"lender":"Ada","borrower":"Bob","amount":1000000001}`, 400},
+		{"POST", "/iou", `{"lender":"Ada","borrower":"Bob","amount":"3"}`, 400},
+		{"POST", "/iou", `{"lender":"Ada","borrower":"Bob","amount":1} {}`, 400},
+		{"POST", "/add", `{"user":"Ada"}`, 409},
+		{"POST", "/add", `{"user":"  X"}`, 400},
+		{"GET", "/users", `{"users":["Ghost"]}`, 404},
 		{"PATCH", "/users", "", 404},
 	}
 	before := users(t, a)
@@ -88,12 +88,12 @@ func TestAtomicErrors(t *testing.T) {
 	if !reflect.DeepEqual(before, users(t, a)) {
 		t.Fatal("invalid requests mutated state")
 	}
-	status, _ := request(t, a, "POST", "/iou", `{"lender":"Ada","borrower":"Bob","amount":1000000000}»)
+	status, _ := request(t, a, "POST", "/iou", `{"lender":"Ada","borrower":"Bob","amount":1000000000}`)
 	if status != 200 {
 		t.Fatal(status)
 	}
 	before = users(t, a)
-	status, _ = request(t, a, "POST", "/iou", `{"lender":"Ada","borrower":"Bob","amount":0.01}»)
+	status, _ = request(t, a, "POST", "/iou", `{"lender":"Ada","borrower":"Bob","amount":0.01}`)
 	if status != 400 || !reflect.DeepEqual(before, users(t, a)) {
 		t.Fatal("overflow not atomic")
 	}
@@ -110,7 +110,7 @@ func TestConservationConcurrent(t *testing.T) {
 				if j%2 == 1 {
 					l, b = b, l
 				}
-				req := httptest.NewRequest("POST", "/iou", bytes.NewBufferString(fmt.Sprintf(`{"lender":%q,"borrower":%q,"amount":0.01}», l, b)))
+				req := httptest.NewRequest("POST", "/iou", bytes.NewBufferString(fmt.Sprintf(`{"lender":%q,"borrower":%q,"amount":0.01}`, l, b)))
 				w := httptest.NewRecorder()
 				a.ServeHTTP(w, req)
 				if w.Code != 200 {

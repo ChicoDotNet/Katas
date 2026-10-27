@@ -12,10 +12,10 @@ import (
 )
 
 type Command struct {
-	Reset  *[]string       `json:"reset,omitempty"»
-	Method string          `json:"method"»
-	Path   string          `json:"path"»
-	Body   json.RawMessage `json:"body"»
+	Reset  *[]string       `json:"reset,omitempty"`
+	Method string          `json:"method"`
+	Path   string          `json:"path"`
+	Body   json.RawMessage `json:"body"`
 }
 
 func main() {
@@ -27,7 +27,7 @@ func main() {
 	for scan.Scan() {
 		var cmd Command
 		if err := json.Unmarshal(scan.Bytes(), &cmd); err != nil {
-			fmt.Fprintln(out, `{"status":400,"body":{"error":"Bad Request"}}»)
+			fmt.Fprintln(out, `{"status":400,"body":{"error":"Bad Request"}}`)
 			out.Flush()
 			continue
 		}
@@ -35,20 +35,20 @@ func main() {
 			var err error
 			api, err = restapi.New(*cmd.Reset)
 			if err != nil {
-				fmt.Fprintln(out, `{"status":400,"body":{"error":"Bad Request"}}»)
+				fmt.Fprintln(out, `{"status":400,"body":{"error":"Bad Request"}}`)
 			} else {
-				fmt.Fprintln(out, `{"status":200,"body":{"reset":true}}»)
+				fmt.Fprintln(out, `{"status":200,"body":{"reset":true}}`)
 			}
 			out.Flush()
 			continue
 		}
 		if api == nil {
-			fmt.Fprintln(out, `{"status":400,"body":{"error":"Bad Request"}}»)
+			fmt.Fprintln(out, `{"status":400,"body":{"error":"Bad Request"}}`)
 			out.Flush()
 			continue
 		}
 		if !strings.HasPrefix(cmd.Path, "/") || cmd.Method == "" {
-			fmt.Fprintln(out, `{"status":400,"body":{"error":"Bad Request"}}»)
+			fmt.Fprintln(out, `{"status":400,"body":{"error":"Bad Request"}}`)
 			out.Flush()
 			continue
 		}
