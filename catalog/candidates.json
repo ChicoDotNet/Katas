@@ -1816,6 +1816,13 @@
       "audit": "docs/audits/ninja-publication-four-2026-10-19.md"
     },
     "published_via": {
+      "publication_pr": "https://github.com/ChicoDotNet/Katas/pull/45",
+      "state": "PENDING_INDEPENDENT_REVIEW_AND_SQUASH_MERGE",
+      "branch": "dev",
+      "merge_commit_sha": null,
+      "merged_at": null
+    },
+    "implementation_via": {
       "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/31",
       "commit_sha": "12653c1f9b9281eb1e3495f8171dd161e19e0353",
       "branch": "dev",
@@ -1881,6 +1888,13 @@
       "audit": "docs/audits/ninja-publication-four-2026-10-19.md"
     },
     "published_via": {
+      "publication_pr": "https://github.com/ChicoDotNet/Katas/pull/45",
+      "state": "PENDING_INDEPENDENT_REVIEW_AND_SQUASH_MERGE",
+      "branch": "dev",
+      "merge_commit_sha": null,
+      "merged_at": null
+    },
+    "implementation_via": {
       "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/31",
       "commit_sha": "12653c1f9b9281eb1e3495f8171dd161e19e0353",
       "branch": "dev",
@@ -2292,6 +2306,13 @@
       "audit": "docs/audits/ninja-publication-four-2026-10-19.md"
     },
     "published_via": {
+      "publication_pr": "https://github.com/ChicoDotNet/Katas/pull/45",
+      "state": "PENDING_INDEPENDENT_REVIEW_AND_SQUASH_MERGE",
+      "branch": "dev",
+      "merge_commit_sha": null,
+      "merged_at": null
+    },
+    "implementation_via": {
       "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/31",
       "commit_sha": "12653c1f9b9281eb1e3495f8171dd161e19e0353",
       "branch": "dev",
@@ -2627,6 +2648,13 @@
       "audit": "docs/audits/ninja-publication-four-2026-10-19.md"
     },
     "published_via": {
+      "publication_pr": "https://github.com/ChicoDotNet/Katas/pull/45",
+      "state": "PENDING_INDEPENDENT_REVIEW_AND_SQUASH_MERGE",
+      "branch": "dev",
+      "merge_commit_sha": null,
+      "merged_at": null
+    },
+    "implementation_via": {
       "merged_pr": "https://github.com/ChicoDotNet/Katas/pull/31",
       "commit_sha": "12653c1f9b9281eb1e3495f8171dd161e19e0353",
       "branch": "dev",
