@@ -1,0 +1,7 @@
+tests/run.sh: line 10:   639 Aborted                 .build/red > .build/red.log 2>&1
+RED_PASS compiled stub fails native behavioral assertions
+NATIVE_PASS assertions=230
+ORACLE_PASS cases=2541 token_model=1800 ruby_codepoints=700 malformed=36 idempotence=2500 suffix=2152
+MUTANT_KILLED MUTANT_OFF_BY_ONE
+MUTANT_KILLED MUTANT_ACCEPT_OVERLONG
+FULL_SUITE_PASS
