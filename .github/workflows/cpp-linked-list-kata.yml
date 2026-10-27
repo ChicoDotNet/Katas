@@ -1,0 +1,25 @@
+name: C++20 Linked List kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths: ['katas/KATA-000041/**', '.github/workflows/cpp-linked-list-kata.yml', 'catalog/**']
+  push:
+    branches: [dev, main]
+    paths: ['katas/KATA-000041/**', '.github/workflows/cpp-linked-list-kata.yml']
+permissions:
+  contents: read
+jobs:
+  linked-list:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install real C++20 and Ruby toolchains
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y g++ ruby
+          g++ --version | head -1
+          ruby --version
+      - name: Native C++ RED GREEN ASan UBSan Ruby array oracle and compiled mutants
+        working-directory: katas/KATA-000041
+        run: bash tests/run.sh

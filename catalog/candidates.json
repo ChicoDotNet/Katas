@@ -1737,25 +1737,34 @@
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/linked-list",
     "fingerprint": "exercism-spec-linked-list",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "owned-bidirectional-linked-structures",
+    "difficulty": 4,
+    "difficulty_evidence": "Provisional 4/5: bidirectional pointer topology, deep ownership, copy/move, iterative destruction and mutation verification; not calibrated.",
+    "score": 79,
+    "score_evidence": "KATA-000041/README.md: provisional rubric transfer 16, depth 15, oracle 16, TDD 12, novelty 6, pedagogy 7, portability 3, maintenance 4; not independently calibrated.",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/exercises/linked-list/instructions.md",
+      "scope": "Conceptual instructions blob edf4055b38ca35950a3600fa268e267763b69a17 under MIT root LICENSE blob 6813d6298df9a46da6485050e8a5fcd61ab79879; no upstream starters, fixtures, canonical data or tests copied."
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "C++20",
+    "language_rationale": "C++20 unique_ptr ownership and non-owning back-links vs Rust/Swift/Haskell; Ruby array event-log oracle plus inverse-operation metamorphism selected before CI.",
+    "evidence": {
+      "red": "katas/KATA-000041/evidence/red.txt",
+      "green": "katas/KATA-000041/evidence/green.txt",
+      "oracle": "katas/KATA-000041/evidence/oracle.txt",
+      "ci": "katas/KATA-000041/evidence/ci.txt",
+      "skill_review": "katas/KATA-000041/evidence/skill_review.md",
+      "skill_conclusion": "confirmed"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
-    }
+    },
+    "development_complete": true
   },
   {
     "id": "KATA-000042",
