@@ -1,0 +1,30 @@
+name: Swift Custom Set kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths: ['katas/KATA-000040/**', '.github/workflows/swift-custom-set-kata.yml', 'catalog/**']
+  push:
+    branches: [dev, main]
+    paths: ['katas/KATA-000040/**', '.github/workflows/swift-custom-set-kata.yml']
+permissions:
+  contents: read
+jobs:
+  custom-set:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: swift-actions/setup-swift@v2
+        with:
+          swift-version: '6.2'
+      - uses: actions/setup-go@v6
+        with:
+          go-version: '1.23.2'
+      - name: Genuine Swift RED GREEN Go map and bitset oracle plus compiled mutants
+        working-directory: katas/KATA-000040
+        shell: bash
+        run: |
+          set -euo pipefail
+          swiftc --version
+          go version
+          bash tests/run.sh

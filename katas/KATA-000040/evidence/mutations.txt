@@ -1,0 +1,3 @@
+MUTANT KILLED binary-search-order: native behavioral failure
+MUTANT KILLED union-merge-order: native behavioral failure
+MUTATIONS PASS 2/2

@@ -1,0 +1,9 @@
+=== RUN   TestIndependentModels
+--- PASS: TestIndependentModels (0.24s)
+=== RUN   TestRealSwiftProcessDifferential
+ORACLE PASS: 1408 genuine Swift JSONL requests, 704 real swapped pairs, 3000 map-vs-bitset crosschecks
+--- PASS: TestRealSwiftProcessDifferential (0.51s)
+=== RUN   TestInvalidRequestRejected
+--- PASS: TestInvalidRequestRejected (0.01s)
+PASS
+ok  	katas/ordered-set-oracle	1.770s

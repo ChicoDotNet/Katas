@@ -1,0 +1,3 @@
+LOCAL CHECKPOINT ONLY. No GitHub CI run for KATA-000040 has been executed.
+Do not mark verified/published. A future PR must pass the new Swift workflow,
+exact-head catalog validation and branch governance and independent review.
