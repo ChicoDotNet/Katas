@@ -85,7 +85,8 @@ func TestIndependentPrefixAndMetamorphisms(t *testing.T) {
   if rows==0 || cols==0 {continue}
   turned,err:=runNative(rotate(in));if err!=nil {t.Fatalf("rotated case=%d: %v",n,err)}
   if !same(turned,rotate(actual)) {t.Fatalf("rotation case=%d",n)}
-  mirrored,err:=runNative(reflect(in));if err!=nil {t.Fatalf("reflected case=%d: %v",n)}
+  mirrored,err:=runNative(reflect(in));if err!=nil {t.Fatalf("reflected case=%d: %v",n,err)}
+  if !same(mirrored,reflect(actual)) {t.Fatalf("reflection case=%d",n)}
  }
  t.Logf("PASS %d independent prefix cases; real-process rotation/reflection",histories)
 }
