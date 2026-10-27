@@ -1711,25 +1711,34 @@
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/custom-set",
     "fingerprint": "exercism-spec-custom-set",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "set-algebra-and-value-semantics",
+    "difficulty": 3,
+    "difficulty_evidence": "Provisional 3/5: copy-on-write, signed bounds, set algebra and independent map/bitset models; not independently calibrated.",
+    "score": 74,
+    "score_evidence": "KATA-000040/README.md: provisional rubric transfer 15, depth 13, oracle 16, TDD 12, novelty 5, pedagogy 7, portability 3, maintenance 3; not independently calibrated.",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/exercises/custom-set/description.md",
+      "scope": "Conceptual description blob 33b90e28d7f87328d24652822d4424354b2590a1 under MIT LICENSE blob 6813d6298df9a46da6485050e8a5fcd61ab79879; no starter/tests/fixtures imported."
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Swift",
+    "language_rationale": "Swift value semantics/COW sorted-array set algebra vs Haskell/Ada/C++20; Go map and independent bounded bitset oracles, selected before CI.",
+    "evidence": {
+      "red": "katas/KATA-000040/evidence/red.txt",
+      "green": "katas/KATA-000040/evidence/green.txt",
+      "oracle": "katas/KATA-000040/evidence/oracle.txt",
+      "ci": "katas/KATA-000040/evidence/ci.txt",
+      "skill_review": "katas/KATA-000040/evidence/skill_review.md",
+      "skill_conclusion": "confirmed"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
-    }
+    },
+    "development_complete": true
   },
   {
     "id": "KATA-000041",

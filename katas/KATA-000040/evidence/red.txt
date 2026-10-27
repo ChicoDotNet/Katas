@@ -1,0 +1,45 @@
+red/main.swift:5: Fatal error: NATIVE FAIL #2: canonical sorted unique
+
+*** Signal 4: Backtracing from 0x7f17674a5788... done ***
+
+*** Program crashed: Illegal instruction at 0x00007f17674a5788 ***
+
+Platform: x86_64 Linux (Debian GNU/Linux 13 (trixie))
+
+Thread 0 "red" crashed:
+
+  0  0x00007f17674a5788 _assertionFailure(_:_:file:line:flags:) + 264 in libswiftCore.so
+...
+
+
+Registers:
+
+rax 0x0000000200000003  8589934595
+rdx 0x0000000000000002  2
+rcx 0xfffffffe00000000  18446744065119617024
+rbx 0x0000000000000003  3
+rsi 0x000055ebe72d5f88  03 00 00 00 00 00 00 00 40 00 00 00 00 00 00 00  ········@·······
+rdi 0x0000000000000001  1
+rbp 0x00007fffb2fd5080  00 00 00 00 00 00 00 00 90 8a 84 db eb 55 00 00  ···········ÛëU··
+rsp 0x00007fffb2fd5010  00 00 00 00 00 00 00 10 00 00 00 00 00 00 00 00  ················
+ r8 0x0000000000000040  64
+ r9 0x0000000000000027  39
+r10 0x0000000000000000  0
+r11 0x0000000000000000  0
+r12 0x0000000000000000  0
+r13 0x00007fffb2fd50d0  27 00 00 00 00 00 00 f0 80 5f 2d e7 eb 55 00 00  '······ð·_-çëU··
+r14 0xe100000000000000  16212958658533785600
+r15 0x000055ebdb84bd10  20 62 84 db eb 55 00 00 68 cf 7b 67 17 7f 00 00   b·ÛëU··hÏ{g····
+rip 0x00007f17674a5788  0f 0b 48 8d 35 7f 0c fb ff 48 8d 55 a0 45 31 e4  ··H·5··ûÿH·U E1ä
+
+rflags 0x0000000000010202  
+
+cs 0x0033  fs 0x0000  gs 0x0000
+
+
+Images (12 omitted):
+
+0x00007f17671c3000–0x00007f17677741e8 fd1782c519b557fc55329e9a457a811e94945645 libswiftCore.so /usr/local/swift/usr/lib/swift/linux/libswiftCore.so
+
+Backtrace took 0.01s
+
