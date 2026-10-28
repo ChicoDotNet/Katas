@@ -25,7 +25,10 @@ jobs:
           java-version: '21'
       - name: Install Kotlin compiler
         run: sudo apt-get update && sudo apt-get install -y kotlin
-      - name: Verify RED, GREEN and independent oracle
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+      - name: Verify RED, GREEN and independent single-day oracle
         working-directory: katas/KATA-000011
         shell: bash
         run: |
@@ -37,3 +40,7 @@ jobs:
           kotlinc tests/InventoryRed.kt tests/InventoryTest.kt -include-runtime -d /tmp/gilded-red.jar
           if java -jar /tmp/gilded-red.jar >/tmp/gilded-red.log 2>&1; then exit 1; fi
           grep -q 'ordinary before expiry' /tmp/gilded-red.log
+      - name: Verify multi-day Kotlin invariants, independent Ruby closed-form oracle and temporal mutant
+        working-directory: katas/KATA-000011
+        shell: bash
+        run: bash tests/run_trajectory.sh
