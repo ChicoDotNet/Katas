@@ -1,0 +1,1 @@
+NOT CERTIFIED REMOTELY. The workflow is prepared but has not been executed on a GitHub exact-head commit. Do not label verified/published without successful CI, independent review, squash merge to dev, and post-merge reconciliation.

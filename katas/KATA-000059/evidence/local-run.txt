@@ -1,0 +1,10 @@
+Swift version 6.2.1 (swift-6.2.1-RELEASE)
+Target: x86_64-unknown-linux-gnu
+ruby 3.3.8 (2025-04-09 revision b200bad6cd) [x86_64-linux-gnu]
+RED Swift compiled and failed behaviorally: duplicate robot names
+GREEN Swift native PASS: 5263 assertions, 1200 seeded + 250 system-RNG robots, 200 resets, 600 concurrent, 8-slot exhaustion
+THREAD SANITIZER PASS: native Swift actor concurrency suite
+ORACLE Ruby PASS: 100 histories, 11365 operations, 10 complete name universes, metamorphic/idempotence/replay, seeded diversity
+MUTANT MUTANT_IGNORE_OCCUPIED killed by native Swift behavioral assertion
+MUTANT MUTANT_RESET_REUSES killed by native Swift behavioral assertion
+FULL SUITE PASS
