@@ -1,0 +1,18 @@
+2026-10-28 UTC | additive KATA-000008 verification | Swift 6.2.1, Go 1.23.2, Python 3.13.5
+Original source hashes verified against dev 0d97c338cb8702265ad6fda4381cbd9336197f61:
+  leaderboard.swift 66837001dd6baf9b2ffbee92746ec486fc3dd489
+  cli.swift 21a2956b24642123d7f7eba3f627d1267497db13
+  test_leaderboard.swift cf301dbe82a83178febe62e40dfb1f88c8d88d8d
+  differential.py 8a5b2b43ceeb374bd102eac64e23d7fde18dd0cc
+Commands and observed output:
+  swiftc -swift-version 6 -O src/leaderboard.swift tests/test_leaderboard.swift -o /tmp/ninja008native && /tmp/ninja008native
+  PASS: 8 deterministic Swift scoring and validation cases
+  python3 tests/differential.py tests/leaderboard-cli
+  PASS: 300 independent Swift ranking comparisons
+  swiftc -swift-version 6 -D KATA_RED src/leaderboard.swift tests/test_leaderboard.swift -o /tmp/ninja008red && /tmp/ninja008red
+  Expected behavioral failure: FAIL behavioral assertion: self-driving must occupy second position
+  bash tests/histogram-run.sh
+  PASS histogram oracle: 1542 Swift comparisons, 880 metamorphic invariants, 220 partition-additivity witnesses, nil/tie witnesses
+  PASS: compiled points mutant detected
+  PASS: compiled tie mutant detected
+Local suite PASS. No remote CI or publication inferred from this file.

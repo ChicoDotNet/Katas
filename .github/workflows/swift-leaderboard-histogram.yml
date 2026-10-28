@@ -1,0 +1,34 @@
+name: Swift leaderboard histogram hardening
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000008/**'
+      - '.github/workflows/swift-leaderboard-histogram.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000008/**'
+      - '.github/workflows/swift-leaderboard-histogram.yml'
+permissions:
+  contents: read
+jobs:
+  histogram-metamorphic:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: swift-actions/setup-swift@v2
+        with:
+          swift-version: '6.2'
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+      - name: Histogram reference, metamorphic properties and compiled mutants
+        working-directory: katas/KATA-000008
+        run: |
+          set -euo pipefail
+          swift --version
+          go version
+          bash tests/histogram-run.sh
