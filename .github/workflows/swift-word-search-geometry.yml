@@ -1,0 +1,26 @@
+name: Swift Word Search geometry hardening
+on:
+  pull_request:
+    branches: [dev, main]
+    paths: ['katas/KATA-000046/**', '.github/workflows/swift-word-search-geometry.yml']
+  push:
+    branches: [dev, main]
+    paths: ['katas/KATA-000046/**', '.github/workflows/swift-word-search-geometry.yml']
+permissions:
+  contents: read
+jobs:
+  geometric-oracle:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: swift-actions/setup-swift@v2
+        with:
+          swift-version: '6.2'
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+      - name: Native Swift RED/GREEN, constructive Go oracle, mutation gates
+        working-directory: katas/KATA-000046
+        shell: bash
+        run: bash tests/geometry-run.sh

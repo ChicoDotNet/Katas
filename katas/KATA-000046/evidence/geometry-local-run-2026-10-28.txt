@@ -1,0 +1,5 @@
+PASS: 11 directional assertions and 2 input validation cases
+PASS: 1760 boards, 11040 symmetry existence invariants, 4320 constructive witness/absence checks, 7912 valid witnesses
+PASS: compiled and detected mutant missing-diagonal
+PASS: compiled and detected mutant incorrect-endpoint
+PASS: native Swift, constructive Go oracle, RED, and 2 mutation gates
