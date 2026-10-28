@@ -2575,24 +2575,52 @@
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/ledger",
     "fingerprint": "exercism-spec-ledger",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "fixed-point-accounting-formatting",
+    "difficulty": 4,
+    "difficulty_evidence": "Author provisional 4/5: locale-specific money and dates, stable ordering, exact integer cents, UTF-8 symbol width, legacy-refactoring scope caveat",
+    "score": 79,
+    "score_evidence": "Author provisional 79/100, uncalibrated: transfer 15/20, depth 16/20, oracle 13/15, TDD 12/15, novelty 8/10, pedagogy 8/10, portability 3/5, maintenance 4/5",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/LICENSE",
+      "scope": "Concept and locale contract only; no starter or canonical fixtures copied; original MIT C++20/Ruby code"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "C++20",
+    "language_rationale": "Exact integer cents and strict locale/Unicode-width policy; COBOL, Ada and Go evaluated; Ruby BigDecimal/Date reference independent",
+    "evidence": {
+      "red": "katas/KATA-000058/evidence/red.log",
+      "green": "katas/KATA-000058/evidence/green.log",
+      "oracle": "katas/KATA-000058/evidence/oracle.log",
+      "mutations": "katas/KATA-000058/evidence/mutations.log",
+      "skill_review": "katas/KATA-000058/evidence/skill_review.md",
+      "skill_conclusion": "confirmed"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "GCC 14.2.0 + Ruby 3.3.8 + Python 3",
+      "red": "compiled behavioral stub fails",
+      "green_assertions": 75027,
+      "differential_cases": 960,
+      "metamorphic_cases": 320,
+      "invalid_cases": 7,
+      "compiled_mutants_killed": 2,
+      "compiled_mutants_total": 2,
+      "asan_ubsan": true,
+      "ci_pending": true
     }
   },
   {
