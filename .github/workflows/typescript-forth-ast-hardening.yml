@@ -1,0 +1,32 @@
+name: TypeScript Forth AST-first Go oracle hardening
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000033/**'
+      - '.github/workflows/typescript-forth-ast-hardening.yml'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000033/**'
+      - '.github/workflows/typescript-forth-ast-hardening.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  ast-first-oracle:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23.2'
+      - name: Install TypeScript 5.8.3
+        run: npm install --global typescript@5.8.3
+      - name: RED GREEN Python reference Go AST oracle and compiled mutants
+        working-directory: katas/KATA-000033
+        run: bash tests/ast-run.sh
