@@ -1,0 +1,33 @@
+name: Swift Robot Name kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000059/**'
+      - '.github/workflows/swift-robot-name-kata.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000059/**'
+      - '.github/workflows/swift-robot-name-kata.yml'
+permissions:
+  contents: read
+jobs:
+  swift-robot-name:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: swift-actions/setup-swift@v2
+        with:
+          swift-version: '6.2'
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+      - name: Authentic Swift 6 actor RED/GREEN, Ruby state oracle, exhaustive model, compiled mutants
+        shell: bash
+        working-directory: katas/KATA-000059
+        run: |
+          set -euo pipefail
+          bash tests/run.sh

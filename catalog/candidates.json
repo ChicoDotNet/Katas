@@ -2601,25 +2601,34 @@
     "source_id": "exercism",
     "source_url": "https://github.com/exercism/problem-specifications/tree/main/exercises/robot-name",
     "fingerprint": "exercism-spec-robot-name",
-    "domain": "not_yet_classified",
-    "difficulty": 0,
-    "difficulty_evidence": "not yet audited",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "domain": "concurrent-randomized-name-reservation",
+    "difficulty": 5,
+    "difficulty_evidence": "Provisional 5/5: randomized collision resistance, actor isolation, reset invariants, finite namespace exhaustion, concurrent stress, independent state and combinatorial models; independent calibration pending.",
+    "score": 83,
+    "score_evidence": "KATA-000059/README.md provisional: transfer 17, depth 15, oracle 16, TDD 12, novelty 8, pedagogy 8, portability 4, maintenance 3 = 83/100; independent calibration pending.",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/exercism/problem-specifications/blob/main/exercises/robot-name/description.md",
+      "scope": "Concept description blob fca3a41aeccc9ce1e2839ec947ffcf8e6ef8e2bb under MIT LICENSE blob 6813d6298df9a46da6485050e8a5fcd61ab79879; only conceptual reference; original Swift, Ruby and synthetic tests, no starter/fixtures copied."
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Swift 6.2",
+    "language_rationale": "Swift 6 actor isolation + production system RNG and bounded reservoir fallback; Go mutex, Erlang GenServer, Ada protected objects compared before CI. Native Swift RED/GREEN; independent Ruby Set state model and Cartesian enumeration oracle.",
+    "evidence": {
+      "red": "katas/KATA-000059/evidence/local-run.txt",
+      "green": "katas/KATA-000059/evidence/local-run.txt",
+      "oracle": "katas/KATA-000059/evidence/local-run.txt",
+      "ci": "katas/KATA-000059/evidence/ci.txt",
+      "skill_review": "katas/KATA-000059/evidence/skill_review.md",
+      "skill_conclusion": "confirmed"
+    },
     "discovery": {
       "source_scan": "exercism-20261017-part1",
       "date": "2026-10-17",
       "note": "metadata only; no exercises copied"
-    }
+    },
+    "development_complete": true
   },
   {
     "id": "KATA-000060",
