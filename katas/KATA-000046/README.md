@@ -20,3 +20,18 @@ grep -q 'FAIL behavioral assertion' /tmp/word-red.log
 Local: 11 fixed directional assertions, 2 validation checks and 400 independently checked boards. An incorrectly spelled expected reverse diagonal was corrected before GREEN. RED compiles and fails for missing expected matches. Author-only provisional difficulty 4/5 and score 89/100; not calibrated.
 
 [RED](evidence/red.txt) · [GREEN](evidence/green.txt) · [oracle](evidence/oracle.txt) · [CI](evidence/ci.txt) · [Ninja review](evidence/skill_review.md).
+
+
+## Geometric hardening — 28-oct-2026 (additive, same KATA-ID)
+
+| Layer | Language | Algorithm / verification technique |
+|---|---|---|
+| Production | Swift 6 (unchanged) | Eight-direction row-major search and explicit optional endpoints |
+| RED/GREEN | Swift 6 | Native behavioral assertions, actual KATA_RED compile/failure |
+| Original differential oracle | Python 3 | Enumerate all coordinates/directions, check deterministic tie-break |
+| New independent oracle | Go 1.23 | Construct a unique path *before* running Swift, transform endpoints under all eight dihedral symmetries, verify path witnesses |
+| Mutation gate | Swift 6 + Go 1.23 | Compile and detect missing diagonal and incorrect endpoint mutants |
+
+The new oracle contrasts **constructive/metamorphic geometry** against the existing **brute-force enumeration**. A rotated/reflected board preserves *existence*, but its row-major tie-break may choose a different occurrence; only **uniquely planted** words assert transformed endpoints. Go was selected for clear bounded byte-grid transformations, not because of an existing workflow. Haskell and Ruby were considered; neither provides an evidenced advantage here. Shared risk: row/column and direction conventions. The constructive model avoids translating the Swift search loop, while Python still covers tie-break cases.
+
+Local command: `bash tests/geometry-run.sh` (Swift 6.2.1, Go 1.23.2, Python 3.13.5). Local evidence: [geometry run](evidence/geometry-local-run-2026-10-28.txt), [full audit and Ninja decision](evidence/geometry-hardening-2026-10-28.md). The existing Python suite is still run by the original workflow; the new script does not claim to execute it. No source implementation change or new publication; remote certification requires exact-head CI and independent review.
