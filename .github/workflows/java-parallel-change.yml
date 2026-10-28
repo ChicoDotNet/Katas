@@ -35,3 +35,7 @@ jobs:
           javac --release 21 -d /tmp/cart-red tests/RedCart.java tests/TestShoppingCart.java
           if java -cp /tmp/cart-red TestShoppingCart > /tmp/cart-red.log 2>&1; then echo 'Expected RED passed' >&2; exit 1; fi
           grep -q 'bulk items retained' /tmp/cart-red.log
+      - name: Verify precompiled legacy client, contracts and fault-injection mutants
+        working-directory: katas/KATA-000019
+        shell: bash
+        run: bash tests/run-hardening.sh

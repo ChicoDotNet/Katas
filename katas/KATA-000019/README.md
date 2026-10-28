@@ -22,3 +22,17 @@ grep -q 'bulk items retained' /tmp/cart-red.log
 Local Java21: 11 fixed compatibility/isolation checks green, 400 Python differential command sequences green, and RED detects truncation of bulk items. Original operations and semantics are documented locally, not assumed identical to the externally linked shopping-cart starter. Provisional author difficulty 4/5, score 89/100, not calibrated.
 
 Evidence: evidence/red.txt, green.txt, oracle.txt, ci.txt, skill_review.md.
+
+## 2026-10-28 retroactive hardening — legacy ABI, atomicity and snapshots
+
+The published Java 21 implementation remains unchanged. We added a **precompiled old client**: compile `tests/LegacyConsumer.java` only against `tests/legacy-api/ShoppingCart.java`, then run the same client bytecode with the current production class first on the runtime classpath. This checks JVM binary linkage, unlike merely recompiling an old source client. Native Java tests cover immutable snapshots, defensive copies, invalid-list failure atomicity (including a null *after* a valid prefix), integer-to-long sum boundaries, and 9,000 seeded mixed operations. Two compiled mutants deliberately expose a live mutable alias or commit partial state before rejecting an invalid element.
+
+| Role | Language / strategy |
+|---|---|
+| Implementation (unchanged) | Java 21, expand-migrate-contract API |
+| RED/GREEN and ABI | Java 21 native tests; separately precompiled legacy bytecode; compiled behavioral mutants |
+| Original independent differential oracle (unchanged) | Python 3, 400 CLI sequences against a separate list state model |
+| New complementary verification | Java 21 API state model, snapshot metamorphisms, failure injection, old-binary runtime linkage |
+| Alternatives / common-mode risks | Source-only compile misses JVM binary linkage; another translated list simulator repeats data-structure assumptions; Java list model shares representation and is not a new independent oracle |
+
+Run `bash tests/run-hardening.sh` from this kata directory; CI runs it after the existing RED/GREEN and Python differential suite. Local OpenJDK 21.0.12.1: 34,243 assertions across 150 histories / 9,000 steps; legacy binary linked and ran; both mutants compiled and failed as expected. See `evidence/compatibility-hardening-2026-10-28.md`. **This is additive hardening, not a new kata or published-state transition.**
