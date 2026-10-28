@@ -1,0 +1,20 @@
+=== TypeScript original RED/GREEN ===
+PASS: 23 original Forth fixed cases and boundaries
+PASS: 816 independent Forth programs (Python token interpreter vs TypeScript compiled operations)
+PASS: compiled RED fails behaviorally
+=== Go AST-first independent oracle ===
+PASS: 2117 AST-first, frozen-binding, metamorphic and invalid-input witnesses (20 classes)
+Classes: ast-direct=300, ast-composition=300, ast-definition=300, frozen-alias=300, self-redefinition=301, builtin-shadow=300, builtin-freeze=300, negative-division=3
+PASS: compiled mutant floor_division detected by AST oracle
+PASS: compiled mutant builtin_precedence detected by AST oracle
+PASS: compiled mutant frozen_alias_truncation detected by AST oracle
+PASS: Forth hardening complete
+Toolchains: Node v22.16.0; TypeScript 5.8.3; Go 1.23.2; Python 3.13.5.
+Original repository blobs verified before changes:
+  src/forth.ts 12703cb84342f34231fb48d020de1fb247d11221
+  cli.js 944034d49996e0fa2c12c447af7a51d52ac5a08a
+  tests/test_forth.ts 5b4ef8538cdf1ad4ae178daf6c58ae8c65a5e3a0
+  tests/differential.py 0225434dd7f2dcf95f8a71edcc83358c135548b9
+  tsconfig.json dc8c72e25b36b1e7271598e91d74f8ea2119e03a
+Source provenance: MIT Exercism problem-specifications concept, no external starters/fixtures copied. All new Go code and tests original.
+Remote GitHub CI: NOT EXECUTED for this local hardening checkpoint.
