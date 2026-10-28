@@ -1,0 +1,11 @@
+# KATA-000019 — binary compatibility and fault injection (2026-10-28)
+
+**Scope:** additive verification of an already published Java 21 implementation. The original `src/ShoppingCart.java` is unchanged (Git blob `5c4aa905f2804abdc3881190868e2cdffb6a8404`). No new published kata, no language migration, no change to catalog status.
+
+**Structural verification strategies:** (A) compile a `LegacyConsumer` binary against a separately authored legacy-only `ShoppingCart` shell, then execute that bytecode with the production `ShoppingCart` first on the runtime classpath. This exercises JVM method descriptors and linkage, which the preexisting CLI list-model differential oracle cannot check. (B) native Java API state/snapshot and fault-injection tests with a sequential list model, invalid bulk input after a valid prefix, defensive-copy and immutable-snapshot invariants, and long-precision totals. The reference model uses a list just like the production representation and is **not** claimed as a structurally independent algorithmic oracle. The original 400-case Python CLI differential oracle remains unchanged. (C) compile two intentionally defective production variants (mutable alias and partial commit) and demand behavioral detection.
+
+**Languages:** Java 21 implementation and native RED/GREEN/compatibility checks; Python 3 remains the original differential oracle. Java is necessary for binary linking and JVM API signature checks; a Ruby/Go translation would not test bytecode compatibility. For alternative strategies, source-level compilation alone misses binary linkage, while a second translated list simulator shares representation and adds little fault detection.
+
+**Executed locally:** `bash tests/run-hardening.sh` with OpenJDK 21.0.12.1: precompiled legacy bytecode PASS, 34,243 native assertions over 9,000 mixed steps in 150 histories PASS, both mutants compiled and killed. No races/throughput or causal improvement inferred. Remote CI remains pending until a reviewable PR passes on its exact SHA. Original code/tests remain MIT authored, no external starter or fixtures copied.
+
+**Ninja v0.1.29 review:** `confirmed` for OBS-013, bounded to API compatibility, snapshot isolation and failure atomicity. No skill modification; holdout transfer not measured.
