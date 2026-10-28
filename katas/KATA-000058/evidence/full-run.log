@@ -1,0 +1,9 @@
+g++ (Debian 14.2.0-19) 14.2.0
+ruby 3.3.8 (2025-04-09 revision b200bad6cd) [x86_64-linux-gnu]
+EXPECTED RED: missing formatted entry
+PASS native C++ assertions: 75027
+PASS Ruby BigDecimal/key-sort differential: 960 cases; 320 permutations; 7 invalid rejections
+PASS mutant wrong-sort: compiled, behaviorally rejected
+PASS mutant wrong-decimal-separator: compiled, behaviorally rejected
+PASS compiled mutations: 2/2 killed
+PASS FULL SUITE

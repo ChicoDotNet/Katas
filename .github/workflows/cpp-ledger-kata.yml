@@ -1,0 +1,34 @@
+name: C++20 ledger kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000058/**'
+      - '.github/workflows/cpp-ledger-kata.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000058/**'
+      - '.github/workflows/cpp-ledger-kata.yml'
+permissions:
+  contents: read
+jobs:
+  ledger:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: false
+      - name: Verify real toolchains
+        run: |
+          g++ --version
+          ruby --version
+          python3 --version
+      - name: Compile behavioral RED and GREEN, Ruby oracle, sanitizers and compiled mutations
+        working-directory: katas/KATA-000058
+        shell: bash
+        run: bash tests/run.sh

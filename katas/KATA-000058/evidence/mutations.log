@@ -1,0 +1,3 @@
+PASS mutant wrong-sort: compiled, behaviorally rejected
+PASS mutant wrong-decimal-separator: compiled, behaviorally rejected
+PASS compiled mutations: 2/2 killed

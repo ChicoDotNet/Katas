@@ -1,0 +1,1 @@
+PASS Ruby BigDecimal/key-sort differential: 960 cases; 320 permutations; 7 invalid rejections
