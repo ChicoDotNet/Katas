@@ -1,0 +1,1 @@
+2026-10-19 local Node 22.16.0: NINJA_RED=1 node --test tests/test-clock-in.mjs exits 1 with behavioral assertion POST began before required GPS completed; mutant is compilable and sends prematurely.

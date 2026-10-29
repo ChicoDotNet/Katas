@@ -682,29 +682,52 @@
   },
   {
     "id": "KATA-000013",
-    "title": "Clock-in",
+    "title": "Clock-in — Deterministic Promise Ordering and GPS Fallback (Clean-room)",
     "source_id": "kata-log",
     "source_url": "https://kata-log.rocks/clock-in-kata",
     "fingerprint": "asynchronous-time-attendance-promises",
     "domain": "async-and-time",
     "difficulty": 4,
-    "difficulty_evidence": "Provisional triage only: Asynchronous and promises; review acceptance criteria",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "difficulty_evidence": "Provisional 4/5: Promise ordering, GPS fallback and retry, rejection propagation, deterministic trace reference; not independently calibrated",
+    "score": 88,
+    "score_evidence": "Provisional author 88/100; independent calibration pending",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://github.com/ChicoDotNet/Katas/blob/dev/LICENSE",
+      "scope": "MIT covers original locally authored JS and Go source, tests and fixtures; Kata-Log is only a public-domain conceptual reference. No external starter or fixtures copied."
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "JavaScript",
+    "language_rationale": "Native JS Promises and node:test deferred microtasks; Kotlin coroutines and C# Tasks contrasted; Go selected for structurally different decision-table oracle.",
+    "evidence": {
+      "red": "katas/KATA-000013/evidence/red.txt",
+      "green": "katas/KATA-000013/evidence/green.txt",
+      "oracle": "katas/KATA-000013/evidence/oracle.txt",
+      "ci": "katas/KATA-000013/evidence/ci.txt",
+      "skill_review": "katas/KATA-000013/evidence/skill_review.md",
+      "skill_conclusion": "confirmed"
+    },
     "discovery": {
       "date": "2026-10-17",
       "listing": "https://kata-log.rocks/",
       "audit": "rights, oracle and difficulty require item-specific review",
       "scan_id": "kata-log-index-20261017-v1"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Node 22.16.0 / Go 1.23.2; CI proposed Node 24.18.1 / Go 1.26.5",
+      "red": "Behaviorally wrong POST-before-GPS mutant fails node:test",
+      "green": "9 native Node tests",
+      "differential_cases": 1550,
+      "ci_pending": true
     }
   },
   {

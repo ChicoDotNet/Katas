@@ -1,0 +1,3 @@
+2026-10-19 local Go 1.23.2 / Node 22.16.0: go run tests/oracle.go src/cli.mjs PASSED 1550 independent decision-table outcomes: 750 exhaustive + 800 seeded. Go classifies first GPS success before deriving events; JS uses async retry and deferred Promises. Real network not tested.
+
+2026-10-19: Expanded invalid GPS tokens J (longitude 181) and K (latitude 90.5); local RED, 9 GREEN, 1,550 Go differential comparisons and go vet passed. Pending exact-head remote certification.
