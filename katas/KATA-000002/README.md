@@ -30,3 +30,17 @@ The CLI takes JSON array entries with date (dd/mm/yyyy), type (deposit/withdraw)
 Provisional scoring: transfer 18/20, depth 17/20, oracle 13/15, TDD 15/15, novelty 7/10, pedagogy 7/10, portability 4/5, maintenance 4/5 = **85/100**; preliminary single-reviewer assessment.
 
 Evidence: [RED](evidence/red.txt), [GREEN](evidence/green.txt), [oracles](evidence/oracle.txt), [CI](evidence/ci.txt), [Ninja review](evidence/skill_review.md). Only mark verified after GitHub-hosted CI passes. Publish only after PR is merged to dev.
+
+## Additive failure-injection hardening (2026-10-29)
+
+The published PHP implementation and original RED/GREEN/Python oracle remain unchanged. New native PHP tests inject clock, ledger and formatter failures, verify no effects on rejected input, check one clock observation per accepted operation, and exercise exact integer overflow/underflow and immutable snapshots. **Verification strategies differ:** the Python reference compares ledger output over 251 histories; PHP dependency spies and boundary checks test failure paths the output oracle cannot observe. Python is used for mutation source edits only, not as an additional oracle.
+
+| Role | Language | Technique |
+| --- | --- | --- |
+| Production | PHP 8.4 | Existing port-based account / immutable transactions |
+| RED/GREEN | PHP 8.4 | Native behavioral and fault-injection assertions |
+| Independent oracle | Python 3 | Existing 251 seeded ledger histories |
+| Complementary verifier | PHP 8.4 | Dependency fault injection, overflow atomicity, value snapshots |
+| Mutation harness | Python 3 + PHP 8.4 | Source mutations compiled and behaviorally rejected |
+
+Compared with COBOL (batch/decimal), Ada (range contracts) and Java (typed exception ports), PHP is retained because this hardening concerns the actual published PHP failure boundary. No migration or language quota is involved. The independent ledger model and fault-injection approach cover different error classes; neither establishes rollback for an arbitrary external ledger that mutates before throwing. Run `bash tests/run_fault_hardening.sh` from this kata directory; CI executes it after the original RED/GREEN/differential gate. See [full audit](evidence/fault-hardening-2026-10-29.md), including rights, commands, toolchain, mutation evidence, limitations and Ninja v0.1.29 review.

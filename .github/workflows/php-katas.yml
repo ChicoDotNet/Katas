@@ -41,3 +41,7 @@ jobs:
           php -l src/cli.php
           php tests/behavior.php
           python3 tests/differential.py
+      - name: Native dependency fault injection, atomicity and mutation gate
+        working-directory: katas/KATA-000002
+        shell: bash
+        run: bash tests/run_fault_hardening.sh
