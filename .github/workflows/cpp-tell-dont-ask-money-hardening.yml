@@ -1,0 +1,29 @@
+name: C++ Tell Dont Ask monetary hardening
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000007/**'
+      - '.github/workflows/cpp-tell-dont-ask-money-hardening.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000007/**'
+      - '.github/workflows/cpp-tell-dont-ask-money-hardening.yml'
+permissions:
+  contents: read
+jobs:
+  money-boundaries:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Confirm native toolchains
+        run: |
+          g++ --version | head -n 1
+          ruby --version
+          python3 --version
+      - name: RED GREEN exact Ruby oracle metamorphic and mutation gates
+        shell: bash
+        run: bash katas/KATA-000007/tests/run_money_hardening.sh

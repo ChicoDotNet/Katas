@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 #pragma once
 #include <cstdint>
+#include <limits>
 #include <stdexcept>
 #include <vector>
 #include <string>
@@ -13,7 +14,8 @@ inline std::int64_t subtotal_of(const std::vector<Line>& lines) {
  return subtotal;
 }
 inline std::int64_t tax_of(std::int64_t subtotal,int rate_bps){
- return (subtotal*rate_bps+5000)/10000; // nearest cent, half up
+ // Decompose first: multiplying a large subtotal by basis points can overflow.
+ return (subtotal / 10000) * rate_bps + ((subtotal % 10000) * rate_bps + 5000) / 10000;
 }
 struct Snapshot { State state; std::int64_t subtotal,tax,total; int accepted,refused; };
 // Deliberately anemic, procedural teaching specimen, original to this repo.
@@ -42,7 +44,23 @@ public:
 #else
   bool allowed=false;
   switch(command){
-  case 'A':if(state_==State::draft&&line.quantity>0&&line.cents>=0){lines_.push_back(line);allowed=true;}break;
+  case 'A':
+   if(state_==State::draft && line.quantity>0 && line.cents>=0){
+    constexpr auto max=std::numeric_limits<std::int64_t>::max();
+    // Reject an unrepresentable line or tax-inclusive total before any mutation.
+    if(line.cents<=max/line.quantity){
+     const auto amount=line.quantity*line.cents;
+     if(amount<=max-subtotal_){
+      const auto next=subtotal_+amount;
+      if(tax_of(next,rate_)<=max-next){
+       lines_.push_back(line); // If allocation throws, subtotal stays unchanged.
+       subtotal_=next;
+       allowed=true;
+      }
+     }
+    }
+   }
+   break;
   case 'P':if(state_==State::draft&&!lines_.empty()){state_=State::approved;allowed=true;}break;
   case 'R':if(state_==State::draft||state_==State::approved){state_=State::rejected;allowed=true;}break;
   case 'S':if(state_==State::approved){state_=State::shipped;allowed=true;}break;
@@ -52,12 +70,13 @@ public:
 #endif
  }
  [[nodiscard]] Snapshot snapshot() const{
-  auto sub=subtotal_of(lines_);auto tax=tax_of(sub,rate_);
-  return{state_,sub,tax,sub+tax,accepted_,rejected_};
+  auto tax=tax_of(subtotal_,rate_);
+  return{state_,subtotal_,tax,subtotal_+tax,accepted_,rejected_};
  }
 private:
  State state_=State::draft;
  std::vector<Line> lines_;
+ std::int64_t subtotal_=0;
  int rate_;
  int accepted_=0,rejected_=0;
 };
