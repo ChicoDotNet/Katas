@@ -12,6 +12,7 @@ trap 'rm -rf "$tmp"' EXIT
  gfortran -std=f2008 -Wall -Wextra -fcheck=all "$OLDPWD/src/lights.f90" "$OLDPWD/tests/test_lights.f90" -o green
  ./green
  gfortran -std=f2008 -Wall -Wextra -fcheck=all "$OLDPWD/src/lights.f90" "$OLDPWD/src/lights_cli.f90" -o cli
+ bash "$OLDPWD/tests/cli_contract.sh" ./cli
  go build -o oracle "$OLDPWD/tests/oracle.go"
  go vet "$OLDPWD/tests/oracle.go"
  ./oracle ./cli
