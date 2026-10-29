@@ -53,3 +53,28 @@ Provisional score (not externally calibrated): transfer 19/20 + depth 19/20 + or
 Complexity: time O(P + T) for P participants and T scripted turns for refactored implementation (bounded questions/categories); memory O(P + transcript length). The intentionally ugly legacy implementation uses repeated string concatenation, which may be less efficient; speed is not a goal of Golden Master verification.
 
 **Do not claim that this proves refactoring a GPL codebase without seeing that code**; it proves the technique on an original analogous system.
+
+## Retroactive event-stream hardening (2026-10-29; pending independent review)
+
+This is **KATA-000001 again**, not a new kata or language migration. The published Java implementation and original Python forward-model oracle remain unchanged. The new Ruby 3.3 contract monitor consumes emitted events, reconstructs state from the transcript, and checks round-robin order, stations, category numbering, pause/return, scores, winner termination and absence of trailing events. Unlike the Python oracle, it does not generate an expected full transcript first. It is complementary, **not mathematically independent of all game rules**, because both depend on the same authored contract.
+
+| Role | Language | Technique and rationale |
+| --- | --- | --- |
+| Implementation | Java 21 | Original OO legacy/refactor contrast; no migration |
+| RED/GREEN | Java 21 | Compilable failing stub and fixed Golden Master |
+| Original oracle | Python 3 | Forward state simulation over generated scenarios |
+| Additional contract monitor | Ruby 3.3 | Parse and validate actual event stream as a stateful protocol |
+| Metamorphisms | Ruby 3.3 | Alpha-renaming of participants; prefix/terminal extension |
+| Mutation controls | Java 21 + Ruby | Compile wrong rotation, category sequence, and score persistence |
+
+Compared a **forward simulator** (Python, retained) against a **trace contract monitor + metamorphic relations** (Ruby, added). Considered Java (too easy to reuse the same event types) and Prolog (declarative constraints attractive but little advantage for line-oriented protocol parsing); Ruby's regex/string processing and Open3 process integration fit this test harness. Counterfactual: translating the Python simulator into Ruby would preserve its structural assumptions and add little detection power. Limits: test input generation is bounded; no external GPL code was imported; alpha-renaming assumes generated names P0..Pn and Q0..Qn. No causal Ninja claim.
+
+Reproduction from repository root:
+
+~~~bash
+bash katas/KATA-000001/tests/run_trace_hardening.sh
+# Optional expanded stochastic monitor (requires compiled classes):
+TRIVIA_CASES=12 ruby katas/KATA-000001/tests/trace_contract.rb /tmp/trivia-green
+~~~
+
+The required runner compiles and checks RED/GREEN, runs five deterministic trace scenarios in both modes (550 event/metamorphic assertions), then compiles and detects three mutants. The original Java workflow separately runs the Python oracle (196 scripts x two implementations plus five rejected inputs). The optional extended monitor passed previously but its rerun on 2026-10-29 timed out in Open3, so its reliability needs further investigation and it is **not** a CI requirement. See [evidence/trace-hardening-2026-10-29.md](evidence/trace-hardening-2026-10-29.md).
