@@ -661,24 +661,39 @@
     "fingerprint": "range-updates-boolean-brightness-grid",
     "domain": "grids-and-algorithms",
     "difficulty": 3,
-    "difficulty_evidence": "Provisional triage only: Starter; large-grid rectangle operations; inspired by AoC but only Kata-Log page indexed",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "difficulty_evidence": "Kata-Log Starter; two independent rectangle-update grids, inclusive bounds and saturation",
+    "score": 86,
+    "score_evidence": "Single-reviewer rubric in katas/KATA-000012/README.md; not independently calibrated",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "Unlicense",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/christmas-lights-kata",
+      "scope": "Only Kata-Log own public-domain description; original MIT implementation/tests; no linked starter or image imported"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Fortran",
+    "language_rationale": "Fortran 2008 native dense matrices and bounded indexing; Julia, Ada and C++20 compared before CI selection",
+    "evidence": {
+      "red": "katas/KATA-000012/evidence/local-2026-10-29.md",
+      "green": "katas/KATA-000012/evidence/local-2026-10-29.md",
+      "oracle": "katas/KATA-000012/evidence/local-2026-10-29.md",
+      "skill_review": "katas/KATA-000012/evidence/local-2026-10-29.md",
+      "skill_conclusion": "confirmed"
+    },
     "discovery": {
       "date": "2026-10-17",
       "listing": "https://kata-log.rocks/",
       "audit": "rights, oracle and difficulty require item-specific review",
       "scan_id": "kata-log-index-20261017-v1"
-    }
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ]
   },
   {
     "id": "KATA-000013",
