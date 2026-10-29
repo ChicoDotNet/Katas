@@ -1,0 +1,1 @@
+2026-10-19 local Node 22.16.0: tests/telemetry_oracle.mjs; PASS: 925 independent grammar-generated traces (125 exhaustive + 800 seeded), compared to Java CLI. Limited to scripted finite I/O outcomes.
