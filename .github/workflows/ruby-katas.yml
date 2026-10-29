@@ -33,3 +33,7 @@ jobs:
             echo 'RED unexpectedly passed' >&2; exit 1
           fi
           grep -q 'Failure:' /tmp/spending-red.log
+      - name: Calendar fault injection, metamorphic properties and mutation gate
+        working-directory: katas/KATA-000006
+        shell: bash
+        run: bash tests/run_calendar_hardening.sh
