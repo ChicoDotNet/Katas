@@ -40,3 +40,6 @@ jobs:
       - name: Independent differential verification and invalid inputs
         working-directory: katas/KATA-000001
         run: python3 tests/differential.py /tmp/trivia-green
+      - name: Event-stream trace contract, metamorphisms and compiled mutants
+        shell: bash
+        run: bash katas/KATA-000001/tests/run_trace_hardening.sh
