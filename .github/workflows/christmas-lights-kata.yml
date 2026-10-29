@@ -1,0 +1,33 @@
+name: Fortran Christmas Lights + Go compressed oracle
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000012/**'
+      - '.github/workflows/christmas-lights-kata.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000012/**'
+      - '.github/workflows/christmas-lights-kata.yml'
+permissions:
+  contents: read
+jobs:
+  verify-lights:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install authentic Fortran toolchain
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends gfortran
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23.2'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: RED, GREEN, independent Go oracle and mutation gates
+        working-directory: katas/KATA-000012
+        shell: bash
+        run: bash tests/run_all.sh
