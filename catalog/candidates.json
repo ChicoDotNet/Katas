@@ -1050,23 +1050,48 @@
     "fingerprint": "custom-delimiter-parser-negative-validation",
     "domain": "parsing",
     "difficulty": 3,
-    "difficulty_evidence": "Provisional triage only: Starter; evolving parser",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "difficulty_evidence": "Kata-Log Starter; strict Unicode delimiter grammar and error handling are local extensions, not upstream difficulty claims.",
+    "score": 83,
+    "score_evidence": "Provisional single-author rubric for Swift Unicode parsing, independent AST-first oracle, negative validation and metamorphic coverage; not independently calibrated.",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "Unlicense",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/string-calculator-kata",
+      "scope": "Only Kata-Log's own public-domain conceptual description; original Swift/Go/Python code and tests MIT; no third-party starter, fixtures or linked code imported."
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Swift",
+    "language_rationale": "Swift 6.2 Character grapheme scanner, typed errors and checked Int64. Compared OCaml/Haskell parser combinators and Go byte scanning before inspecting CI; Go 1.23 AST-first oracle.",
+    "evidence": {
+      "red": "katas/KATA-000025/evidence/red.txt",
+      "green": "katas/KATA-000025/evidence/green.txt",
+      "oracle": "katas/KATA-000025/evidence/full-local.txt",
+      "skill_review": "katas/KATA-000025/evidence/skill_review.md",
+      "skill_conclusion": "no_change"
+    },
     "discovery": {
       "date": "2026-10-17",
       "listing": "https://kata-log.rocks/",
       "audit": "rights, oracle and difficulty require item-specific review",
       "scan_id": "kata-log-index-20261017-v1"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Swift 6.2.1, Go 1.23.2, Python 3.13.5",
+      "red": "Swift stub compiles and fails expected sum behaviorally",
+      "green": "30 native assertions",
+      "oracle_language": "Go",
+      "oracle_strategy": "AST-first generation and serialization; expected value from leaves",
+      "differential_cases": 2948,
+      "mutants_killed": 3,
+      "ci_pending": true
     }
   },
   {
