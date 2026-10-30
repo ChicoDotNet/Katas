@@ -1,0 +1,33 @@
+name: C++20 Yatzy + Go physical-dice oracle
+on:
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000031/**'
+      - '.github/workflows/cpp-yatzy-kata.yml'
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000031/**'
+      - '.github/workflows/cpp-yatzy-kata.yml'
+  workflow_dispatch:
+jobs:
+  yatzy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v6
+        with:
+          go-version: '1.23.2'
+          cache: false
+      - name: RED GREEN exhaustive independent oracle and compiled mutants
+        shell: bash
+        run: |
+          set -euo pipefail
+          g++ --version
+          go version
+          python3 --version
+          bash katas/KATA-000031/tests/run.sh

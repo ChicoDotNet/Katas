@@ -1,0 +1,10 @@
+RED C++20 compiled, failed behaviorally at assertion 1
+GREEN C++20 24 native assertions PASS
+GO independent physical-dice subset oracle: 8776 valid rolls x 15 scores = 131640 differential assertions; 1000 metamorphic permutation pairs; 8 malformed lines rejected PASS
+COMPILED MUTANT KILLED: highest-pair-wrong roll [1 1 1 2 2] category 8 got "2" expected 4
+exit status 1
+COMPILED MUTANT KILLED: full-house-accepts-quintuple roll [1 1 2 2 2] category 14 got "0" expected 8
+exit status 1
+COMPILED MUTANT KILLED: small-straight-excludes-one roll [1 2 3 4 5] category 12 got "0" expected 15
+exit status 1
+3/3 compiled C++20 mutants detected
