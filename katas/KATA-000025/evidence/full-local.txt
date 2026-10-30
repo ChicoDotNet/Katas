@@ -1,0 +1,7 @@
+RED compiled, failed behaviorally as expected
+GREEN native 30 assertions
+GO AST-first oracle: 2948 Swift executions PASS (343 exhaustive, 1800 generated, 800 metamorphic, 5 malformed)
+KILLED threshold-1000: compiled; failed behavioral assertion
+KILLED shortest-delimiter: compiled; failed behavioral assertion
+KILLED ignore-negatives: compiled; failed behavioral assertion
+3/3 compiled mutants killed
