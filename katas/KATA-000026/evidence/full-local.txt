@@ -1,0 +1,7 @@
+RED compiled and failed behaviorally
+GREEN Kotlin 21 native assertions
+GO event-replay oracle: 701 Kotlin scenarios PASS (1 deletion witness, 500 generated, 200 renamed)
+KILLED sequence-reuse compiled and behaviorally rejected
+KILLED include-done-today compiled and behaviorally rejected
+KILLED include-undated compiled and behaviorally rejected
+3/3 compiled Kotlin mutants killed

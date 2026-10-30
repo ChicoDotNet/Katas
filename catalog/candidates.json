@@ -1077,23 +1077,48 @@
     "fingerprint": "task-tracker-domain-types-deadlines",
     "domain": "refactoring",
     "difficulty": 4,
-    "difficulty_evidence": "Provisional triage only: Refactoring plus domain value objects and deadlines",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "difficulty_evidence": "Kata-Log Starter refactoring exercise; local typed-domain, deadlines, state transitions and deletion-order constraints. Provisional 4/5, not independently calibrated.",
+    "score": 84,
+    "score_evidence": "Provisional single-author score for domain invariants, typed Kotlin, independent Go event replay, 701 scenarios and mutation coverage; no causal skill claim.",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "Unlicense",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/task-list-kata",
+      "scope": "Only Kata-Log's own public-domain concept; original Kotlin/Go/Python source and tests MIT; no linked starter/fixtures imported."
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Kotlin",
+    "language_rationale": "Kotlin inline value classes model domain primitives; compared Ada, Java and Ruby before CI; Go independent event-replay oracle.",
+    "evidence": {
+      "red": "katas/KATA-000026/evidence/local-2026-10-30.md",
+      "green": "katas/KATA-000026/evidence/full-local.txt",
+      "oracle": "katas/KATA-000026/evidence/full-local.txt",
+      "skill_review": "katas/KATA-000026/evidence/skill_review.md",
+      "skill_conclusion": "confirmed"
+    },
     "discovery": {
       "date": "2026-10-17",
       "listing": "https://kata-log.rocks/",
       "audit": "rights, oracle and difficulty require item-specific review",
       "scan_id": "kata-log-index-20261017-v1"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Kotlin 1.9.0, JDK 21.0.12.1, Go 1.23.2, Python 3.13.5",
+      "red": "compilable wrong stub fails behaviorally",
+      "green": "21 native assertions",
+      "oracle_language": "Go",
+      "oracle_strategy": "event-sourced fold/replay versus Kotlin mutable aggregate",
+      "differential_cases": 701,
+      "mutants_killed": 3,
+      "ci_pending": true
     }
   },
   {
