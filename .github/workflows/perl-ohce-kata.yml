@@ -1,0 +1,31 @@
+name: Perl Ohce CLI + Ruby transcript oracle
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000018/**'
+      - '.github/workflows/perl-ohce-kata.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000018/**'
+      - '.github/workflows/perl-ohce-kata.yml'
+permissions:
+  contents: read
+jobs:
+  ohce:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+      - name: Check genuine Perl and Ruby toolchains
+        run: |
+          perl -v
+          ruby --version
+          perl -MTest::More -e 'print qq(Test::More available\n)'
+      - name: RED GREEN Ruby oracle metamorphism and compiled Perl mutation gate
+        run: bash katas/KATA-000018/run.sh
