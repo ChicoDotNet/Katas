@@ -863,9 +863,10 @@
       "green": "36 Perl native assertions",
       "differential_sessions": 604,
       "metamorphic_pairs": 60,
-      "invalid_cli_rejections": 6,
+      "invalid_cli_rejections": 8,
       "mutants_killed": 3,
-      "ci_pending": true
+      "ci_pending": true,
+      "invalid_utf8_rejections": 1
     }
   },
   {

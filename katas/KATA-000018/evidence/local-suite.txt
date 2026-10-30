@@ -2,6 +2,7 @@
 Perl -c: Ohce.pm, OhceRed.pm, ohce.pl, native.t all syntax OK.
 RED: OhceRed parseable and behaviorally failed (not ok).
 GREEN: 36/36 Test::More assertions PASS.
-Ruby transcript-AST oracle: 604 real Perl process sessions PASS; 60 observed double-reversal pairs PASS; 6 malformed CLI invocations rejected.
+Ruby transcript-AST oracle: 604 real Perl process sessions PASS; 60 observed double-reversal pairs PASS; 8 malformed CLI invocations rejected; malformed UTF-8 input rejected.
 Mutation: wrong-noon-boundary, split-combining-mark, reverse-is-identity — 3/3 syntax-valid Perl mutants killed by behavioral mismatches.
 Remote CI not yet certified; do not infer publication.
+Hardening 2026-10-30: raw STDIN + strict UTF-8 decoding; duplicate --name/--hour rejected. Full suite rerun exit 0; malformed UTF-8 input previously exited 0 with mojibake, now exits nonzero.

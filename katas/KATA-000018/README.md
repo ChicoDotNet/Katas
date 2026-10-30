@@ -4,7 +4,7 @@
 
 ## Contract
 
-Spanish reverse-echo streaming CLI: `--name NAME`, optional `--hour 0..23` for reproducibility. Night [20,06), morning [06,12), afternoon [12,20). Reverse each line by extended Unicode grapheme clusters (Perl `\\X`), case/normalization-sensitive palindrome detection with `¡Bonita palabra!` for nonempty palindromes. Exact `Stop!` prints `Adios NAME` and terminates; lower-case `stop` is ordinary input. Malformed CLI arguments rejected. Streaming implementation does not prebuffer the whole conversation.
+Spanish reverse-echo streaming CLI: `--name NAME`, optional `--hour 0..23` for reproducibility. Night [20,06), morning [06,12), afternoon [12,20). Reverse each line by extended Unicode grapheme clusters (Perl `\X`), case/normalization-sensitive palindrome detection with `¡Bonita palabra!` for nonempty palindromes. Exact `Stop!` prints `Adios NAME` and terminates; lower-case `stop` is ordinary input. Malformed CLI arguments, duplicate flags, and malformed UTF-8 input rejected. Streaming implementation does not prebuffer the whole conversation.
 
 ## Language decision before CI
 
@@ -36,7 +36,7 @@ cd katas/KATA-000018
 bash run.sh
 OHCE_IMPL=OhceRed perl -I src tests/native.t  # expected RED failure
 perl -I src tests/native.t                      # 36 GREEN assertions
-ruby tests/oracle.rb                            # 604 transcript sessions, 60 metamorphic pairs, 6 invalid CLI cases
+ruby tests/oracle.rb                            # 604 transcript sessions, 60 metamorphic pairs, 8 invalid CLI cases plus malformed UTF-8 input
 ruby tests/mutations.rb                         # 3/3 syntax-valid mutants killed
 ```
 

@@ -83,14 +83,20 @@ end
 # Negative CLI contracts are distinct from the scoring/session model.
 invalid_args = [[], ['--hour', '12'], ['--name', 'Ana', '--hour', '24'],
                 ['--name', 'Ana', '--hour', '-1'], ['--name', 'Ana', '--hour', '06'],
-                ['--name', 'Ana', '--bogus', '1']]
+                ['--name', 'Ana', '--bogus', '1'],
+                ['--name', 'Ana', '--name', 'Bob'],
+                ['--name', 'Ana', '--hour', '12', '--hour', '20']]
 invalid_args.each do |args|
   _out, _err, status = Open3.capture3('perl', '-I', 'src', 'src/ohce.pl', *args, stdin_data: '', chdir: root)
   raise "invalid CLI accepted #{args.inspect}" if status.success?
 end
+# A Unicode CLI must reject malformed input bytes rather than emit a replacement or mojibake.
+_out, _err, invalid_stdin_status = Open3.capture3('perl', '-I', 'src', 'src/ohce.pl', '--name', 'Ana', '--hour', '12',
+                                                  stdin_data: "\xFF\n".b, chdir: root)
+raise 'malformed UTF-8 input accepted' if invalid_stdin_status.success?
 cases.each_with_index do |(name, hour, messages), index|
   expected = OhceReference.output(name, hour, messages)
   observed = actual(root, name, hour, messages, source)
   raise "oracle mismatch ##{index}: #{[name, hour, messages].inspect}: #{observed.inspect} != #{expected.inspect}" unless observed == expected
 end
-puts "RUBY AST-first transcript oracle PASS: #{cases.length} Perl sessions, #{metamorphic} observed double-reversal metamorphic pairs, #{invalid_args.length} malformed CLI invocations rejected"
+puts "RUBY AST-first transcript oracle PASS: #{cases.length} Perl sessions, #{metamorphic} observed double-reversal metamorphic pairs, #{invalid_args.length} malformed CLI invocations rejected; invalid UTF-8 input rejected"
