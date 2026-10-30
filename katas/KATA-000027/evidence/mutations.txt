@@ -1,0 +1,4 @@
+COMPILED/PARSED MUTANT KILLED: deuce-too-early
+COMPILED/PARSED MUTANT KILLED: winner-not-terminal
+COMPILED/PARSED MUTANT KILLED: advantage-does-not-reset
+3/3 mutant variants detected

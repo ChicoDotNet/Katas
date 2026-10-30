@@ -1,0 +1,69 @@
+Run options: --seed 27030
+
+# Running:
+
+.F.FFFFF
+
+Finished in 0.014290s, 559.8387 runs/s, 769.7782 assertions/s.
+
+  1) Failure:
+TennisGameTest#test_direct_wins [tests/test_tennis.rb:24]:
+--- expected
++++ actual
+@@ -1,3 +1,3 @@
+ # encoding: UTF-8
+ #    valid: true
+-"Win A"
++"Love-All"
+
+
+  2) Failure:
+TennisGameTest#test_terminal_point_is_rejected [tests/test_tennis.rb:41]:
+Tennis::GameOver expected but nothing was raised.
+
+  3) Failure:
+TennisGameTest#test_opening_scores [tests/test_tennis.rb:19]:
+A.
+--- expected
++++ actual
+@@ -1,3 +1,3 @@
+ # encoding: UTF-8
+ #    valid: true
+-"Fifteen-Love"
++"Love-All"
+
+
+  4) Failure:
+TennisGameTest#test_deuce_and_advantage_cycle [tests/test_tennis.rb:31]:
+--- expected
++++ actual
+@@ -1,3 +1,3 @@
+ # encoding: UTF-8
+ #    valid: true
+-"Deuce"
++"Love-All"
+
+
+  5) Failure:
+TennisGameTest#test_invalid_player_never_mutates [tests/test_tennis.rb:49]:
+--- expected
++++ actual
+@@ -1,3 +1,3 @@
+ # encoding: UTF-8
+ #    valid: true
+-"Thirty-Fifteen"
++"Love-All"
+
+
+  6) Failure:
+TennisGameTest#test_immutable_snapshots [tests/test_tennis.rb:55]:
+--- expected
++++ actual
+@@ -1,3 +1,3 @@
+ # encoding: UTF-8
+ #    valid: true
+-"Thirty-Fifteen"
++"Love-All"
+
+
+8 runs, 11 assertions, 6 failures, 0 errors, 0 skips
