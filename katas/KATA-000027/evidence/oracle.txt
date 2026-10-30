@@ -1,0 +1,1 @@
+GO independent count/prefix oracle PASS: 34772 Ruby histories, 33139 observed player-swap metamorphic pairs (exhaustive through 14 points; 1000 seeded generated)

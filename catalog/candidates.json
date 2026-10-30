@@ -1104,23 +1104,48 @@
     "fingerprint": "tennis-score-advantage-refactoring",
     "domain": "scoring-refactoring",
     "difficulty": 3,
-    "difficulty_evidence": "Provisional triage only: Refactoring and TDD",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "difficulty_evidence": "Provisional 3/5: finite-state deuce/advantage/terminal transitions and error precedence; independently verified bounded histories, not original four-starter refactor",
+    "score": 82,
+    "score_evidence": "Provisional author-only rubric; not independently calibrated, no causal skill claim",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "Unlicense",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/tennis-kata",
+      "scope": "Kata-Log own public-domain concept only; original Ruby solution, native tests and Go oracle MIT; third-party starters not imported or audited"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Ruby",
+    "language_rationale": "Immutable explicit FSM and Minitest for domain state; compare Haskell ADTs, Kotlin sealed types, C++20 enums; Go prefix-count oracle structurally independent; no language chosen for existing CI",
+    "evidence": {
+      "red": "katas/KATA-000027/evidence/red.txt",
+      "green": "katas/KATA-000027/evidence/green.txt",
+      "oracle": "katas/KATA-000027/evidence/oracle.txt",
+      "ci": "katas/KATA-000027/evidence/ci.txt",
+      "skill_review": "katas/KATA-000027/evidence/skill_review.md",
+      "skill_conclusion": "no_change"
+    },
     "discovery": {
       "date": "2026-10-17",
       "listing": "https://kata-log.rocks/",
       "audit": "rights, oracle and difficulty require item-specific review",
       "scan_id": "kata-log-index-20261017-v1"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Ruby 3.3.8 Minitest, Go 1.23.2; ruby -c; go vet",
+      "red": "intentionally incorrect Ruby stub parsed and failed behaviorally",
+      "green": "33 Ruby native assertions",
+      "differential_cases": 34772,
+      "metamorphic_observed_pairs": 33139,
+      "mutants_killed": 3,
+      "ci_pending": true
     }
   },
   {

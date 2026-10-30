@@ -1,0 +1,20 @@
+Syntax OK
+Syntax OK
+Syntax OK
+Syntax OK
+Syntax OK
+RED Ruby stub parsed and failed behaviorally
+Run options: --seed 27030
+
+# Running:
+
+........
+
+Finished in 0.001072s, 7459.6317 runs/s, 30770.9809 assertions/s.
+
+8 runs, 33 assertions, 0 failures, 0 errors, 0 skips
+GO independent count/prefix oracle PASS: 34772 Ruby histories, 33139 observed player-swap metamorphic pairs (exhaustive through 14 points; 1000 seeded generated)
+COMPILED/PARSED MUTANT KILLED: deuce-too-early
+COMPILED/PARSED MUTANT KILLED: winner-not-terminal
+COMPILED/PARSED MUTANT KILLED: advantage-does-not-reset
+3/3 mutant variants detected
