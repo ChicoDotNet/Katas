@@ -823,23 +823,49 @@
     "fingerprint": "reversing-echo-cli",
     "domain": "cli-tdd",
     "difficulty": 3,
-    "difficulty_evidence": "Provisional triage only: Starter; mocking and IO",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "difficulty_evidence": "Streaming CLI, clock boundaries, Unicode grapheme reversal, Stop! semantics; Ruby process-transcript oracle",
+    "score": 78,
+    "score_evidence": "Provisional author-only rubric, not independently calibrated",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "Unlicense",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/ohce-kata",
+      "scope": "Kata-Log own public-domain concept only; no external starters/fixtures; original code MIT"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Perl",
+    "language_rationale": "Perl 5.40 Unicode grapheme regex and streaming IO; compared Swift, Kotlin, Ruby before CI; Ruby transcript AST-first oracle",
+    "evidence": {
+      "red": "katas/KATA-000018/evidence/local-suite.txt",
+      "green": "katas/KATA-000018/evidence/local-suite.txt",
+      "oracle": "katas/KATA-000018/evidence/local-suite.txt",
+      "ci": "katas/KATA-000018/evidence/ci.txt",
+      "skill_review": "katas/KATA-000018/evidence/skill_review.md",
+      "skill_conclusion": "no_change"
+    },
     "discovery": {
       "date": "2026-10-17",
       "listing": "https://kata-log.rocks/",
       "audit": "rights, oracle and difficulty require item-specific review",
       "scan_id": "kata-log-index-20261017-v1"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Perl 5.40.1 Test::More; Ruby 3.3.8",
+      "red": "parseable wrong module fails behavioral tests",
+      "green": "36 Perl native assertions",
+      "differential_sessions": 604,
+      "metamorphic_pairs": 60,
+      "invalid_cli_rejections": 6,
+      "mutants_killed": 3,
+      "ci_pending": true
     }
   },
   {

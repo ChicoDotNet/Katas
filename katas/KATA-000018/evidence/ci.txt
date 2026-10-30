@@ -1,0 +1,1 @@
+NOT REMOTELY CERTIFIED. Local Perl 5.40.1 / Ruby 3.3.8 RED/GREEN/oracle/mutation gates passed 2026-10-30. Exact-head GitHub Actions, independent review, merge and publication pending.
