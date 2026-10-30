@@ -1055,7 +1055,7 @@
     "score_evidence": "Provisional single-author rubric for Swift Unicode parsing, independent AST-first oracle, negative validation and metamorphic coverage; not independently calibrated.",
     "status": "green",
     "license": {
-      "id": "Public-Domain-Declaration",
+      "id": "Unlicense",
       "verified": true,
       "evidence_url": "https://kata-log.rocks/string-calculator-kata",
       "scope": "Only Kata-Log's own public-domain conceptual description; original Swift/Go/Python code and tests MIT; no third-party starter, fixtures or linked code imported."

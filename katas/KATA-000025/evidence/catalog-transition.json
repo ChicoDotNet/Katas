@@ -6,7 +6,7 @@
   "proposed_status": "green",
   "development_complete": true,
   "license": {
-    "id": "Public-Domain-Declaration",
+    "id": "Unlicense",
     "verified": true,
     "evidence_url": "https://kata-log.rocks/string-calculator-kata",
     "scope": "Kata-Log own page only; not a claim of CC0 or rights over linked starters; original implementation/tests MIT"
