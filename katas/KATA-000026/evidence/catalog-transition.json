@@ -1,0 +1,14 @@
+{
+  "id": "KATA-000026",
+  "expected_base_catalog_blob": "9e303fc1eb0fe964d84e10fb85b19e43148ca4ee",
+  "expected_status": "discovered",
+  "proposed_status": "green",
+  "development_complete": true,
+  "license_scope": "Kata-Log public-domain concept only; original MIT code/tests, no upstream starter",
+  "implementation_language": "Kotlin 1.9",
+  "tests_language": "Kotlin 1.9",
+  "oracle_language": "Go 1.23",
+  "oracle_technique": "event-sourced replay versus incremental mutable state",
+  "ci_pending": true,
+  "note": "Proposal only: apply only after live catalog fingerprint/status reconciliation"
+}
