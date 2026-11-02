@@ -1,0 +1,4 @@
+Code SHA 3896d7f986bad3a52850e06bbea2af5034d09cf3; https://github.com/ChicoDotNet/Katas/actions/runs/41534914458
+Command: swipl -q -g run_tests -t halt -s tests/green_tests.pl
+SWI-Prolog 9.0.4 plunit SUCCESS: eight fixed anchors, 0/4000 bounds, nine noncanonical spellings, all 3999 integers round-trip with EXACTLY ONE parse per canonical numeral.
+Original code SHA 8ae179... had 3999 choicepoint warnings; corrected test uses findall and verified no warnings in job 125584188601.

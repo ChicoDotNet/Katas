@@ -945,7 +945,7 @@
     "difficulty_evidence": "Kata-Log Starter: bounded canonical grammar 1..3999; reverse parsing and malformed spellings add verification depth.",
     "score": 72,
     "score_evidence": "Author provisional rubric 72/100, uncalibrated: reversible DCG grammar and exhaustive finite oracle; Starter difficulty 2/5; harder candidates already have development PRs.",
-    "status": "selected",
+    "status": "green",
     "license": {
       "id": "Unlicense",
       "verified": true,
@@ -955,8 +955,12 @@
     "language": "Prolog",
     "language_rationale": "SWI-Prolog DCG reversibility chosen over Haskell parser combinators, COBOL decimal editing and Ruby tables before inspecting CI; Go greedy oracle is structurally different.",
     "evidence": {
+      "red": "katas/KATA-000021/evidence/red.txt",
+      "green": "katas/KATA-000021/evidence/green.txt",
+      "oracle": "katas/KATA-000021/evidence/oracle.txt",
+      "ci": "katas/KATA-000021/evidence/ci.txt",
       "skill_review": "katas/KATA-000021/evidence/skill_review.md",
-      "ci": "katas/KATA-000021/evidence/ci.txt"
+      "skill_conclusion": "no_change"
     },
     "discovery": {
       "date": "2026-10-17",
@@ -964,17 +968,36 @@
       "audit": "rights, oracle and difficulty require item-specific review",
       "scan_id": "kata-log-index-20261017-v1"
     },
-    "development_complete": false,
+    "development_complete": true,
     "state_history": [
       "discovered",
       "eligible",
-      "selected"
+      "selected",
+      "red",
+      "green"
     ],
     "provenance": {
       "source_url": "https://kata-log.rocks/roman-numerals-kata",
       "concept_license": "Kata-Log own content public domain",
       "external_starters_imported": false,
       "original_code_license": "MIT"
+    },
+    "local_validation": {
+      "prolog_local_available": false,
+      "go_vet_build": "success",
+      "bash_syntax": "success"
+    },
+    "remote_validation": {
+      "code_head": "3896d7f986bad3a52850e06bbea2af5034d09cf3",
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/41534914458",
+      "job_id": 125584188601,
+      "conclusion": "success",
+      "prolog": "SWI-Prolog 9.0.4",
+      "go": "go1.23.12",
+      "red": "behavioral failure PASS",
+      "green": "3999 unique roundtrip parses plus native anchors and malformed spellings",
+      "oracle": "3999 greedy + 3999 independent decodes + 2999 metamorphic + 12 invalid",
+      "mutations": "3/3 compiled and detected"
     }
   },
   {

@@ -1,0 +1,4 @@
+Code SHA 3896d7f986bad3a52850e06bbea2af5034d09cf3; https://github.com/ChicoDotNet/Katas/actions/runs/41534914458
+Command: swipl -q -g run_tests -t halt -s tests/red_tests.pl
+The intentionally wrong stub returned 'I' for 4; the subtractive-four test required 'IV'. Runner asserted nonzero exit AND matching behavioral-failure text, excluding syntax/load failure.
+Observed: RED behavioral failure PASS. SWI-Prolog 9.0.4.

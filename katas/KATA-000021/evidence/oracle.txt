@@ -1,0 +1,5 @@
+Code SHA 3896d7f986bad3a52850e06bbea2af5034d09cf3; https://github.com/ChicoDotNet/Katas/actions/runs/41534914458
+Go 1.23.12 oracle (descending greedy subtraction) versus Prolog four-place DCG:
+PASS 3999 greedy comparisons, 3999 independent numeric decodes, 2999 metamorphic shifts, 12 invalid lines.
+Three alternate DCGs genuinely loaded by SWI and rejected by Go differential: ones4, tens9, hundreds4. 3/3 detected.
+Commands: go vet tests/oracle.go; go run tests/oracle.go; bash tests/run.sh.

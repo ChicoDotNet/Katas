@@ -1,6 +1,6 @@
 # KATA-000021 — Roman Numerals (Prolog DCG + Go reference)
 
-**Status:** unverified draft until actual SWI-Prolog RED/GREEN and Go oracle execute. Never count as published until independently reviewed, exact-head CI green, and squash merge to `dev`.
+**Status:** `green + development_complete=true` in this PR branch only, based on authentic SWI-Prolog 9.0.4 and Go 1.23.12 execution at code SHA `3896d7f986bad3a52850e06bbea2af5034d09cf3` ([successful run](https://github.com/ChicoDotNet/Katas/actions/runs/41534914458)). **NOT verified/published**: new metadata HEAD needs exact-head CI, independent review, and squash merge to `dev`.
 
 ## Domain and rights
 
@@ -42,4 +42,4 @@ Genkidama source consulted after language selection: `ChicoDotNet/Genkidama` `en
 
 ## Limitations and Ninja
 
-A simple bounded kata, not a hardest-first replacement for higher-difficulty eligible work. All higher-priority candidates identified at the checkpoint already have development PRs; verify concurrency before integration. `Ninja v0.1.29`: `no_change` pending authentic SWI execution and independent review; no causal claim about skill benefit. No holdouts modified.
+A simple bounded kata, not a hardest-first replacement for higher-difficulty eligible work. All higher-priority candidates identified at the checkpoint already have development PRs; verify concurrency before integration. `Ninja v0.1.29`: `no_change` after authentic SWI execution; independent review still pending; no causal claim about skill benefit. No holdouts modified.
