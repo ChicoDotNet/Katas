@@ -1,6 +1,6 @@
 # KATA-000010 — BugsZero: invalid game states by construction (Ada 2022)
 
-**State: NOT CERTIFIED.** Ada compiler unavailable locally on 2026-11-02. This branch is an engineering checkpoint until the authentic GNAT CI compiles RED/GREEN, executes the Go oracle, and detects all mutants. Do not set `development_complete`, `green`, `verified` or `published` by inference.
+**State: GREEN / development_complete after authentic GNAT 13.3 + Go 1.23.12 CI on initial source HEAD `ee3f5d932bfae3adfc0c3dce207ba094ae015245`.** Exact-head CI for this metadata commit remains required; independent review and publication are pending.
 
 ## Source and rights
 
@@ -30,8 +30,12 @@ CLI token stream: `P C B T`, followed by P player IDs, B board category IDs, C d
 bash katas/KATA-000010/tests/run.sh
 ```
 
-The script compiles a behaviorally wrong RED package, builds/runs native GREEN tests and Ada CLI, executes an independent Go oracle, and compiles/rejects three mutation variants. Workflow `.github/workflows/ada-bugszero-kata.yml` installs Ubuntu GNAT following the repository's existing Ada/Rust cross-language workflow and Genkidama's GNU/longtail adapter patterns. CI must be inspected at exact head before any status promotion.
+The GitHub-hosted run 41514728561 executed the script successfully. The script compiles a behaviorally wrong RED package, builds/runs native GREEN tests and Ada CLI, executes an independent Go oracle, and compiles/rejects three mutation variants. Workflow `.github/workflows/ada-bugszero-kata.yml` installs Ubuntu GNAT following the repository's existing Ada/Rust cross-language workflow and Genkidama's GNU/longtail adapter patterns. Initial source HEAD was verified via job 125515236221; metadata HEAD must also pass exact-head CI before review/merge.
 
 ## Ninja review
 
-Ninja v0.1.29: **no_change (provisional)**. This design has no certified evidence yet, no holdout change and no causal claim. Record runtime, defects, reruns and CI evidence only after they occur.
+Ninja v0.1.29: **no_change** after observing authentic GNAT RED/GREEN, Go differential and compiled mutants. No holdout change and no causal attribution. Record runtime, defects, reruns and CI evidence only after they occur.
+
+## Authentic remote execution (2026-11-02)
+
+Initial source SHA `ee3f5d932bfae3adfc0c3dce207ba094ae015245`; [GitHub Actions run 41514728561](https://github.com/ChicoDotNet/Katas/actions/runs/41514728561), job `125515236221`, success. GNATMAKE 13.3.0; Go 1.23.12. RED compiled and failed behaviorally, GREEN 12 Ada assertions, 301 baseline scenarios / 2333 turns, 535 metamorphic sessions, 8 invalid inputs, three compiled Ada mutants rejected by Go. This is not local GNAT execution; the remote hosted runner supplied the compiler. New metadata HEAD requires fresh CI.

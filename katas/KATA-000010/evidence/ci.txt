@@ -1,0 +1,1 @@
+Initial source SHA ee3f5d932bfae3adfc0c3dce207ba094ae015245 certified by GitHub Actions run 41514728561, job 125515236221: success; GNATMAKE 13.3.0, Go 1.23.12, RED/GREEN/oracle/mutants executed. Governance 41514728365 success; catalog 41514728486 success. Metadata update requires new exact-head CI; NOT verified/published, PR #79 remains draft pending independent review.
