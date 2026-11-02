@@ -1195,24 +1195,52 @@
     "source_url": "https://kata-log.rocks/tic-tac-toe-kata",
     "fingerprint": "tic-tac-toe-turn-based-terminal-state",
     "domain": "game-state",
-    "difficulty": 2,
-    "difficulty_evidence": "Provisional triage only: Starter; terminal-state transitions",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "difficulty": 3,
+    "difficulty_evidence": "3x3 bounded exhaustive reachability and post-terminal precedence; original source rates starter; provisional local triage, not independently calibrated.",
+    "score": 79,
+    "score_evidence": "Provisional single-author rubric: 19,683 finite boards, independent 5,478-state BFS, 4,040 symmetry cases and three compiled Java mutants; not population ranked.",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "Unlicense",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/tic-tac-toe-kata",
+      "scope": "Only Kata-Log's own public-domain rules; no external starter, fixtures or source copied. Original code MIT under repository license."
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Java",
+    "language_rationale": "Java 21 pure static reachability predicate contrasted with Go 1.23.2 independent BFS history oracle. Compared Haskell, Prolog and Swift before consulting CI.",
+    "evidence": {
+      "red": "katas/KATA-000029/evidence/local-run.txt",
+      "green": "katas/KATA-000029/evidence/local-run.txt",
+      "oracle": "katas/KATA-000029/evidence/local-run.txt",
+      "skill_review": "katas/KATA-000029/evidence/skill_review.md",
+      "skill_conclusion": "no_change"
+    },
     "discovery": {
       "date": "2026-10-17",
       "listing": "https://kata-log.rocks/",
       "audit": "rights, oracle and difficulty require item-specific review",
       "scan_id": "kata-log-index-20261017-v1"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "OpenJDK 21.0.12.1, Go 1.23.2, Python 3.13.5",
+      "red": "javac --release 21 compiles deliberately wrong stub, Java assertion fails by behavior",
+      "green": "20 Java native assertions",
+      "oracle_language": "Go",
+      "oracle_strategy": "BFS legal-history enumeration vs Java direct count/winner constraints",
+      "differential_cases": 23731,
+      "exhaustive_boards": 19683,
+      "reachable_boards": 5478,
+      "metamorphic_cases": 4040,
+      "mutants_killed": 3,
+      "ci_pending": true
     }
   },
   {
