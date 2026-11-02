@@ -1,0 +1,43 @@
+{
+  "expected": {
+    "id": "KATA-000030",
+    "fingerprint": "trip-authorization-dependencies",
+    "status": "discovered",
+    "source_url": "https://kata-log.rocks/trip-service-kata"
+  },
+  "changes": {
+    "difficulty": 3,
+    "difficulty_evidence": "Kata-Log experienced legacy-service refactoring; bounded original contract with access precedence, seams, authorization and ordering; provisional 3/5.",
+    "score": 80,
+    "score_evidence": "Single-author provisional rubric: independent Go decision-table 1458 requests and 3 compiled/syntax-valid mutants; not independently calibrated.",
+    "status": "green",
+    "license": {
+      "id": "Unlicense",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/trip-service-kata",
+      "scope": "Kata-Log's own conceptual public-domain description only; no original legacy starter or fixtures copied; all new Ruby, Go, shell files MIT under repository license. Not equivalent to upstream legacy source."
+    },
+    "language": "Ruby",
+    "language_rationale": "Ruby 3.3 explicit legacy collaborator seams and Minitest, compared with Haskell, VB.NET and C++20 before Genkidama CI; Go 1.23 independent request-AST and decision-table oracle.",
+    "evidence": {
+      "red": "katas/KATA-000030/evidence/local-run.txt",
+      "green": "katas/KATA-000030/evidence/local-run.txt",
+      "oracle": "katas/KATA-000030/evidence/local-run.txt",
+      "skill_review": "katas/KATA-000030/evidence/skill_review.md",
+      "skill_conclusion": "no_change"
+    },
+    "development_complete": true,
+    "state_history": ["discovered", "eligible", "selected", "red", "green"],
+    "local_validation": {
+      "toolchain": "Ruby 3.3.8, Go 1.23.2",
+      "red": "syntax-valid wrong stub fails first behavioral assertion",
+      "green": "13 native Minitest cases, 17 assertions",
+      "oracle_language": "Go",
+      "oracle_strategy": "AST-first request generation and authorization decision table vs Ruby collaborator-boundary service",
+      "differential_cases": 1458,
+      "metamorphic_cases": 200,
+      "mutants_killed": 3,
+      "ci_pending": true
+    }
+  }
+}

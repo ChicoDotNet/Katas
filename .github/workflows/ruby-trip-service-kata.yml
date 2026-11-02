@@ -1,0 +1,34 @@
+name: Ruby Trip Service + Go decision-table oracle
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000030/**'
+      - '.github/workflows/ruby-trip-service-kata.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000030/**'
+      - '.github/workflows/ruby-trip-service-kata.yml'
+permissions:
+  contents: read
+jobs:
+  trip-service:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+      - uses: actions/setup-go@v6
+        with:
+          go-version: '1.23.2'
+      - name: RED GREEN, Go decision-table oracle, metamorphic and mutation gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          ruby --version
+          go version
+          bash katas/KATA-000030/tests/run.sh
