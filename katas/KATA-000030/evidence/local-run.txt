@@ -1,0 +1,19 @@
+RED behavioral failure confirmed
+Run options: --seed 44298
+
+# Running:
+
+.............
+
+Finished in 0.003323s, 3912.3536 runs/s, 5116.1548 assertions/s.
+
+13 runs, 17 assertions, 0 failures, 0 errors, 0 skips
+GO independent decision-table oracle PASS: 350 exhaustive, 900 generated, 200 metamorphic, 8 invalid, total 1458
+MUTANT bypass-authentication: syntax-valid and behaviorally rejected
+MUTANT friendship-hardcoded: syntax-valid and behaviorally rejected
+MUTANT discard-duplicate-trips: syntax-valid and behaviorally rejected
+3/3 Ruby mutants killed
+
+Runtime: ruby 3.3.8 (2025-04-09 revision b200bad6cd) [x86_64-linux-gnu]
+go version go1.23.2 linux/amd64
+Executed UTC: 2026-11-02T14:16:27Z
