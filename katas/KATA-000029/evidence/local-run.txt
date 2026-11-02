@@ -1,0 +1,9 @@
+openjdk version "21.0.12.1" 2026-08-18
+go version go1.23.2 linux/amd64
+RED compilable, behavioral failure confirmed
+JAVA GREEN 20 assertions PASS
+GO BFS ORACLE PASS: 5478 reachable states; 19683 ternary boards; 4040 dihedral metamorphic cases; 8 malformed/adversarial; 23731 total CLI cases
+MUTANT accept-impossible-turn-counts: compiled, behaviorally rejected
+MUTANT accept-impossible-winners: compiled, behaviorally rejected
+MUTANT misclassify-terminal-winner: compiled, behaviorally rejected
+3/3 compiled Java mutants killed
