@@ -1,0 +1,6 @@
+SWI-Prolog 9.0.4 and Go 1.23.12 genuinely executed on code SHA 3896d7f986bad3a52850e06bbea2af5034d09cf3.
+Workflow: https://github.com/ChicoDotNet/Katas/actions/runs/41534914458
+Job: 125584188601 — SUCCESS.
+RED behavioral failure, native GREEN 3999 unique parsing roundtrips, Go 3999 greedy comparisons + 3999 signed-value decodes + 2999 metamorphic shifts + 12 invalid lines, 3/3 compiled mutations detected.
+No PL-Unit choicepoint warnings on the corrected code.
+NOTE: Metadata commit after this code SHA still needs its OWN exact-head CI. This evidence certifies the code, NOT a published status. Review + squash merge to dev are pending.
