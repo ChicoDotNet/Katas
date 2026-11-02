@@ -715,23 +715,51 @@
     "fingerprint": "wardrobe-configuration-combinatorics",
     "domain": "constraints",
     "difficulty": 3,
-    "difficulty_evidence": "Provisional triage only: Starter; configurable domain rules",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "difficulty_evidence": "Kata-Log starter combinatorics: exact 250cm combinations, price optimization, local extension 0..1000 walls; provisional 3/5, uncalibrated.",
+    "score": 78,
+    "score_evidence": "Provisional single-author rubric for Swift memoized DP, Go brute-force independent oracle, 1001 real differential walls, 3 compiled mutants; not independently calibrated or causal.",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "Unlicense",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/configure-wardrobe-kata",
+      "scope": "Kata-Log own public-domain conceptual page only; no linked starter/fixtures imported. Original Swift, Go and Python code MIT."
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Swift",
+    "language_rationale": "Swift 6.2 value-semantic immutable plan and memoized integer suffix DP. Julia, Prolog, Haskell compared before workflow; Go count-vector brute-force oracle is independent of DP.",
+    "evidence": {
+      "red": "katas/KATA-000014/evidence/local-run.txt",
+      "green": "katas/KATA-000014/evidence/local-run.txt",
+      "oracle": "katas/KATA-000014/evidence/local-run.txt",
+      "skill_review": "katas/KATA-000014/evidence/skill_review.md",
+      "skill_conclusion": "no_change"
+    },
     "discovery": {
       "date": "2026-10-17",
       "listing": "https://kata-log.rocks/",
       "audit": "rights, oracle and difficulty require item-specific review",
       "scan_id": "kata-log-index-20261017-v1"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Swift 6.2.1, Go 1.23.2, Python 3.13.5",
+      "red": "compilable wrong stub fails intended first assertion",
+      "green": "5034 native assertions",
+      "oracle_language": "Go",
+      "oracle_strategy": "independent count-vector brute force versus Swift memoized suffix DP",
+      "differential_cases": 1001,
+      "metamorphic_plan_checks": 1482,
+      "metamorphic_cli_checks": 120,
+      "invalid_cli_checks": 15,
+      "mutants_killed": 3,
+      "ci_pending": true
     }
   },
   {
