@@ -1,0 +1,3 @@
+# Ninja v0.1.29 review — KATA-000024
+
+Outcome: **no_change**. Existing skill already calls for independently chosen implementation/tests/oracle, RED conductual, real toolchains, rights per artifact, and mutation where useful. TypeScript incremental indexes contrasted with a Go full-history scan and independent token scanner; 1,201 histories, 20,602 projections, 100 metamorphic pairs and 3/3 compiled mutants were executed locally. No independent holdout, retraining, timing-controlled comparison or demonstrated transfer. Do not promote a new principle based on this single kata. Scope: clean-room JSON domain model, not a production social network or reproduction of external starters.
