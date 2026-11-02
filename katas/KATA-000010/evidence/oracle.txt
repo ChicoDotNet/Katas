@@ -1,0 +1,2 @@
+2026-11-02 Go 1.23.12 independent immutable-history reference, source SHA ee3f5d932bfae3adfc0c3dce207ba094ae015245
+Job 125515236221: GO EVENT-HISTORY ORACLE PASS: 301 baseline scenarios, 2333 turns, 535 metamorphic sessions, 8 invalid configurations. MUTANTS PASS 3/3 (wrong-score, wrong-deck, wrong-release; compiled and behaviorally rejected). Run: https://github.com/ChicoDotNet/Katas/actions/runs/41514728561

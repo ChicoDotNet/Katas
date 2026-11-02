@@ -569,23 +569,55 @@
     "fingerprint": "defensive-design-bug-prevention",
     "domain": "legacy-hardening",
     "difficulty": 4,
-    "difficulty_evidence": "Provisional triage only: Refactoring; may overlap Ugly Trivia source: distinct failure-prevention objective; dedup review pending",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "difficulty_evidence": "Original anti-invalid-state game: validated private Ada construction, cyclic state, penalties, multiple bounded dimensions; provisional 4/5, no independent calibration.",
+    "score": 86,
+    "score_evidence": "Provisional author rubric only (affinity 19, depth 18, oracle 17, TDD 14, novelty 8, pedagogy 7, portability 1, maintenance 2); not independently calibrated.",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "MIT",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/bugs-zero-kata",
+      "scope": "Kata-Log's own public-domain concept used as inspiration; original Ada/Go code MIT under Katas LICENSE; no upstream Trivia GPL starters, code or fixtures imported."
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Ada",
+    "language_rationale": "Ada 2022 private indefinite type, constrained discriminants and range checks directly teach invalid-state prevention; Swift and Haskell smart constructors viable, Prolog relational but less direct for imperative API. Authentic GNAT 13.3 CI, not existing workflow convenience.",
+    "evidence": {
+      "red": "katas/KATA-000010/evidence/red.txt",
+      "green": "katas/KATA-000010/evidence/green.txt",
+      "oracle": "katas/KATA-000010/evidence/oracle.txt",
+      "ci": "katas/KATA-000010/evidence/ci.txt",
+      "skill_review": "katas/KATA-000010/evidence/skill_review.md",
+      "skill_conclusion": "no_change"
+    },
     "discovery": {
       "date": "2026-10-17",
       "listing": "https://kata-log.rocks/",
       "audit": "rights, oracle and difficulty require item-specific review",
       "scan_id": "kata-log-index-20261017-v1"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "runtime_validation": {
+      "toolchains": "GNATMAKE 13.3.0 Ada 2022; Go 1.23.12; GitHub-hosted ubuntu-24.04",
+      "source": "GitHub Actions exact-head job 125515236221, commit ee3f5d932bfae3adfc0c3dce207ba094ae015245",
+      "red": "Compiled behaviorally incorrect Ada scoring mutation; test failed with expected FAIL behavioral marker",
+      "green": "12 Ada native assertions PASS",
+      "oracle": "Go immutable event-history: 301 baseline scenarios, 2333 turns, 535 metamorphic sessions, 8 invalid inputs",
+      "mutants": "3/3 compiled Ada mutants behaviorally rejected",
+      "workflow_url": "https://github.com/ChicoDotNet/Katas/actions/runs/41514728561",
+      "workflow_conclusion": "success",
+      "ci_pending_new_head": true
+    },
+    "provenance": {
+      "original_contract": true,
+      "source_code_imported": false,
+      "overlap_with_kata_000001": "Distinct original anti-invalid-state design, not GPL Trivia characterization"
     }
   },
   {
