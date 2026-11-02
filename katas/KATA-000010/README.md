@@ -10,7 +10,7 @@ Concept: https://kata-log.rocks/bugs-zero-kata. Kata-Log declares its own conten
 
 A circular-board question game requires 2–6 unique player IDs (1..99), 1–4 categories, a board of 1–128 cells whose category IDs exist, and a nonempty question deck of 1–5 questions per category. No caller can default-construct the indefinite private `Game` type; `Create` validates every dynamic invariant and rejects invalid configuration. `Play` accepts rolls 1–6 and alternates players. Positions wrap modulo board length; questions cycle per category. Correct answers gain a point unless a player is penalized, in which case a correct answer removes the penalty without scoring; wrong answers apply a penalty. These gameplay choices are original policy for this experiment.
 
-CLI token stream: `P C B T`, followed by P player IDs, B board category IDs, C deck lengths, then T `(roll, correct[0|1])` pairs. Each output row is `player-index category question-index score penalized[0|1]`. Invalid input exits nonzero with `ERR` on stderr. No unlicensed fixtures or starter assets.
+CLI token stream: `P C B T`, followed by P player IDs, B board category IDs, C deck lengths, then T `(roll, correct[0|1])` pairs. Each output row is `player-index category question-index score penalized[0|1]`. Invalid input exits nonzero with `ERR` on stderr and **no partial stdout**: the bounded batch of turns is fully validated before any results are emitted. No unlicensed fixtures or starter assets.
 
 ## Three independent language decisions
 
@@ -39,3 +39,7 @@ Ninja v0.1.29: **no_change** after observing authentic GNAT RED/GREEN, Go differ
 ## Authentic remote execution (2026-11-02)
 
 Initial source SHA `ee3f5d932bfae3adfc0c3dce207ba094ae015245`; [GitHub Actions run 41514728561](https://github.com/ChicoDotNet/Katas/actions/runs/41514728561), job `125515236221`, success. GNATMAKE 13.3.0; Go 1.23.12. RED compiled and failed behaviorally, GREEN 12 Ada assertions, 301 baseline scenarios / 2333 turns, 535 metamorphic sessions, 8 invalid inputs, three compiled Ada mutants rejected by Go. This is not local GNAT execution; the remote hosted runner supplied the compiler. New metadata HEAD requires fresh CI.
+
+## 2026-11-02 adversarial hardening — batch input atomicity
+
+Independent review of the initial Ada CLI found that an invalid second turn could cause a nonzero exit **after** the first turn had already been printed, leaving a misleading partial result. The CLI now validates all 0–128 turns before emitting any output; the Go oracle checks empty stdout and the `ERR` diagnostic for invalid batches, including invalid second turns. This is a localized robustness change, not a new kata or a Ninja causal improvement. Exact-head GNAT CI and independent PR review must be repeated after this change.

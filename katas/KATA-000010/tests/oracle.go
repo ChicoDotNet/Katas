@@ -90,9 +90,13 @@ func assert(binary string, s scenario, label string) {
     }
 }
 
+// Invalid batch input must be rejected atomically, not merely exit nonzero
+// after already exposing a successful-looking prefix of results.
 func invalid(binary string, s scenario, label string) {
-    _, err := execute(binary, s)
-    if err == nil { panic("invalid input accepted: " + label + "\n" + input(s)) }
+    out, err := execute(binary, s)
+    if err == nil || strings.TrimSpace(out) != "" || !strings.Contains(err.Error(), "ERR") {
+        panic(fmt.Sprintf("invalid input not rejected atomically: %s\nINPUT:\n%s\nSTDOUT: %q\nERROR: %v", label, input(s), out, err))
+    }
 }
 
 func main() {
@@ -134,5 +138,7 @@ func main() {
     x=base;x.cells=0;invalid(binary,x,"empty board")
     x=base;x.turns=[]turn{{0,1}};invalid(binary,x,"zero roll")
     x=base;x.turns=[]turn{{1,2}};invalid(binary,x,"invalid answer")
-    fmt.Printf("GO EVENT-HISTORY ORACLE PASS: %d baseline scenarios, %d turns, %d metamorphic sessions, 8 invalid configurations\n",total,steps,metamorphic)
+    x=base;x.turns=[]turn{{1,1},{0,1}};invalid(binary,x,"late invalid roll after valid turn")
+    x=base;x.turns=[]turn{{1,1},{1,2}};invalid(binary,x,"late invalid answer after valid turn")
+    fmt.Printf("GO EVENT-HISTORY ORACLE PASS: %d baseline scenarios, %d turns, %d metamorphic sessions, 10 invalid configurations (including late-turn atomicity)\n",total,steps,metamorphic)
 }
