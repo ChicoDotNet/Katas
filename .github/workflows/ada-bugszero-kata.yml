@@ -1,0 +1,32 @@
+name: Ada BugsZero anti-invalid-state kata
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000010/**'
+      - '.github/workflows/ada-bugszero-kata.yml'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000010/**'
+      - '.github/workflows/ada-bugszero-kata.yml'
+permissions:
+  contents: read
+jobs:
+  ada-go-bugszero:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23.x'
+          cache: false
+      - name: Install GNAT from Ubuntu toolchain
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends gnat
+      - name: Confirm authentic Ada and Go toolchains
+        run: |
+          gnatmake -v
+          go version
+      - name: Ada RED, GREEN, independent Go oracle and compiled mutants
+        run: bash katas/KATA-000010/tests/run.sh
