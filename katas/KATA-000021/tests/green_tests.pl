@@ -15,6 +15,6 @@ test(noncanonical, [forall(member(Text, ['IIII', 'VV', 'IL', 'IC', 'MCMC', 'IIV'
     \+ roman:roman(_, Text).
 test(exhaustive_roundtrip, [forall(between(1, 3999, Number))]) :-
     roman:roman(Number, Text),
-    roman:roman(Parsed, Text),
-    assertion(Parsed =:= Number).
+    findall(Parsed, roman:roman(Parsed, Text), Parses),
+    assertion(Parses == [Number]).
 :- end_tests(roman_green).
