@@ -1,0 +1,13 @@
+Swift version 6.2.1 (swift-6.2.1-RELEASE)
+Target: x86_64-unknown-linux-gnu
+go version go1.23.2 linux/amd64
+Python 3.13.5
+RED compiled and failed on intended behavioral assertion
+GREEN native 5034 assertions
+GO independent brute oracle: 1001 wall values, 1482 50cm injection metamorphisms, 120 padded-input metamorphisms, 15 invalid CLI rejections PASS
+MUTANT wrong-price-75: compiled; independent Go oracle rejected behavioral mismatch
+MUTANT wrong-width-120: compiled; independent Go oracle rejected behavioral mismatch
+MUTANT accept-incomplete-plan: compiled; independent Go oracle rejected behavioral mismatch
+3/3 compiled Swift mutants behaviorally killed
+
+2026-10-30 follow-up: numeric tie-break comparator regression added to Go oracle. `go vet` PASS; real Swift 6.2.1 compile PASS; Go differential 1001 walls / 1482 injection / 120 padded / 15 invalid PASS; separate Python mutation gate 3/3 compiled and behaviorally rejected. Full combined `tests/run.sh` timed out after RED/GREEN/Go oracle; gates completed in separate runs. Remote CI still pending.
