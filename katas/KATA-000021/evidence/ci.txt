@@ -1,0 +1,1 @@
+NOT CERTIFIED. SWI-Prolog unavailable in local container; native RED/GREEN and Prolog-vs-Go oracle have NOT run. GitHub Actions exact-head pending. Go oracle builds/vets locally separately.

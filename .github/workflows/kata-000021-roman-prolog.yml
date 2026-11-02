@@ -1,0 +1,29 @@
+name: KATA-000021 Prolog Roman Numerals + Go greedy oracle
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000021/**'
+      - '.github/workflows/kata-000021-roman-prolog.yml'
+      - 'catalog/candidates.json'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000021/**'
+      - '.github/workflows/kata-000021-roman-prolog.yml'
+      - 'catalog/candidates.json'
+permissions:
+  contents: read
+jobs:
+  roman-numerals:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+      - name: Install SWI-Prolog (Genkidama functional-family toolchain)
+        run: sudo apt-get update && sudo apt-get install --no-install-recommends -y swi-prolog-nox
+      - name: RED/GREEN + independent Go oracle + three mutation controls
+        run: bash katas/KATA-000021/tests/run.sh

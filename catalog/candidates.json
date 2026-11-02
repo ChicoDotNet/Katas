@@ -942,23 +942,39 @@
     "fingerprint": "decimal-to-roman-encoding",
     "domain": "numerical-encoding",
     "difficulty": 2,
-    "difficulty_evidence": "Provisional triage only: Starter; algorithms",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "difficulty_evidence": "Kata-Log Starter: bounded canonical grammar 1..3999; reverse parsing and malformed spellings add verification depth.",
+    "score": 72,
+    "score_evidence": "Author provisional rubric 72/100, uncalibrated: reversible DCG grammar and exhaustive finite oracle; Starter difficulty 2/5; harder candidates already have development PRs.",
+    "status": "selected",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "Unlicense",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/roman-numerals-kata",
+      "scope": "Kata-Log own public-domain concept only; all source/tests original MIT; linked starters not imported"
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "Prolog",
+    "language_rationale": "SWI-Prolog DCG reversibility chosen over Haskell parser combinators, COBOL decimal editing and Ruby tables before inspecting CI; Go greedy oracle is structurally different.",
+    "evidence": {
+      "skill_review": "katas/KATA-000021/evidence/skill_review.md",
+      "ci": "katas/KATA-000021/evidence/ci.txt"
+    },
     "discovery": {
       "date": "2026-10-17",
       "listing": "https://kata-log.rocks/",
       "audit": "rights, oracle and difficulty require item-specific review",
       "scan_id": "kata-log-index-20261017-v1"
+    },
+    "development_complete": false,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected"
+    ],
+    "provenance": {
+      "source_url": "https://kata-log.rocks/roman-numerals-kata",
+      "concept_license": "Kata-Log own content public domain",
+      "external_starters_imported": false,
+      "original_code_license": "MIT"
     }
   },
   {
