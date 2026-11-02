@@ -1,0 +1,63 @@
+TOOLCHAINS:
+v22.16.0
+Version 5.8.3
+go version go1.23.2 linux/amd64
+Python 3.13.5
+RED compiled, behaviorally failed as expected
+TAP version 13
+# Subtest: BDD posting and reading: reverse chronological with stable event IDs
+ok 1 - BDD posting and reading: reverse chronological with stable event IDs
+  ---
+  duration_ms: 2.330196
+  type: 'test'
+  ...
+# Subtest: BDD following: directional, idempotent, excludes own posts, chronological
+ok 2 - BDD following: directional, idempotent, excludes own posts, chronological
+  ---
+  duration_ms: 1.671435
+  type: 'test'
+  ...
+# Subtest: BDD mentions: unique per post and not confused by email address
+ok 3 - BDD mentions: unique per post and not confused by email address
+  ---
+  duration_ms: 0.279591
+  type: 'test'
+  ...
+# Subtest: BDD links: metadata only, no network calls
+ok 4 - BDD links: metadata only, no network calls
+  ---
+  duration_ms: 0.386462
+  type: 'test'
+  ...
+# Subtest: BDD direct messages: private, recipient only, no feed/timeline leak
+ok 5 - BDD direct messages: private, recipient only, no feed/timeline leak
+  ---
+  duration_ms: 1.384423
+  type: 'test'
+  ...
+# Subtest: malformed events rejected before any effects
+ok 6 - malformed events rejected before any effects
+  ---
+  duration_ms: 0.592271
+  type: 'test'
+  ...
+# Subtest: empty feeds and independent repeated evaluations
+ok 7 - empty feeds and independent repeated evaluations
+  ---
+  duration_ms: 3.29561
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 88.323685
+GO INDEPENDENT EVENT-LOG ORACLE PASS: 1201 request histories, 20602 projection comparisons, 100 unrelated-DM metamorphic pairs
+MUTANT wrong-follow-target: TypeScript compiled, Go oracle behaviorally rejected
+MUTANT private-inbox-leak: TypeScript compiled, Go oracle behaviorally rejected
+MUTANT reverse-feed-order: TypeScript compiled, Go oracle behaviorally rejected
+MUTANTS PASS: 3/3 compiled and behaviorally rejected

@@ -1,0 +1,36 @@
+name: TypeScript Social Network + Go event-log oracle
+on:
+  pull_request:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000024/**'
+      - '.github/workflows/ts-social-network-kata.yml'
+      - 'catalog/**'
+  push:
+    branches: [dev, main]
+    paths:
+      - 'katas/KATA-000024/**'
+      - '.github/workflows/ts-social-network-kata.yml'
+permissions:
+  contents: read
+jobs:
+  independent-social-contract:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-go@v6
+        with:
+          go-version: '1.23.2'
+      - name: Install pinned TypeScript without package scripts
+        working-directory: katas/KATA-000024
+        run: npm install --ignore-scripts --no-audit --no-fund
+      - name: RED, GREEN, independent log oracle, metamorphisms and mutations
+        working-directory: katas/KATA-000024
+        shell: bash
+        run: |
+          export PATH="$PWD/node_modules/.bin:$PATH"
+          bash tests/run.sh

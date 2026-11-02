@@ -1023,23 +1023,50 @@
     "fingerprint": "social-network-command-relationships",
     "domain": "domain-design",
     "difficulty": 3,
-    "difficulty_evidence": "Provisional triage only: Starter; social network model",
-    "score": 0,
-    "score_evidence": "not_evaluated",
-    "status": "discovered",
+    "difficulty_evidence": "Six incremental BDD features; bounded event log, public/private projection invariants and cross-language differential model. Provisional triage, not population ranked.",
+    "score": 78,
+    "score_evidence": "Provisional single-author rubric: seven native BDD tests, 1,201 histories, 20,602 query projections, 100 metamorphic pairs, three compiled mutants; not independently calibrated.",
+    "status": "green",
     "license": {
-      "id": "UNKNOWN",
-      "verified": false,
-      "evidence_url": ""
+      "id": "Unlicense",
+      "verified": true,
+      "evidence_url": "https://kata-log.rocks/social-network-kata",
+      "scope": "Only Kata-Log's own public-domain backlog; no linked starter, fixtures, images or third-party code copied. All new implementation/tests/oracle MIT."
     },
-    "language": "",
-    "language_rationale": "",
-    "evidence": {},
+    "language": "TypeScript",
+    "language_rationale": "TypeScript 5.8.3 discriminated event unions and incremental indexes; native Node 22 BDD tests; Go 1.23.2 independent full-history projection and byte-level token scanner. Compared Ruby, Haskell and Prolog before inspecting CI.",
+    "evidence": {
+      "red": "katas/KATA-000024/evidence/local-run.txt",
+      "green": "katas/KATA-000024/evidence/local-run.txt",
+      "oracle": "katas/KATA-000024/evidence/local-run.txt",
+      "skill_review": "katas/KATA-000024/evidence/skill_review.md",
+      "skill_conclusion": "no_change"
+    },
     "discovery": {
       "date": "2026-10-17",
       "listing": "https://kata-log.rocks/",
       "audit": "rights, oracle and difficulty require item-specific review",
       "scan_id": "kata-log-index-20261017-v1"
+    },
+    "development_complete": true,
+    "state_history": [
+      "discovered",
+      "eligible",
+      "selected",
+      "red",
+      "green"
+    ],
+    "local_validation": {
+      "toolchain": "Node 22.16.0, TypeScript 5.8.3, Go 1.23.2, Python 3.13.5",
+      "red": "TypeScript stub compiles; seven native Node tests fail behaviorally",
+      "green": "7 BDD tests",
+      "oracle_language": "Go",
+      "oracle_strategy": "Read-only full event-log scan and byte scanner vs TypeScript incremental indexes and regex",
+      "differential_histories": 1201,
+      "differential_projections": 20602,
+      "metamorphic_pairs": 100,
+      "mutants_killed": 3,
+      "ci_pending": true
     }
   },
   {
